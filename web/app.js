@@ -9,6 +9,8 @@
 const DATA_URL = "./data.json";
 
 // ── État global ──────────────────────────────────────────────────
+const PAGE_SIZE = 10;
+
 let state = {
   releases: [],
   trends: [],
@@ -17,6 +19,7 @@ let state = {
   updatedAt: null,
   activeCategory: "all",
   activeImpact: "all",
+  currentPage: 1,
 };
 
 // ── Utilitaires ──────────────────────────────────────────────────
@@ -147,22 +150,68 @@ function getFilteredReleases() {
 }
 
 function renderReleases() {
-  const container = document.getElementById("releases-list");
-  const releases = getFilteredReleases();
+  const container  = document.getElementById("releases-list");
+  const pagination = document.getElementById("releases-pagination");
+  const releases   = getFilteredReleases();
 
   if (releases.length === 0) {
     container.innerHTML = '<div class="empty-state">Aucune release pour ces filtres.</div>';
+    if (pagination) pagination.innerHTML = "";
     return;
   }
 
-  container.innerHTML = releases.slice(0, 30).map(r => renderReleaseCard(r)).join("");
+  const totalPages = Math.ceil(releases.length / PAGE_SIZE);
+  // Recadrer la page courante si elle dépasse le total après un changement de filtre
+  if (state.currentPage > totalPages) state.currentPage = 1;
 
-  // Bind click
+  const start = (state.currentPage - 1) * PAGE_SIZE;
+  const page  = releases.slice(start, start + PAGE_SIZE);
+
+  container.innerHTML = page.map(r => renderReleaseCard(r)).join("");
+
+  // Bind click → modal
   container.querySelectorAll(".release-card").forEach(card => {
     card.addEventListener("click", () => {
-      const id = card.dataset.id;
-      const release = state.releases.find(r => r.id === id);
+      const release = state.releases.find(r => r.id === card.dataset.id);
       if (release) openModal(release);
+    });
+  });
+
+  // Pagination
+  if (pagination) renderPagination(pagination, totalPages, releases.length);
+}
+
+function renderPagination(container, totalPages, totalItems) {
+  if (totalPages <= 1) { container.innerHTML = ""; return; }
+
+  const cur   = state.currentPage;
+  const start = (cur - 1) * PAGE_SIZE + 1;
+  const end   = Math.min(cur * PAGE_SIZE, totalItems);
+
+  // Génère les numéros à afficher : toujours 1, ..., cur-1, cur, cur+1, ..., last
+  const pages = new Set([1, totalPages, cur, cur - 1, cur + 1].filter(p => p >= 1 && p <= totalPages));
+  const sorted = [...pages].sort((a, b) => a - b);
+
+  const btnHtml = sorted.reduce((acc, p, i) => {
+    if (i > 0 && p - sorted[i - 1] > 1) acc += '<span class="page-ellipsis">…</span>';
+    acc += `<button class="page-btn${p === cur ? " active" : ""}" data-page="${p}">${p}</button>`;
+    return acc;
+  }, "");
+
+  container.innerHTML = `
+    <div class="pagination">
+      <button class="page-btn page-prev" data-page="${cur - 1}" ${cur === 1 ? "disabled" : ""}>‹</button>
+      ${btnHtml}
+      <button class="page-btn page-next" data-page="${cur + 1}" ${cur === totalPages ? "disabled" : ""}>›</button>
+      <span class="page-info">${start}–${end} / ${totalItems}</span>
+    </div>`;
+
+  container.querySelectorAll(".page-btn:not([disabled])").forEach(btn => {
+    btn.addEventListener("click", () => {
+      state.currentPage = parseInt(btn.dataset.page, 10);
+      renderReleases();
+      // Remonter en haut de la liste
+      document.getElementById("releases-list").scrollIntoView({ behavior: "smooth", block: "start" });
     });
   });
 }
@@ -464,6 +513,7 @@ function initFilters() {
       document.querySelectorAll(".filter-btn").forEach(b => b.classList.remove("active"));
       btn.classList.add("active");
       state.activeCategory = btn.dataset.filter;
+      state.currentPage = 1;
       renderReleases();
     });
   });
@@ -474,6 +524,7 @@ function initFilters() {
       document.querySelectorAll(".impact-filter").forEach(e => e.classList.remove("active"));
       el.classList.add("active");
       state.activeImpact = el.dataset.impact;
+      state.currentPage = 1;
       renderReleases();
     });
   });

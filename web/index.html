@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html lang="fr">
 <head>
   <meta charset="UTF-8" />
@@ -8,7 +8,7 @@
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet" />
 </head>
-<body>
+<body class="home-page">
 
   <!-- ─── HEADER ──────────────────────────────────────────────── -->
   <header class="site-header">
@@ -22,147 +22,160 @@
       </div>
       <div class="header-meta">
         <nav class="header-nav">
-          <a href="index.html" class="nav-link nav-link-active">Dashboard</a>
+          <a href="index.html" class="nav-link nav-link-active">Accueil</a>
+          <a href="dashboard.html" class="nav-link">Dashboard</a>
           <a href="outils.html" class="nav-link">Outils suivis</a>
           <a href="radar.html" class="nav-link">Découvertes</a>
+          <a href="compat.html"  class="nav-link">Compatibilité</a>
           <a href="compare.html" class="nav-link">Comparatifs</a>
         </nav>
         <span class="badge badge-live">● Live</span>
-        <span id="last-updated" class="header-updated">Chargement...</span>
+        <span id="home-updated" class="header-updated">—</span>
       </div>
     </div>
   </header>
 
-  <!-- ─── STATS BAR ────────────────────────────────────────────── -->
-  <section class="stats-bar">
-    <div class="container stats-grid">
-      <div class="stat-card">
-        <span class="stat-value" id="stat-releases">—</span>
-        <span class="stat-label">Releases</span>
+  <!-- ─── HERO ─────────────────────────────────────────────────── -->
+  <section class="home-hero">
+    <div class="container">
+      <div class="home-hero-content">
+        <p class="home-hero-eyebrow">Automatisé · Quotidien · Open Source</p>
+        <h2 class="home-hero-title">Votre radar technologique<br>toujours à jour</h2>
+        <p class="home-hero-desc">
+          Le pipeline s'exécute chaque jour à 07h00 et collecte automatiquement les releases,
+          tendances GitHub et outils émergents dans les domaines Data Engineering, IA, Rust et Cloud.
+        </p>
+        <div class="home-hero-actions">
+          <a href="dashboard.html" class="home-btn home-btn-primary">Voir le dashboard →</a>
+          <a href="radar.html" class="home-btn home-btn-secondary">Découvertes</a>
+        </div>
       </div>
-      <div class="stat-card">
-        <span class="stat-value" id="stat-critical">—</span>
-        <span class="stat-label">Critiques</span>
-      </div>
-      <div class="stat-card">
-        <span class="stat-value" id="stat-rising">—</span>
-        <span class="stat-label">En hausse</span>
-      </div>
-      <div class="stat-card">
-        <span class="stat-value" id="stat-projects">—</span>
-        <span class="stat-label">Projets suivis</span>
-      </div>
-      <div class="stat-card" style="cursor:pointer" onclick="location.href='radar.html'">
-        <span class="stat-value" id="stat-discoveries">—</span>
-        <span class="stat-label">Découvertes ↗</span>
+      <div class="home-hero-stats" id="hero-stats">
+        <div class="home-hero-stat">
+          <strong id="hs-releases">—</strong>
+          <span>Releases suivies</span>
+        </div>
+        <div class="home-hero-stat">
+          <strong id="hs-discoveries">—</strong>
+          <span>Outils détectés</span>
+        </div>
+        <div class="home-hero-stat">
+          <strong id="hs-critical">—</strong>
+          <span>Critiques</span>
+        </div>
+        <div class="home-hero-stat">
+          <strong id="hs-projects">—</strong>
+          <span>Projets surveillés</span>
+        </div>
       </div>
     </div>
   </section>
 
-  <!-- ─── MAIN ─────────────────────────────────────────────────── -->
-  <main class="container main-grid">
+  <!-- ─── PAGES GRID ───────────────────────────────────────────── -->
+  <section class="home-pages">
+    <div class="container">
+      <h2 class="home-section-title">Explorer la plateforme</h2>
+      <div class="home-pages-grid">
 
-    <!-- ─── COL GAUCHE ─── -->
-    <div class="col-main">
+        <a href="dashboard.html" class="home-page-card">
+          <span class="home-page-icon">📊</span>
+          <div class="home-page-body">
+            <h3 class="home-page-title">Dashboard</h3>
+            <p class="home-page-desc">
+              Vue d'ensemble des releases récentes. Filtres par catégorie (Data, IA, Rust, Lakehouse…)
+              et par niveau d'impact. Pagination, tendances et top impact en temps réel.
+            </p>
+            <div class="home-page-meta">
+              <span class="home-page-stat" id="ps-releases">— releases</span>
+              <span class="home-page-tag">Temps réel</span>
+            </div>
+          </div>
+        </a>
 
-      <!-- FILTRES -->
-      <div class="filter-bar">
-        <button class="filter-btn active" data-filter="all">Tous</button>
-        <button class="filter-btn" data-filter="data-engineering">Data Engineering</button>
-        <button class="filter-btn" data-filter="ai">IA</button>
-        <button class="filter-btn" data-filter="backend">Backend</button>
-        <button class="filter-btn" data-filter="backend-rust">Rust</button>
-        <button class="filter-btn" data-filter="lakehouse">Lakehouse</button>
-        <button class="filter-btn" data-filter="tooling">Tooling</button>
+        <a href="radar.html" class="home-page-card">
+          <span class="home-page-icon">🔍</span>
+          <div class="home-page-body">
+            <h3 class="home-page-title">Radar — Découvertes</h3>
+            <p class="home-page-desc">
+              Outils émergents détectés automatiquement via les topics GitHub configurés.
+              Recherche, filtres par catégorie et suivi personnalisé dans votre navigateur.
+            </p>
+            <div class="home-page-meta">
+              <span class="home-page-stat" id="ps-discoveries">— outils</span>
+              <span class="home-page-tag">Auto-détecté</span>
+            </div>
+          </div>
+        </a>
+
+        <a href="outils.html" class="home-page-card">
+          <span class="home-page-icon">⭐</span>
+          <div class="home-page-body">
+            <h3 class="home-page-title">Outils suivis</h3>
+            <p class="home-page-desc">
+              Liste complète des projets surveillés par le pipeline, organisée par catégorie.
+              Retrouvez aussi vos favoris marqués depuis le Radar.
+            </p>
+            <div class="home-page-meta">
+              <span class="home-page-stat" id="ps-tracked">— projets</span>
+              <span class="home-page-tag">Votre liste</span>
+            </div>
+          </div>
+        </a>
+
+        <a href="compare.html" class="home-page-card">
+          <span class="home-page-icon">📈</span>
+          <div class="home-page-body">
+            <h3 class="home-page-title">Comparatifs</h3>
+            <p class="home-page-desc">
+              Benchmarks et comparaisons visuelles entre les outils de l'écosystème.
+              Visualisez l'activité, les stars et les tendances sur Chart.js.
+            </p>
+            <div class="home-page-meta">
+              <span class="home-page-tag">Chart.js</span>
+              <span class="home-page-tag">Benchmark</span>
+            </div>
+          </div>
+        </a>
+
       </div>
+    </div>
+  </section>
 
-      <!-- IMPACT FILTER -->
-      <div class="impact-bar">
-        <span class="impact-filter active" data-impact="all">Tout</span>
-        <span class="impact-filter" data-impact="critical">🔴 Critique</span>
-        <span class="impact-filter" data-impact="high">🟠 Élevé</span>
-        <span class="impact-filter" data-impact="medium">🟡 Moyen</span>
-        <span class="impact-filter" data-impact="low">🟢 Faible</span>
-      </div>
-
-      <!-- RELEASES LIST -->
-      <section class="section">
-        <h2 class="section-title">
-          <span class="section-icon">📦</span>
-          Dernières Releases
-        </h2>
-        <div id="releases-list" class="releases-list">
-          <div class="skeleton-list">
-            <div class="skeleton-card"></div>
-            <div class="skeleton-card"></div>
-            <div class="skeleton-card"></div>
+  <!-- ─── PIPELINE INFO ────────────────────────────────────────── -->
+  <section class="home-pipeline">
+    <div class="container">
+      <h2 class="home-section-title">Comment ça fonctionne</h2>
+      <div class="home-pipeline-steps">
+        <div class="home-pipeline-step">
+          <span class="home-pipeline-num">01</span>
+          <div>
+            <h4>Collecte automatique</h4>
+            <p>Le pipeline Python récupère chaque matin les nouvelles releases GitHub, les articles RSS et les packages PyPI des projets configurés.</p>
           </div>
         </div>
-      </section>
-
-    </div>
-
-    <!-- ─── COL DROITE ─── -->
-    <div class="col-side">
-
-      <!-- TENDANCES -->
-      <section class="section">
-        <h2 class="section-title">
-          <span class="section-icon">📈</span>
-          Tendances
-        </h2>
-        <div id="trends-list" class="trends-list">
-          <div class="loading">Chargement...</div>
+        <div class="home-pipeline-arrow">→</div>
+        <div class="home-pipeline-step">
+          <span class="home-pipeline-num">02</span>
+          <div>
+            <h4>Analyse &amp; scoring</h4>
+            <p>Polars + DuckDB calculent un score d'impact basé sur les stars, la fréquence de release et l'activité de la communauté.</p>
+          </div>
         </div>
-      </section>
-
-      <!-- TOP IMPACT -->
-      <section class="section">
-        <h2 class="section-title">
-          <span class="section-icon">⚡</span>
-          Top Impact
-        </h2>
-        <div id="top-impact" class="top-impact-list">
-          <div class="loading">Chargement...</div>
+        <div class="home-pipeline-arrow">→</div>
+        <div class="home-pipeline-step">
+          <span class="home-pipeline-num">03</span>
+          <div>
+            <h4>Déploiement GitHub Pages</h4>
+            <p>Les données sont exportées en JSON statique et publiées automatiquement. Aucun serveur nécessaire.</p>
+          </div>
         </div>
-      </section>
-
-      <!-- CATÉGORIES -->
-      <section class="section">
-        <h2 class="section-title">
-          <span class="section-icon">🏷️</span>
-          Par Catégorie
-        </h2>
-        <div id="category-chart" class="category-chart">
-          <div class="loading">Chargement...</div>
-        </div>
-      </section>
-
-    </div>
-  </main>
-
-  <!-- ─── MODAL DÉTAIL ─────────────────────────────────────────── -->
-  <div id="modal-overlay" class="modal-overlay hidden" role="dialog" aria-modal="true">
-    <div class="modal">
-      <button class="modal-close" id="modal-close" aria-label="Fermer">✕</button>
-      <div id="modal-content"></div>
-    </div>
-  </div>
-
-  <!-- ─── RADAR (aperçu) ─────────────────────────────────── -->
-  <section class="radar-section">
-    <div class="container">
-      <h2 class="section-title">
-        <span class="section-icon">🔍</span>
-        Radar — Outils émergents
-        <span class="radar-count" id="radar-count"></span>
-      </h2>
-      <p class="radar-subtitle">Top 6 détectés automatiquement via les topics configurés. <a href="radar.html">Voir toutes les découvertes &rarr;</a></p>
-      <div id="discoveries-grid" class="discoveries-grid" data-preview="6">
-        <div class="loading">Chargement…</div>
       </div>
-      <div style="text-align:center;margin-top:1.25rem">
-        <a href="radar.html" class="btn-see-all">🔍 Voir toutes les découvertes ↗</a>
+      <div class="home-pipeline-stack">
+        <span class="home-stack-badge">Python 3.12</span>
+        <span class="home-stack-badge">Polars</span>
+        <span class="home-stack-badge">DuckDB</span>
+        <span class="home-stack-badge">GitHub Actions</span>
+        <span class="home-stack-badge">GitHub Pages</span>
       </div>
     </div>
   </section>
@@ -171,14 +184,43 @@
   <footer class="site-footer">
     <div class="container">
       <p>
-        Tech Watch — pipeline automatisé · 
+        Tech Watch — pipeline automatisé ·
         <a href="https://github.com" target="_blank" rel="noopener">GitHub</a> ·
         Données mises à jour quotidiennement
       </p>
-      <p class="footer-stack">Stack : Python · Polars · DuckDB · FastAPI · GitHub Actions</p>
+      <p class="footer-stack">Stack : Python · Polars · DuckDB · GitHub Actions</p>
     </div>
   </footer>
 
-  <script src="app.js"></script>
+  <script>
+    (async () => {
+      try {
+        const r = await fetch(`./data.json?t=${Date.now()}`);
+        if (!r.ok) return;
+        const d = await r.json();
+        const releases    = d.releases    || [];
+        const discoveries = d.discoveries || [];
+        const critical    = releases.filter(x => x.impact_level === 'critical').length;
+        const projects    = new Set(releases.map(x => x.name)).size;
+
+        document.getElementById('hs-releases').textContent    = releases.length;
+        document.getElementById('hs-discoveries').textContent = discoveries.length;
+        document.getElementById('hs-critical').textContent    = critical;
+        document.getElementById('hs-projects').textContent    = projects;
+
+        document.getElementById('ps-releases').textContent    = `${releases.length} releases`;
+        document.getElementById('ps-discoveries').textContent = `${discoveries.length} outils`;
+        document.getElementById('ps-tracked').textContent     = `${projects} projets`;
+
+        if (d.generated_at) {
+          const dt = new Date(d.generated_at);
+          document.getElementById('home-updated').textContent =
+            `Mis à jour ${dt.toLocaleDateString('fr-FR', {day:'2-digit',month:'short'})} ${dt.toLocaleTimeString('fr-FR', {hour:'2-digit',minute:'2-digit'})}`;
+        }
+      } catch (e) {
+        console.warn('home: data.json unavailable', e);
+      }
+    })();
+  </script>
 </body>
 </html>

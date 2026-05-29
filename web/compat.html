@@ -1,0 +1,362 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Compatibilité — Tech Watch</title>
+  <link rel="stylesheet" href="styles.css" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet" />
+</head>
+<body>
+
+  <!-- ─── HEADER ──────────────────────────────────────────────── -->
+  <header class="site-header">
+    <div class="container">
+      <div class="header-brand">
+        <a href="index.html" style="display:flex;align-items:center;gap:.6rem;text-decoration:none;color:inherit">
+          <span class="header-icon">🔭</span>
+          <div>
+            <h1 class="header-title">Tech Watch</h1>
+            <p class="header-subtitle">Veille technologique automatisée · Data · IA · Rust · Cloud</p>
+          </div>
+        </a>
+      </div>
+      <nav class="header-nav">
+        <a href="index.html"     class="nav-link">Accueil</a>
+        <a href="dashboard.html" class="nav-link">Dashboard</a>
+        <a href="outils.html"    class="nav-link">Outils suivis</a>
+        <a href="radar.html"     class="nav-link">Découvertes</a>
+        <a href="compat.html"    class="nav-link nav-link-active">Compatibilité</a>
+        <a href="compare.html"   class="nav-link">Comparatifs</a>
+      </nav>
+    </div>
+  </header>
+
+  <!-- ─── HERO ─────────────────────────────────────────────────── -->
+  <section class="tools-intro">
+    <div class="container">
+      <h2 class="tools-intro-title">Matrice de compatibilité</h2>
+      <p class="tools-intro-sub">
+        Quels outils de l'écosystème fonctionnent bien ensemble ? Cette matrice recense
+        les intégrations natives, les combinaisons courantes et les incompatibilités connues.
+      </p>
+      <div class="compat-legend">
+        <span class="legend-item legend-great">✅ Excellent — intégration native ou combo très courant</span>
+        <span class="legend-item legend-ok">⚠️ Partiel — fonctionne avec adaptation</span>
+        <span class="legend-item legend-poor">❌ Difficile — incompatibilité ou cas d'usage trop éloignés</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- ─── MATRIX ───────────────────────────────────────────────── -->
+  <section class="container compat-section">
+    <div class="compat-layout">
+
+      <!-- Matrix -->
+      <div class="compat-matrix-wrap">
+        <table id="compat-table" class="compat-table" aria-label="Matrice de compatibilité des outils"></table>
+      </div>
+
+      <!-- Detail panel -->
+      <div class="compat-detail" id="compat-detail">
+        <div class="compat-detail-placeholder" id="detail-placeholder">
+          <span>↖</span>
+          <p>Survolez une cellule pour voir les détails de l'intégration</p>
+        </div>
+        <div class="compat-detail-content hidden" id="detail-content">
+          <div class="detail-pair" id="detail-pair"></div>
+          <div class="detail-badge-wrap" id="detail-badge"></div>
+          <p class="detail-note" id="detail-note"></p>
+          <div class="detail-tags" id="detail-tags"></div>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ─── STACKS RECOMMANDÉS ──────────────────────────────────── -->
+  <section class="compat-stacks-section">
+    <div class="container">
+      <h2 class="home-section-title">⭐ Stacks recommandés</h2>
+      <p class="tools-intro-sub" style="margin-bottom:1.75rem">
+        Combinaisons éprouvées où tous les outils fonctionnent en synergie.
+      </p>
+      <div class="stacks-grid" id="stacks-grid"></div>
+    </div>
+  </section>
+
+  <!-- ─── FOOTER ───────────────────────────────────────────────── -->
+  <footer class="site-footer">
+    <div class="container">
+      <p>
+        Tech Watch — pipeline automatisé ·
+        <a href="https://github.com" target="_blank" rel="noopener">GitHub</a> ·
+        Données mises à jour quotidiennement
+      </p>
+      <p class="footer-stack">Stack : Python · Polars · DuckDB · GitHub Actions</p>
+    </div>
+  </footer>
+
+  <script>
+  // ── Données ──────────────────────────────────────────────────────
+  const TOOLS = [
+    { id: 'polars',       name: 'Polars',       cat: 'data',    catLabel: 'Data',    short: 'Polars'  },
+    { id: 'duckdb',       name: 'DuckDB',       cat: 'data',    catLabel: 'Data',    short: 'DuckDB'  },
+    { id: 'spark',        name: 'Spark',        cat: 'data',    catLabel: 'Data',    short: 'Spark'   },
+    { id: 'delta',        name: 'Delta Lake',   cat: 'lake',    catLabel: 'Lakehouse', short: 'Delta' },
+    { id: 'iceberg',      name: 'Iceberg',      cat: 'lake',    catLabel: 'Lakehouse', short: 'Iceberg'},
+    { id: 'langchain',    name: 'LangChain',    cat: 'ai',      catLabel: 'AI',      short: 'LangChain'},
+    { id: 'transformers', name: 'Transformers', cat: 'ai',      catLabel: 'AI',      short: 'HF Trans.'},
+    { id: 'openai',       name: 'OpenAI SDK',   cat: 'ai',      catLabel: 'AI',      short: 'OpenAI'  },
+    { id: 'mlflow',       name: 'MLflow',       cat: 'mlops',   catLabel: 'MLOps',   short: 'MLflow'  },
+    { id: 'fastapi',      name: 'FastAPI',      cat: 'backend', catLabel: 'Backend', short: 'FastAPI' },
+    { id: 'uv',           name: 'uv',           cat: 'tooling', catLabel: 'Tooling', short: 'uv'      },
+    { id: 'ruff',         name: 'Ruff',         cat: 'tooling', catLabel: 'Tooling', short: 'Ruff'    },
+  ];
+
+  // Niveaux : great | ok | poor
+  const COMPAT = {
+    'polars:duckdb':         { level: 'great', note: 'Intégration native via Apache Arrow. DuckDB peut requêter un DataFrame Polars directement avec duckdb.sql(). Combinaison idéale pour analytics locaux.', tags: ['Arrow', 'natif'] },
+    'polars:spark':          { level: 'ok',    note: 'Échange possible via Parquet ou Arrow Flight. APIs très différentes ; convertir un Polars DF en Spark DF demande un passage par fichier ou PyArrow.', tags: ['Parquet', 'conversion'] },
+    'polars:delta':          { level: 'great', note: 'La librairie deltalake (delta-rs) expose une API Polars native : write_deltalake() et DeltaTable.to_pyarrow() → Polars. Très performant.', tags: ['delta-rs', 'natif'] },
+    'polars:iceberg':        { level: 'ok',    note: 'PyIceberg ≥ 0.7 lit et écrit via PyArrow, compatible avec Polars. Pas de binding natif mais le flux fonctionne bien.', tags: ['PyArrow', 'pyiceberg'] },
+    'polars:langchain':      { level: 'poor',  note: 'LangChain est conçu autour de Pandas pour ses Document loaders. Il faut convertir .to_pandas() avant chaque interaction. Pas recommandé en production lourde.', tags: ['Pandas requis'] },
+    'polars:transformers':   { level: 'ok',    note: "Pas de binding direct, mais datasets HuggingFace supportent Arrow. On peut passer par polars → arrow → Dataset HF.", tags: ['PyArrow', 'HF Datasets'] },
+    'polars:openai':         { level: 'ok',    note: 'Polars prépare les données textuelles (.to_series()), OpenAI les consomme via API. Pipeline découplé qui fonctionne bien.', tags: ['pipeline'] },
+    'polars:mlflow':         { level: 'ok',    note: 'MLflow attend du Pandas pour mlflow.log_table(). Conversion légère depuis Polars. Pas bloquant.', tags: ['conversion Pandas'] },
+    'polars:fastapi':        { level: 'great', note: 'Polars DataFrame → JSON via .to_dicts() dans les endpoints FastAPI. Pattern très courant et très propre.', tags: ['to_dicts()', 'REST'] },
+    'polars:uv':             { level: 'great', note: 'uv installe Polars en quelques secondes (binaire Rust pré-compilé). Pas de dépendance runtime partagée mais stack très cohérente.', tags: ['Rust', 'rapide'] },
+    'polars:ruff':           { level: 'great', note: 'Ruff lint et formate le code Python utilisant Polars. Aucun conflit, config partagée recommandée.', tags: ['lint', 'format'] },
+
+    'duckdb:spark':          { level: 'ok',    note: 'Parquet ou Arrow Flight comme pont. DuckDB et Spark ciblent des échelles différentes (local vs cluster). On choisit l\'un ou l\'autre selon le volume.', tags: ['Parquet', 'échelles différentes'] },
+    'duckdb:delta':          { level: 'great', note: 'Extension delta disponible dans DuckDB. LOAD delta; puis lecture directe de tables Delta via delta_scan(). Combo très puissant.', tags: ['extension delta', 'natif'] },
+    'duckdb:iceberg':        { level: 'great', note: 'Support Iceberg natif dans DuckDB 0.10+. LOAD iceberg; puis iceberg_scan(). Lecture de métadonnées et données Iceberg sans Spark.', tags: ['natif', 'DuckDB 0.10+'] },
+    'duckdb:langchain':      { level: 'ok',    note: 'LangChain a un SQLDatabaseChain qui supporte DuckDB. Permet de faire du text-to-SQL sur des données DuckDB.', tags: ['SQLChain', 'text-to-SQL'] },
+    'duckdb:transformers':   { level: 'poor',  note: 'Flux très séparé : DuckDB extrait les features, Transformers modélise. Pas d\'intégration directe mais aucun conflit non plus.', tags: ['flux séparés'] },
+    'duckdb:openai':         { level: 'ok',    note: 'Pattern : DuckDB prépare les données textuelles, OpenAI les enrichit. Fonctionne bien en pipeline ETL enrichi par LLM.', tags: ['pipeline LLM'] },
+    'duckdb:mlflow':         { level: 'ok',    note: 'MLflow peut logger des DataFrames Pandas extraits de DuckDB. Pas de flavor DuckDB natif mais rien ne bloque.', tags: ['log Pandas'] },
+    'duckdb:fastapi':        { level: 'great', note: 'DuckDB comme base analytique embarquée pour des endpoints FastAPI. Zéro infrastructure, performances excellentes pour des workloads read-heavy.', tags: ['embarqué', 'analytics'] },
+    'duckdb:uv':             { level: 'great', note: 'uv installe duckdb (binaire Rust). Stack cohérente et très rapide à bootstrapper.', tags: ['Rust', 'rapide'] },
+    'duckdb:ruff':           { level: 'great', note: 'Ruff lint le code Python DuckDB. Aucun conflit.', tags: ['lint'] },
+
+    'spark:delta':           { level: 'great', note: 'Intégration de référence. Delta Lake a été créé par Databricks pour fonctionner avec Spark. Toutes les opérations ACID, time travel et schema evolution sont disponibles nativement.', tags: ['Databricks', 'ACID', 'natif'] },
+    'spark:iceberg':         { level: 'great', note: 'Connecteur Spark-Iceberg officiel (org.apache.iceberg:iceberg-spark). Supporte toutes les opérations DML, merge-on-read, copy-on-write.', tags: ['officiel', 'DML'] },
+    'spark:langchain':       { level: 'ok',    note: 'LangChain peut exécuter du SparkSQL via SQLDatabaseChain. Possible mais lourd à mettre en place — Spark doit être démarré en amont.', tags: ['SparkSQL', 'setup complexe'] },
+    'spark:transformers':    { level: 'ok',    note: 'spark-nlp (John Snow Labs) est distinct de HF Transformers. Pour HF sur Spark, on peut utiliser petastorm ou simplement distribuer l\'inférence avec pandas_udf.', tags: ['pandas_udf', 'petastorm'] },
+    'spark:openai':          { level: 'ok',    note: 'Intégration possible via pandas_udf qui appelle l\'API OpenAI depuis des workers Spark. Coûteux en latence mais fonctionne.', tags: ['pandas_udf', 'latence'] },
+    'spark:mlflow':          { level: 'great', note: 'MLflow a une intégration Spark officielle. Logging automatique des métriques PySpark, saving de modèles MLlib, tracking des expériences.', tags: ['officiel', 'autolog'] },
+    'spark:fastapi':         { level: 'poor',  note: 'Spark nécessite un cluster JVM. Le démarrer depuis un worker FastAPI est lourd et peu pratique. Pour ce cas, préférez DuckDB ou Polars.', tags: ['JVM', 'déconseillé'] },
+    'spark:uv':              { level: 'ok',    note: 'uv peut gérer les dépendances Python du job PySpark. La JVM reste gérée séparément (JAVA_HOME). Cohabitation possible.', tags: ['JVM séparée'] },
+    'spark:ruff':            { level: 'great', note: 'Ruff lint le code PySpark. Aucun conflit.', tags: ['lint'] },
+
+    'delta:iceberg':         { level: 'poor',  note: 'Formats ouverts concurrents avec des specs différentes. Databricks UniForm permet d\'exposer une table Delta avec des métadonnées Iceberg. Autrement, migration via spark ou outils externes.', tags: ['UniForm', 'concurrent'] },
+    'delta:langchain':       { level: 'poor',  note: 'Pas de connecteur LangChain pour Delta Lake. On peut accéder via SparkSQL ou DuckDB en intermédiaire.', tags: ['via intermédiaire'] },
+    'delta:transformers':    { level: 'poor',  note: 'Delta est un format de stockage, Transformers un framework ML. Flux très séparés. Delta stocke les datasets d\'entraînement, Transformers les lit via Parquet.', tags: ['flux séparés'] },
+    'delta:openai':          { level: 'poor',  note: 'Pas d\'intégration directe. Delta stocke les données textuelles, OpenAI les consomme. Pipeline manuel nécessaire.', tags: ['flux séparés'] },
+    'delta:mlflow':          { level: 'great', note: 'MLflow peut utiliser Delta comme format de stockage pour les datasets. Unity Catalog (Databricks) gère Delta + MLflow nativement.', tags: ['Unity Catalog', 'Databricks'] },
+    'delta:fastapi':         { level: 'ok',    note: 'FastAPI peut lire des tables Delta via delta-rs sans Spark. Temps de lecture acceptable pour des petites tables. Pour du volumétrique, préférez DuckDB en intermédiaire.', tags: ['delta-rs', 'petites tables'] },
+    'delta:uv':              { level: 'great', note: 'uv installe deltalake (delta-rs, Rust). Stack Python Rust-based cohérente.', tags: ['delta-rs', 'Rust'] },
+    'delta:ruff':            { level: 'great', note: 'Ruff lint. Aucun conflit.', tags: ['lint'] },
+
+    'iceberg:langchain':     { level: 'poor',  note: 'Pas de connecteur LangChain pour Iceberg. Accès indirect via SQL (Spark, DuckDB, Trino).', tags: ['indirect'] },
+    'iceberg:transformers':  { level: 'poor',  note: 'Flux séparés. Iceberg stocke, Transformers modélise. Aucune intégration directe.', tags: ['flux séparés'] },
+    'iceberg:openai':        { level: 'poor',  note: 'Pas d\'intégration directe. Pipeline manuel : Iceberg → extraction → OpenAI.', tags: ['pipeline manuel'] },
+    'iceberg:mlflow':        { level: 'ok',    note: 'MLflow peut logger des datasets Iceberg comme artifacts. Pas de flavor natif mais fonctionne via PyArrow.', tags: ['artifacts'] },
+    'iceberg:fastapi':       { level: 'ok',    note: 'Possible via PyIceberg mais pas la combinaison la plus courante. DuckDB en intermédiaire est plus simple.', tags: ['via DuckDB'] },
+    'iceberg:uv':            { level: 'great', note: 'uv installe pyiceberg. Stack cohérente.', tags: ['Rust', 'rapide'] },
+    'iceberg:ruff':          { level: 'great', note: 'Ruff lint. Aucun conflit.', tags: ['lint'] },
+
+    'langchain:transformers': { level: 'great', note: 'LangChain a une intégration HuggingFacePipeline native. Combo très populaire pour des applications RAG open-source. Les modèles HF s\'utilisent directement comme LLM dans les chains.', tags: ['HuggingFacePipeline', 'RAG', 'natif'] },
+    'langchain:openai':      { level: 'great', note: 'OpenAI est le LLM de référence pour LangChain. Intégration first-class via langchain-openai. La quasi-totalité des exemples LangChain utilisent OpenAI.', tags: ['first-class', 'langchain-openai'] },
+    'langchain:mlflow':      { level: 'great', note: 'MLflow trace automatiquement les runs LangChain via mlflow.langchain.autolog(). Logging des prompts, réponses, latence et coûts tokens.', tags: ['autolog', 'tracing'] },
+    'langchain:fastapi':     { level: 'great', note: 'LangServe = LangChain + FastAPI. Librairie officielle pour exposer des chains LangChain comme API REST. Le combo de production recommandé.', tags: ['LangServe', 'officiel'] },
+    'langchain:uv':          { level: 'great', note: 'uv installe langchain et ses dépendances rapidement. Pas de conflit.', tags: ['rapide'] },
+    'langchain:ruff':        { level: 'great', note: 'Ruff lint le code LangChain. Aucun conflit.', tags: ['lint'] },
+
+    'transformers:openai':   { level: 'ok',    note: 'HF Transformers (open-source) et OpenAI (propriétaire) ciblent le même but par des voies différentes. On peut les mixer dans une app mais ce n\'est pas une intégration directe.', tags: ['alternatives', 'coexistence'] },
+    'transformers:mlflow':   { level: 'great', note: 'MLflow a un flavor HuggingFace officiel : mlflow.transformers.log_model() et load_model(). Gestion complète du cycle de vie des modèles HF.', tags: ['flavor officiel', 'lifecycle'] },
+    'transformers:fastapi':  { level: 'great', note: 'Pattern de référence : modèle HF chargé au démarrage FastAPI, exposé via un endpoint /predict. Très répandu pour le serving de modèles NLP.', tags: ['serving', 'pattern courant'] },
+    'transformers:uv':       { level: 'great', note: 'uv installe transformers et ses dépendances (torch, etc.). Plus rapide que pip pour les dépendances lourdes ML.', tags: ['rapide', 'ML heavy deps'] },
+    'transformers:ruff':     { level: 'great', note: 'Ruff lint. Aucun conflit.', tags: ['lint'] },
+
+    'openai:mlflow':         { level: 'great', note: 'MLflow a un flavor OpenAI officiel : log des appels, traçage des coûts, versioning de prompts. Essentiel pour contrôler les dépenses en production.', tags: ['flavor officiel', 'coûts', 'prompts'] },
+    'openai:fastapi':        { level: 'great', note: 'Pattern classique et très répandu : wrapper FastAPI autour de l\'API OpenAI pour ajouter auth, rate limiting, cache, monitoring.', tags: ['wrapper', 'auth', 'cache'] },
+    'openai:uv':             { level: 'great', note: 'uv installe openai très rapidement. Stack cohérente.', tags: ['rapide'] },
+    'openai:ruff':           { level: 'great', note: 'Ruff lint. Aucun conflit.', tags: ['lint'] },
+
+    'mlflow:fastapi':        { level: 'ok',    note: 'MLflow a son propre serveur mlflow serve. FastAPI est utile pour wrapping custom avec logique métier supplémentaire. Les deux peuvent coexister.', tags: ['mlflow serve', 'custom'] },
+    'mlflow:uv':             { level: 'great', note: 'uv installe mlflow. Stack cohérente.', tags: ['rapide'] },
+    'mlflow:ruff':           { level: 'great', note: 'Ruff lint. Aucun conflit.', tags: ['lint'] },
+
+    'fastapi:uv':            { level: 'great', note: 'uv gère le venv et les dépendances du projet FastAPI. Combo de référence pour un nouveau projet Python backend moderne.', tags: ['venv', 'moderne'] },
+    'fastapi:ruff':          { level: 'great', note: 'Ruff lint et formate le code FastAPI. Recommandé par l\'équipe FastAPI. Config pyproject.toml partagée.', tags: ['recommandé', 'pyproject'] },
+
+    'uv:ruff':               { level: 'great', note: 'Tous les deux développés par Astral, en Rust. uv gère les dépendances et venvs, ruff lint et formate. Le combo parfait pour un projet Python moderne.', tags: ['Astral', 'Rust', 'combo parfait'] },
+  };
+
+  const STACKS = [
+    {
+      name: 'Stack Data Engineering Moderne',
+      icon: '🏗️',
+      tools: ['polars', 'duckdb', 'delta', 'fastapi', 'uv', 'ruff'],
+      desc: 'Analytics locaux ultra-rapides sans infrastructure. 100% Rust-based, zéro JVM. Idéal pour des pipelines data embarqués ou des APIs analytiques légères.',
+      level: 'great',
+    },
+    {
+      name: 'Stack IA / LLM Production',
+      icon: '🤖',
+      tools: ['langchain', 'openai', 'transformers', 'mlflow', 'fastapi'],
+      desc: 'Pipeline complet de production pour applications LLM : LangChain orchestre, OpenAI ou Transformers génèrent, MLflow trace et FastAPI expose.',
+      level: 'great',
+    },
+    {
+      name: 'Stack Enterprise Lakehouse',
+      icon: '🏢',
+      tools: ['spark', 'delta', 'mlflow'],
+      desc: 'Stack Databricks-style éprouvée. Spark traite les volumes massifs, Delta garantit l\'ACID, MLflow suit les expériences ML. Référence pour l\'entreprise.',
+      level: 'great',
+    },
+    {
+      name: 'Stack API Python Moderne',
+      icon: '🚀',
+      tools: ['fastapi', 'duckdb', 'polars', 'uv', 'ruff'],
+      desc: 'API légère avec capacité analytique embarquée. DuckDB répond aux requêtes complexes, Polars structure les données, uv + ruff maintiennent la qualité du code.',
+      level: 'great',
+    },
+    {
+      name: 'Stack RAG Open Source',
+      icon: '🔍',
+      tools: ['langchain', 'transformers', 'mlflow', 'fastapi', 'duckdb'],
+      desc: 'Système de Retrieval-Augmented Generation 100% open source. LangChain orchestre, Transformers encode, DuckDB stocke les embeddings, MLflow trace.',
+      level: 'great',
+    },
+    {
+      name: 'Stack Lakehouse Modern (sans Spark)',
+      icon: '🦆',
+      tools: ['polars', 'duckdb', 'iceberg', 'delta', 'uv'],
+      desc: 'Alternative légère à Spark pour des volumes < 100 Go. DuckDB lit nativement Delta et Iceberg, Polars traite en mémoire. Déploiement simple, coût zéro.',
+      level: 'great',
+    },
+  ];
+
+  // ── Utilitaires ──────────────────────────────────────────────────
+  const toolById = Object.fromEntries(TOOLS.map(t => [t.id, t]));
+
+  function getCompat(a, b) {
+    return COMPAT[`${a}:${b}`] || COMPAT[`${b}:${a}`] || null;
+  }
+
+  const CAT_COLORS = {
+    data:    '#58a6ff',
+    lake:    '#3fb950',
+    ai:      '#d2a520',
+    mlops:   '#f0883e',
+    backend: '#bc8cff',
+    tooling: '#6e7681',
+  };
+
+  // ── Rendu de la matrice ──────────────────────────────────────────
+  function renderMatrix() {
+    const table = document.getElementById('compat-table');
+
+    // Ligne de header (colonnes) avec texte rotaté
+    let html = '<thead><tr><th class="mat-corner"></th>';
+    for (const t of TOOLS) {
+      html += `<th class="mat-col-head">
+        <div class="mat-col-label" title="${t.name}" style="border-bottom-color:${CAT_COLORS[t.cat]}">
+          ${t.short}
+        </div>
+      </th>`;
+    }
+    html += '</tr></thead><tbody>';
+
+    for (const t1 of TOOLS) {
+      const color1 = CAT_COLORS[t1.cat];
+      html += `<tr>
+        <th class="mat-row-head" title="${t1.name}" style="border-left-color:${color1}">
+          <span>${t1.short}</span>
+        </th>`;
+      for (const t2 of TOOLS) {
+        if (t1.id === t2.id) {
+          html += `<td class="mat-self" style="background:${color1}22"></td>`;
+        } else {
+          const c = getCompat(t1.id, t2.id);
+          if (!c) {
+            html += `<td class="mat-cell mat-unknown" data-a="${t1.id}" data-b="${t2.id}">·</td>`;
+          } else {
+            const icon = c.level === 'great' ? '✅' : c.level === 'ok' ? '⚠️' : '❌';
+            html += `<td class="mat-cell mat-${c.level}" data-a="${t1.id}" data-b="${t2.id}" tabindex="0">${icon}</td>`;
+          }
+        }
+      }
+      html += '</tr>';
+    }
+    html += '</tbody>';
+    table.innerHTML = html;
+
+    // Events hover
+    table.querySelectorAll('.mat-cell[data-a]').forEach(cell => {
+      cell.addEventListener('mouseenter', () => showDetail(cell.dataset.a, cell.dataset.b));
+    });
+    table.addEventListener('mouseleave', () => hideDetail());
+  }
+
+  function showDetail(aId, bId) {
+    const a = toolById[aId];
+    const b = toolById[bId];
+    const c = getCompat(aId, bId);
+    if (!c) return;
+
+    const levelLabel = c.level === 'great' ? '✅ Excellent'
+                     : c.level === 'ok'    ? '⚠️ Partiel'
+                     :                       '❌ Difficile';
+    const levelClass = `detail-level-${c.level}`;
+
+    document.getElementById('detail-pair').innerHTML =
+      `<span style="color:${CAT_COLORS[a.cat]}">${a.name}</span>
+       <span class="detail-plus">+</span>
+       <span style="color:${CAT_COLORS[b.cat]}">${b.name}</span>`;
+
+    document.getElementById('detail-badge').innerHTML =
+      `<span class="detail-level ${levelClass}">${levelLabel}</span>`;
+
+    document.getElementById('detail-note').textContent = c.note;
+
+    const tags = (c.tags || []).map(t => `<span class="detail-tag">${t}</span>`).join('');
+    document.getElementById('detail-tags').innerHTML = tags;
+
+    document.getElementById('detail-placeholder').classList.add('hidden');
+    document.getElementById('detail-content').classList.remove('hidden');
+  }
+
+  function hideDetail() {
+    document.getElementById('detail-placeholder').classList.remove('hidden');
+    document.getElementById('detail-content').classList.add('hidden');
+  }
+
+  // ── Rendu des stacks ─────────────────────────────────────────────
+  function renderStacks() {
+    const grid = document.getElementById('stacks-grid');
+    grid.innerHTML = STACKS.map(s => {
+      const badges = s.tools.map(id => {
+        const t = toolById[id];
+        return `<span class="stack-tool-badge" style="border-color:${CAT_COLORS[t.cat]}30;color:${CAT_COLORS[t.cat]}">${t.name}</span>`;
+      }).join('');
+      return `<div class="stack-card">
+        <div class="stack-card-header">
+          <span class="stack-icon">${s.icon}</span>
+          <h3 class="stack-name">${s.name}</h3>
+        </div>
+        <p class="stack-desc">${s.desc}</p>
+        <div class="stack-tools">${badges}</div>
+      </div>`;
+    }).join('');
+  }
+
+  // ── Init ─────────────────────────────────────────────────────────
+  renderMatrix();
+  renderStacks();
+  </script>
+</body>
+</html>
