@@ -1,0 +1,3 @@
+"""
+Package api — application FastAPI.
+"""

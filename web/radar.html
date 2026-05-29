@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Radar Découvertes — Tech Watch</title>
+  <link rel="stylesheet" href="styles.css" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet" />
+</head>
+<body>
+
+  <!-- ─── HEADER ──────────────────────────────────────────────── -->
+  <header class="site-header">
+    <div class="container">
+      <div class="header-brand">
+        <span class="header-icon">🔭</span>
+        <div>
+          <h1 class="header-title">Tech Watch</h1>
+          <p class="header-subtitle">Veille technologique automatisée · Data · IA · Rust · Cloud</p>
+        </div>
+      </div>
+      <div class="header-meta">
+        <nav class="header-nav">
+          <a href="index.html" class="nav-link">Dashboard</a>
+          <a href="outils.html" class="nav-link">Outils suivis</a>
+          <a href="radar.html" class="nav-link nav-link-active">Découvertes</a>
+          <a href="compare.html" class="nav-link">Comparatifs</a>
+        </nav>
+      </div>
+    </div>
+  </header>
+
+  <!-- ─── HERO ─────────────────────────────────────────────────── -->
+  <section class="tools-intro">
+    <div class="container">
+      <h2 class="tools-intro-title">🔍 Radar — Outils émergents</h2>
+      <p class="tools-intro-sub">
+        Dépôts GitHub détectés automatiquement via les topics configurés (data-engineering, llm, rag,
+        lakehouse, databricks…). Cliquez sur <strong>+ Suivre</strong> pour ajouter un outil à votre
+        liste personnelle — il apparaîtra dans <a href="outils.html">Outils suivis</a>.
+      </p>
+      <div class="radar-hero-stats">
+        <div class="radar-hero-stat">
+          <strong id="stat-total">—</strong>
+          <span>détectés</span>
+        </div>
+        <div class="radar-hero-stat">
+          <strong id="stat-tracked-hero">—</strong>
+          <span>suivis</span>
+        </div>
+        <div class="radar-hero-stat">
+          <strong id="stat-cats">—</strong>
+          <span>catégories</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ─── CONTRÔLES ─────────────────────────────────────────────── -->
+  <div class="container radar-controls">
+    <input type="search" id="radar-search" class="radar-search"
+           placeholder="🔎  Rechercher par nom ou description…" autocomplete="off" />
+    <div class="filter-bar" id="cat-filters">
+      <button class="filter-btn active" data-cat="all">Tous</button>
+      <button class="filter-btn" data-cat="data-engineering">Data Engineering</button>
+      <button class="filter-btn" data-cat="ai">IA / LLM</button>
+      <button class="filter-btn" data-cat="lakehouse">Lakehouse</button>
+      <button class="filter-btn" data-cat="backend">Backend</button>
+      <button class="filter-btn" data-cat="backend-rust">Rust</button>
+    </div>
+  </div>
+
+  <!-- ─── MES SUIVIS ────────────────────────────────────────────── -->
+  <section class="container" id="tracked-section" style="display:none">
+    <h2 class="section-title">
+      <span class="section-icon">⭐</span>
+      Mes outils suivis
+      <span class="radar-count" id="tracked-count"></span>
+    </h2>
+    <div id="tracked-grid" class="discoveries-grid"></div>
+    <hr class="radar-divider" />
+  </section>
+
+  <!-- ─── TOUTES LES DÉCOUVERTES ──────────────────────────────── -->
+  <section class="container radar-all-section">
+    <h2 class="section-title">
+      <span class="section-icon">🔍</span>
+      Toutes les découvertes
+      <span class="radar-count" id="disc-count"></span>
+    </h2>
+    <div id="discoveries-grid" class="discoveries-grid">
+      <div class="loading">Chargement…</div>
+    </div>
+  </section>
+
+  <!-- ─── FOOTER ───────────────────────────────────────────────── -->
+  <footer class="site-footer">
+    <div class="container">
+      <p>
+        Tech Watch — pipeline automatisé ·
+        <a href="https://github.com" target="_blank" rel="noopener">GitHub</a> ·
+        Données mises à jour quotidiennement
+      </p>
+      <p class="footer-stack">Stack : Python · Polars · DuckDB · GitHub Actions</p>
+    </div>
+  </footer>
+
+  <script src="radar.js"></script>
+</body>
+</html>

@@ -1,0 +1,128 @@
+name: Tech Watch — Daily Pipeline
+
+on:
+  schedule:
+    # Chaque jour à 07:00 UTC
+    - cron: "0 7 * * *"
+  workflow_dispatch:
+    inputs:
+      dry_run:
+        description: "Mode dry-run (sans commit ni déploiement)"
+        type: boolean
+        default: false
+      no_discovery:
+        description: "Désactiver la découverte automatique (plus rapide)"
+        type: boolean
+        default: false
+      no_github:
+        description: "Désactiver la collecte GitHub Releases"
+        type: boolean
+        default: false
+      force_deploy:
+        description: "Forcer le redéploiement Pages même si data.json n'a pas changé"
+        type: boolean
+        default: false
+
+# Permissions séparées par job via jobs.<id>.permissions
+permissions: {}
+
+jobs:
+  # ──────────────────────────────────────────────────────────────
+  run-pipeline:
+    name: 🔄 Run Tech Watch Pipeline
+    runs-on: ubuntu-latest
+    timeout-minutes: 40
+    permissions:
+      contents: write   # pour pousser web/data.json
+
+    outputs:
+      data_changed: ${{ steps.commit.outputs.changed }}
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Set up Python 3.12
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+          cache: "pip"
+
+      - name: Install dependencies
+        run: pip install -r requirements.txt
+
+      - name: Build pipeline args
+        id: args
+        run: |
+          ARGS=""
+          [ "${{ inputs.dry_run }}"      = "true" ] && ARGS="$ARGS --dry-run"
+          [ "${{ inputs.no_discovery }}" = "true" ] && ARGS="$ARGS --no-discovery"
+          [ "${{ inputs.no_github }}"    = "true" ] && ARGS="$ARGS --no-github"
+          echo "args=$ARGS" >> "$GITHUB_OUTPUT"
+
+      - name: Run pipeline
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          LOG_LEVEL: INFO
+          ENVIRONMENT: production
+        run: python -m scripts.run_pipeline ${{ steps.args.outputs.args }}
+
+      - name: Commit updated web/data.json
+        id: commit
+        if: ${{ inputs.dry_run != 'true' }}
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          git add web/data.json
+          if git diff --staged --quiet; then
+            echo "changed=false" >> "$GITHUB_OUTPUT"
+            echo "ℹ️  web/data.json inchangé — pas de commit."
+          else
+            git commit -m "chore: update tech-watch data $(date -u +%Y-%m-%d) [skip ci]"
+            git push
+            echo "changed=true" >> "$GITHUB_OUTPUT"
+            echo "✅ web/data.json mis à jour et poussé."
+          fi
+
+  # ──────────────────────────────────────────────────────────────
+  deploy-pages:
+    name: 🚀 Deploy GitHub Pages
+    needs: run-pipeline
+    # Déployer si : pas dry-run ET (data a changé OU force_deploy)
+    if: >
+      inputs.dry_run != 'true' &&
+      (needs.run-pipeline.outputs.data_changed == 'true' ||
+       inputs.force_deploy == 'true' ||
+       github.event_name == 'schedule')
+    runs-on: ubuntu-latest
+    permissions:
+      pages: write
+      id-token: write
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+
+    steps:
+      - name: Checkout (avec données fraîches)
+        uses: actions/checkout@v4
+        with:
+          ref: main         # récupère le commit poussé par run-pipeline
+
+      - name: Setup Pages
+        uses: actions/configure-pages@v5
+
+      - name: Upload Pages artifact
+        uses: actions/upload-pages-artifact@v3
+        with:
+          path: web/
+
+      - name: Deploy to GitHub Pages
+        id: deployment
+        uses: actions/deploy-pages@v4
+
+      - name: Summary
+        run: |
+          echo "### ✅ Tech Watch déployé" >> "$GITHUB_STEP_SUMMARY"
+          echo "" >> "$GITHUB_STEP_SUMMARY"
+          echo "🌐 **URL** : ${{ steps.deployment.outputs.page_url }}" >> "$GITHUB_STEP_SUMMARY"
+          echo "📅 **Date** : $(date -u '+%Y-%m-%d %H:%M UTC')" >> "$GITHUB_STEP_SUMMARY"

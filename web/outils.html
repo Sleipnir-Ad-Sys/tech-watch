@@ -1,0 +1,570 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Outils suivis — Tech Watch</title>
+  <link rel="stylesheet" href="styles.css" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet" />
+</head>
+<body>
+
+  <!-- ─── HEADER ──────────────────────────────────────────────── -->
+  <header class="site-header">
+    <div class="container">
+      <div class="header-brand">
+        <span class="header-icon">🔭</span>
+        <div>
+          <h1 class="header-title">Tech Watch</h1>
+          <p class="header-subtitle">Veille technologique automatisée · Data · IA · Rust · Cloud</p>
+        </div>
+      </div>
+      <nav class="header-nav">
+        <a href="index.html" class="nav-link">Dashboard</a>
+        <a href="outils.html" class="nav-link nav-link-active">Outils suivis</a>
+        <a href="radar.html" class="nav-link">Découvertes</a>
+        <a href="compare.html" class="nav-link">Comparatifs</a>
+      </nav>
+    </div>
+  </header>
+
+  <!-- ─── INTRO ────────────────────────────────────────────────── -->
+  <section class="tools-intro">
+    <div class="container">
+      <h2 class="tools-intro-title">Technologies suivies</h2>
+      <p class="tools-intro-sub">
+        Cette plateforme surveille automatiquement les releases, articles et packages de ces projets.
+        Le pipeline s'exécute chaque jour à 07h00, collecte les données et calcule un score d'impact.
+      </p>
+    </div>
+  </section>
+
+  <!-- ─── MES DÉCOUVERTES SUIVIES (localStorage) ───────────────── -->
+  <section class="container" id="my-tracked-section" style="display:none">
+    <h2 class="section-title"><span class="section-icon">⭐</span> Mes découvertes suivies</h2>
+    <p class="tools-intro-sub" style="margin-bottom:1.25rem">
+      Outils ajoutés depuis le <a href="radar.html">Radar</a>. Stockés dans votre navigateur.
+      <a href="radar.html" style="margin-left:.5rem">Gérer →</a>
+    </p>
+    <div id="my-tracked-grid" class="discoveries-grid"></div>
+    <hr class="radar-divider" style="margin-top:2rem" />
+  </section>
+
+  <!-- ─── COMMENT ÇA MARCHE ────────────────────────────────────── -->
+  <section class="container tools-how">
+    <h2 class="section-title"><span class="section-icon">⚙️</span> Comment fonctionne la veille ?</h2>
+    <div class="how-grid">
+      <div class="how-card">
+        <div class="how-icon">📡</div>
+        <div class="how-title">1. Collecte</div>
+        <p>Chaque jour : API GitHub, flux RSS des blogs officiels, registre PyPI. Les données brutes sont normalisées en objets structurés.</p>
+      </div>
+      <div class="how-card">
+        <div class="how-icon">⚡</div>
+        <div class="how-title">2. Pipeline Polars</div>
+        <p>Transformation vectorisée avec <strong>Polars</strong> : parsing semver, déduplication, extraction des breaking changes (regex), scoring.</p>
+      </div>
+      <div class="how-card">
+        <div class="how-icon">🦆</div>
+        <div class="how-title">3. Stockage DuckDB</div>
+        <p>Chaque release est upsertée dans <strong>DuckDB</strong> (base analytique locale) et exportée en Parquet. Le delta est calculé à chaque run.</p>
+      </div>
+      <div class="how-card">
+        <div class="how-icon">📊</div>
+        <div class="how-title">4. Score d'impact</div>
+        <p>Score = (majeur×10 + mineur×3 + patch×0.5 + rupture×8 + fréquence×2) × poids_projet. Le RuleEngine applique des règles métier supplémentaires.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ─── SCORE EXPLICATION ────────────────────────────────────── -->
+  <section class="container tools-score">
+    <h2 class="section-title"><span class="section-icon">🎯</span> Niveaux d'impact</h2>
+    <div class="score-grid">
+      <div class="score-level-card level-critical">
+        <div class="score-level-header">
+          <span class="badge badge-critical">🔴 Critique</span>
+          <span class="score-threshold">Score ≥ 20</span>
+        </div>
+        <p>Version majeure avec rupture de compatibilité, ou faille de sécurité (CVE/RCE). Revue immédiate recommandée avant mise à jour.</p>
+        <div class="score-triggers">
+          <strong>Déclencheurs :</strong>
+          <ul>
+            <li>Version X.0.0 + BREAKING CHANGE</li>
+            <li>Mot-clé sécurité (CVE, RCE, vulnérabilité...)</li>
+            <li>Score calculé ≥ 20</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="score-level-card level-high">
+        <div class="score-level-header">
+          <span class="badge badge-high">🟠 Élevé</span>
+          <span class="score-threshold">Score ≥ 12</span>
+        </div>
+        <p>Version majeure sans breaking change explicite, ou version mineure avec changements structurels. Planifier la mise à jour.</p>
+        <div class="score-triggers">
+          <strong>Déclencheurs :</strong>
+          <ul>
+            <li>Version X.0.0</li>
+            <li>BREAKING CHANGE sans version majeure</li>
+            <li>Score calculé ≥ 12</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="score-level-card level-medium">
+        <div class="score-level-header">
+          <span class="badge badge-medium">🟡 Moyen</span>
+          <span class="score-threshold">Score ≥ 5</span>
+        </div>
+        <p>Version mineure avec nouvelles fonctionnalités ou améliorations. Pas d'urgence, à intégrer dans la prochaine itération.</p>
+        <div class="score-triggers">
+          <strong>Déclencheurs :</strong>
+          <ul>
+            <li>Version X.Y.0 (mineur significatif)</li>
+            <li>Fréquence de releases élevée</li>
+            <li>Score calculé ≥ 5</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="score-level-card level-low">
+        <div class="score-level-header">
+          <span class="badge badge-low">🟢 Faible</span>
+          <span class="score-threshold">Score > 0</span>
+        </div>
+        <p>Patch ou correction mineure. Mise à jour de routine, aucun risque de régression.</p>
+        <div class="score-triggers">
+          <strong>Déclencheurs :</strong>
+          <ul>
+            <li>Version X.Y.Z (patch seul)</li>
+            <li>Corrections de bugs documentées</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ─── OUTILS PAR CATÉGORIE ─────────────────────────────────── -->
+
+  <!-- DATA ENGINEERING -->
+  <section class="container tools-category">
+    <h2 class="section-title"><span class="section-icon">🗄️</span> Data Engineering</h2>
+    <div class="tools-grid">
+
+      <article class="tool-card">
+        <div class="tool-header">
+          <span class="tool-icon">🐻‍❄️</span>
+          <div>
+            <div class="tool-name">Polars</div>
+            <div class="tool-version-badge">pola-rs/polars</div>
+          </div>
+        </div>
+        <p class="tool-desc">DataFrame library ultra-rapide écrite en Rust. API lazy, multi-threadée, compatible Arrow. Alternative moderne à pandas avec des performances 10-50× supérieures.</p>
+        <div class="tool-meta">
+          <span class="tool-tag">Python · Rust</span>
+          <span class="tool-tag">PyPI</span>
+          <a href="https://pola.rs" target="_blank" rel="noopener" class="tool-link">pola.rs ↗</a>
+        </div>
+        <div class="tool-why"><strong>Pourquoi ?</strong> Utilisé comme moteur ETL de ce pipeline.</div>
+      </article>
+
+      <article class="tool-card">
+        <div class="tool-header">
+          <span class="tool-icon">🦆</span>
+          <div>
+            <div class="tool-name">DuckDB</div>
+            <div class="tool-version-badge">duckdb/duckdb</div>
+          </div>
+        </div>
+        <p class="tool-desc">Base de données analytique embarquée (OLAP). Lit directement Parquet/CSV/JSON, compatible Arrow, SQL complet. Aucun serveur requis.</p>
+        <div class="tool-meta">
+          <span class="tool-tag">C++ · Python · SQL</span>
+          <span class="tool-tag">PyPI</span>
+          <a href="https://duckdb.org" target="_blank" rel="noopener" class="tool-link">duckdb.org ↗</a>
+        </div>
+        <div class="tool-why"><strong>Pourquoi ?</strong> Entrepôt local de ce pipeline. Remplace un serveur PostgreSQL entier.</div>
+      </article>
+
+      <article class="tool-card">
+        <div class="tool-header">
+          <span class="tool-icon">🏹</span>
+          <div>
+            <div class="tool-name">Apache Arrow</div>
+            <div class="tool-version-badge">apache/arrow</div>
+          </div>
+        </div>
+        <p class="tool-desc">Format de données en mémoire columnar, standard inter-langages. Zéro-copie entre Python, Rust, Java. Colle Polars ↔ DuckDB.</p>
+        <div class="tool-meta">
+          <span class="tool-tag">Multi-langages</span>
+          <span class="tool-tag">PyPI</span>
+          <a href="https://arrow.apache.org" target="_blank" rel="noopener" class="tool-link">arrow.apache.org ↗</a>
+        </div>
+        <div class="tool-why"><strong>Pourquoi ?</strong> Pont zéro-copie entre Polars et DuckDB dans le pipeline.</div>
+      </article>
+
+      <article class="tool-card">
+        <div class="tool-header">
+          <span class="tool-icon">🧊</span>
+          <div>
+            <div class="tool-name">Ibis Framework</div>
+            <div class="tool-version-badge">ibis-project/ibis</div>
+          </div>
+        </div>
+        <p class="tool-desc">API DataFrame backend-agnostique : même code pour DuckDB, BigQuery, Snowflake, Spark. Abstraction universelle pour la data analytique.</p>
+        <div class="tool-meta">
+          <span class="tool-tag">Python</span>
+          <span class="tool-tag">PyPI</span>
+          <a href="https://ibis-project.org" target="_blank" rel="noopener" class="tool-link">ibis-project.org ↗</a>
+        </div>
+        <div class="tool-why"><strong>Pourquoi ?</strong> Tendance montante dans la data stack moderne.</div>
+      </article>
+
+    </div>
+  </section>
+
+  <!-- IA / ML -->
+  <section class="container tools-category">
+    <h2 class="section-title"><span class="section-icon">🤖</span> IA / Machine Learning</h2>
+    <div class="tools-grid">
+
+      <article class="tool-card">
+        <div class="tool-header">
+          <span class="tool-icon">🤗</span>
+          <div>
+            <div class="tool-name">Transformers</div>
+            <div class="tool-version-badge">huggingface/transformers</div>
+          </div>
+        </div>
+        <p class="tool-desc">Bibliothèque de référence pour les LLMs et modèles NLP (BERT, GPT, LLaMA…). Plus de 500k modèles sur le Hub. Standard de facto en NLP.</p>
+        <div class="tool-meta">
+          <span class="tool-tag">Python</span>
+          <span class="tool-tag">PyPI · GitHub</span>
+          <a href="https://huggingface.co/transformers" target="_blank" rel="noopener" class="tool-link">huggingface.co ↗</a>
+        </div>
+        <div class="tool-why"><strong>Pourquoi ?</strong> Évolutions majeures à surveiller pour les projets IA.</div>
+      </article>
+
+      <article class="tool-card">
+        <div class="tool-header">
+          <span class="tool-icon">🔗</span>
+          <div>
+            <div class="tool-name">LangChain Core</div>
+            <div class="tool-version-badge">langchain-ai/langchain</div>
+          </div>
+        </div>
+        <p class="tool-desc">Framework de composition pour applications LLM : chains, agents, outils, mémoire. Socle de l'écosystème LLM Python.</p>
+        <div class="tool-meta">
+          <span class="tool-tag">Python</span>
+          <span class="tool-tag">PyPI</span>
+          <a href="https://langchain.com" target="_blank" rel="noopener" class="tool-link">langchain.com ↗</a>
+        </div>
+        <div class="tool-why"><strong>Pourquoi ?</strong> Évolue très rapidement, breaking changes fréquents.</div>
+      </article>
+
+      <article class="tool-card">
+        <div class="tool-header">
+          <span class="tool-icon">🔬</span>
+          <div>
+            <div class="tool-name">Scikit-learn</div>
+            <div class="tool-version-badge">scikit-learn/scikit-learn</div>
+          </div>
+        </div>
+        <p class="tool-desc">Bibliothèque ML classique incontournable : classification, régression, clustering, preprocessing. API sklearn stable et cohérente.</p>
+        <div class="tool-meta">
+          <span class="tool-tag">Python</span>
+          <span class="tool-tag">PyPI</span>
+          <a href="https://scikit-learn.org" target="_blank" rel="noopener" class="tool-link">scikit-learn.org ↗</a>
+        </div>
+        <div class="tool-why"><strong>Pourquoi ?</strong> Pilier du ML Python, versions majeures régulières.</div>
+      </article>
+
+      <article class="tool-card">
+        <div class="tool-header">
+          <span class="tool-icon">🧬</span>
+          <div>
+            <div class="tool-name">Sentence Transformers</div>
+            <div class="tool-version-badge">UKPLab/sentence-transformers</div>
+          </div>
+        </div>
+        <p class="tool-desc">Embeddings sémantiques de phrases. Utilisé pour la recherche vectorielle, RAG, similarité textuelle. Compatible avec les principaux VectorDBs.</p>
+        <div class="tool-meta">
+          <span class="tool-tag">Python</span>
+          <span class="tool-tag">PyPI</span>
+          <a href="https://sbert.net" target="_blank" rel="noopener" class="tool-link">sbert.net ↗</a>
+        </div>
+        <div class="tool-why"><strong>Pourquoi ?</strong> Composant clé des pipelines RAG modernes.</div>
+      </article>
+
+    </div>
+  </section>
+
+  <!-- BACKEND -->
+  <section class="container tools-category">
+    <h2 class="section-title"><span class="section-icon">🌐</span> Backend</h2>
+    <div class="tools-grid">
+
+      <article class="tool-card">
+        <div class="tool-header">
+          <span class="tool-icon">⚡</span>
+          <div>
+            <div class="tool-name">FastAPI</div>
+            <div class="tool-version-badge">tiangolo/fastapi</div>
+          </div>
+        </div>
+        <p class="tool-desc">Framework web Python async ultra-rapide. OpenAPI automatique, Pydantic intégré, performances comparables à Node.js. Standard pour les APIs Python modernes.</p>
+        <div class="tool-meta">
+          <span class="tool-tag">Python</span>
+          <span class="tool-tag">PyPI · GitHub</span>
+          <a href="https://fastapi.tiangolo.com" target="_blank" rel="noopener" class="tool-link">fastapi.tiangolo.com ↗</a>
+        </div>
+        <div class="tool-why"><strong>Pourquoi ?</strong> Utilisé pour l'API REST de ce projet.</div>
+      </article>
+
+      <article class="tool-card">
+        <div class="tool-header">
+          <span class="tool-icon">🔷</span>
+          <div>
+            <div class="tool-name">Pydantic</div>
+            <div class="tool-version-badge">pydantic/pydantic</div>
+          </div>
+        </div>
+        <p class="tool-desc">Validation de données par types Python. V2 réécrit en Rust (pydantic-core), 5-50× plus rapide. Utilisé par FastAPI, LangChain, et des milliers de projets.</p>
+        <div class="tool-meta">
+          <span class="tool-tag">Python · Rust</span>
+          <span class="tool-tag">PyPI</span>
+          <a href="https://docs.pydantic.dev" target="_blank" rel="noopener" class="tool-link">docs.pydantic.dev ↗</a>
+        </div>
+        <div class="tool-why"><strong>Pourquoi ?</strong> Utilisé pour tous les modèles de données du pipeline.</div>
+      </article>
+
+    </div>
+  </section>
+
+  <!-- RUST / BACKEND RUST -->
+  <section class="container tools-category">
+    <h2 class="section-title"><span class="section-icon">🦀</span> Rust / Tooling Rust</h2>
+    <div class="tools-grid">
+
+      <article class="tool-card">
+        <div class="tool-header">
+          <span class="tool-icon">🛡️</span>
+          <div>
+            <div class="tool-name">Axum</div>
+            <div class="tool-version-badge">tokio-rs/axum</div>
+          </div>
+        </div>
+        <p class="tool-desc">Framework web Rust ergonomique, construit sur Tokio. Typage fort, zéro coût à l'abstraction. Alternative haute performance aux frameworks Python/Node pour les APIs.</p>
+        <div class="tool-meta">
+          <span class="tool-tag">Rust</span>
+          <span class="tool-tag">GitHub (crates.io)</span>
+          <a href="https://github.com/tokio-rs/axum" target="_blank" rel="noopener" class="tool-link">tokio-rs/axum ↗</a>
+        </div>
+        <div class="tool-why"><strong>Pourquoi ?</strong> Tendance forte dans le backend haute performance.</div>
+      </article>
+
+      <article class="tool-card">
+        <div class="tool-header">
+          <span class="tool-icon">⚙️</span>
+          <div>
+            <div class="tool-name">Tokio</div>
+            <div class="tool-version-badge">tokio-rs/tokio</div>
+          </div>
+        </div>
+        <p class="tool-desc">Runtime async Rust de référence. Base de l'écosystème Rust async (Axum, Hyper, Tonic…). Millions de projets en dépendent.</p>
+        <div class="tool-meta">
+          <span class="tool-tag">Rust</span>
+          <span class="tool-tag">GitHub (crates.io)</span>
+          <a href="https://tokio.rs" target="_blank" rel="noopener" class="tool-link">tokio.rs ↗</a>
+        </div>
+        <div class="tool-why"><strong>Pourquoi ?</strong> Fondation de tout l'écosystème Rust async.</div>
+      </article>
+
+      <article class="tool-card">
+        <div class="tool-header">
+          <span class="tool-icon">✨</span>
+          <div>
+            <div class="tool-name">Ruff</div>
+            <div class="tool-version-badge">astral-sh/ruff</div>
+          </div>
+        </div>
+        <p class="tool-desc">Linter et formateur Python écrit en Rust. 10-100× plus rapide que Flake8/Black. Remplace flake8, isort, pyupgrade, et plus encore en un seul outil.</p>
+        <div class="tool-meta">
+          <span class="tool-tag">Rust</span>
+          <span class="tool-tag">PyPI · GitHub</span>
+          <a href="https://docs.astral.sh/ruff" target="_blank" rel="noopener" class="tool-link">docs.astral.sh/ruff ↗</a>
+        </div>
+        <div class="tool-why"><strong>Pourquoi ?</strong> Révolutionne le tooling Python. Utilisé dans ce projet.</div>
+      </article>
+
+      <article class="tool-card">
+        <div class="tool-header">
+          <span class="tool-icon">📦</span>
+          <div>
+            <div class="tool-name">Maturin</div>
+            <div class="tool-version-badge">PyO3/maturin</div>
+          </div>
+        </div>
+        <p class="tool-desc">Outil de build pour packages Python avec extensions Rust (PyO3). Compile des modules Rust directement importables en Python. Utilisé par Polars, Pydantic, Ruff.</p>
+        <div class="tool-meta">
+          <span class="tool-tag">Rust · Python</span>
+          <span class="tool-tag">PyPI</span>
+          <a href="https://maturin.rs" target="_blank" rel="noopener" class="tool-link">maturin.rs ↗</a>
+        </div>
+        <div class="tool-why"><strong>Pourquoi ?</strong> Standard pour les packages Python/Rust hybrides.</div>
+      </article>
+
+    </div>
+  </section>
+
+  <!-- LAKEHOUSE -->
+  <section class="container tools-category">
+    <h2 class="section-title"><span class="section-icon">🏔️</span> Lakehouse</h2>
+    <div class="tools-grid">
+
+      <article class="tool-card">
+        <div class="tool-header">
+          <span class="tool-icon">🔺</span>
+          <div>
+            <div class="tool-name">Delta Lake (delta-rs)</div>
+            <div class="tool-version-badge">delta-io/delta-rs</div>
+          </div>
+        </div>
+        <p class="tool-desc">Format de table transactionnel open source (ACID) pour les data lakes. delta-rs est l'implémentation Rust avec bindings Python. Utilisé par Databricks.</p>
+        <div class="tool-meta">
+          <span class="tool-tag">Rust · Python</span>
+          <span class="tool-tag">PyPI · GitHub</span>
+          <a href="https://delta.io" target="_blank" rel="noopener" class="tool-link">delta.io ↗</a>
+        </div>
+        <div class="tool-why"><strong>Pourquoi ?</strong> Standard lakehouse en entreprise.</div>
+      </article>
+
+      <article class="tool-card">
+        <div class="tool-header">
+          <span class="tool-icon">🧊</span>
+          <div>
+            <div class="tool-name">Apache Iceberg</div>
+            <div class="tool-version-badge">apache/iceberg</div>
+          </div>
+        </div>
+        <p class="tool-desc">Format de table open source pour les huge analytical datasets. Time travel, schema evolution, hidden partitioning. Adopté par AWS, Google, Snowflake.</p>
+        <div class="tool-meta">
+          <span class="tool-tag">Java · Python</span>
+          <span class="tool-tag">GitHub</span>
+          <a href="https://iceberg.apache.org" target="_blank" rel="noopener" class="tool-link">iceberg.apache.org ↗</a>
+        </div>
+        <div class="tool-why"><strong>Pourquoi ?</strong> Concurrent direct de Delta Lake, en forte croissance.</div>
+      </article>
+
+    </div>
+  </section>
+
+  <!-- TOOLING -->
+  <section class="container tools-category">
+    <h2 class="section-title"><span class="section-icon">🔧</span> Tooling</h2>
+    <div class="tools-grid">
+
+      <article class="tool-card">
+        <div class="tool-header">
+          <span class="tool-icon">🚀</span>
+          <div>
+            <div class="tool-name">uv</div>
+            <div class="tool-version-badge">astral-sh/uv</div>
+          </div>
+        </div>
+        <p class="tool-desc">Gestionnaire de packages et d'environnements Python écrit en Rust. Remplace pip, pip-tools, virtualenv, pyenv. 10-100× plus rapide que pip.</p>
+        <div class="tool-meta">
+          <span class="tool-tag">Rust</span>
+          <span class="tool-tag">GitHub</span>
+          <a href="https://docs.astral.sh/uv" target="_blank" rel="noopener" class="tool-link">docs.astral.sh/uv ↗</a>
+        </div>
+        <div class="tool-why"><strong>Pourquoi ?</strong> Révolutionne le workflow Python. Utilisé dans ce projet.</div>
+      </article>
+
+    </div>
+  </section>
+
+  <!-- ─── FOOTER ───────────────────────────────────────────────── -->
+  <footer class="site-footer">
+    <div class="container">
+      <p>
+        Tech Watch — pipeline automatisé ·
+        <a href="https://github.com/sleipnir-ad-sys/tech-watch" target="_blank" rel="noopener">GitHub</a> ·
+        Données mises à jour quotidiennement
+      </p>
+      <p class="footer-stack">Stack : Python · Polars · DuckDB · FastAPI · GitHub Actions</p>
+    </div>
+  </footer>
+
+  <script>
+  /* ── Outils suivis dynamiques (localStorage) ── */
+  (function () {
+    "use strict";
+    var KEY = "tech-watch:tracked";
+
+    function escHtml(s) {
+      if (!s) return "";
+      return String(s).replace(/&/g,"&amp;").replace(/</g,"&lt;")
+                      .replace(/>/g,"&gt;").replace(/"/g,"&quot;");
+    }
+    function formatDate(iso) {
+      if (!iso) return "";
+      var d = new Date(iso), now = new Date();
+      var days = Math.floor((now - d) / 86400000);
+      if (days === 0) return "aujourd'hui";
+      if (days === 1) return "hier";
+      if (days < 7)   return "il y a " + days + "j";
+      if (days < 30)  return "il y a " + Math.floor(days/7) + "sem";
+      return "il y a " + Math.floor(days/30) + "mois";
+    }
+    function getTracked() {
+      try { return JSON.parse(localStorage.getItem(KEY) || "[]"); }
+      catch (e) { return []; }
+    }
+    function removeTracked(fullName) {
+      localStorage.setItem(KEY, JSON.stringify(
+        getTracked().filter(function(r){ return r.full_name !== fullName; })
+      ));
+      render();
+    }
+    function render() {
+      var list = getTracked();
+      var sec  = document.getElementById("my-tracked-section");
+      var grid = document.getElementById("my-tracked-grid");
+      if (!list.length) { sec.style.display = "none"; return; }
+      sec.style.display = "";
+      grid.innerHTML = list.map(function(r) {
+        var url   = escHtml(r.url || "https://github.com/" + r.full_name);
+        var stars = (r.stars || 0).toLocaleString("fr-FR");
+        var date  = r.pushed_at ? "<span class=\"disc-date\">" + formatDate(r.pushed_at) + "</span>" : "";
+        var lang  = r.language  ? "<span class=\"disc-lang\">"  + escHtml(r.language)  + "</span>" : "";
+        var cat   = r.category  ? "<span class=\"disc-cat\">"   + escHtml(r.category)  + "</span>" : "";
+        return [
+          "<article class=\"discovery-card\">",
+          "  <div class=\"disc-header\">",
+          "    <a href=\"" + url + "\" target=\"_blank\" rel=\"noopener\" class=\"disc-name\">" + escHtml(r.full_name) + "</a>",
+          "    <span class=\"disc-stars\">★ " + stars + "</span>",
+          "  </div>",
+          "  <p class=\"disc-desc\">" + escHtml(r.description || "") + "</p>",
+          "  <div class=\"disc-meta\">" + cat + lang + date + "</div>",
+          "  <div class=\"disc-actions\">",
+          "    <button class=\"track-btn track-remove\" data-remove=\"" + escHtml(r.full_name) + "\">✕ Retirer</button>",
+          "  </div>",
+          "</article>"
+        ].join("");
+      }).join("");
+      /* event delegation — pas d'onclick inline */
+      grid.querySelectorAll("[data-remove]").forEach(function(btn) {
+        btn.addEventListener("click", function() {
+          removeTracked(btn.dataset.remove);
+        });
+      });
+    }
+    document.addEventListener("DOMContentLoaded", render);
+  })();
+  </script>
+
+</body>
+</html>

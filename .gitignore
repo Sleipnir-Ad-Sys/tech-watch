@@ -1,0 +1,38 @@
+# Environnement Python
+.env
+.venv/
+venv/
+__pycache__/
+*.py[cod]
+*.pyo
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+
+# DuckDB & données
+data/warehouse.duckdb
+data/warehouse.duckdb.wal
+data/raw/
+data/processed/
+
+# Garder les .gitkeep
+!data/raw/.gitkeep
+!data/processed/.gitkeep
+
+# Build
+dist/
+build/
+*.egg-info/
+
+# IDE
+.vscode/settings.json
+.idea/
+*.code-workspace
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Logs
+*.log
+logs/

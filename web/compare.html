@@ -1,0 +1,455 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Comparatifs — Tech Watch</title>
+  <link rel="stylesheet" href="styles.css" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet" />
+  <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.7/dist/chart.umd.min.js"></script>
+</head>
+<body>
+
+  <!-- ─── HEADER ──────────────────────────────────────────────── -->
+  <header class="site-header">
+    <div class="container">
+      <div class="header-brand">
+        <span class="header-icon">🔭</span>
+        <div>
+          <h1 class="header-title">Tech Watch</h1>
+          <p class="header-subtitle">Veille technologique automatisée · Data · IA · Rust · Cloud</p>
+        </div>
+      </div>
+      <nav class="header-nav">
+        <a href="index.html" class="nav-link">Dashboard</a>
+        <a href="outils.html" class="nav-link">Outils suivis</a>
+        <a href="radar.html" class="nav-link">Découvertes</a>
+        <a href="compare.html" class="nav-link nav-link-active">Comparatifs</a>
+      </nav>
+    </div>
+  </header>
+
+  <!-- ─── HERO ─────────────────────────────────────────────────── -->
+  <div class="compare-hero">
+    <div class="container">
+      <h2 class="compare-hero-title">⚡ Comparatifs & Benchmarks</h2>
+      <p class="compare-hero-sub">
+        Analyse multidimensionnelle des outils par catégorie — performance, mémoire, ergonomie, maturité.
+        Données basées sur des benchmarks communautaires (TPC-H, H2O.ai, benchmarks publics).
+      </p>
+    </div>
+  </div>
+
+  <!-- ─── TABS ─────────────────────────────────────────────────── -->
+  <div class="ctabs-bar">
+    <div class="container">
+      <div class="ctabs">
+        <button class="ctab active" data-tab="dataframes">📊 DataFrames</button>
+        <button class="ctab" data-tab="ai">🤖 IA / LLM</button>
+        <button class="ctab" data-tab="lakehouse">🏛️ Lakehouse</button>
+        <button class="ctab" data-tab="backend">⚡ Backend</button>
+        <button class="ctab" data-tab="rusttools">🦀 Rust Tooling</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- ═══════════════════════════════════════════════════════════ -->
+  <!-- SECTION: DATAFRAMES                                         -->
+  <!-- ═══════════════════════════════════════════════════════════ -->
+  <section id="tab-dataframes" class="csection">
+    <div class="container">
+      <div class="csection-header">
+        <h2>📊 Moteurs DataFrame Python</h2>
+        <p>Comparaison de Pandas, Polars, DuckDB, Dask et Modin pour le traitement tabulaire en Python.
+          Référence : benchmark TPC-H sur un dataset de 1 Go, single node.</p>
+      </div>
+
+      <div class="charts-row">
+        <div class="chart-card">
+          <div class="chart-card-title">Performance GroupBy (× Pandas)</div>
+          <div class="chart-card-note">Source : H2O.ai db-benchmark, dataset 1 Go — plus élevé = meilleur</div>
+          <div class="chart-wrap"><canvas id="chart-df-bench"></canvas></div>
+        </div>
+        <div class="chart-card">
+          <div class="chart-card-title">Analyse multidimensionnelle</div>
+          <div class="chart-card-note">Score 0–100 normalisé par dimension</div>
+          <div class="chart-wrap chart-wrap-radar"><canvas id="chart-df-radar"></canvas></div>
+        </div>
+      </div>
+
+      <!-- Migration spotlight -->
+      <div class="migration-card">
+        <div class="migration-label">🚀 Guide de Migration</div>
+        <h3 class="migration-title">Pandas → Polars</h3>
+        <p class="migration-sub">
+          Polars est <strong>10–15× plus rapide</strong> que Pandas sur les opérations groupby/join et consomme
+          <strong>~60 % moins de mémoire</strong> grâce à son backend Apache Arrow et son exécution
+          multi-threadée lazy. La migration est progressive — les deux peuvent coexister.
+        </p>
+        <div class="perf-badges">
+          <span class="perf-badge perf-badge-green">GroupBy : 12×</span>
+          <span class="perf-badge perf-badge-green">Join : 8×</span>
+          <span class="perf-badge perf-badge-green">Filter : 6×</span>
+          <span class="perf-badge perf-badge-blue">Mémoire : −60 %</span>
+          <span class="perf-badge perf-badge-purple">Multi-thread natif</span>
+        </div>
+        <div class="code-compare">
+          <div class="code-block">
+            <div class="code-label code-label-old">Pandas</div>
+<pre><code>import pandas as pd
+
+df = pd.read_csv("data.csv")
+
+# GroupBy
+result = (df
+  .groupby("category")["value"]
+  .mean()
+  .reset_index()
+)
+
+# Filtre + sélection
+out = df[df["score"] > 0.5][["id","score"]]
+
+# Join
+merged = df.merge(ref, on="key", how="left")
+</code></pre>
+          </div>
+          <div class="code-arrow">→</div>
+          <div class="code-block">
+            <div class="code-label code-label-new">Polars</div>
+<pre><code>import polars as pl
+
+df = pl.read_csv("data.csv")
+
+# GroupBy (lazy → collect)
+result = (df.lazy()
+  .group_by("category")
+  .agg(pl.col("value").mean())
+  .collect()
+)
+
+# Filtre + sélection
+out = df.filter(pl.col("score") > 0.5).select("id","score")
+
+# Join
+merged = df.join(ref, on="key", how="left")
+</code></pre>
+          </div>
+        </div>
+        <div class="migration-tips">
+          <div class="migration-tip">💡 <strong>Lecture seule :</strong> <code>pd.DataFrame</code> → <code>pl.DataFrame</code> — pas de <code>inplace=</code></div>
+          <div class="migration-tip">💡 <strong>Index :</strong> Polars n'a pas d'index — utilisez une colonne explicite</div>
+          <div class="migration-tip">💡 <strong>apply() :</strong> Remplacer par <code>pl.Expr</code> ou <code>map_elements()</code> pour garder la vitesse</div>
+          <div class="migration-tip">💡 <strong>NaN vs null :</strong> Polars distingue <code>null</code> (missing) de <code>NaN</code> (float invalid)</div>
+        </div>
+      </div>
+
+      <!-- Feature table -->
+      <div class="ftable-wrap">
+        <h3 class="ftable-title">Tableau des fonctionnalités</h3>
+        <div class="ftable-scroll">
+          <table class="ftable">
+            <thead>
+              <tr>
+                <th>Fonctionnalité</th>
+                <th>Pandas</th>
+                <th>Polars</th>
+                <th>DuckDB</th>
+                <th>Dask</th>
+                <th>Modin</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr><td>Exécution lazy</td><td class="no">✗</td><td class="yes">✓</td><td class="yes">✓</td><td class="yes">✓</td><td class="no">✗</td></tr>
+              <tr><td>Multi-threading natif</td><td class="no">✗</td><td class="yes">✓</td><td class="yes">✓</td><td class="yes">✓</td><td class="yes">✓</td></tr>
+              <tr><td>Backend Apache Arrow</td><td class="partial">~</td><td class="yes">✓</td><td class="yes">✓</td><td class="no">✗</td><td class="no">✗</td></tr>
+              <tr><td>Support SQL natif</td><td class="no">✗</td><td class="yes">✓</td><td class="yes">✓</td><td class="yes">✓</td><td class="partial">~</td></tr>
+              <tr><td>Out-of-core (>RAM)</td><td class="no">✗</td><td class="yes">✓</td><td class="yes">✓</td><td class="yes">✓</td><td class="no">✗</td></tr>
+              <tr><td>Streaming / scan</td><td class="no">✗</td><td class="yes">✓</td><td class="yes">✓</td><td class="yes">✓</td><td class="no">✗</td></tr>
+              <tr><td>GPU (RAPIDS)</td><td class="no">✗</td><td class="no">✗</td><td class="no">✗</td><td class="yes">✓</td><td class="yes">✓</td></tr>
+              <tr><td>API compatible Pandas</td><td class="yes">✓</td><td class="no">✗</td><td class="no">✗</td><td class="yes">✓</td><td class="yes">✓</td></tr>
+              <tr><td>Null safety stricte</td><td class="partial">~</td><td class="yes">✓</td><td class="yes">✓</td><td class="partial">~</td><td class="partial">~</td></tr>
+              <tr><td>Expressions chaînables</td><td class="partial">~</td><td class="yes">✓</td><td class="yes">SQL</td><td class="partial">~</td><td class="partial">~</td></tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══════════════════════════════════════════════════════════ -->
+  <!-- SECTION: AI / LLM                                           -->
+  <!-- ═══════════════════════════════════════════════════════════ -->
+  <section id="tab-ai" class="csection csection-hidden">
+    <div class="container">
+      <div class="csection-header">
+        <h2>🤖 Frameworks IA / LLM</h2>
+        <p>Comparaison des frameworks d'orchestration LLM : LangChain, LlamaIndex, Haystack, AutoGen, DSPy.
+          Métriques : étoiles GitHub (mai 2026), popularité PyPI, axes fonctionnels.</p>
+      </div>
+
+      <div class="charts-row">
+        <div class="chart-card">
+          <div class="chart-card-title">Stars GitHub (×1 000)</div>
+          <div class="chart-card-note">Indicateur de traction communautaire — mai 2026</div>
+          <div class="chart-wrap"><canvas id="chart-ai-bench"></canvas></div>
+        </div>
+        <div class="chart-card">
+          <div class="chart-card-title">Analyse multidimensionnelle</div>
+          <div class="chart-card-note">Score 0–100 normalisé</div>
+          <div class="chart-wrap chart-wrap-radar"><canvas id="chart-ai-radar"></canvas></div>
+        </div>
+      </div>
+
+      <div class="ftable-wrap">
+        <h3 class="ftable-title">Tableau des fonctionnalités</h3>
+        <div class="ftable-scroll">
+          <table class="ftable">
+            <thead>
+              <tr>
+                <th>Fonctionnalité</th>
+                <th>LangChain</th>
+                <th>LlamaIndex</th>
+                <th>Haystack</th>
+                <th>AutoGen</th>
+                <th>DSPy</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr><td>RAG Pipeline</td><td class="yes">✓</td><td class="yes">✓</td><td class="yes">✓</td><td class="partial">~</td><td class="yes">✓</td></tr>
+              <tr><td>Agents multi-étapes</td><td class="yes">✓</td><td class="partial">~</td><td class="yes">✓</td><td class="yes">✓</td><td class="no">✗</td></tr>
+              <tr><td>Appel d'outils (tool calling)</td><td class="yes">✓</td><td class="yes">✓</td><td class="yes">✓</td><td class="yes">✓</td><td class="yes">✓</td></tr>
+              <tr><td>Multi-agents collaboratifs</td><td class="partial">~</td><td class="no">✗</td><td class="partial">~</td><td class="yes">✓</td><td class="no">✗</td></tr>
+              <tr><td>Observabilité / traces</td><td class="yes">✓</td><td class="yes">✓</td><td class="yes">✓</td><td class="partial">~</td><td class="partial">~</td></tr>
+              <tr><td>LLMs locaux (Ollama…)</td><td class="yes">✓</td><td class="yes">✓</td><td class="yes">✓</td><td class="yes">✓</td><td class="yes">✓</td></tr>
+              <tr><td>Streaming tokens</td><td class="yes">✓</td><td class="yes">✓</td><td class="yes">✓</td><td class="partial">~</td><td class="no">✗</td></tr>
+              <tr><td>Évaluation / metrics</td><td class="partial">~</td><td class="yes">✓</td><td class="yes">✓</td><td class="no">✗</td><td class="yes">✓</td></tr>
+              <tr><td>Optimisation automatique prompts</td><td class="no">✗</td><td class="no">✗</td><td class="no">✗</td><td class="no">✗</td><td class="yes">✓</td></tr>
+              <tr><td>Vector store intégré</td><td class="yes">✓</td><td class="yes">✓</td><td class="yes">✓</td><td class="no">✗</td><td class="no">✗</td></tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══════════════════════════════════════════════════════════ -->
+  <!-- SECTION: LAKEHOUSE                                          -->
+  <!-- ═══════════════════════════════════════════════════════════ -->
+  <section id="tab-lakehouse" class="csection csection-hidden">
+    <div class="container">
+      <div class="csection-header">
+        <h2>🏛️ Formats Lakehouse & Plateformes</h2>
+        <p>Comparaison des formats de table ouverts (Delta Lake, Iceberg, Hudi) et de la plateforme
+          Azure Databricks pour architectures Data Lakehouse.</p>
+      </div>
+
+      <div class="charts-row">
+        <div class="chart-card">
+          <div class="chart-card-title">Score de maturité par dimension</div>
+          <div class="chart-card-note">Score 0–100 basé sur les specs et retours terrain</div>
+          <div class="chart-wrap"><canvas id="chart-lake-bench"></canvas></div>
+        </div>
+        <div class="chart-card">
+          <div class="chart-card-title">Analyse multidimensionnelle</div>
+          <div class="chart-card-note">Score 0–100 normalisé</div>
+          <div class="chart-wrap chart-wrap-radar"><canvas id="chart-lake-radar"></canvas></div>
+        </div>
+      </div>
+
+      <div class="callout callout-info">
+        <strong>🔵 Azure Databricks</strong> — La plateforme inclut Delta Lake comme format natif,
+        Unity Catalog pour la gouvernance, et des optimisations exclusives (OPTIMIZE, ZORDER, Predictive I/O).
+        Elle est managée et n'est pas open source à part entière, mais repose sur des standards ouverts.
+      </div>
+
+      <div class="ftable-wrap">
+        <h3 class="ftable-title">Tableau des fonctionnalités</h3>
+        <div class="ftable-scroll">
+          <table class="ftable">
+            <thead>
+              <tr>
+                <th>Fonctionnalité</th>
+                <th>Delta Lake</th>
+                <th>Iceberg</th>
+                <th>Apache Hudi</th>
+                <th>Databricks</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr><td>Transactions ACID</td><td class="yes">✓</td><td class="yes">✓</td><td class="yes">✓</td><td class="yes">✓</td></tr>
+              <tr><td>Évolution de schéma</td><td class="yes">✓</td><td class="yes">✓</td><td class="yes">✓</td><td class="yes">✓</td></tr>
+              <tr><td>Time Travel</td><td class="yes">✓</td><td class="yes">✓</td><td class="yes">✓</td><td class="yes">✓</td></tr>
+              <tr><td>Évolution de partition</td><td class="no">✗</td><td class="yes">✓</td><td class="partial">~</td><td class="yes">✓</td></tr>
+              <tr><td>Upsert / MERGE INTO</td><td class="yes">✓</td><td class="yes">✓</td><td class="yes">✓</td><td class="yes">✓</td></tr>
+              <tr><td>Streaming (CDC)</td><td class="yes">✓</td><td class="partial">~</td><td class="yes">✓</td><td class="yes">✓</td></tr>
+              <tr><td>Support moteurs multiples</td><td class="partial">~</td><td class="yes">✓</td><td class="partial">~</td><td class="no">Databricks</td></tr>
+              <tr><td>Unity Catalog / gouvernance</td><td class="no">✗</td><td class="partial">~</td><td class="no">✗</td><td class="yes">✓</td></tr>
+              <tr><td>Open source complet</td><td class="yes">✓</td><td class="yes">✓</td><td class="yes">✓</td><td class="partial">~</td></tr>
+              <tr><td>OPTIMIZE / compaction auto</td><td class="partial">~</td><td class="partial">~</td><td class="yes">✓</td><td class="yes">✓</td></tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══════════════════════════════════════════════════════════ -->
+  <!-- SECTION: BACKEND                                            -->
+  <!-- ═══════════════════════════════════════════════════════════ -->
+  <section id="tab-backend" class="csection csection-hidden">
+    <div class="container">
+      <div class="csection-header">
+        <h2>⚡ Frameworks Backend Python</h2>
+        <p>Comparaison des frameworks web Python : FastAPI, Litestar, Starlette, Flask, Django.
+          Benchmark : requêtes/sec sur endpoint simple (JSON), instance unique, Python 3.12.</p>
+      </div>
+
+      <div class="charts-row">
+        <div class="chart-card">
+          <div class="chart-card-title">Throughput (req/s, endpoint JSON simple)</div>
+          <div class="chart-card-note">Benchmark TechEmpower-like, Python 3.12, uvicorn — plus élevé = meilleur</div>
+          <div class="chart-wrap"><canvas id="chart-be-bench"></canvas></div>
+        </div>
+        <div class="chart-card">
+          <div class="chart-card-title">Analyse multidimensionnelle</div>
+          <div class="chart-card-note">Score 0–100 normalisé</div>
+          <div class="chart-wrap chart-wrap-radar"><canvas id="chart-be-radar"></canvas></div>
+        </div>
+      </div>
+
+      <div class="ftable-wrap">
+        <h3 class="ftable-title">Tableau des fonctionnalités</h3>
+        <div class="ftable-scroll">
+          <table class="ftable">
+            <thead>
+              <tr>
+                <th>Fonctionnalité</th>
+                <th>FastAPI</th>
+                <th>Litestar</th>
+                <th>Starlette</th>
+                <th>Flask</th>
+                <th>Django</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr><td>Async natif (ASGI)</td><td class="yes">✓</td><td class="yes">✓</td><td class="yes">✓</td><td class="no">✗</td><td class="partial">~</td></tr>
+              <tr><td>Validation automatique</td><td class="yes">Pydantic</td><td class="yes">Attrs/DC</td><td class="no">✗</td><td class="no">✗</td><td class="partial">Forms</td></tr>
+              <tr><td>OpenAPI / Swagger auto</td><td class="yes">✓</td><td class="yes">✓</td><td class="no">✗</td><td class="no">✗</td><td class="no">✗</td></tr>
+              <tr><td>Dependency injection</td><td class="yes">✓</td><td class="yes">✓</td><td class="partial">~</td><td class="no">✗</td><td class="no">✗</td></tr>
+              <tr><td>ORM intégré</td><td class="no">✗</td><td class="no">✗</td><td class="no">✗</td><td class="no">✗</td><td class="yes">✓</td></tr>
+              <tr><td>Batteries incluses</td><td class="partial">~</td><td class="partial">~</td><td class="no">✗</td><td class="partial">~</td><td class="yes">✓</td></tr>
+              <tr><td>WebSocket</td><td class="yes">✓</td><td class="yes">✓</td><td class="yes">✓</td><td class="no">✗</td><td class="partial">~</td></tr>
+              <tr><td>Typage strict / mypy</td><td class="yes">✓</td><td class="yes">✓</td><td class="partial">~</td><td class="partial">~</td><td class="partial">~</td></tr>
+              <tr><td>Maturité / LTS</td><td class="yes">Stable</td><td class="partial">Actif</td><td class="yes">Stable</td><td class="yes">✓ LTS</td><td class="yes">✓ LTS</td></tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══════════════════════════════════════════════════════════ -->
+  <!-- SECTION: RUST TOOLING                                       -->
+  <!-- ═══════════════════════════════════════════════════════════ -->
+  <section id="tab-rusttools" class="csection csection-hidden">
+    <div class="container">
+      <div class="csection-header">
+        <h2>🦀 Rust Tooling pour Python</h2>
+        <p>Les outils Rust révolutionnent le workflow Python : linting, formatting, packaging.
+          Ruff remplace Flake8 + Black + isort. uv remplace pip + virtualenv + poetry.</p>
+      </div>
+
+      <div class="charts-row">
+        <div class="chart-card">
+          <div class="chart-card-title">Vitesse relative (× outil de référence)</div>
+          <div class="chart-card-note">Ruff vs Flake8 sur 50k lignes · uv vs pip install —  plus élevé = plus rapide</div>
+          <div class="chart-wrap"><canvas id="chart-rust-bench"></canvas></div>
+        </div>
+        <div class="chart-card">
+          <div class="chart-card-title">Analyse multidimensionnelle — Linters</div>
+          <div class="chart-card-note">Score 0–100 normalisé</div>
+          <div class="chart-wrap chart-wrap-radar"><canvas id="chart-rust-radar"></canvas></div>
+        </div>
+      </div>
+
+      <div class="callout callout-success">
+        <strong>✅ Recommandation</strong> — Remplacer le stack <code>pip + virtualenv + flake8 + black + isort + pylint</code>
+        par <code>uv + ruff</code> réduit le temps de setup CI de plusieurs minutes à quelques secondes,
+        sans aucun changement de code source.
+      </div>
+
+      <div class="ftable-wrap">
+        <h3 class="ftable-title">Linters & Formatters</h3>
+        <div class="ftable-scroll">
+          <table class="ftable">
+            <thead>
+              <tr>
+                <th>Fonctionnalité</th>
+                <th>Ruff</th>
+                <th>Flake8</th>
+                <th>Pylint</th>
+                <th>Black</th>
+                <th>isort</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr><td>Vitesse (relative)</td><td class="yes">100×</td><td class="partial">1×</td><td class="no">0.1×</td><td class="partial">5×</td><td class="partial">4×</td></tr>
+              <tr><td>Linting PEP8</td><td class="yes">✓</td><td class="yes">✓</td><td class="yes">✓</td><td class="no">✗</td><td class="no">✗</td></tr>
+              <tr><td>Formatage auto</td><td class="yes">✓</td><td class="no">✗</td><td class="no">✗</td><td class="yes">✓</td><td class="no">✗</td></tr>
+              <tr><td>Tri imports</td><td class="yes">✓</td><td class="no">✗</td><td class="no">✗</td><td class="no">✗</td><td class="yes">✓</td></tr>
+              <tr><td>Analyse de type</td><td class="partial">~</td><td class="no">✗</td><td class="yes">✓</td><td class="no">✗</td><td class="no">✗</td></tr>
+              <tr><td>Fix automatique</td><td class="yes">✓</td><td class="no">✗</td><td class="partial">~</td><td class="yes">✓</td><td class="yes">✓</td></tr>
+              <tr><td>Config pyproject.toml</td><td class="yes">✓</td><td class="partial">~</td><td class="partial">~</td><td class="yes">✓</td><td class="yes">✓</td></tr>
+              <tr><td>Règles personnalisées</td><td class="partial">~</td><td class="yes">✓</td><td class="yes">✓</td><td class="no">✗</td><td class="no">✗</td></tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+
+      <div class="ftable-wrap" style="margin-top:1.5rem">
+        <h3 class="ftable-title">Gestionnaires de packages & environnements</h3>
+        <div class="ftable-scroll">
+          <table class="ftable">
+            <thead>
+              <tr>
+                <th>Fonctionnalité</th>
+                <th>uv</th>
+                <th>pip</th>
+                <th>Poetry</th>
+                <th>PDM</th>
+                <th>Conda</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr><td>Vitesse installation</td><td class="yes">10–80×</td><td class="partial">1×</td><td class="partial">~2×</td><td class="partial">~2×</td><td class="no">0.3×</td></tr>
+              <tr><td>Résolution de dépendances</td><td class="yes">✓</td><td class="partial">~</td><td class="yes">✓</td><td class="yes">✓</td><td class="yes">✓</td></tr>
+              <tr><td>Lock file</td><td class="yes">✓</td><td class="no">✗</td><td class="yes">✓</td><td class="yes">✓</td><td class="no">✗</td></tr>
+              <tr><td>Gestion virtualenv</td><td class="yes">✓</td><td class="partial">~</td><td class="yes">✓</td><td class="yes">✓</td><td class="yes">✓</td></tr>
+              <tr><td>Gestion version Python</td><td class="yes">✓</td><td class="no">✗</td><td class="no">✗</td><td class="no">✗</td><td class="yes">✓</td></tr>
+              <tr><td>Publication PyPI</td><td class="yes">✓</td><td class="partial">pip build</td><td class="yes">✓</td><td class="yes">✓</td><td class="no">✗</td></tr>
+              <tr><td>PEP 517/518 natif</td><td class="yes">✓</td><td class="yes">✓</td><td class="yes">✓</td><td class="yes">✓</td><td class="partial">~</td></tr>
+              <tr><td>Packages non-Python</td><td class="no">✗</td><td class="no">✗</td><td class="no">✗</td><td class="no">✗</td><td class="yes">✓</td></tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ─── FOOTER ───────────────────────────────────────────────── -->
+  <footer class="site-footer">
+    <div class="container">
+      <p>
+        Tech Watch — pipeline automatisé · 
+        <a href="https://github.com" target="_blank" rel="noopener">GitHub</a> ·
+        Données mises à jour quotidiennement
+      </p>
+      <p class="footer-stack">Stack : Python · Polars · DuckDB · FastAPI · GitHub Actions</p>
+    </div>
+  </footer>
+
+  <script src="compare.js"></script>
+</body>
+</html>

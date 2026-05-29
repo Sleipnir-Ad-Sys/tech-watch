@@ -1,0 +1,78 @@
+[project]
+name = "tech-watch"
+version = "0.1.0"
+description = "Automated tech watch platform for Data Engineering, AI, and modern backend"
+readme = "README.md"
+requires-python = ">=3.12"
+license = { text = "MIT" }
+authors = [{ name = "Tech Watch", email = "techwatch@example.com" }]
+keywords = ["data-engineering", "tech-watch", "polars", "duckdb", "fastapi"]
+classifiers = [
+  "Programming Language :: Python :: 3.12",
+  "License :: OSI Approved :: MIT License",
+  "Topic :: Software Development :: Libraries :: Application Frameworks",
+]
+
+dependencies = [
+  "polars>=1.0.0",
+  "duckdb>=1.0.0",
+  "fastapi>=0.111.0",
+  "uvicorn[standard]>=0.30.0",
+  "pydantic>=2.7.0",
+  "pydantic-settings>=2.2.0",
+  "requests>=2.32.0",
+  "feedparser>=6.0.11",
+  "httpx>=0.27.0",
+  "PyYAML>=6.0.1",
+  "pyarrow>=16.0.0",
+  "python-dateutil>=2.9.0",
+  "rich>=13.7.0",
+  "structlog>=24.1.0",
+  "apscheduler>=3.10.4",
+]
+
+[project.optional-dependencies]
+dev = [
+  "ruff>=0.4.0",
+  "pytest>=8.2.0",
+  "pytest-asyncio>=0.23.0",
+  "httpx>=0.27.0",
+  "mypy>=1.10.0",
+]
+
+[project.scripts]
+tech-watch = "scripts.run_pipeline:main"
+
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
+
+[tool.ruff]
+target-version = "py312"
+line-length = 100
+src = [".", "collectors", "pipeline", "engine", "api", "scheduler", "scripts"]
+
+[tool.ruff.lint]
+select = [
+  "E",   # pycodestyle errors
+  "W",   # pycodestyle warnings
+  "F",   # pyflakes
+  "I",   # isort
+  "B",   # flake8-bugbear
+  "UP",  # pyupgrade
+  "C4",  # flake8-comprehensions
+  "RUF", # Ruff-specific rules
+]
+ignore = ["E501", "B008"]
+
+[tool.ruff.lint.isort]
+known-first-party = ["collectors", "pipeline", "engine", "api", "scheduler"]
+
+[tool.mypy]
+python_version = "3.12"
+strict = true
+ignore_missing_imports = true
+
+[tool.pytest.ini_options]
+asyncio_mode = "auto"
+testpaths = ["tests"]
