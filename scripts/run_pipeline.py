@@ -230,7 +230,20 @@ def _export_web_json(df, trends, summaries, discoveries=None) -> None:
     for row in df_export.iter_rows(named=True):
         r = {}
         for k, v in row.items():
-            if hasattr(v, "isoformat"):
+            if k == "detected_factors":
+                # Peut être une chaîne JSON (depuis DuckDB) ou une liste Python
+                if isinstance(v, str):
+                    try:
+                        r[k] = json.loads(v)
+                    except Exception:
+                        r[k] = []
+                elif v is None:
+                    r[k] = []
+                else:
+                    r[k] = v
+            elif k == "analysis_reasons":
+                r[k] = v if v is not None else []
+            elif hasattr(v, "isoformat"):
                 r[k] = v.isoformat()
             elif isinstance(v, list):
                 r[k] = v
@@ -273,19 +286,21 @@ def _print_summary_table(df, trends) -> None:
     impact_colors = {
         "critical": "red",
         "high": "orange3",
+        "moderate": "yellow",
         "medium": "yellow",
         "low": "green",
     }
 
-    top = df.sort("impact_score", descending=True).head(10)
+    top = df.sort("final_score" if "final_score" in df.columns else "impact_score", descending=True).head(10)
     for row in top.iter_rows(named=True):
         level = row.get("impact_level", "unknown")
         color = impact_colors.get(level, "white")
+        final = row.get("final_score") or row.get("impact_score", 0)
         table.add_row(
             row.get("name", ""),
             row.get("tag", ""),
             f"[{color}]{level.upper()}[/{color}]",
-            f"{row.get('impact_score', 0):.1f}",
+            f"{final:.1f}",
             row.get("category", ""),
         )
 

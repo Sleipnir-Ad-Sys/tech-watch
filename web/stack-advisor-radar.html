@@ -1,0 +1,891 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="icon" type="image/png" href="ico/01.png" />
+  <title>Stack Radar — Tech Watch</title>
+  <link rel="stylesheet" href="styles.css" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet" />
+
+  <!-- React 18 UMD -->
+  <script crossorigin src="https://unpkg.com/react@18/umd/react.production.min.js"></script>
+  <script crossorigin src="https://unpkg.com/react-dom@18/umd/react-dom.production.min.js"></script>
+  <!-- prop-types (required by Recharts UMD) -->
+  <script src="https://unpkg.com/prop-types/prop-types.min.js"></script>
+  <!-- Recharts 2 UMD -->
+  <script src="https://cdn.jsdelivr.net/npm/recharts@2.12.7/umd/Recharts.js"></script>
+  <!-- Babel standalone — JSX transpilation in browser -->
+  <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+
+  <style>
+    /* ── Stack Radar component styles (sr-* prefix) — dark theme ── */
+
+    .sr-page {
+      background: #0d1117;
+      min-height: calc(100vh - 80px);
+      font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+    }
+
+    /* Hero bar */
+    .sr-hero {
+      background: #161b22;
+      border-bottom: 1px solid #30363d;
+      padding: 24px;
+    }
+    .sr-hero-inner {
+      max-width: 1140px;
+      margin: 0 auto;
+      display: flex;
+      align-items: center;
+      gap: 14px;
+    }
+    .sr-hero-icon { font-size: 26px; line-height: 1; }
+    .sr-hero-title {
+      font-size: 19px;
+      font-weight: 700;
+      color: #e6edf3;
+      margin: 0 0 3px;
+    }
+    .sr-hero-sub {
+      font-size: 13px;
+      color: #8b949e;
+      margin: 0;
+    }
+    .sr-hero-badge {
+      margin-left: auto;
+      background: linear-gradient(135deg, #6366f1, #8b5cf6);
+      color: white;
+      font-size: 11px;
+      font-weight: 600;
+      padding: 4px 12px;
+      border-radius: 20px;
+      white-space: nowrap;
+    }
+
+    /* Main layout */
+    .sr-main {
+      max-width: 1140px;
+      margin: 0 auto;
+      padding: 28px 24px 48px;
+    }
+    .sr-layout {
+      display: flex;
+      gap: 24px;
+      align-items: flex-start;
+    }
+    .sr-sidebar {
+      width: 308px;
+      flex-shrink: 0;
+      display: flex;
+      flex-direction: column;
+      gap: 16px;
+    }
+    .sr-content {
+      flex: 1;
+      min-width: 0;
+      display: flex;
+      flex-direction: column;
+      gap: 20px;
+    }
+
+    /* Cards */
+    .sr-card {
+      background: #161b22;
+      border: 1px solid #30363d;
+      border-radius: 14px;
+      box-shadow: 0 1px 3px rgba(0,0,0,.4), 0 4px 12px rgba(0,0,0,.2);
+      overflow: hidden;
+    }
+    .sr-card-pad { padding: 18px 20px; }
+
+    /* Selector card */
+    .sr-sel-header {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      margin-bottom: 16px;
+    }
+    .sr-sel-title {
+      font-size: 13px;
+      font-weight: 600;
+      color: #e6edf3;
+    }
+    .sr-swap-btn {
+      display: flex;
+      align-items: center;
+      gap: 5px;
+      padding: 5px 10px;
+      border: 1px solid #30363d;
+      border-radius: 8px;
+      background: #1c2128;
+      cursor: pointer;
+      font-size: 12px;
+      font-weight: 500;
+      color: #8b949e;
+      font-family: inherit;
+      transition: all 0.15s;
+      user-select: none;
+    }
+    .sr-swap-btn:hover { background: #21262d; color: #e6edf3; border-color: #444c56; }
+
+    /* Field / Select */
+    .sr-field { margin-bottom: 14px; }
+    .sr-field:last-child { margin-bottom: 0; }
+    .sr-label {
+      font-size: 11px;
+      font-weight: 600;
+      color: #6e7681;
+      text-transform: uppercase;
+      letter-spacing: 0.07em;
+      display: flex;
+      align-items: center;
+      gap: 6px;
+      margin-bottom: 6px;
+    }
+    .sr-label-dot {
+      width: 8px;
+      height: 8px;
+      border-radius: 50%;
+      display: inline-block;
+      flex-shrink: 0;
+    }
+    .sr-select {
+      width: 100%;
+      padding: 9px 32px 9px 12px;
+      border: 1.5px solid #30363d;
+      border-radius: 9px;
+      background: #1c2128;
+      background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='14' height='14' viewBox='0 0 24 24' fill='none' stroke='%236e7681' stroke-width='2.5' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpolyline points='6 9 12 15 18 9'%3E%3C/polyline%3E%3C/svg%3E");
+      background-repeat: no-repeat;
+      background-position: right 10px center;
+      background-size: 14px;
+      appearance: none;
+      font-size: 13px;
+      font-weight: 500;
+      color: #c9d1d9;
+      font-family: inherit;
+      cursor: pointer;
+      transition: border-color 0.15s, box-shadow 0.15s;
+    }
+    .sr-select:focus {
+      outline: none;
+      border-color: #6366f1;
+      box-shadow: 0 0 0 3px rgb(99 102 241 / 0.18);
+    }
+    .sr-select:hover { border-color: #444c56; }
+    .sr-select option { background: #1c2128; color: #c9d1d9; }
+
+    /* Stack summary card */
+    .sr-stack-pad { padding: 16px 18px; }
+    .sr-stack-head { display: flex; align-items: flex-start; gap: 12px; margin-bottom: 16px; }
+    .sr-stack-accent { width: 3px; height: 40px; border-radius: 2px; flex-shrink: 0; margin-top: 2px; }
+    .sr-stack-name-row {
+      display: flex;
+      align-items: center;
+      gap: 6px;
+      font-size: 15px;
+      font-weight: 700;
+      color: #e6edf3;
+      flex-wrap: wrap;
+    }
+    .sr-stack-icon { font-size: 17px; line-height: 1; }
+    .sr-stack-role {
+      font-size: 10px;
+      font-weight: 600;
+      color: #8b949e;
+      background: #21262d;
+      padding: 2px 8px;
+      border-radius: 20px;
+      text-transform: uppercase;
+      letter-spacing: 0.04em;
+      white-space: nowrap;
+    }
+    .sr-stack-desc {
+      font-size: 12px;
+      color: #8b949e;
+      margin: 4px 0 0;
+      line-height: 1.55;
+    }
+
+    /* Score bars */
+    .sr-dim-row {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      margin-bottom: 9px;
+    }
+    .sr-dim-label {
+      font-size: 11px;
+      color: #6e7681;
+      width: 102px;
+      flex-shrink: 0;
+      font-weight: 500;
+    }
+    .sr-dim-track {
+      flex: 1;
+      height: 5px;
+      background: #21262d;
+      border-radius: 3px;
+      overflow: hidden;
+    }
+    .sr-dim-fill {
+      height: 100%;
+      border-radius: 3px;
+      transition: width 0.55s cubic-bezier(0.4, 0, 0.2, 1);
+    }
+    .sr-dim-val {
+      font-size: 11px;
+      font-family: 'JetBrains Mono', monospace;
+      color: #6e7681;
+      width: 24px;
+      text-align: right;
+      font-weight: 500;
+    }
+    .sr-avg-row {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding-top: 12px;
+      margin-top: 4px;
+      border-top: 1px solid #21262d;
+    }
+    .sr-avg-label { font-size: 11px; color: #6e7681; }
+
+    /* Badges */
+    .sr-badge {
+      display: inline-block;
+      padding: 2px 9px;
+      border-radius: 7px;
+      font-size: 12px;
+      font-family: 'JetBrains Mono', monospace;
+      font-weight: 700;
+      letter-spacing: 0.02em;
+    }
+    .sr-badge-high { background: #122d20; color: #3fb950; }
+    .sr-badge-mid  { background: #2d1f00; color: #d29922; }
+    .sr-badge-low  { background: #2d0e0e; color: #f85149; }
+
+    /* Radar panel */
+    .sr-radar-head {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 18px 22px 0;
+    }
+    .sr-radar-title { font-size: 14px; font-weight: 700; color: #e6edf3; }
+    .sr-radar-legend { display: flex; align-items: center; gap: 18px; }
+    .sr-legend-item { display: flex; align-items: center; gap: 7px; font-size: 12px; font-weight: 600; color: #c9d1d9; }
+    .sr-legend-swatch { width: 14px; height: 8px; border-radius: 4px; }
+
+    /* Comparison table */
+    .sr-table-head {
+      display: flex;
+      align-items: center;
+      padding: 14px 20px;
+      border-bottom: 1px solid #21262d;
+    }
+    .sr-table-head-title { font-size: 13px; font-weight: 700; color: #e6edf3; }
+    .sr-table {
+      width: 100%;
+      border-collapse: collapse;
+      font-size: 13px;
+    }
+    .sr-table thead th {
+      background: #1c2128;
+      padding: 9px 18px;
+      text-align: left;
+      font-size: 11px;
+      font-weight: 600;
+      color: #6e7681;
+      text-transform: uppercase;
+      letter-spacing: 0.06em;
+      border-bottom: 1px solid #30363d;
+    }
+    .sr-table thead th.r { text-align: right; }
+    .sr-table thead th.c { text-align: center; }
+    .sr-table tbody td {
+      padding: 10px 18px;
+      border-top: 1px solid #21262d;
+      color: #8b949e;
+      vertical-align: middle;
+    }
+    .sr-table tbody td.r { text-align: right; }
+    .sr-table tbody td.c { text-align: center; }
+    .sr-table tbody tr:hover td { background: #21262d; }
+    .sr-diff { font-family: 'JetBrains Mono', monospace; font-size: 12px; font-weight: 700; }
+    .sr-diff-pos  { color: #6366f1; }
+    .sr-diff-neg  { color: #f43f5e; }
+    .sr-diff-zero { color: #444c56; }
+    .sr-winner-a  { font-size: 12px; font-weight: 600; color: #6366f1; }
+    .sr-winner-b  { font-size: 12px; font-weight: 600; color: #f43f5e; }
+    .sr-winner-eq { font-size: 12px; color: #6e7681; }
+
+    .sr-table-footer {
+      display: flex;
+      align-items: center;
+      gap: 6px;
+      padding: 12px 20px;
+      border-top: 1px solid #21262d;
+      font-size: 12px;
+      color: #6e7681;
+      flex-wrap: wrap;
+    }
+    .sr-table-footer strong { font-weight: 700; color: #8b949e; }
+
+    /* Tooltip */
+    .sr-tooltip {
+      background: #1c2128;
+      border: 1px solid #30363d;
+      border-radius: 10px;
+      padding: 10px 14px;
+      box-shadow: 0 4px 16px rgb(0 0 0 / 0.50);
+      font-size: 13px;
+      font-family: 'Inter', sans-serif;
+      min-width: 160px;
+    }
+    .sr-tooltip-dim {
+      font-weight: 700;
+      color: #e6edf3;
+      margin-bottom: 8px;
+      font-size: 12px;
+      text-transform: uppercase;
+      letter-spacing: 0.06em;
+    }
+    .sr-tooltip-row {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      margin-bottom: 4px;
+    }
+    .sr-tooltip-dot { width: 8px; height: 8px; border-radius: 50%; flex-shrink: 0; }
+    .sr-tooltip-name { color: #8b949e; flex: 1; font-size: 12px; }
+    .sr-tooltip-val { font-family: 'JetBrains Mono', monospace; font-weight: 700; font-size: 13px; color: #e6edf3; }
+
+    /* Footer */
+    .sr-footer {
+      text-align: center;
+      padding: 20px;
+      font-size: 12px;
+      color: #6e7681;
+      border-top: 1px solid #30363d;
+      background: #161b22;
+      margin-top: 8px;
+    }
+
+    /* Responsive */
+    @media (max-width: 900px) {
+      .sr-layout { flex-direction: column; }
+      .sr-sidebar { width: 100%; }
+      .sr-hero-badge { display: none; }
+    }
+    @media (max-width: 520px) {
+      .sr-main { padding: 16px 14px 36px; }
+      .sr-hero { padding: 16px 14px; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- ─── SITE HEADER ───────────────────────────────────────────── -->
+  <header class="site-header">
+    <div class="container">
+      <div class="header-brand">
+        <span class="header-icon">🔭</span>
+        <div>
+          <h1 class="header-title">Tech Watch</h1>
+          <p class="header-subtitle">Veille technologique automatisée · Data · IA · Rust · Cloud</p>
+        </div>
+      </div>
+      <div class="header-meta">
+        <nav class="header-nav">
+          <a href="index.html"                class="nav-link">Accueil</a>
+          <a href="dashboard.html"            class="nav-link">Dashboard</a>
+          <a href="outils.html"               class="nav-link">Outils suivis</a>
+          <a href="radar.html"                class="nav-link">Découvertes</a>
+          <a href="compat.html"               class="nav-link">Compatibilité</a>
+          <a href="compare.html"              class="nav-link">Comparatifs</a>
+          <a href="stack-advisor.html"        class="nav-link">Stack Advisor</a>
+          <a href="stack-advisor-radar.html"  class="nav-link nav-link-active">Stack Radar</a>
+        </nav>
+      </div>
+    </div>
+  </header>
+
+  <!-- ─── REACT ROOT ───────────────────────────────────────────── -->
+  <div id="radar-root"></div>
+
+  <script type="text/babel">
+    "use strict";
+
+    const { useState, useMemo } = React;
+    const {
+      RadarChart, Radar, PolarGrid, PolarAngleAxis, PolarRadiusAxis,
+      ResponsiveContainer, Tooltip,
+    } = Recharts;
+
+    // ══════════════════════════════════════════════════════════════
+    // 1. CONSTANTS
+    // ══════════════════════════════════════════════════════════════
+
+    const COLOR_A = "#6366f1"; // indigo-500
+    const COLOR_B = "#f43f5e"; // rose-500
+
+    const DIMS = [
+      { key: "performance",       label: "Performance"    },
+      { key: "simplicity",        label: "Simplicité"     },
+      { key: "scalability",       label: "Scalabilité"    },
+      { key: "ecosystem",         label: "Écosystème"     },
+      { key: "memory_efficiency", label: "Mémoire"        },
+    ];
+
+    // ══════════════════════════════════════════════════════════════
+    // 2. DATA MODEL — extensible, add new tools freely
+    //
+    // scores range: 0–100 per dimension
+    //   performance:       Raw throughput / latency
+    //   simplicity:        Learning curve inverse (100 = trivial)
+    //   scalability:       Ability to scale to large/distributed workloads
+    //   ecosystem:         Library breadth, community, integrations
+    //   memory_efficiency: RAM efficiency on large datasets
+    // ══════════════════════════════════════════════════════════════
+
+    const STACKS = {
+      "Polars": {
+        icon: "🐻",
+        role: "Data Processing",
+        description: "DataFrame ultra-performant, lazy evaluation, columnar, multi-thread. Remplaçant moderne de pandas sur volumes moyens à larges.",
+        scores: { performance: 95, simplicity: 55, scalability: 72, ecosystem: 65, memory_efficiency: 90 },
+      },
+      "pandas": {
+        icon: "🐼",
+        role: "Data Processing",
+        description: "DataFrame standard Python, vaste écosystème, simple à prendre en main. Référence de facto mais lent sur gros volumes.",
+        scores: { performance: 48, simplicity: 92, scalability: 30, ecosystem: 98, memory_efficiency: 38 },
+      },
+      "DuckDB": {
+        icon: "🦆",
+        role: "SQL Analytics",
+        description: "Moteur SQL OLAP local, vectorisé, query-pushdown sur Parquet et CSV. Idéal pour analytics en local sans infrastructure.",
+        scores: { performance: 92, simplicity: 68, scalability: 68, ecosystem: 62, memory_efficiency: 88 },
+      },
+      "PyArrow": {
+        icon: "🏹",
+        role: "Sérialisation",
+        description: "Interopérabilité données : Parquet, Arrow IPC, columnar in-memory. Couche basse de Polars et DuckDB.",
+        scores: { performance: 90, simplicity: 38, scalability: 72, ecosystem: 72, memory_efficiency: 92 },
+      },
+      "FastAPI": {
+        icon: "⚡",
+        role: "API Layer",
+        description: "API async moderne, OpenAPI auto, validation Pydantic. Framework Python de référence pour les APIs REST haute performance.",
+        scores: { performance: 88, simplicity: 70, scalability: 82, ecosystem: 82, memory_efficiency: 78 },
+      },
+      "Flask": {
+        icon: "🫙",
+        role: "API Layer",
+        description: "Micro-framework web minimaliste, idéal pour prototypes et petits services. Synchrone, écosystème mature.",
+        scores: { performance: 52, simplicity: 95, scalability: 38, ecosystem: 88, memory_efficiency: 72 },
+      },
+      "Django": {
+        icon: "🎸",
+        role: "API Layer",
+        description: "Framework web complet : admin, ORM, authentification, i18n inclus. Optimal pour applications web avec backoffice.",
+        scores: { performance: 48, simplicity: 58, scalability: 52, ecosystem: 95, memory_efficiency: 58 },
+      },
+      "NumPy": {
+        icon: "🔢",
+        role: "Calcul numérique",
+        description: "Calcul vectorisé, tableaux N-dim, fondation de l'écosystème scientifique Python. Incontournable pour le ML et les maths.",
+        scores: { performance: 82, simplicity: 72, scalability: 28, ecosystem: 98, memory_efficiency: 60 },
+      },
+      "SciPy": {
+        icon: "🔬",
+        role: "Calcul scientifique",
+        description: "Algorithmes scientifiques : stats, signal, optimisation, algèbre linéaire. Complément naturel de NumPy.",
+        scores: { performance: 72, simplicity: 52, scalability: 25, ecosystem: 85, memory_efficiency: 58 },
+      },
+      "scikit-learn": {
+        icon: "🤖",
+        role: "Machine Learning",
+        description: "ML classique : classification, régression, clustering, pipelines sklearn. Standard de l'industrie pour le ML tabulaire.",
+        scores: { performance: 68, simplicity: 82, scalability: 32, ecosystem: 95, memory_efficiency: 55 },
+      },
+      "Parquet": {
+        icon: "📦",
+        role: "Format stockage",
+        description: "Format columnar compressé, optimal pour analytics et interopérabilité. Réduit la taille x5–10 vs CSV.",
+        scores: { performance: 90, simplicity: 65, scalability: 88, ecosystem: 82, memory_efficiency: 92 },
+      },
+      "CSV": {
+        icon: "📄",
+        role: "Format stockage",
+        description: "Format texte universel, simple, lisible, interopérable partout. Mais lent, volumineux, sans types natifs.",
+        scores: { performance: 28, simplicity: 98, scalability: 18, ecosystem: 100, memory_efficiency: 32 },
+      },
+      "SQLite": {
+        icon: "🗄️",
+        role: "SQL Transactionnel",
+        description: "Base SQL fichier locale, ACID, zéro configuration, idéal pour petits projets et prototypes.",
+        scores: { performance: 52, simplicity: 90, scalability: 22, ecosystem: 92, memory_efficiency: 68 },
+      },
+      "Apache Spark": {
+        icon: "🔥",
+        role: "Distribué",
+        description: "Traitement distribué massivement parallèle, batch et streaming structuré. Nécessite un vrai cluster.",
+        scores: { performance: 85, simplicity: 18, scalability: 98, ecosystem: 85, memory_efficiency: 28 },
+      },
+      "Dask": {
+        icon: "⚙️",
+        role: "Distribué",
+        description: "Parallélisme pandas-compatible sur multi-core local ou petit cluster. Pont entre pandas et Spark.",
+        scores: { performance: 62, simplicity: 42, scalability: 80, ecosystem: 58, memory_efficiency: 55 },
+      },
+      "Apache Kafka": {
+        icon: "📨",
+        role: "Streaming",
+        description: "Bus de messages distribué pour streaming haute volumétrie et fiabilité. Infrastructure lourde mais inégalée.",
+        scores: { performance: 88, simplicity: 15, scalability: 98, ecosystem: 82, memory_efficiency: 60 },
+      },
+    };
+
+    // ══════════════════════════════════════════════════════════════
+    // 3. HELPERS
+    // ══════════════════════════════════════════════════════════════
+
+    function avgScore(scores) {
+      const vals = Object.values(scores);
+      return Math.round(vals.reduce((a, b) => a + b, 0) / vals.length);
+    }
+
+    function badgeCls(score) {
+      if (score >= 78) return "sr-badge sr-badge-high";
+      if (score >= 52) return "sr-badge sr-badge-mid";
+      return "sr-badge sr-badge-low";
+    }
+
+    function diffCls(d) {
+      if (d > 0) return "sr-diff sr-diff-pos";
+      if (d < 0) return "sr-diff sr-diff-neg";
+      return "sr-diff sr-diff-zero";
+    }
+
+    // ══════════════════════════════════════════════════════════════
+    // 4. COMPONENTS
+    // ══════════════════════════════════════════════════════════════
+
+    // ── Custom tooltip ────────────────────────────────────────────
+    function RadarTooltip({ active, payload }) {
+      if (!active || !payload || payload.length === 0) return null;
+      const dim = payload[0]?.payload?.dimension;
+      return (
+        <div className="sr-tooltip">
+          <div className="sr-tooltip-dim">{dim}</div>
+          {payload.map((p, i) => (
+            <div key={i} className="sr-tooltip-row">
+              <div className="sr-tooltip-dot" style={{ backgroundColor: p.stroke }} />
+              <span className="sr-tooltip-name">{p.name}</span>
+              <span className="sr-tooltip-val" style={{ color: p.stroke }}>{p.value}</span>
+            </div>
+          ))}
+        </div>
+      );
+    }
+
+    // ── Select field ──────────────────────────────────────────────
+    function StackSelect({ value, onChange, label, color }) {
+      return (
+        <div className="sr-field">
+          <label className="sr-label">
+            <span className="sr-label-dot" style={{ backgroundColor: color }} />
+            {label}
+          </label>
+          <select
+            className="sr-select"
+            value={value}
+            onChange={e => onChange(e.target.value)}
+          >
+            {Object.entries(STACKS).map(([k, v]) => (
+              <option key={k} value={k}>{v.icon}  {k} — {v.role}</option>
+            ))}
+          </select>
+        </div>
+      );
+    }
+
+    // ── Score bar row ─────────────────────────────────────────────
+    function DimBar({ label, score, color }) {
+      return (
+        <div className="sr-dim-row">
+          <span className="sr-dim-label">{label}</span>
+          <div className="sr-dim-track">
+            <div
+              className="sr-dim-fill"
+              style={{ width: `${score}%`, backgroundColor: color }}
+            />
+          </div>
+          <span className="sr-dim-val">{score}</span>
+        </div>
+      );
+    }
+
+    // ── Stack summary card ────────────────────────────────────────
+    function StackCard({ name, color }) {
+      const s = STACKS[name];
+      if (!s) return null;
+      const total = avgScore(s.scores);
+      return (
+        <div className="sr-card">
+          <div className="sr-stack-pad">
+            <div className="sr-stack-head">
+              <div className="sr-stack-accent" style={{ backgroundColor: color }} />
+              <div style={{ flex: 1 }}>
+                <div className="sr-stack-name-row">
+                  <span className="sr-stack-icon">{s.icon}</span>
+                  <span>{name}</span>
+                  <span className="sr-stack-role">{s.role}</span>
+                </div>
+                <p className="sr-stack-desc">{s.description}</p>
+              </div>
+            </div>
+            {DIMS.map(d => (
+              <DimBar
+                key={d.key}
+                label={d.label}
+                score={s.scores[d.key]}
+                color={color}
+              />
+            ))}
+            <div className="sr-avg-row">
+              <span className="sr-avg-label">Score moyen</span>
+              <span className={badgeCls(total)}>{total} / 100</span>
+            </div>
+          </div>
+        </div>
+      );
+    }
+
+    // ── Radar chart ───────────────────────────────────────────────
+    function RadarPanel({ nameA, nameB }) {
+      const data = useMemo(() =>
+        DIMS.map(d => ({
+          dimension: d.label,
+          [nameA]: STACKS[nameA].scores[d.key],
+          [nameB]: STACKS[nameB].scores[d.key],
+        })),
+        [nameA, nameB]
+      );
+
+      return (
+        <div className="sr-card">
+          <div className="sr-radar-head">
+            <span className="sr-radar-title">Comparaison radar</span>
+            <div className="sr-radar-legend">
+              <div className="sr-legend-item">
+                <div className="sr-legend-swatch" style={{ backgroundColor: COLOR_A + "aa" }} />
+                <span style={{ color: COLOR_A }}>{nameA}</span>
+              </div>
+              <div className="sr-legend-item">
+                <div className="sr-legend-swatch" style={{ backgroundColor: COLOR_B + "aa" }} />
+                <span style={{ color: COLOR_B }}>{nameB}</span>
+              </div>
+            </div>
+          </div>
+          <div style={{ height: 390, padding: "6px 16px 20px" }}>
+            <ResponsiveContainer width="100%" height="100%">
+              <RadarChart data={data} cx="50%" cy="50%" outerRadius="65%">
+                <PolarGrid
+                  stroke="#e2e8f0"
+                  strokeDasharray="4 3"
+                />
+                <PolarAngleAxis
+                  dataKey="dimension"
+                  tick={{ fill: "#64748b", fontSize: 12, fontWeight: 500 }}
+                />
+                <PolarRadiusAxis
+                  angle={90}
+                  domain={[0, 100]}
+                  tickCount={6}
+                  tick={{ fontSize: 10, fill: "#cbd5e1" }}
+                  axisLine={false}
+                />
+                <Radar
+                  name={nameA}
+                  dataKey={nameA}
+                  stroke={COLOR_A}
+                  fill={COLOR_A}
+                  fillOpacity={0.20}
+                  strokeWidth={2.5}
+                  dot={{ fill: COLOR_A, r: 4, strokeWidth: 0 }}
+                  activeDot={{ r: 6 }}
+                />
+                <Radar
+                  name={nameB}
+                  dataKey={nameB}
+                  stroke={COLOR_B}
+                  fill={COLOR_B}
+                  fillOpacity={0.16}
+                  strokeWidth={2.5}
+                  dot={{ fill: COLOR_B, r: 4, strokeWidth: 0 }}
+                  activeDot={{ r: 6 }}
+                />
+                <Tooltip content={<RadarTooltip />} />
+              </RadarChart>
+            </ResponsiveContainer>
+          </div>
+        </div>
+      );
+    }
+
+    // ── Comparison table ──────────────────────────────────────────
+    function CompTable({ nameA, nameB }) {
+      const A = STACKS[nameA].scores;
+      const B = STACKS[nameB].scores;
+      const avgA = avgScore(A);
+      const avgB = avgScore(B);
+      const winner = avgA > avgB ? nameA : avgA < avgB ? nameB : null;
+      const gap = Math.abs(avgA - avgB);
+
+      return (
+        <div className="sr-card">
+          <div className="sr-table-head">
+            <span className="sr-table-head-title">Détail par dimension</span>
+          </div>
+          <table className="sr-table">
+            <thead>
+              <tr>
+                <th>Dimension</th>
+                <th className="r" style={{ color: COLOR_A }}>{nameA}</th>
+                <th className="c">Δ</th>
+                <th style={{ color: COLOR_B }}>{nameB}</th>
+                <th>Avantage</th>
+              </tr>
+            </thead>
+            <tbody>
+              {DIMS.map(d => {
+                const a = A[d.key];
+                const b = B[d.key];
+                const diff = a - b;
+                const THRESHOLD = 8;
+                let advantage;
+                if (diff >  THRESHOLD) advantage = <span className="sr-winner-a">← {nameA}</span>;
+                else if (diff < -THRESHOLD) advantage = <span className="sr-winner-b">{nameB} →</span>;
+                else advantage = <span className="sr-winner-eq">≈ Équivalent</span>;
+
+                return (
+                  <tr key={d.key}>
+                    <td><strong style={{ color: "#334155", fontWeight: 600 }}>{d.label}</strong></td>
+                    <td className="r"><span className={badgeCls(a)}>{a}</span></td>
+                    <td className="c">
+                      <span className={diffCls(diff)}>
+                        {diff > 0 ? `+${diff}` : diff === 0 ? "=" : diff}
+                      </span>
+                    </td>
+                    <td><span className={badgeCls(b)}>{b}</span></td>
+                    <td>{advantage}</td>
+                  </tr>
+                );
+              })}
+            </tbody>
+          </table>
+          <div className="sr-table-footer">
+            <span>Score moyen :</span>
+            <strong style={{ color: COLOR_A }}>{nameA} = {avgA}</strong>
+            <span>·</span>
+            <strong style={{ color: COLOR_B }}>{nameB} = {avgB}</strong>
+            {winner && (
+              <>
+                <span>·</span>
+                <span>
+                  <strong style={{ color: avgA > avgB ? COLOR_A : COLOR_B }}>{winner}</strong>
+                  {" "}supérieur (+{gap} pts en moyenne)
+                </span>
+              </>
+            )}
+          </div>
+        </div>
+      );
+    }
+
+    // ══════════════════════════════════════════════════════════════
+    // 5. MAIN APP
+    // ══════════════════════════════════════════════════════════════
+
+    function App() {
+      const [nameA, setNameA] = useState("Polars");
+      const [nameB, setNameB] = useState("pandas");
+
+      function swap() {
+        setNameA(prev => {
+          setNameB(prev);
+          return nameB;
+        });
+      }
+
+      return (
+        <div className="sr-page">
+          {/* Hero */}
+          <div className="sr-hero">
+            <div className="sr-hero-inner">
+              <span className="sr-hero-icon">📡</span>
+              <div>
+                <h2 className="sr-hero-title">Stack Radar &amp; Comparator</h2>
+                <p className="sr-hero-sub">
+                  Comparez deux outils sur 5 dimensions · {Object.keys(STACKS).length} stacks disponibles · radar interactif
+                </p>
+              </div>
+              <span className="sr-hero-badge">Rule-based · No LLM</span>
+            </div>
+          </div>
+
+          {/* Layout */}
+          <div className="sr-main">
+            <div className="sr-layout">
+
+              {/* ── Left sidebar ── */}
+              <div className="sr-sidebar">
+
+                {/* Selector card */}
+                <div className="sr-card">
+                  <div className="sr-card-pad">
+                    <div className="sr-sel-header">
+                      <span className="sr-sel-title">Sélection des stacks</span>
+                      <button className="sr-swap-btn" onClick={swap} title="Inverser les stacks">
+                        ⇄ Inverser
+                      </button>
+                    </div>
+                    <StackSelect value={nameA} onChange={setNameA} label="Stack A" color={COLOR_A} />
+                    <StackSelect value={nameB} onChange={setNameB} label="Stack B" color={COLOR_B} />
+                  </div>
+                </div>
+
+                {/* Stack A summary */}
+                <StackCard name={nameA} color={COLOR_A} />
+
+                {/* Stack B summary */}
+                <StackCard name={nameB} color={COLOR_B} />
+              </div>
+
+              {/* ── Right content ── */}
+              <div className="sr-content">
+                <RadarPanel nameA={nameA} nameB={nameB} />
+                <CompTable nameA={nameA} nameB={nameB} />
+              </div>
+
+            </div>
+          </div>
+
+          {/* Footer */}
+          <footer className="sr-footer">
+            Tech Watch — Stack Radar · {Object.keys(STACKS).length} outils · 5 dimensions · Rule-based · Aucun LLM requis
+          </footer>
+        </div>
+      );
+    }
+
+    // Mount
+    ReactDOM.createRoot(document.getElementById("radar-root")).render(<App />);
+  </script>
+</body>
+</html>

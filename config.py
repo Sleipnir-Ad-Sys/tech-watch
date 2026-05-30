@@ -102,6 +102,50 @@ class DiscoveryConfig(BaseModel):
     topics: list[DiscoveryTopicConfig] = Field(default_factory=list)
 
 
+# ---------------------------------------------------------------------------
+# Impact analysis configuration
+# ---------------------------------------------------------------------------
+
+
+class ChangelogWeightsConfig(BaseModel):
+    """Pondérations par catégorie de changelog — modifiables sans toucher au code."""
+    security: float = 100.0
+    breaking_change: float = 50.0
+    deprecated: float = 30.0
+    removed: float = 30.0
+    migration: float = 25.0
+    performance: float = 15.0
+    enhancement: float = 10.0
+    bug_fix: float = 5.0
+    documentation: float = 1.0
+
+    def as_dict(self) -> dict[str, float]:
+        return {
+            "security": self.security,
+            "breaking_change": self.breaking_change,
+            "deprecated": self.deprecated,
+            "removed": self.removed,
+            "migration": self.migration,
+            "performance": self.performance,
+            "enhancement": self.enhancement,
+            "bug_fix": self.bug_fix,
+            "documentation": self.documentation,
+        }
+
+
+class TechnologyRelevanceConfig(BaseModel):
+    """Profil utilisateur avec score de pertinence par technologie."""
+    label: str = ""
+    technologies: dict[str, float] = Field(default_factory=dict)
+
+
+class ImpactAnalysisConfig(BaseModel):
+    """Configuration complète du moteur d'analyse d'impact."""
+    changelog_weights: ChangelogWeightsConfig = Field(default_factory=ChangelogWeightsConfig)
+    profiles: dict[str, TechnologyRelevanceConfig] = Field(default_factory=dict)
+    default_profiles: list[str] = Field(default_factory=lambda: ["data_engineering"])
+
+
 class Config(BaseModel):
     app: AppConfig = Field(default_factory=AppConfig)
     paths: PathsConfig = Field(default_factory=PathsConfig)
@@ -112,6 +156,7 @@ class Config(BaseModel):
     api: APIConfig = Field(default_factory=APIConfig)
     scheduler: SchedulerConfig = Field(default_factory=SchedulerConfig)
     discovery: DiscoveryConfig = Field(default_factory=DiscoveryConfig)
+    impact_analysis: ImpactAnalysisConfig = Field(default_factory=ImpactAnalysisConfig)
 
 
 # ---------------------------------------------------------------------------

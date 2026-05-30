@@ -120,7 +120,7 @@ def transform_releases(raw_releases: list[RawRelease]) -> pl.DataFrame:
             "version_patch": patch,
             "published_at": r.published_at,
             "category": r.category,
-            "body_excerpt": body_clean[:500],
+            "body_excerpt": body_clean[:2000],
             "has_breaking_change": has_breaking,
             "breaking_snippets": snippets,
             "repo_weight": r.repo_weight,

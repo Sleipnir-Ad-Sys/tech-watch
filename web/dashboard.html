@@ -31,6 +31,8 @@
           <a href="radar.html" class="nav-link">Découvertes</a>
           <a href="compat.html"  class="nav-link">Compatibilité</a>
           <a href="compare.html" class="nav-link">Comparatifs</a>
+          <a href="stack-advisor.html" class="nav-link">Stack Advisor</a>
+          <a href="stack-advisor-radar.html" class="nav-link">Stack Radar</a>
         </nav>
         <span class="badge badge-live">● Live</span>
         <span id="last-updated" class="header-updated">Chargement...</span>
@@ -84,10 +86,22 @@
       <!-- IMPACT FILTER -->
       <div class="impact-bar">
         <span class="impact-filter active" data-impact="all">Tout</span>
-        <span class="impact-filter" data-impact="critical">🔴 Critique</span>
-        <span class="impact-filter" data-impact="high">🟠 Élevé</span>
-        <span class="impact-filter" data-impact="medium">🟡 Moyen</span>
-        <span class="impact-filter" data-impact="low">🟢 Faible</span>
+        <span class="impact-filter" data-impact="critical">🔴 CRITICAL</span>
+        <span class="impact-filter" data-impact="high">🟠 HIGH</span>
+        <span class="impact-filter" data-impact="moderate">🟡 MODERATE</span>
+        <span class="impact-filter" data-impact="low">🟢 LOW</span>
+      </div>
+
+      <!-- PROFILE SELECTOR -->
+      <div class="profile-bar" id="profile-bar">
+        <span class="profile-label">Mon profil :</span>
+        <button class="profile-btn active" data-profile="data_engineering">📊 Data Engineering</button>
+        <button class="profile-btn" data-profile="analytics_engineering">📈 Analytics</button>
+        <button class="profile-btn" data-profile="python">🐍 Python</button>
+        <button class="profile-btn" data-profile="rust">🦀 Rust</button>
+        <button class="profile-btn" data-profile="ai_llm">🤖 AI / LLM</button>
+        <button class="profile-btn" data-profile="cloud">☁️ Cloud</button>
+        <button class="profile-btn" data-profile="frontend">🖥️ Frontend</button>
       </div>
 
       <!-- RELEASES LIST -->

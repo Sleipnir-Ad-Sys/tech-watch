@@ -11,6 +11,17 @@ const DATA_URL = "./data.json";
 // ── État global ──────────────────────────────────────────────────
 const PAGE_SIZE = 10;
 
+// Profils disponibles (clés doivent correspondre à config.yaml)
+const PROFILES = [
+  { id: "data_engineering",       label: "Data Engineering" },
+  { id: "analytics_engineering",  label: "Analytics Eng." },
+  { id: "python",                 label: "Python" },
+  { id: "rust",                   label: "Rust" },
+  { id: "ai_llm",                 label: "AI / LLM" },
+  { id: "cloud",                  label: "Cloud" },
+  { id: "frontend",               label: "Frontend" },
+];
+
 let state = {
   releases: [],
   trends: [],
@@ -19,6 +30,7 @@ let state = {
   updatedAt: null,
   activeCategory: "all",
   activeImpact: "all",
+  activeProfiles: ["data_engineering"],  // profil(s) sélectionné(s)
   currentPage: 1,
 };
 
@@ -60,14 +72,75 @@ function escapeHtml(str) {
  */
 function impactBadge(level) {
   const labels = {
-    critical: { icon: "🔴", label: "Critique" },
-    high:     { icon: "🟠", label: "Élevé" },
-    medium:   { icon: "🟡", label: "Moyen" },
-    low:      { icon: "🟢", label: "Faible" },
+    critical: { icon: "🔴", label: "CRITICAL" },
+    high:     { icon: "🟠", label: "HIGH" },
+    moderate: { icon: "🟡", label: "MODERATE" },
+    medium:   { icon: "🟡", label: "MODERATE" },  // alias
+    low:      { icon: "🟢", label: "LOW" },
     unknown:  { icon: "⚪", label: "Inconnu" },
   };
   const { icon, label } = labels[level] || labels.unknown;
-  return `<span class="badge badge-${level}">${icon} ${label}</span>`;
+  return `<span class="badge badge-${level === 'medium' ? 'moderate' : level}">${icon} ${label}</span>`;
+}
+
+/**
+ * Retourne la classe CSS de couleur pour un score numérique.
+ */
+function scoreColorClass(level) {
+  const map = { critical: "impact-critical", high: "impact-high",
+    moderate: "impact-moderate", medium: "impact-moderate", low: "impact-low" };
+  return map[level] || "impact-unknown";
+}
+
+/**
+ * Calcule le final_score de la release (0–100).
+ * Formule : min(100, technical × 0.7 + relevance × 3)
+ * Si la donnée est déjà dans la release (pré-calculée), on la retourne directement.
+ */
+function getFinalScore(r) {
+  if (r.final_score != null && r.final_score >= 0) return r.final_score;
+  const tech = r.technical_score || r.impact_score || 0;
+  const rel  = r.relevance_score || 0;
+  return Math.round(Math.min(100, (tech * 0.7) + (rel * 3)) * 10) / 10;
+}
+
+/**
+ * Formate les facteurs détectés en liste lisible.
+ */
+function formatFactors(detectedFactors) {
+  if (!detectedFactors || !detectedFactors.length) return "";
+  const labels = {
+    security:       "Sécurité / CVE",
+    breaking_change:"Breaking Change",
+    deprecated:     "Dépréciation",
+    removed:        "Suppression",
+    migration:      "Migration",
+    performance:    "Performance",
+    enhancement:    "Enhancement",
+    bug_fix:        "Bug Fix",
+    documentation:  "Documentation",
+  };
+  return detectedFactors
+    .filter(f => f.count > 0)
+    .map(f => {
+      const lbl = labels[f.category] || f.category;
+      return `<li><span class="factor-count">${f.count}</span> ${escapeHtml(lbl)}</li>`;
+    })
+    .join("");
+}
+
+/**
+ * Retourne l'icône et la classe CSS pour une action recommandée.
+ */
+function actionIcon(action) {
+  const map = {
+    "URGENT":              { icon: "🚨", cls: "action-critical" },
+    "PLANIFIER MIGRATION": { icon: "⚠️",  cls: "action-high" },
+    "METTRE À JOUR":       { icon: "🔄",  cls: "action-moderate" },
+    "SURVEILLER":          { icon: "👁",   cls: "action-low" },
+    "IGNORER":             { icon: "💤",  cls: "action-ignore" },
+  };
+  return map[action] || { icon: "ℹ️", cls: "" };
 }
 
 /**
@@ -217,26 +290,65 @@ function renderPagination(container, totalPages, totalItems) {
 }
 
 function renderReleaseCard(r) {
-  const name     = escapeHtml(r.name || "");
-  const tag      = escapeHtml(r.tag || "");
-  const category = escapeHtml(r.category || "");
-  const excerpt  = escapeHtml((r.body_excerpt || "").substring(0, 200));
-  const breaking = r.has_breaking_change
+  const name       = escapeHtml(r.name || "");
+  const tag        = escapeHtml(r.tag || "");
+  const category   = escapeHtml(r.category || "");
+  const excerpt    = escapeHtml((r.body_excerpt || "").substring(0, 180));
+  const breaking   = r.has_breaking_change
     ? '<span class="breaking-badge">⚠ Rupture</span>'
     : "";
 
+  // Scores
+  const techScore  = (r.technical_score || r.impact_score || 0).toFixed(0);
+  const relScore   = r.relevance_score != null ? r.relevance_score.toFixed(0) : "—";
+  const finalScore = getFinalScore(r).toFixed(0);
+  const lvl        = r.impact_level || "unknown";
+
+  // Action recommandée + Urgence
+  const action     = r.action_recommended || "";
+  const { icon: aIcon, cls: aCls } = actionIcon(action);
+  const urgency    = r.urgency_level || "";
+  const urgencyMap = {
+    "URGENT": { icon: "🔴", cls: "urgency-urgent", label: "URGENT — faille sécurité" },
+    "HIGH":   { icon: "🟠", cls: "urgency-high",   label: "HIGH — breaking change" },
+    "MEDIUM": { icon: "🟡", cls: "urgency-medium",  label: "MEDIUM — migration requise" },
+    "LOW":    { icon: "🟢", cls: "urgency-low",     label: "LOW — routine" },
+  };
+  const urgencyInfo = urgencyMap[urgency] || null;
+
+  // Facteurs (jusqu'à 3)
+  let factors = r.detected_factors || [];
+  if (typeof factors === "string") {
+    try { factors = JSON.parse(factors); } catch (_) { factors = []; }
+  }
+  const topFactors = factors.slice(0, 3);
+  const factorTags = topFactors.map(f => {
+    const lbl = { security:"SEC", breaking_change:"BC", deprecated:"DEP",
+      removed:"REM", migration:"MIG", performance:"PERF",
+      enhancement:"ENH", bug_fix:"FIX", documentation:"DOC" }[f.category] || f.category;
+    return `<span class="factor-tag factor-${f.category}">${lbl}×${f.count}</span>`;
+  }).join("");
+
   return `
-    <article class="release-card" data-id="${escapeHtml(r.id)}" data-impact="${escapeHtml(r.impact_level)}">
+    <article class="release-card" data-id="${escapeHtml(r.id)}" data-impact="${escapeHtml(lvl)}">
       <div class="release-header">
         <span class="release-name">${name}</span>
         <span class="release-tag">${tag}</span>
       </div>
       <div class="release-meta">
-        ${impactBadge(r.impact_level)}
+        ${impactBadge(lvl)}
         <span class="badge badge-unknown">${category}</span>
         <span class="release-date">${formatDate(r.published_at)}</span>
         ${breaking}
       </div>
+      <div class="release-scores">
+        <span class="score-pill score-tech" title="Score technique">T:${techScore}</span>
+        <span class="score-pill score-rel"  title="Score pertinence">R:${relScore}</span>
+        <span class="score-pill score-final ${scoreColorClass(lvl)}" title="Score final">F:${finalScore}</span>
+        ${action ? `<span class="action-pill ${aCls}" title="${escapeHtml(action)}">${aIcon} ${escapeHtml(action)}</span>` : ""}
+        ${urgencyInfo ? `<span class="urgency-pill ${urgencyInfo.cls}" title="Urgence : ${urgencyInfo.label}">${urgencyInfo.icon}</span>` : ""}
+      </div>
+      ${factorTags ? `<div class="factor-tags">${factorTags}</div>` : ""}
       ${excerpt ? `<p class="release-excerpt">${excerpt}</p>` : ""}
     </article>`;
 }
@@ -338,24 +450,36 @@ function renderCategoryChart() {
 
 // ── Modal ─────────────────────────────────────────────────────────
 
+/**
+ * Génère le bloc HTML d'explication du score d'impact (nouveau moteur changelog).
+ */
 function scoreExplanation(release) {
-  const parts = [];
-  const maj = release.version_major;
-  const min = release.version_minor;
-  const pat = release.version_patch;
-
-  if (maj !== null && maj !== undefined) {
-    if (maj >= 1) parts.push(`Version majeure ×${maj} (+${(maj * 10).toFixed(0)}pts)`);
+  let factors = release.detected_factors || [];
+  if (typeof factors === "string") {
+    try { factors = JSON.parse(factors); } catch (_) { factors = []; }
   }
-  if (min) parts.push(`Version mineure ×${min} (+${(min * 3).toFixed(0)}pts)`);
-  if (pat) parts.push(`Patch ×${pat} (+${(pat * 0.5).toFixed(1)}pts)`);
-  if (release.has_breaking_change) parts.push("Rupture de compatibilité (+8pts)");
-  if (release.repo_weight && release.repo_weight !== 1.0)
-    parts.push(`Multiplicateur projet ×${release.repo_weight}`);
 
-  return parts.length
-    ? `<ul class="score-breakdown">${parts.map(p => `<li>${escapeHtml(p)}</li>`).join("")}</ul>`
-    : "";
+  if (!factors.length) return "";
+
+  const labels = {
+    security:       "Sécurité / CVE",
+    breaking_change:"Breaking Change",
+    deprecated:     "Dépréciation",
+    removed:        "Suppression de fonctionnalité",
+    migration:      "Migration requise",
+    performance:    "Amélioration de performance",
+    enhancement:    "Enhancement / Nouvelle fonctionnalité",
+    bug_fix:        "Correction de bug",
+    documentation:  "Documentation",
+  };
+
+  const items = factors.map(f => {
+    const lbl   = labels[f.category] || f.category;
+    const score = f.score_contribution != null ? ` (+${f.score_contribution.toFixed(0)}pts)` : "";
+    return `<li><strong>${f.count}×</strong> ${escapeHtml(lbl)}${score}</li>`;
+  }).join("");
+
+  return `<ul class="score-breakdown">${items}</ul>`;
 }
 
 function formatDateFull(isoStr) {
@@ -366,16 +490,20 @@ function formatDateFull(isoStr) {
 }
 
 function impactLabel(level) {
-  return { critical: "Critique", high: "Élevé", medium: "Moyen", low: "Faible", unknown: "Inconnu" }[level] || level;
+  return {
+    critical: "CRITICAL", high: "HIGH", moderate: "MODERATE",
+    medium: "MODERATE", low: "LOW", unknown: "Inconnu",
+  }[level] || level;
 }
 
 function impactDescription(level) {
   const desc = {
-    critical: "Cette release introduit des changements majeurs (version majeure + rupture de compatibilité ou failles de sécurité). Revue immédiate recommandée.",
-    high:     "Changement significatif : version majeure ou breaking change. Planifier une mise à jour.",
-    medium:   "Version mineure avec nouvelles fonctionnalités. Pas d'urgence mais à intégrer.",
-    low:      "Patch ou correction mineure. Mise à jour de routine.",
-    unknown:  "Niveau d'impact non déterminé.",
+    critical: "Score final > 80 + SECURITY/BREAKING détecté — faille ou rupture confirmée. Action immédiate requise.",
+    high:     "Score final 51–80 — impacts importants. Planifier la mise à jour.",
+    moderate: "Score final 21–50 — changements notables non critiques. À intégrer dans le prochain cycle.",
+    medium:   "Score final 21–50 — changements notables non critiques. À intégrer dans le prochain cycle.",
+    low:      "Score final ≤ 20 — impact faible : docs, bugfixes mineurs ou corrections de routine.",
+    unknown:  "Niveau d'impact non déterminé — changelog insuffisant.",
   };
   return desc[level] || "";
 }
@@ -415,6 +543,27 @@ function openModal(release) {
 
   const scoreBreakdown = scoreExplanation(release);
 
+  // Scores
+  const techScore  = (release.technical_score || release.impact_score || 0).toFixed(1);
+  const relScore   = release.relevance_score != null ? release.relevance_score.toFixed(1) : "—";
+  const finalScore = getFinalScore(release).toFixed(1);
+  const action     = release.action_recommended || "";
+  const { icon: aIcon, cls: aCls } = actionIcon(action);
+  const urgency    = release.urgency_level || "";
+  const modalUrgencyMap = {
+    "URGENT": { icon: "🔴", cls: "urgency-urgent", label: "URGENT — faille sécurité" },
+    "HIGH":   { icon: "🟠", cls: "urgency-high",   label: "HIGH — breaking change" },
+    "MEDIUM": { icon: "🟡", cls: "urgency-medium",  label: "MEDIUM — migration requise" },
+    "LOW":    { icon: "🟢", cls: "urgency-low",     label: "LOW — routine" },
+  };
+  const modalUrgencyInfo = modalUrgencyMap[urgency] || null;
+
+  // Reasons
+  const reasons = release.analysis_reasons || [];
+  const reasonsList = reasons.length
+    ? `<ul class="reasons-list">${reasons.map(r => `<li>${escapeHtml(r)}</li>`).join("")}</ul>`
+    : "";
+
   content.innerHTML = `
     <div class="modal-title">${name}</div>
     <div class="modal-tag">${category} · ${formatDateFull(release.published_at)}</div>
@@ -427,11 +576,42 @@ function openModal(release) {
 
     <div class="modal-impact-desc">${impactDescription(release.impact_level)}</div>
 
-    <div class="modal-score-row">
-      <span class="modal-score-label">Score d'impact</span>
-      <span class="modal-score-value impact-${release.impact_level}">${score}</span>
+    <div class="modal-scores-grid">
+      <div class="modal-score-box">
+        <span class="modal-score-label">Score Technique</span>
+        <span class="modal-score-value impact-${release.impact_level}">${techScore}<small style="font-size:.6em;opacity:.6">/100</small></span>
+      </div>
+      <div class="modal-score-box">
+        <span class="modal-score-label">Score Pertinence</span>
+        <span class="modal-score-value">${relScore}<small style="font-size:.6em;opacity:.6">/10</small></span>
+      </div>
+      <div class="modal-score-box">
+        <span class="modal-score-label">Score Final</span>
+        <span class="modal-score-value impact-${release.impact_level}">${finalScore}<small style="font-size:.6em;opacity:.6">/100</small></span>
+      </div>
     </div>
-    ${scoreBreakdown}
+
+    ${action ? `<div class="modal-action ${aCls}">
+      <span class="modal-action-icon">${aIcon}</span>
+      <span class="modal-action-label">Action recommandée</span>
+      <span class="modal-action-value">${escapeHtml(action)}</span>
+    </div>` : ""}
+
+    ${modalUrgencyInfo ? `<div class="modal-urgency ${modalUrgencyInfo.cls}">
+      <span class="modal-urgency-icon">${modalUrgencyInfo.icon}</span>
+      <span class="modal-urgency-label">Urgence</span>
+      <span class="modal-urgency-value">${modalUrgencyInfo.label}</span>
+    </div>` : ""}
+
+    <div class="modal-section">
+      <div class="modal-section-label">Facteurs détectés</div>
+      ${scoreBreakdown || '<div class="modal-body">Aucun facteur détecté dans le changelog.</div>'}
+    </div>
+
+    ${reasonsList ? `<div class="modal-section">
+      <div class="modal-section-label">Analyse</div>
+      ${reasonsList}
+    </div>` : ""}
 
     <div class="modal-section">
       <div class="modal-section-label">Changements</div>
@@ -529,6 +709,26 @@ function initFilters() {
     });
   });
 
+  // Sélecteur de profils
+  document.querySelectorAll(".profile-btn").forEach(btn => {
+    btn.addEventListener("click", () => {
+      const profile = btn.dataset.profile;
+      if (btn.classList.contains("active")) {
+        // Ne pas désactiver si c'est le seul actif
+        if (state.activeProfiles.length > 1) {
+          state.activeProfiles = state.activeProfiles.filter(p => p !== profile);
+          btn.classList.remove("active");
+        }
+      } else {
+        state.activeProfiles.push(profile);
+        btn.classList.add("active");
+      }
+      state.currentPage = 1;
+      renderReleases();
+      renderTopImpact();
+    });
+  });
+
   // Fermeture modal
   document.getElementById("modal-close").addEventListener("click", closeModal);
   document.getElementById("modal-overlay").addEventListener("click", e => {
@@ -536,6 +736,22 @@ function initFilters() {
   });
   document.addEventListener("keydown", e => {
     if (e.key === "Escape") closeModal();
+  });
+}
+
+// ── Tri par profil ────────────────────────────────────────────────
+
+/**
+ * Trie les releases par final_score décroissant (basé sur les profils actifs).
+ * Si la release a déjà un final_score pré-calculé (pipeline), on l'utilise.
+ * Sinon, on trie par impact_score.
+ */
+function sortByProfileRelevance(releases) {
+  return [...releases].sort((a, b) => {
+    const fa = getFinalScore(a);
+    const fb = getFinalScore(b);
+    if (fb !== fa) return fb - fa;
+    return new Date(b.published_at) - new Date(a.published_at);
   });
 }
 

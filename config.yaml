@@ -150,7 +150,132 @@ pypi:
       category: "backend-rust"
       weight: 1.1
 
-# ---- Scoring -----------------------------------------------
+# ---- Analyse d'impact changelog ----------------------------
+impact_analysis:
+
+  # Pondérations par catégorie — modifier ici sans toucher au code
+  changelog_weights:
+    security:       100.0   # CVE, vulnérabilité, faille
+    breaking_change: 50.0   # BREAKING CHANGE, incompatible
+    deprecated:      30.0   # dépréciation d'API
+    removed:         30.0   # suppression de fonctionnalité
+    migration:       25.0   # guide de migration requis
+    performance:     15.0   # optimisations, speedup, mémoire
+    enhancement:     10.0   # nouvelles fonctionnalités
+    bug_fix:          5.0   # corrections de bugs
+    documentation:    1.0   # mise à jour docs uniquement
+
+  # Classification du score technique
+  # 0–20  → LOW | 21–50 → MODERATE | 51–100 → HIGH | >100 → CRITICAL
+
+  # Profils utilisateur par défaut (actifs si non spécifié dans la requête)
+  default_profiles:
+    - data_engineering
+
+  # Profils disponibles — score de pertinence par technologie (0-10)
+  profiles:
+    data_engineering:
+      label: "Data Engineering"
+      technologies:
+        polars:              10
+        duckdb:              10
+        arrow:                9
+        pyarrow:              9
+        iceberg:              8
+        delta_rs:             8
+        delta:                8
+        spark:                7
+        pandas:               6
+        ibis:                 7
+        ibis_framework:       7
+        dbt:                  8
+        great_expectations:   6
+        datafusion:           8
+        substrait:            7
+
+    analytics_engineering:
+      label: "Analytics Engineering"
+      technologies:
+        dbt:         10
+        duckdb:       9
+        polars:       8
+        metabase:     7
+        looker:       7
+        lightdash:    7
+        superset:     6
+        evidence:     8
+        rill:         7
+
+    python:
+      label: "Python"
+      technologies:
+        fastapi:     9
+        pydantic:    8
+        ruff:        8
+        uv:          8
+        pyarrow:     7
+        httpx:       7
+        starlette:   8
+        uvicorn:     7
+        pytest:      7
+        mypy:        7
+        black:       6
+        typer:       7
+        rich:        6
+        structlog:   6
+
+    rust:
+      label: "Rust"
+      technologies:
+        tokio:    10
+        axum:      9
+        serde:     8
+        polars:    8
+        maturin:   8
+        pyo3:      8
+        delta_rs:  7
+        rustc:    10
+        cargo:     9
+
+    ai_llm:
+      label: "AI / LLM"
+      technologies:
+        transformers:          10
+        langchain:              9
+        langchain_core:         9
+        openai:                 8
+        scikit_learn:           7
+        sentence_transformers:  9
+        llama_index:            8
+        vllm:                   9
+        trl:                    8
+        ollama:                 8
+        mistral:                8
+
+    cloud:
+      label: "Cloud"
+      technologies:
+        terraform:    8
+        kubernetes:   9
+        docker:       8
+        helm:         8
+        pulumi:       7
+        ansible:      6
+
+    frontend:
+      label: "Frontend"
+      technologies:
+        react:      10
+        vue:         9
+        svelte:      8
+        typescript:  9
+        vite:        8
+        nextjs:      9
+        tailwind:    7
+        shadcn:      8
+        astro:       7
+
+# ---- Scoring (legacy — conservé pour compatibilité) --------
 scoring:
   weights:
     major_version: 10.0      # bump version majeure

@@ -25,14 +25,16 @@ from engine.summarizer import generate_summary
 from logger import configure_logging, get_logger
 from models import (
     HealthResponse,
+    ImpactAnalysisResponse,
     ImpactLevel,
     ImpactResponse,
     ProcessedRelease,
+    ProfilesResponse,
     ReleasesResponse,
     SummaryReport,
     TrendsResponse,
 )
-from pipeline.storage import load_releases_from_db
+from pipeline.storage import load_releases_from_db, load_impact_history
 from pipeline.trends import compute_trends
 
 configure_logging()
@@ -166,9 +168,93 @@ async def get_summary(release_id: str) -> SummaryReport:
     return generate_summary(release)
 
 
-@app.get("/stats", tags=["data"])
-async def get_stats() -> JSONResponse:
+@app.get("/profiles", response_model=ProfilesResponse, tags=["impact"])
+async def get_profiles() -> ProfilesResponse:
     """
+    Retourne la liste des profils utilisateur disponibles pour le calcul de pertinence.
+    """
+    from engine.impact_analyzer import ProfileEngine
+    engine = ProfileEngine()
+    return ProfilesResponse(profiles=engine.list_profiles())
+
+
+@app.get("/releases/{release_id}/impact", response_model=ImpactAnalysisResponse, tags=["impact"])
+async def get_release_impact(
+    release_id: str,
+    profiles: str = Query(
+        default="",
+        description="Profils séparés par virgule : data_engineering,python,rust…",
+    ),
+) -> ImpactAnalysisResponse:
+    """
+    Analyse l'impact d'une release spécifique selon les profils sélectionnés.
+
+    - `release_id` : identifiant SHA de la release
+    - `profiles`   : profils séparés par virgule (ex: data_engineering,python)
+    """
+    import polars as pl
+    from engine.impact_analyzer import ImpactScoreEngine
+
+    df = load_releases_from_db(limit=10000)
+    if df.is_empty():
+        raise HTTPException(status_code=404, detail="Aucune release trouvée")
+
+    filtered = df.filter(pl.col("id") == release_id)
+    if filtered.is_empty():
+        raise HTTPException(status_code=404, detail=f"Release {release_id!r} introuvable")
+
+    row = filtered.row(0, named=True)
+    active_profiles = [p.strip() for p in profiles.split(",") if p.strip()] or None
+
+    engine = ImpactScoreEngine()
+    impact = engine.analyze(
+        release_id=release_id,
+        project_name=row.get("name", ""),
+        changelog_text=row.get("body_excerpt", ""),
+        profiles=active_profiles,
+    )
+
+    return ImpactAnalysisResponse(
+        release_id=release_id,
+        project_name=row.get("name", ""),
+        tag=row.get("tag", ""),
+        impact=impact,
+    )
+
+
+@app.get("/impact/history", tags=["impact"])
+async def get_impact_history(
+    project: str | None = Query(default=None, description="Filtre par nom de projet"),
+    limit: int = Query(default=50, ge=1, le=200),
+) -> JSONResponse:
+    """
+    Retourne l'historique des scores d'impact pour comparaison entre releases.
+
+    - `project` : filtre partiel sur le nom du projet
+    - `limit`   : nombre max de résultats
+    """
+    df = load_impact_history(project_name=project, limit=limit)
+
+    if df.is_empty():
+        return JSONResponse({"total": 0, "history": []})
+
+    history = []
+    for row in df.iter_rows(named=True):
+        entry = {}
+        for k, v in row.items():
+            if hasattr(v, "isoformat"):
+                entry[k] = v.isoformat()
+            elif isinstance(v, list):
+                entry[k] = v
+            else:
+                entry[k] = v
+        history.append(entry)
+
+    return JSONResponse({"total": len(history), "history": history})
+
+
+@app.get("/stats", tags=["data"])
+async def get_stats() -> JSONResponse:    """
     Retourne des statistiques globales sur le dataset.
     """
     import polars as pl

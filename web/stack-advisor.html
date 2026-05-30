@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="icon" type="image/png" href="ico/01.png">
+  <title>Stack Advisor — Tech Watch</title>
+  <link rel="stylesheet" href="styles.css" />
+  <link rel="stylesheet" href="stack-advisor.css" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet" />
+</head>
+<body>
+
+  <!-- ─── HEADER ──────────────────────────────────────────────── -->
+  <header class="site-header">
+    <div class="container">
+      <div class="header-brand">
+        <a href="index.html" style="display:flex;align-items:center;gap:.6rem;text-decoration:none;color:inherit">
+          <span class="header-icon">🔭</span>
+          <div>
+            <h1 class="header-title">Tech Watch</h1>
+            <p class="header-subtitle">Veille technologique automatisée · Data · IA · Rust · Cloud</p>
+          </div>
+        </a>
+      </div>
+      <div class="header-meta">
+        <nav class="header-nav">
+          <a href="index.html"        class="nav-link">Accueil</a>
+          <a href="dashboard.html"    class="nav-link">Dashboard</a>
+          <a href="outils.html"       class="nav-link">Outils suivis</a>
+          <a href="radar.html"        class="nav-link">Découvertes</a>
+          <a href="compat.html"       class="nav-link">Compatibilité</a>
+          <a href="compare.html"      class="nav-link">Comparatifs</a>
+          <a href="stack-advisor.html" class="nav-link nav-link-active">Stack Advisor</a>
+          <a href="stack-advisor-radar.html" class="nav-link">Stack Radar</a>
+        </nav>
+      </div>
+    </div>
+  </header>
+
+  <!-- ─── HERO ─────────────────────────────────────────────────── -->
+  <section class="sa-hero">
+    <div class="container">
+      <div class="sa-hero-badge">🧠 Rule-based · Déterministe · Explicable</div>
+      <h2 class="sa-hero-title">Stack Advisor</h2>
+      <p class="sa-hero-desc">
+        Décrivez votre besoin en quelques mots, obtenez une recommandation de stack technique
+        classée en trois niveaux : optimal, alternatif, déconseillé.
+      </p>
+    </div>
+  </section>
+
+  <!-- ─── MAIN ─────────────────────────────────────────────────── -->
+  <main class="container sa-main">
+
+    <!-- ─── INPUT PANEL ─────────────────────────────────────────── -->
+    <section class="sa-input-panel">
+      <label class="sa-input-label" for="sa-query">
+        Décrivez votre cas d'usage
+      </label>
+      <textarea
+        id="sa-query"
+        class="sa-textarea"
+        rows="4"
+        placeholder="Ex : « Je veux analyser 30 millions de lignes CSV et calculer des KPI quotidiens »"
+      ></textarea>
+
+      <!-- Quick examples -->
+      <div class="sa-examples">
+        <span class="sa-examples-label">Exemples rapides :</span>
+        <button class="sa-example-btn" data-q="analyser 30 millions de lignes CSV et calculer des KPI quotidiens">📊 KPI 30M lignes</button>
+        <button class="sa-example-btn" data-q="créer une API REST pour exposer des données à une application mobile">🌐 API REST</button>
+        <button class="sa-example-btn" data-q="pipeline ETL simple pour transformer des fichiers CSV en parquet chaque matin">⚙️ ETL quotidien</button>
+        <button class="sa-example-btn" data-q="entraîner un modèle de machine learning sur 500 000 lignes de données tabulaires">🤖 ML tabulaire</button>
+        <button class="sa-example-btn" data-q="script Python rapide pour lire un CSV de 10 000 lignes et générer un rapport Excel">📄 Script simple</button>
+        <button class="sa-example-btn" data-q="traiter des données en streaming en temps réel depuis Kafka">⚡ Streaming temps réel</button>
+        <button class="sa-example-btn" data-q="requêtes SQL analytiques complexes sur un fichier parquet de 5 Go">🦆 Analytics SQL</button>
+      </div>
+
+      <div class="sa-input-actions">
+        <button id="sa-analyze-btn" class="sa-btn-primary">
+          <span class="sa-btn-icon">⚡</span> Analyser ma stack
+        </button>
+        <button id="sa-reset-btn" class="sa-btn-ghost">Réinitialiser</button>
+      </div>
+    </section>
+
+    <!-- ─── RESULTS ──────────────────────────────────────────────── -->
+    <section id="sa-results" class="sa-results hidden">
+
+      <!-- Context detected -->
+      <div class="sa-context-bar" id="sa-context-bar"></div>
+
+      <!-- Three columns -->
+      <div class="sa-columns">
+        <!-- OPTIMISÉ -->
+        <div class="sa-column sa-col-optimized">
+          <div class="sa-col-header">
+            <span class="sa-col-medal">🥇</span>
+            <div>
+              <div class="sa-col-title">OPTIMISÉ</div>
+              <div class="sa-col-subtitle">Meilleure solution pour ce cas</div>
+            </div>
+          </div>
+          <div id="sa-optimized-list" class="sa-tool-list"></div>
+          <div id="sa-optimized-reason" class="sa-col-reason"></div>
+        </div>
+
+        <!-- MÉDIUM -->
+        <div class="sa-column sa-col-medium">
+          <div class="sa-col-header">
+            <span class="sa-col-medal">🥈</span>
+            <div>
+              <div class="sa-col-title">MÉDIUM</div>
+              <div class="sa-col-subtitle">Alternative simple et connue</div>
+            </div>
+          </div>
+          <div id="sa-medium-list" class="sa-tool-list"></div>
+          <div id="sa-medium-reason" class="sa-col-reason"></div>
+        </div>
+
+        <!-- NE PAS UTILISER -->
+        <div class="sa-column sa-col-avoid">
+          <div class="sa-col-header">
+            <span class="sa-col-medal">🚫</span>
+            <div>
+              <div class="sa-col-title">NE PAS UTILISER</div>
+              <div class="sa-col-subtitle">Inadapté à ce cas d'usage</div>
+            </div>
+          </div>
+          <div id="sa-avoid-list" class="sa-tool-list"></div>
+          <div id="sa-avoid-reason" class="sa-col-reason"></div>
+        </div>
+      </div>
+
+      <!-- Explanation -->
+      <div class="sa-explanation" id="sa-explanation">
+        <div class="sa-explanation-header">🧠 Explication de la recommandation</div>
+        <div id="sa-explanation-body" class="sa-explanation-body"></div>
+      </div>
+
+      <!-- Score debug panel -->
+      <details class="sa-debug">
+        <summary class="sa-debug-summary">📐 Détail des scores (débogage)</summary>
+        <div id="sa-debug-body" class="sa-debug-body"></div>
+      </details>
+
+    </section>
+
+    <!-- ─── EMPTY STATE ──────────────────────────────────────────── -->
+    <section id="sa-empty" class="sa-empty">
+      <div class="sa-empty-icon">🏗️</div>
+      <div class="sa-empty-title">Décrivez votre besoin ci-dessus</div>
+      <div class="sa-empty-desc">
+        Le moteur analysera votre description et classera les outils selon
+        le volume de données, le type de tâche et les contraintes implicites.
+      </div>
+    </section>
+
+  </main>
+
+  <!-- ─── FOOTER ──────────────────────────────────────────────── -->
+  <footer class="site-footer">
+    <div class="container footer-content">
+      <span>Tech Watch — Stack Advisor · Rule-based · Aucun LLM requis</span>
+    </div>
+  </footer>
+
+  <script src="stack-advisor.js"></script>
+</body>
+</html>
