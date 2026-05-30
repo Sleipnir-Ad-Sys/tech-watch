@@ -64,9 +64,16 @@ tech-watch/
 │   └── run_pipeline.py       # Pipeline complet
 │
 ├── web/                      # Frontend GitHub Pages
-│   ├── index.html
+│   ├── index.html            # Page d'accueil (landing, stats live)
+│   ├── dashboard.html        # Tableau de bord des releases
+│   ├── radar.html            # Découvertes — radar technologique
+│   ├── outils.html           # Outils suivis (localStorage)
+│   ├── compat.html           # Matrice de compatibilité 12×12
+│   ├── compare.html          # Comparatifs (Chart.js)
 │   ├── styles.css
 │   ├── app.js
+│   ├── radar.js
+│   ├── compare.js
 │   └── data.json             # Données exportées par le pipeline
 │
 ├── data/
@@ -149,13 +156,14 @@ uvicorn api.app:app --reload
 # → http://localhost:8000/docs
 ```
 
-### Voir le dashboard local
-
-Ouvrir `web/index.html` dans un navigateur ou lancer :
+### Voir le site local
 
 ```bash
 python -m http.server 8080 --directory web
-# → http://localhost:8080
+# → http://localhost:8080               (accueil)
+# → http://localhost:8080/dashboard.html (releases)
+# → http://localhost:8080/compat.html    (matrice de compatibilité)
+# → http://localhost:8080/radar.html     (découvertes)
 ```
 
 ---
@@ -203,7 +211,7 @@ Le **RuleEngine** (`engine/rules.py`) applique des règles supplémentaires :
 Le workflow `.github/workflows/daily_pipeline.yml` :
 
 1. Se déclenche chaque jour à 07:00 UTC
-2. Installe les dépendances avec `uv`
+2. Installe les dépendances (`pip install -r requirements.txt`)
 3. Exécute le pipeline complet
 4. Commit `web/data.json` mis à jour
 5. Déploie le dossier `web/` sur GitHub Pages
