@@ -192,8 +192,10 @@ function renderAll() {
 function renderHeader() {
   if (state.updatedAt) {
     const d = new Date(state.updatedAt);
+    const dateStr = d.toLocaleDateString("fr-FR", { day: "2-digit", month: "2-digit", year: "numeric" });
+    const timeStr = d.toLocaleTimeString("fr-FR", { hour: "2-digit", minute: "2-digit" });
     document.getElementById("last-updated").textContent =
-      "Mis à jour " + formatDate(state.updatedAt);
+      "Mis à jour " + formatDate(state.updatedAt) + " · " + dateStr + " " + timeStr;
   }
 }
 
