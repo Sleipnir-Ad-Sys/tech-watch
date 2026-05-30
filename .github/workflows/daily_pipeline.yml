@@ -111,11 +111,6 @@ jobs:
       - name: Setup Pages
         uses: actions/configure-pages@v5
 
-      - name: Copy public assets into web/
-        run: |
-          mkdir -p web/public
-          cp -r public/* web/public/
-
       - name: Upload Pages artifact
         uses: actions/upload-pages-artifact@v3
         with:
