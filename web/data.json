@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-05-31T08:03:21.348354",
+  "updated_at": "2026-05-31T16:43:16.251203",
   "releases": [
     {
       "id": "9aad874a268c367e",
@@ -16,18 +16,18 @@
       "breaking_snippets": [],
       "repo_weight": 1.5,
       "html_url": "https://github.com/pola-rs/polars/releases/tag/py-1.41.2",
-      "collected_at": "2026-05-31T08:02:29.068446",
-      "technical_score": 77.0,
+      "collected_at": "2026-05-31T16:42:13.498848",
+      "technical_score": 46.0,
       "relevance_score": 10.0,
-      "final_score": 83.9,
-      "impact_score": 79.0,
-      "impact_level": "critical",
+      "final_score": 62.2,
+      "impact_score": 48.0,
+      "impact_level": "high",
       "urgency_level": "LOW",
       "detected_factors": [
         {
           "category": "enhancement",
           "count": 5,
-          "score_contribution": 50.0,
+          "score_contribution": 30.0,
           "snippets": [
             "## ✨ Enhancements",
             "- Add release dates to the On-Prem releases page (#27787)",
@@ -39,7 +39,7 @@
         {
           "category": "performance",
           "count": 1,
-          "score_contribution": 15.0,
+          "score_contribution": 8.0,
           "snippets": [
             "## 🚀 Performance improvements"
           ]
@@ -47,7 +47,7 @@
         {
           "category": "bug_fix",
           "count": 2,
-          "score_contribution": 10.0,
+          "score_contribution": 6.0,
           "snippets": [
             "## 🐞 Bug fixes",
             "- Broken link to AI Policy corrected (#27793)"
@@ -68,7 +68,7 @@
         "1 amélioration(s) de performance",
         "5 amélioration(s) / nouvelle(s) fonctionnalité(s)",
         "2 correction(s) de bug(s)",
-        "Impact critical — intégrer au prochain cycle de mise à jour"
+        "Impact high — intégrer au prochain cycle de mise à jour"
       ]
     },
     {
@@ -86,7 +86,7 @@
       "breaking_snippets": [],
       "repo_weight": 1.5,
       "html_url": "https://pypi.org/project/polars/1.41.2/",
-      "collected_at": "2026-05-31T08:03:02.006920",
+      "collected_at": "2026-05-31T16:42:56.636487",
       "technical_score": 0.0,
       "relevance_score": 10.0,
       "final_score": 30.0,
@@ -114,18 +114,18 @@
       "breaking_snippets": [],
       "repo_weight": 1.1,
       "html_url": "https://github.com/astral-sh/uv/releases/tag/0.11.17",
-      "collected_at": "2026-05-31T08:02:48.858041",
-      "technical_score": 100.0,
+      "collected_at": "2026-05-31T16:42:40.324135",
+      "technical_score": 87.0,
       "relevance_score": 0.0,
-      "final_score": 70.0,
-      "impact_score": 108.0,
+      "final_score": 60.9,
+      "impact_score": 95.0,
       "impact_level": "critical",
       "urgency_level": "LOW",
       "detected_factors": [
         {
           "category": "enhancement",
           "count": 6,
-          "score_contribution": 60.0,
+          "score_contribution": 36.0,
           "snippets": [
             "### Enhancements",
             "- Add a diagnostic for `uv add` with standard library modules (#19572)",
@@ -145,7 +145,7 @@
         {
           "category": "bug_fix",
           "count": 4,
-          "score_contribution": 20.0,
+          "score_contribution": 12.0,
           "snippets": [
             "### Bug fixes",
             "- Fix script environment creation for scripts with long filenames (#19539)",
@@ -156,7 +156,7 @@
         {
           "category": "performance",
           "count": 1,
-          "score_contribution": 15.0,
+          "score_contribution": 8.0,
           "snippets": [
             "- Improve the performance of large entries in `tool.uv.conflicts` (#19538)"
           ]
@@ -193,7 +193,7 @@
       "breaking_snippets": [],
       "repo_weight": 1.1,
       "html_url": "https://pypi.org/project/uv/0.11.17/",
-      "collected_at": "2026-05-31T08:03:05.310475",
+      "collected_at": "2026-05-31T16:43:00.142188",
       "technical_score": 0.0,
       "relevance_score": 0.0,
       "final_score": 0.0,
@@ -221,7 +221,7 @@
       "breaking_snippets": [],
       "repo_weight": 1.2,
       "html_url": "https://pypi.org/project/ruff/0.15.15/",
-      "collected_at": "2026-05-31T08:03:04.832989",
+      "collected_at": "2026-05-31T16:42:59.648048",
       "technical_score": 0.0,
       "relevance_score": 0.0,
       "final_score": 0.0,
@@ -249,12 +249,12 @@
       "breaking_snippets": [],
       "repo_weight": 1.5,
       "html_url": "https://github.com/pola-rs/polars/releases/tag/py-1.41.1",
-      "collected_at": "2026-05-31T08:02:29.068469",
+      "collected_at": "2026-05-31T16:42:13.498870",
       "technical_score": 100.0,
       "relevance_score": 10.0,
       "final_score": 100.0,
       "impact_score": 102.0,
-      "impact_level": "critical",
+      "impact_level": "high",
       "urgency_level": "LOW",
       "detected_factors": [
         {
@@ -267,18 +267,9 @@
           ]
         },
         {
-          "category": "performance",
-          "count": 2,
-          "score_contribution": 30.0,
-          "snippets": [
-            "## 🚀 Performance improvements",
-            "- Fix memory usage regression affecting TPCH Q22 (#27758)"
-          ]
-        },
-        {
           "category": "enhancement",
           "count": 3,
-          "score_contribution": 30.0,
+          "score_contribution": 18.0,
           "snippets": [
             "## ✨ Enhancements",
             "- Add `POLARS_ALLOW_NESTED_CSPE` env var and make nested CSPE opt-in (#27765)",
@@ -288,13 +279,22 @@
         {
           "category": "bug_fix",
           "count": 6,
-          "score_contribution": 30.0,
+          "score_contribution": 18.0,
           "snippets": [
             "## 🐞 Bug fixes",
             "- Fix memory usage regression affecting TPCH Q22 (#27758)",
             "- Fix loss of precision for smaller floating types(#27662) (#27732)",
             "- Fix portstate assertion error on is\\_in (#27757)",
             "- Fix incorrect when/then after forward fill / reverse in groupby (#27745)"
+          ]
+        },
+        {
+          "category": "performance",
+          "count": 2,
+          "score_contribution": 16.0,
+          "snippets": [
+            "## 🚀 Performance improvements",
+            "- Fix memory usage regression affecting TPCH Q22 (#27758)"
           ]
         },
         {
@@ -313,7 +313,7 @@
         "2 amélioration(s) de performance",
         "3 amélioration(s) / nouvelle(s) fonctionnalité(s)",
         "6 correction(s) de bug(s)",
-        "Impact critical — intégrer au prochain cycle de mise à jour"
+        "Impact high — intégrer au prochain cycle de mise à jour"
       ]
     },
     {
@@ -331,7 +331,7 @@
       "breaking_snippets": [],
       "repo_weight": 1.5,
       "html_url": "https://pypi.org/project/polars/1.41.1/",
-      "collected_at": "2026-05-31T08:03:02.006913",
+      "collected_at": "2026-05-31T16:42:56.636480",
       "technical_score": 0.0,
       "relevance_score": 10.0,
       "final_score": 30.0,
@@ -359,18 +359,18 @@
       "breaking_snippets": [],
       "repo_weight": 1.2,
       "html_url": "https://pypi.org/project/fastapi/0.136.3/",
-      "collected_at": "2026-05-31T08:03:02.442524",
-      "technical_score": 15.0,
+      "collected_at": "2026-05-31T16:42:57.107100",
+      "technical_score": 8.0,
       "relevance_score": 0.0,
-      "final_score": 10.5,
-      "impact_score": 15.0,
+      "final_score": 5.6,
+      "impact_score": 8.0,
       "impact_level": "low",
       "urgency_level": "LOW",
       "detected_factors": [
         {
           "category": "performance",
           "count": 1,
-          "score_contribution": 15.0,
+          "score_contribution": 8.0,
           "snippets": [
             "FastAPI framework, high performance, easy to learn, fast to code, ready for production"
           ]
@@ -396,7 +396,7 @@
       "breaking_snippets": [],
       "repo_weight": 1.2,
       "html_url": "https://github.com/fastapi/fastapi/releases/tag/0.136.3",
-      "collected_at": "2026-05-31T08:02:36.347574",
+      "collected_at": "2026-05-31T16:42:23.329396",
       "technical_score": 0.0,
       "relevance_score": 0.0,
       "final_score": 0.0,
@@ -424,7 +424,7 @@
       "breaking_snippets": [],
       "repo_weight": 1.2,
       "html_url": "https://github.com/fastapi/fastapi/releases/tag/0.136.2",
-      "collected_at": "2026-05-31T08:02:36.347593",
+      "collected_at": "2026-05-31T16:42:23.329412",
       "technical_score": 100.0,
       "relevance_score": 0.0,
       "final_score": 70.0,
@@ -475,18 +475,18 @@
       "breaking_snippets": [],
       "repo_weight": 1.5,
       "html_url": "https://github.com/pola-rs/polars/releases/tag/py-1.41.0",
-      "collected_at": "2026-05-31T08:02:29.068478",
-      "technical_score": 100.0,
+      "collected_at": "2026-05-31T16:42:13.498878",
+      "technical_score": 96.0,
       "relevance_score": 10.0,
-      "final_score": 100.0,
-      "impact_score": 102.0,
-      "impact_level": "critical",
+      "final_score": 97.2,
+      "impact_score": 98.0,
+      "impact_level": "high",
       "urgency_level": "LOW",
       "detected_factors": [
         {
           "category": "enhancement",
           "count": 7,
-          "score_contribution": 70.0,
+          "score_contribution": 42.0,
           "snippets": [
             "- Add LazyFrame.gather (#27501)",
             "- Add streaming GatherNode (#27465)",
@@ -496,21 +496,21 @@
           ]
         },
         {
-          "category": "performance",
-          "count": 3,
-          "score_contribution": 45.0,
-          "snippets": [
-            "## 🚀 Performance improvements",
-            "- Optimise `json_decode` Datetime string parsing (#27559)",
-            "- Optimize `select(len())` for non-strict horizontal concat (#27516)"
-          ]
-        },
-        {
           "category": "deprecated",
           "count": 1,
           "score_contribution": 30.0,
           "snippets": [
             "- Deprecate the StringCache (#27580)"
+          ]
+        },
+        {
+          "category": "performance",
+          "count": 3,
+          "score_contribution": 24.0,
+          "snippets": [
+            "## 🚀 Performance improvements",
+            "- Optimise `json_decode` Datetime string parsing (#27559)",
+            "- Optimize `select(len())` for non-strict horizontal concat (#27516)"
           ]
         }
       ],
@@ -519,7 +519,7 @@
         "3 amélioration(s) de performance",
         "1 dépréciation(s) — planifier avant suppression",
         "7 amélioration(s) / nouvelle(s) fonctionnalité(s)",
-        "Impact critical — intégrer au prochain cycle de mise à jour"
+        "Impact high — intégrer au prochain cycle de mise à jour"
       ]
     },
     {
@@ -537,7 +537,7 @@
       "breaking_snippets": [],
       "repo_weight": 1.5,
       "html_url": "https://pypi.org/project/polars/1.41.0/",
-      "collected_at": "2026-05-31T08:03:02.006906",
+      "collected_at": "2026-05-31T16:42:56.636473",
       "technical_score": 0.0,
       "relevance_score": 10.0,
       "final_score": 30.0,
@@ -567,18 +567,18 @@
       ],
       "repo_weight": 1.1,
       "html_url": "https://github.com/astral-sh/uv/releases/tag/0.11.16",
-      "collected_at": "2026-05-31T08:02:48.858059",
-      "technical_score": 36.0,
+      "collected_at": "2026-05-31T16:42:40.324151",
+      "technical_score": 22.0,
       "relevance_score": 0.0,
-      "final_score": 25.2,
-      "impact_score": 41.0,
+      "final_score": 15.4,
+      "impact_score": 27.0,
       "impact_level": "high",
       "urgency_level": "LOW",
       "detected_factors": [
         {
           "category": "enhancement",
           "count": 3,
-          "score_contribution": 30.0,
+          "score_contribution": 18.0,
           "snippets": [
             "### Enhancements",
             "- Add support for direct archive dependencies in Git (#10072)",
@@ -588,7 +588,7 @@
         {
           "category": "bug_fix",
           "count": 1,
-          "score_contribution": 5.0,
+          "score_contribution": 3.0,
           "snippets": [
             "### Bug fixes"
           ]
@@ -602,12 +602,9 @@
           ]
         }
       ],
-      "action_recommended": "SURVEILLER",
+      "action_recommended": "IGNORER",
       "analysis_reasons": [
-        "3 enhancement(s)",
-        "1 bug fix(s)",
-        "1 documentation(s)",
-        "Changements non critiques — surveillance recommandée"
+        "Impact faible — pas d'action requise"
       ]
     },
     {
@@ -625,7 +622,7 @@
       "breaking_snippets": [],
       "repo_weight": 1.1,
       "html_url": "https://pypi.org/project/uv/0.11.16/",
-      "collected_at": "2026-05-31T08:03:05.310449",
+      "collected_at": "2026-05-31T16:43:00.142163",
       "technical_score": 0.0,
       "relevance_score": 0.0,
       "final_score": 0.0,
@@ -653,7 +650,7 @@
       "breaking_snippets": [],
       "repo_weight": 1.2,
       "html_url": "https://pypi.org/project/openai/2.38.0/",
-      "collected_at": "2026-05-31T08:03:04.354982",
+      "collected_at": "2026-05-31T16:42:59.147250",
       "technical_score": 0.0,
       "relevance_score": 0.0,
       "final_score": 0.0,
@@ -681,7 +678,7 @@
       "breaking_snippets": [],
       "repo_weight": 1.2,
       "html_url": "https://pypi.org/project/ruff/0.15.14/",
-      "collected_at": "2026-05-31T08:03:04.832965",
+      "collected_at": "2026-05-31T16:42:59.648025",
       "technical_score": 0.0,
       "relevance_score": 0.0,
       "final_score": 0.0,
@@ -709,7 +706,7 @@
       "breaking_snippets": [],
       "repo_weight": 1.4,
       "html_url": "https://pypi.org/project/transformers/5.9.0/",
-      "collected_at": "2026-05-31T08:03:03.714330",
+      "collected_at": "2026-05-31T16:42:58.475035",
       "technical_score": 0.0,
       "relevance_score": 0.0,
       "final_score": 0.0,
@@ -739,11 +736,11 @@
       ],
       "repo_weight": 1.3,
       "html_url": "https://github.com/huggingface/transformers/releases/tag/v5.9.0",
-      "collected_at": "2026-05-31T08:02:44.387636",
-      "technical_score": 94.0,
+      "collected_at": "2026-05-31T16:42:34.306489",
+      "technical_score": 78.0,
       "relevance_score": 0.0,
-      "final_score": 65.8,
-      "impact_score": 99.0,
+      "final_score": 54.6,
+      "impact_score": 83.0,
       "impact_level": "high",
       "urgency_level": "HIGH",
       "detected_factors": [
@@ -758,7 +755,7 @@
         {
           "category": "enhancement",
           "count": 4,
-          "score_contribution": 40.0,
+          "score_contribution": 24.0,
           "snippets": [
             "Command A+ is a Mixture-of-Experts (MoE) language model from Cohere that features a hybrid attention pattern combining sliding window and full attention layers. The model incorporates both shared and ",
             "* Add new cohere2_moe model (#46115) by @Cyrilvallez in #46115",
@@ -799,7 +796,7 @@
       "breaking_snippets": [],
       "repo_weight": 1.5,
       "html_url": "https://pypi.org/project/duckdb/1.5.3/",
-      "collected_at": "2026-05-31T08:03:02.232017",
+      "collected_at": "2026-05-31T16:42:56.885873",
       "technical_score": 0.0,
       "relevance_score": 10.0,
       "final_score": 30.0,
@@ -827,18 +824,18 @@
       "breaking_snippets": [],
       "repo_weight": 1.5,
       "html_url": "https://github.com/duckdb/duckdb/releases/tag/v1.5.3",
-      "collected_at": "2026-05-31T08:02:33.206854",
-      "technical_score": 55.0,
+      "collected_at": "2026-05-31T16:42:19.021662",
+      "technical_score": 33.0,
       "relevance_score": 10.0,
-      "final_score": 68.5,
-      "impact_score": 57.0,
+      "final_score": 53.1,
+      "impact_score": 35.0,
       "impact_level": "high",
       "urgency_level": "LOW",
       "detected_factors": [
         {
           "category": "bug_fix",
           "count": 7,
-          "score_contribution": 35.0,
+          "score_contribution": 21.0,
           "snippets": [
             "This is a bugfix release for various issues discovered after we released v1.5.2.",
             "* fix: resolve current catalog in ADBC Ingest to avoid temp table shadowing by @eitsupi in https://github.com/duckdb/duckdb/pull/22020",
@@ -850,7 +847,7 @@
         {
           "category": "enhancement",
           "count": 2,
-          "score_contribution": 20.0,
+          "score_contribution": 12.0,
           "snippets": [
             "* Add iceberg copy function autoload by @NiclasHaderer in https://github.com/duckdb/duckdb/pull/22037",
             "* Add `DISABLE_BUILTIN_HTTPLIB` option by @carlopi in https://github.com/duckdb/duckdb/pull/22054"
@@ -879,18 +876,18 @@
       "breaking_snippets": [],
       "repo_weight": 1.2,
       "html_url": "https://github.com/apache/iceberg/releases/tag/apache-iceberg-1.11.0",
-      "collected_at": "2026-05-31T08:02:57.867959",
-      "technical_score": 23.0,
+      "collected_at": "2026-05-31T16:42:51.109443",
+      "technical_score": 15.0,
       "relevance_score": 8.0,
-      "final_score": 40.1,
-      "impact_score": 25.0,
+      "final_score": 34.5,
+      "impact_score": 17.0,
       "impact_level": "moderate",
       "urgency_level": "LOW",
       "detected_factors": [
         {
           "category": "enhancement",
           "count": 2,
-          "score_contribution": 20.0,
+          "score_contribution": 12.0,
           "snippets": [
             "* Revert \"[SPEC] Add implementation note about schema evolution (#13936)\" by @emkornfield in https://github.com/apache/iceberg/pull/14002",
             "* Core: Extended header support for RESTClient implementations by @gaborkaszab in https://github.com/apache/iceberg/pull/12194"
@@ -929,7 +926,7 @@
       "breaking_snippets": [],
       "repo_weight": 1.1,
       "html_url": "https://pypi.org/project/sentence-transformers/5.5.1/",
-      "collected_at": "2026-05-31T08:03:04.560659",
+      "collected_at": "2026-05-31T16:42:59.364661",
       "technical_score": 0.0,
       "relevance_score": 0.0,
       "final_score": 0.0,
@@ -957,18 +954,18 @@
       "breaking_snippets": [],
       "repo_weight": 1.2,
       "html_url": "https://github.com/delta-io/delta-rs/releases/tag/rust-v0.32.3",
-      "collected_at": "2026-05-31T08:02:58.486486",
-      "technical_score": 12.0,
+      "collected_at": "2026-05-31T16:42:51.974519",
+      "technical_score": 8.0,
       "relevance_score": 8.0,
-      "final_score": 32.4,
-      "impact_score": 14.0,
+      "final_score": 29.6,
+      "impact_score": 10.0,
       "impact_level": "moderate",
       "urgency_level": "LOW",
       "detected_factors": [
         {
           "category": "enhancement",
           "count": 1,
-          "score_contribution": 10.0,
+          "score_contribution": 6.0,
           "snippets": [
             "- feat: add support for variant type \\#4325 (abhiaagarwal)"
           ]
@@ -1005,26 +1002,14 @@
       "breaking_snippets": [],
       "repo_weight": 1.2,
       "html_url": "https://github.com/delta-io/delta-rs/releases/tag/python-v1.6.0",
-      "collected_at": "2026-05-31T08:02:58.486504",
-      "technical_score": 93.0,
+      "collected_at": "2026-05-31T16:42:51.974534",
+      "technical_score": 69.0,
       "relevance_score": 8.0,
-      "final_score": 89.1,
-      "impact_score": 103.0,
+      "final_score": 72.3,
+      "impact_score": 79.0,
       "impact_level": "critical",
       "urgency_level": "LOW",
       "detected_factors": [
-        {
-          "category": "bug_fix",
-          "count": 8,
-          "score_contribution": 40.0,
-          "snippets": [
-            "- \\[Bug\\]: Python 1.5.1 MERGE regression: small source batch uses substantially more RSS than 1.5.0 \\#4422",
-            "- \\[Bug\\]: Regression in 1.5.1: schema\\_mode='overwrite' with predicate fails for mixed-case column names \\(utcDate\\) \\#4404",
-            "- \\[Bug\\]: Clarification \\(or regression\\) `dataSkippingNumIndexedCols` \\#4398",
-            "- fix: normalize commit metadata handling \\#4455 (ethan-tyler)",
-            "- fix: restore merge safe cast behavior \\#4454 (ethan-tyler)"
-          ]
-        },
         {
           "category": "deprecated",
           "count": 1,
@@ -1034,9 +1019,21 @@
           ]
         },
         {
+          "category": "bug_fix",
+          "count": 8,
+          "score_contribution": 24.0,
+          "snippets": [
+            "- \\[Bug\\]: Python 1.5.1 MERGE regression: small source batch uses substantially more RSS than 1.5.0 \\#4422",
+            "- \\[Bug\\]: Regression in 1.5.1: schema\\_mode='overwrite' with predicate fails for mixed-case column names \\(utcDate\\) \\#4404",
+            "- \\[Bug\\]: Clarification \\(or regression\\) `dataSkippingNumIndexedCols` \\#4398",
+            "- fix: normalize commit metadata handling \\#4455 (ethan-tyler)",
+            "- fix: restore merge safe cast behavior \\#4454 (ethan-tyler)"
+          ]
+        },
+        {
           "category": "enhancement",
           "count": 2,
-          "score_contribution": 20.0,
+          "score_contribution": 12.0,
           "snippets": [
             "- \\[Feature\\]: Support passing datatypes other than string in custom\\_metadata in CommitProperties from python \\#4443",
             "- \\[Feature\\]: Build Musl arm64 wheels \\#4392"
@@ -1058,7 +1055,7 @@
         "1 dépréciation(s) — planifier avant suppression",
         "2 amélioration(s) / nouvelle(s) fonctionnalité(s)",
         "8 correction(s) de bug(s)",
-        "Impact critical — intégrer au prochain cycle de mise à jour"
+        "Impact high — intégrer au prochain cycle de mise à jour"
       ]
     },
     {
@@ -1076,7 +1073,7 @@
       "breaking_snippets": [],
       "repo_weight": 1.2,
       "html_url": "https://github.com/apache/iceberg/releases/tag/apache-iceberg-1.10.2",
-      "collected_at": "2026-05-31T08:02:57.867978",
+      "collected_at": "2026-05-31T16:42:51.109459",
       "technical_score": 100.0,
       "relevance_score": 8.0,
       "final_score": 94.0,
@@ -1103,7 +1100,7 @@
         {
           "category": "bug_fix",
           "count": 1,
-          "score_contribution": 5.0,
+          "score_contribution": 3.0,
           "snippets": [
             "* AWS: Backport License/Notice fixes (#16196) by @amogh-jahagirdar in https://github.com/apache/iceber"
           ]
@@ -1131,7 +1128,7 @@
       "breaking_snippets": [],
       "repo_weight": 1.1,
       "html_url": "https://github.com/astral-sh/uv/releases/tag/0.11.15",
-      "collected_at": "2026-05-31T08:02:48.858066",
+      "collected_at": "2026-05-31T16:42:40.324157",
       "technical_score": 100.0,
       "relevance_score": 0.0,
       "final_score": 70.0,
@@ -1148,18 +1145,9 @@
           ]
         },
         {
-          "category": "performance",
-          "count": 2,
-          "score_contribution": 30.0,
-          "snippets": [
-            "### Performance",
-            "- Optimize async wheel ZIP writing (#19383)"
-          ]
-        },
-        {
           "category": "enhancement",
           "count": 3,
-          "score_contribution": 30.0,
+          "score_contribution": 18.0,
           "snippets": [
             "### Enhancements",
             "- Add TOML v1.1 -> v1.0 backwards compatibility for source distributions (#18741)",
@@ -1167,9 +1155,18 @@
           ]
         },
         {
+          "category": "performance",
+          "count": 2,
+          "score_contribution": 16.0,
+          "snippets": [
+            "### Performance",
+            "- Optimize async wheel ZIP writing (#19383)"
+          ]
+        },
+        {
           "category": "bug_fix",
           "count": 5,
-          "score_contribution": 25.0,
+          "score_contribution": 15.0,
           "snippets": [
             "- Fix a TAR parser differential, see GHSA-3cv2-h65g-fgmm (#19463)",
             "- Fix dead \"already trimmed\" fast-path in `Version::only_release_trimmed` (#19425)",
@@ -1209,7 +1206,7 @@
       "breaking_snippets": [],
       "repo_weight": 1.1,
       "html_url": "https://pypi.org/project/uv/0.11.15/",
-      "collected_at": "2026-05-31T08:03:05.310422",
+      "collected_at": "2026-05-31T16:43:00.142138",
       "technical_score": 0.0,
       "relevance_score": 0.0,
       "final_score": 0.0,
@@ -1237,7 +1234,7 @@
       "breaking_snippets": [],
       "repo_weight": 1.0,
       "html_url": "https://pypi.org/project/deltalake/1.6.0/",
-      "collected_at": "2026-05-31T08:03:03.295935",
+      "collected_at": "2026-05-31T16:42:58.003288",
       "technical_score": 0.0,
       "relevance_score": 8.0,
       "final_score": 24.0,
@@ -1265,7 +1262,7 @@
       "breaking_snippets": [],
       "repo_weight": 1.2,
       "html_url": "https://github.com/delta-io/delta-rs/releases/tag/rust-v0.32.2",
-      "collected_at": "2026-05-31T08:02:58.486511",
+      "collected_at": "2026-05-31T16:42:51.974540",
       "technical_score": 100.0,
       "relevance_score": 8.0,
       "final_score": 94.0,
@@ -1276,7 +1273,7 @@
         {
           "category": "bug_fix",
           "count": 12,
-          "score_contribution": 60.0,
+          "score_contribution": 36.0,
           "snippets": [
             "- \\[Bug\\]: Python 1.5.1 MERGE regression: small source batch uses substantially more RSS than 1.5.0 \\#4422",
             "- \\[Bug\\]: Clarification \\(or regression\\) `dataSkippingNumIndexedCols` \\#4398",
@@ -1304,7 +1301,7 @@
         {
           "category": "enhancement",
           "count": 1,
-          "score_contribution": 10.0,
+          "score_contribution": 6.0,
           "snippets": [
             "- \\[Feature\\]: Support passing datatypes other than string in custom\\_metadata in CommitProperties from python \\#4443"
           ]
@@ -1325,7 +1322,7 @@
         "1 dépréciation(s) — planifier avant suppression",
         "1 amélioration(s) / nouvelle(s) fonctionnalité(s)",
         "12 correction(s) de bug(s)",
-        "Impact critical — intégrer au prochain cycle de mise à jour"
+        "Impact high — intégrer au prochain cycle de mise à jour"
       ]
     },
     {
@@ -1343,7 +1340,7 @@
       "breaking_snippets": [],
       "repo_weight": 1.2,
       "html_url": "https://pypi.org/project/openai/2.37.0/",
-      "collected_at": "2026-05-31T08:03:04.354975",
+      "collected_at": "2026-05-31T16:42:59.147243",
       "technical_score": 0.0,
       "relevance_score": 0.0,
       "final_score": 0.0,
@@ -1371,7 +1368,7 @@
       "breaking_snippets": [],
       "repo_weight": 1.2,
       "html_url": "https://pypi.org/project/ruff/0.15.13/",
-      "collected_at": "2026-05-31T08:03:04.832940",
+      "collected_at": "2026-05-31T16:42:59.648001",
       "technical_score": 0.0,
       "relevance_score": 0.0,
       "final_score": 0.0,
@@ -1399,7 +1396,7 @@
       "breaking_snippets": [],
       "repo_weight": 1.4,
       "html_url": "https://pypi.org/project/transformers/5.8.1/",
-      "collected_at": "2026-05-31T08:03:03.714323",
+      "collected_at": "2026-05-31T16:42:58.475028",
       "technical_score": 0.0,
       "relevance_score": 0.0,
       "final_score": 0.0,
@@ -1427,18 +1424,18 @@
       "breaking_snippets": [],
       "repo_weight": 1.3,
       "html_url": "https://github.com/huggingface/transformers/releases/tag/v5.8.1",
-      "collected_at": "2026-05-31T08:02:44.387655",
-      "technical_score": 15.0,
+      "collected_at": "2026-05-31T16:42:34.306505",
+      "technical_score": 9.0,
       "relevance_score": 0.0,
-      "final_score": 10.5,
-      "impact_score": 15.0,
+      "final_score": 6.3,
+      "impact_score": 9.0,
       "impact_level": "low",
       "urgency_level": "LOW",
       "detected_factors": [
         {
           "category": "bug_fix",
           "count": 3,
-          "score_contribution": 15.0,
+          "score_contribution": 9.0,
           "snippets": [
             "# Patch release v5.8.1",
             "* Fix WeightConverter regex incorrectly matching shared_experts as experts by @silencelamb, @claude",
@@ -1466,18 +1463,18 @@
       "breaking_snippets": [],
       "repo_weight": 1.1,
       "html_url": "https://github.com/astral-sh/uv/releases/tag/0.11.14",
-      "collected_at": "2026-05-31T08:02:48.858072",
-      "technical_score": 30.0,
+      "collected_at": "2026-05-31T16:42:40.324163",
+      "technical_score": 18.0,
       "relevance_score": 0.0,
-      "final_score": 21.0,
-      "impact_score": 30.0,
-      "impact_level": "moderate",
+      "final_score": 12.6,
+      "impact_score": 18.0,
+      "impact_level": "low",
       "urgency_level": "LOW",
       "detected_factors": [
         {
           "category": "enhancement",
           "count": 2,
-          "score_contribution": 20.0,
+          "score_contribution": 12.0,
           "snippets": [
             "### Enhancements",
             "- Add Astral mirror URL override (#19206)"
@@ -1486,18 +1483,16 @@
         {
           "category": "bug_fix",
           "count": 2,
-          "score_contribution": 10.0,
+          "score_contribution": 6.0,
           "snippets": [
             "### Bug fixes",
             "- Fix `uv tree` showing extra-conditional deps for packages required without extras (#19332)"
           ]
         }
       ],
-      "action_recommended": "SURVEILLER",
+      "action_recommended": "IGNORER",
       "analysis_reasons": [
-        "2 enhancement(s)",
-        "2 bug fix(s)",
-        "Changements non critiques — surveillance recommandée"
+        "Impact faible — pas d'action requise"
       ]
     },
     {
@@ -1515,7 +1510,7 @@
       "breaking_snippets": [],
       "repo_weight": 1.1,
       "html_url": "https://pypi.org/project/uv/0.11.14/",
-      "collected_at": "2026-05-31T08:03:05.310396",
+      "collected_at": "2026-05-31T16:43:00.142114",
       "technical_score": 0.0,
       "relevance_score": 0.0,
       "final_score": 0.0,
@@ -1543,7 +1538,7 @@
       "breaking_snippets": [],
       "repo_weight": 1.1,
       "html_url": "https://pypi.org/project/sentence-transformers/5.5.0/",
-      "collected_at": "2026-05-31T08:03:04.560651",
+      "collected_at": "2026-05-31T16:42:59.364653",
       "technical_score": 0.0,
       "relevance_score": 0.0,
       "final_score": 0.0,
@@ -1571,7 +1566,7 @@
       "breaking_snippets": [],
       "repo_weight": 1.3,
       "html_url": "https://pypi.org/project/langchain-core/1.4.0/",
-      "collected_at": "2026-05-31T08:03:04.142158",
+      "collected_at": "2026-05-31T16:42:58.923783",
       "technical_score": 0.0,
       "relevance_score": 0.0,
       "final_score": 0.0,
@@ -1599,7 +1594,7 @@
       "breaking_snippets": [],
       "repo_weight": 1.0,
       "html_url": "https://pypi.org/project/maturin/1.13.3/",
-      "collected_at": "2026-05-31T08:03:05.062380",
+      "collected_at": "2026-05-31T16:42:59.885878",
       "technical_score": 0.0,
       "relevance_score": 0.0,
       "final_score": 0.0,
@@ -1627,18 +1622,18 @@
       "breaking_snippets": [],
       "repo_weight": 1.1,
       "html_url": "https://github.com/astral-sh/uv/releases/tag/0.11.13",
-      "collected_at": "2026-05-31T08:02:48.858078",
-      "technical_score": 15.0,
+      "collected_at": "2026-05-31T16:42:40.324168",
+      "technical_score": 9.0,
       "relevance_score": 0.0,
-      "final_score": 10.5,
-      "impact_score": 15.0,
+      "final_score": 6.3,
+      "impact_score": 9.0,
       "impact_level": "low",
       "urgency_level": "LOW",
       "detected_factors": [
         {
           "category": "enhancement",
           "count": 1,
-          "score_contribution": 10.0,
+          "score_contribution": 6.0,
           "snippets": [
             "- Add CPython 3.14.5"
           ]
@@ -1646,7 +1641,7 @@
         {
           "category": "bug_fix",
           "count": 1,
-          "score_contribution": 5.0,
+          "score_contribution": 3.0,
           "snippets": [
             "### Bug fixes"
           ]
@@ -1672,7 +1667,7 @@
       "breaking_snippets": [],
       "repo_weight": 1.1,
       "html_url": "https://pypi.org/project/uv/0.11.13/",
-      "collected_at": "2026-05-31T08:03:05.310369",
+      "collected_at": "2026-05-31T16:43:00.142088",
       "technical_score": 0.0,
       "relevance_score": 0.0,
       "final_score": 0.0,
@@ -1700,7 +1695,7 @@
       "breaking_snippets": [],
       "repo_weight": 1.0,
       "html_url": "https://pypi.org/project/maturin/1.13.2/",
-      "collected_at": "2026-05-31T08:03:05.062359",
+      "collected_at": "2026-05-31T16:42:59.885859",
       "technical_score": 0.0,
       "relevance_score": 0.0,
       "final_score": 0.0,
@@ -1728,18 +1723,18 @@
       "breaking_snippets": [],
       "repo_weight": 1.1,
       "html_url": "https://github.com/astral-sh/uv/releases/tag/0.11.12",
-      "collected_at": "2026-05-31T08:02:48.858084",
-      "technical_score": 41.0,
+      "collected_at": "2026-05-31T16:42:40.324174",
+      "technical_score": 25.0,
       "relevance_score": 0.0,
-      "final_score": 28.7,
-      "impact_score": 49.0,
+      "final_score": 17.5,
+      "impact_score": 33.0,
       "impact_level": "critical",
       "urgency_level": "LOW",
       "detected_factors": [
         {
           "category": "enhancement",
           "count": 3,
-          "score_contribution": 30.0,
+          "score_contribution": 18.0,
           "snippets": [
             "- Add CPython 3.15.0b1",
             "### Enhancements",
@@ -1749,7 +1744,7 @@
         {
           "category": "bug_fix",
           "count": 2,
-          "score_contribution": 10.0,
+          "score_contribution": 6.0,
           "snippets": [
             "### Bug fixes",
             "- Fix bug from inconsistent workflow name in GHA-PyPI guide example (#19309)"
@@ -1764,12 +1759,9 @@
           ]
         }
       ],
-      "action_recommended": "SURVEILLER",
+      "action_recommended": "IGNORER",
       "analysis_reasons": [
-        "3 enhancement(s)",
-        "2 bug fix(s)",
-        "1 documentation(s)",
-        "Changements non critiques — surveillance recommandée"
+        "Impact faible — pas d'action requise"
       ]
     },
     {
@@ -1787,7 +1779,7 @@
       "breaking_snippets": [],
       "repo_weight": 1.1,
       "html_url": "https://pypi.org/project/uv/0.11.12/",
-      "collected_at": "2026-05-31T08:03:05.310342",
+      "collected_at": "2026-05-31T16:43:00.142063",
       "technical_score": 0.0,
       "relevance_score": 0.0,
       "final_score": 0.0,
@@ -1815,7 +1807,7 @@
       "breaking_snippets": [],
       "repo_weight": 1.0,
       "html_url": "https://github.com/tokio-rs/tokio/releases/tag/tokio-1.52.3",
-      "collected_at": "2026-05-31T08:02:42.285489",
+      "collected_at": "2026-05-31T16:42:31.359023",
       "technical_score": 0.0,
       "relevance_score": 0.0,
       "final_score": 0.0,
@@ -1843,7 +1835,7 @@
       "breaking_snippets": [],
       "repo_weight": 1.0,
       "html_url": "https://github.com/tokio-rs/tokio/releases/tag/tokio-1.51.3",
-      "collected_at": "2026-05-31T08:02:42.285508",
+      "collected_at": "2026-05-31T16:42:31.359039",
       "technical_score": 0.0,
       "relevance_score": 0.0,
       "final_score": 0.0,
@@ -1871,7 +1863,7 @@
       "breaking_snippets": [],
       "repo_weight": 1.2,
       "html_url": "https://pypi.org/project/openai/2.36.0/",
-      "collected_at": "2026-05-31T08:03:04.354968",
+      "collected_at": "2026-05-31T16:42:59.147237",
       "technical_score": 0.0,
       "relevance_score": 0.0,
       "final_score": 0.0,
@@ -1899,7 +1891,7 @@
       "breaking_snippets": [],
       "repo_weight": 1.3,
       "html_url": "https://pypi.org/project/langchain-core/0.3.86/",
-      "collected_at": "2026-05-31T08:03:04.141722",
+      "collected_at": "2026-05-31T16:42:58.923366",
       "technical_score": 0.0,
       "relevance_score": 0.0,
       "final_score": 0.0,
@@ -1927,7 +1919,7 @@
       "breaking_snippets": [],
       "repo_weight": 1.0,
       "html_url": "https://github.com/tokio-rs/tokio/releases/tag/tokio-1.47.5",
-      "collected_at": "2026-05-31T08:02:42.285516",
+      "collected_at": "2026-05-31T16:42:31.359046",
       "technical_score": 0.0,
       "relevance_score": 0.0,
       "final_score": 0.0,
@@ -1955,7 +1947,7 @@
       "breaking_snippets": [],
       "repo_weight": 1.2,
       "html_url": "https://pypi.org/project/openai/2.35.1/",
-      "collected_at": "2026-05-31T08:03:04.354961",
+      "collected_at": "2026-05-31T16:42:59.147230",
       "technical_score": 0.0,
       "relevance_score": 0.0,
       "final_score": 0.0,
@@ -1983,18 +1975,18 @@
       "breaking_snippets": [],
       "repo_weight": 1.1,
       "html_url": "https://github.com/astral-sh/uv/releases/tag/0.11.11",
-      "collected_at": "2026-05-31T08:02:48.858090",
-      "technical_score": 5.0,
+      "collected_at": "2026-05-31T16:42:40.324179",
+      "technical_score": 3.0,
       "relevance_score": 0.0,
-      "final_score": 3.5,
-      "impact_score": 5.0,
+      "final_score": 2.1,
+      "impact_score": 3.0,
       "impact_level": "low",
       "urgency_level": "LOW",
       "detected_factors": [
         {
           "category": "bug_fix",
           "count": 1,
-          "score_contribution": 5.0,
+          "score_contribution": 3.0,
           "snippets": [
             "### Bug fixes"
           ]
@@ -2020,7 +2012,7 @@
       "breaking_snippets": [],
       "repo_weight": 1.1,
       "html_url": "https://pypi.org/project/uv/0.11.11/",
-      "collected_at": "2026-05-31T08:03:05.310316",
+      "collected_at": "2026-05-31T16:43:00.142038",
       "technical_score": 0.0,
       "relevance_score": 0.0,
       "final_score": 0.0,
@@ -2048,7 +2040,7 @@
       "breaking_snippets": [],
       "repo_weight": 1.2,
       "html_url": "https://pypi.org/project/openai/2.35.0/",
-      "collected_at": "2026-05-31T08:03:04.354954",
+      "collected_at": "2026-05-31T16:42:59.147223",
       "technical_score": 0.0,
       "relevance_score": 0.0,
       "final_score": 0.0,
@@ -2076,7 +2068,7 @@
       "breaking_snippets": [],
       "repo_weight": 1.1,
       "html_url": "https://pypi.org/project/pydantic/2.13.4/",
-      "collected_at": "2026-05-31T08:03:02.664139",
+      "collected_at": "2026-05-31T16:42:57.340091",
       "technical_score": 0.0,
       "relevance_score": 0.0,
       "final_score": 0.0,
@@ -2104,7 +2096,7 @@
       "breaking_snippets": [],
       "repo_weight": 1.3,
       "html_url": "https://pypi.org/project/langchain-core/0.3.85/",
-      "collected_at": "2026-05-31T08:03:04.141715",
+      "collected_at": "2026-05-31T16:42:58.923359",
       "technical_score": 0.0,
       "relevance_score": 0.0,
       "final_score": 0.0,
@@ -2132,18 +2124,18 @@
       "breaking_snippets": [],
       "repo_weight": 1.1,
       "html_url": "https://github.com/astral-sh/uv/releases/tag/0.11.10",
-      "collected_at": "2026-05-31T08:02:48.858095",
-      "technical_score": 10.0,
+      "collected_at": "2026-05-31T16:42:40.324185",
+      "technical_score": 6.0,
       "relevance_score": 0.0,
-      "final_score": 7.0,
-      "impact_score": 10.0,
+      "final_score": 4.2,
+      "impact_score": 6.0,
       "impact_level": "low",
       "urgency_level": "LOW",
       "detected_factors": [
         {
           "category": "bug_fix",
           "count": 2,
-          "score_contribution": 10.0,
+          "score_contribution": 6.0,
           "snippets": [
             "### Bug fixes",
             "- Allow pre-release Python requests with non-zero patch versions (#19286)"
@@ -2170,7 +2162,7 @@
       "breaking_snippets": [],
       "repo_weight": 1.1,
       "html_url": "https://pypi.org/project/uv/0.11.10/",
-      "collected_at": "2026-05-31T08:03:05.310290",
+      "collected_at": "2026-05-31T16:43:00.142013",
       "technical_score": 0.0,
       "relevance_score": 0.0,
       "final_score": 0.0,
@@ -2198,7 +2190,7 @@
       "breaking_snippets": [],
       "repo_weight": 1.3,
       "html_url": "https://pypi.org/project/langchain-core/1.3.3/",
-      "collected_at": "2026-05-31T08:03:04.142151",
+      "collected_at": "2026-05-31T16:42:58.923776",
       "technical_score": 0.0,
       "relevance_score": 0.0,
       "final_score": 0.0,
@@ -2226,18 +2218,18 @@
       "breaking_snippets": [],
       "repo_weight": 1.3,
       "html_url": "https://github.com/huggingface/transformers/releases/tag/v5.8.0",
-      "collected_at": "2026-05-31T08:02:44.387663",
-      "technical_score": 32.0,
+      "collected_at": "2026-05-31T16:42:34.306512",
+      "technical_score": 20.0,
       "relevance_score": 0.0,
-      "final_score": 22.4,
-      "impact_score": 32.0,
-      "impact_level": "moderate",
+      "final_score": 14.0,
+      "impact_score": 20.0,
+      "impact_level": "low",
       "urgency_level": "LOW",
       "detected_factors": [
         {
           "category": "enhancement",
           "count": 3,
-          "score_contribution": 30.0,
+          "score_contribution": 18.0,
           "snippets": [
             "DeepSeek-V4 is the next-generation MoE (Mixture of Experts) language model from DeepSeek that introduces several architectural innovations over DeepSeek-V3. The architecture replaces Multi-head Latent",
             "* Add DeepSeek V4 (#45643) by @ArthurZucker in #45643",
@@ -2254,11 +2246,9 @@
           ]
         }
       ],
-      "action_recommended": "SURVEILLER",
+      "action_recommended": "IGNORER",
       "analysis_reasons": [
-        "3 enhancement(s)",
-        "2 documentation(s)",
-        "Changements non critiques — surveillance recommandée"
+        "Impact faible — pas d'action requise"
       ]
     },
     {
@@ -2276,7 +2266,7 @@
       "breaking_snippets": [],
       "repo_weight": 1.4,
       "html_url": "https://pypi.org/project/transformers/5.8.0/",
-      "collected_at": "2026-05-31T08:03:03.714315",
+      "collected_at": "2026-05-31T16:42:58.475021",
       "technical_score": 0.0,
       "relevance_score": 0.0,
       "final_score": 0.0,
@@ -2304,18 +2294,18 @@
       "breaking_snippets": [],
       "repo_weight": 1.1,
       "html_url": "https://github.com/astral-sh/uv/releases/tag/0.11.9",
-      "collected_at": "2026-05-31T08:02:48.858101",
-      "technical_score": 60.0,
+      "collected_at": "2026-05-31T16:42:40.324190",
+      "technical_score": 36.0,
       "relevance_score": 0.0,
-      "final_score": 42.0,
-      "impact_score": 60.0,
+      "final_score": 25.2,
+      "impact_score": 36.0,
       "impact_level": "moderate",
       "urgency_level": "LOW",
       "detected_factors": [
         {
           "category": "enhancement",
           "count": 3,
-          "score_contribution": 30.0,
+          "score_contribution": 18.0,
           "snippets": [
             "This release includes a special release candidate for the next Python 3.14 patch release. Python 3.14 included a new garbage collection implementation, which reduced pause times but caused significant",
             "- Add CPython 3.14.5rc1",
@@ -2325,7 +2315,7 @@
         {
           "category": "bug_fix",
           "count": 6,
-          "score_contribution": 30.0,
+          "score_contribution": 18.0,
           "snippets": [
             "This release includes a special release candidate for the next Python 3.14 patch release. Python 3.14 included a new garbage collection implementation, which reduced pause times but caused significant",
             "- Fix file locks on Android (#18323)",
@@ -2357,7 +2347,7 @@
       "breaking_snippets": [],
       "repo_weight": 1.1,
       "html_url": "https://pypi.org/project/uv/0.11.9/",
-      "collected_at": "2026-05-31T08:03:05.310698",
+      "collected_at": "2026-05-31T16:43:00.142384",
       "technical_score": 0.0,
       "relevance_score": 0.0,
       "final_score": 0.0,
@@ -2385,7 +2375,7 @@
       "breaking_snippets": [],
       "repo_weight": 1.2,
       "html_url": "https://pypi.org/project/openai/2.34.0/",
-      "collected_at": "2026-05-31T08:03:04.354947",
+      "collected_at": "2026-05-31T16:42:59.147216",
       "technical_score": 0.0,
       "relevance_score": 0.0,
       "final_score": 0.0,
@@ -2413,18 +2403,18 @@
       "breaking_snippets": [],
       "repo_weight": 1.0,
       "html_url": "https://github.com/tokio-rs/tokio/releases/tag/tokio-1.52.2",
-      "collected_at": "2026-05-31T08:02:42.285522",
-      "technical_score": 25.0,
+      "collected_at": "2026-05-31T16:42:31.359051",
+      "technical_score": 14.0,
       "relevance_score": 0.0,
-      "final_score": 17.5,
-      "impact_score": 25.0,
+      "final_score": 9.8,
+      "impact_score": 14.0,
       "impact_level": "low",
       "urgency_level": "LOW",
       "detected_factors": [
         {
           "category": "performance",
           "count": 1,
-          "score_contribution": 15.0,
+          "score_contribution": 8.0,
           "snippets": [
             "This release reverts the LIFO slot stealing change introduced in 1.51.0 ([#7431]), due to [its performance impact][#8065]. ([#8100])"
           ]
@@ -2432,7 +2422,7 @@
         {
           "category": "enhancement",
           "count": 1,
-          "score_contribution": 10.0,
+          "score_contribution": 6.0,
           "snippets": [
             "This release reverts the LIFO slot stealing change introduced in 1.51.0 ([#7431]), due to [its performance impact][#8065]. ([#8100])"
           ]
@@ -2458,18 +2448,18 @@
       "breaking_snippets": [],
       "repo_weight": 1.0,
       "html_url": "https://github.com/tokio-rs/tokio/releases/tag/tokio-1.51.2",
-      "collected_at": "2026-05-31T08:02:42.285527",
-      "technical_score": 25.0,
+      "collected_at": "2026-05-31T16:42:31.359057",
+      "technical_score": 14.0,
       "relevance_score": 0.0,
-      "final_score": 17.5,
-      "impact_score": 25.0,
+      "final_score": 9.8,
+      "impact_score": 14.0,
       "impact_level": "low",
       "urgency_level": "LOW",
       "detected_factors": [
         {
           "category": "performance",
           "count": 1,
-          "score_contribution": 15.0,
+          "score_contribution": 8.0,
           "snippets": [
             "This release reverts the LIFO slot stealing change introduced in 1.51.0 ([#7431]), due to [its performance impact][#8065]. ([#8100])"
           ]
@@ -2477,7 +2467,7 @@
         {
           "category": "enhancement",
           "count": 1,
-          "score_contribution": 10.0,
+          "score_contribution": 6.0,
           "snippets": [
             "This release reverts the LIFO slot stealing change introduced in 1.51.0 ([#7431]), due to [its performance impact][#8065]. ([#8100])"
           ]
@@ -2503,18 +2493,18 @@
       "breaking_snippets": [],
       "repo_weight": 1.3,
       "html_url": "https://github.com/huggingface/transformers/releases/tag/v5.7.0",
-      "collected_at": "2026-05-31T08:02:44.387669",
-      "technical_score": 72.0,
+      "collected_at": "2026-05-31T16:42:34.306518",
+      "technical_score": 43.0,
       "relevance_score": 0.0,
-      "final_score": 50.4,
-      "impact_score": 72.0,
-      "impact_level": "high",
+      "final_score": 30.1,
+      "impact_score": 43.0,
+      "impact_level": "moderate",
       "urgency_level": "LOW",
       "detected_factors": [
         {
           "category": "enhancement",
           "count": 4,
-          "score_contribution": 40.0,
+          "score_contribution": 24.0,
           "snippets": [
             "Laguna is Poolside's mixture-of-experts language model family that extends standard SwiGLU MoE transformers with two key innovations. It features per-layer head counts allowing different decoder layer",
             "* Laguna XS.2 implementation (#45673) by @joerowell in #45673",
@@ -2523,21 +2513,21 @@
           ]
         },
         {
-          "category": "performance",
-          "count": 1,
-          "score_contribution": 15.0,
-          "snippets": [
-            "DEIMv2 (DETR with Improved Matching v2) is a real-time object detection model that extends DEIM with DINOv3 features and spans eight model sizes from X to Atto for diverse deployment scenarios. It use"
-          ]
-        },
-        {
           "category": "bug_fix",
           "count": 3,
-          "score_contribution": 15.0,
+          "score_contribution": 9.0,
           "snippets": [
             "Several attention-related bugs were fixed across multiple models, including a cross-attention cache type error in T5Gemma2 for long inputs, incorrect cached forward behavior in Qwen3.5's gated-delta-n",
             "* Fix cross-attention cache layer type for T5Gemma2 long inputs (#45540) by @Beichen-Ma in [#45540]",
             "* Fix GraniteMoeHybrid _update_mamba_mask crash on attention-only models (#45514)"
+          ]
+        },
+        {
+          "category": "performance",
+          "count": 1,
+          "score_contribution": 8.0,
+          "snippets": [
+            "DEIMv2 (DETR with Improved Matching v2) is a real-time object detection model that extends DEIM with DINOv3 features and spans eight model sizes from X to Atto for diverse deployment scenarios. It use"
           ]
         },
         {
@@ -2550,12 +2540,12 @@
           ]
         }
       ],
-      "action_recommended": "METTRE À JOUR",
+      "action_recommended": "SURVEILLER",
       "analysis_reasons": [
-        "1 amélioration(s) de performance",
-        "4 amélioration(s) / nouvelle(s) fonctionnalité(s)",
-        "3 correction(s) de bug(s)",
-        "Impact high — intégrer au prochain cycle de mise à jour"
+        "4 enhancement(s)",
+        "3 bug fix(s)",
+        "1 performance(s)",
+        "Changements non critiques — surveillance recommandée"
       ]
     },
     {
@@ -2573,7 +2563,7 @@
       "breaking_snippets": [],
       "repo_weight": 1.4,
       "html_url": "https://pypi.org/project/transformers/5.7.0/",
-      "collected_at": "2026-05-31T08:03:03.714308",
+      "collected_at": "2026-05-31T16:42:58.475014",
       "technical_score": 0.0,
       "relevance_score": 0.0,
       "final_score": 0.0,
@@ -2601,7 +2591,7 @@
       "breaking_snippets": [],
       "repo_weight": 1.2,
       "html_url": "https://pypi.org/project/openai/2.33.0/",
-      "collected_at": "2026-05-31T08:03:04.354940",
+      "collected_at": "2026-05-31T16:42:59.147209",
       "technical_score": 0.0,
       "relevance_score": 0.0,
       "final_score": 0.0,
@@ -2629,7 +2619,7 @@
       "breaking_snippets": [],
       "repo_weight": 1.1,
       "html_url": "https://github.com/astral-sh/uv/releases/tag/0.11.8",
-      "collected_at": "2026-05-31T08:02:48.858107",
+      "collected_at": "2026-05-31T16:42:40.324196",
       "technical_score": 100.0,
       "relevance_score": 0.0,
       "final_score": 70.0,
@@ -2637,18 +2627,6 @@
       "impact_level": "high",
       "urgency_level": "LOW",
       "detected_factors": [
-        {
-          "category": "enhancement",
-          "count": 5,
-          "score_contribution": 50.0,
-          "snippets": [
-            "### Enhancements",
-            "- Add `--python-downloads-json-url` to `python pin` (#19092)",
-            "- Add `UV_PYTHON_NO_REGISTRY` (#19035)",
-            "- Add an environment variable for `UV_NO_PROJECT` (#19052)",
-            "- Add `rust-toolchain.toml` to uv-build sdist (#19131)"
-          ]
-        },
         {
           "category": "deprecated",
           "count": 1,
@@ -2666,9 +2644,21 @@
           ]
         },
         {
+          "category": "enhancement",
+          "count": 5,
+          "score_contribution": 30.0,
+          "snippets": [
+            "### Enhancements",
+            "- Add `--python-downloads-json-url` to `python pin` (#19092)",
+            "- Add `UV_PYTHON_NO_REGISTRY` (#19035)",
+            "- Add an environment variable for `UV_NO_PROJECT` (#19052)",
+            "- Add `rust-toolchain.toml` to uv-build sdist (#19131)"
+          ]
+        },
+        {
           "category": "bug_fix",
           "count": 3,
-          "score_contribution": 15.0,
+          "score_contribution": 9.0,
           "snippets": [
             "### Bug fixes",
             "- Disable transparent Python upgrades in projects when a patch version is requested via `.python-version` (#19102)",
@@ -2709,7 +2699,7 @@
       "breaking_snippets": [],
       "repo_weight": 1.1,
       "html_url": "https://pypi.org/project/uv/0.11.8/",
-      "collected_at": "2026-05-31T08:03:05.310671",
+      "collected_at": "2026-05-31T16:43:00.142359",
       "technical_score": 0.0,
       "relevance_score": 0.0,
       "final_score": 0.0,
@@ -2737,7 +2727,7 @@
       "breaking_snippets": [],
       "repo_weight": 1.2,
       "html_url": "https://pypi.org/project/ruff/0.15.12/",
-      "collected_at": "2026-05-31T08:03:04.832915",
+      "collected_at": "2026-05-31T16:42:59.647971",
       "technical_score": 0.0,
       "relevance_score": 0.0,
       "final_score": 0.0,
@@ -2765,7 +2755,7 @@
       "breaking_snippets": [],
       "repo_weight": 1.3,
       "html_url": "https://pypi.org/project/langchain-core/1.3.2/",
-      "collected_at": "2026-05-31T08:03:04.142143",
+      "collected_at": "2026-05-31T16:42:58.923769",
       "technical_score": 0.0,
       "relevance_score": 0.0,
       "final_score": 0.0,
@@ -2793,7 +2783,7 @@
       "breaking_snippets": [],
       "repo_weight": 1.3,
       "html_url": "https://pypi.org/project/langchain-core/1.3.1/",
-      "collected_at": "2026-05-31T08:03:04.142136",
+      "collected_at": "2026-05-31T16:42:58.923762",
       "technical_score": 0.0,
       "relevance_score": 0.0,
       "final_score": 0.0,
@@ -2821,18 +2811,18 @@
       "breaking_snippets": [],
       "repo_weight": 1.3,
       "html_url": "https://github.com/huggingface/transformers/releases/tag/v5.6.2",
-      "collected_at": "2026-05-31T08:02:44.387675",
-      "technical_score": 11.0,
+      "collected_at": "2026-05-31T16:42:34.306524",
+      "technical_score": 7.0,
       "relevance_score": 0.0,
-      "final_score": 7.7,
-      "impact_score": 11.0,
+      "final_score": 4.9,
+      "impact_score": 7.0,
       "impact_level": "low",
       "urgency_level": "LOW",
       "detected_factors": [
         {
           "category": "bug_fix",
           "count": 2,
-          "score_contribution": 10.0,
+          "score_contribution": 6.0,
           "snippets": [
             "# Patch release v5.6.2",
             "* Fix configuration reading and error handling for kernels (https://github.com/huggingface/transformers/pull/45610) by @hmellor"
@@ -2867,7 +2857,7 @@
       "breaking_snippets": [],
       "repo_weight": 1.4,
       "html_url": "https://pypi.org/project/transformers/5.6.2/",
-      "collected_at": "2026-05-31T08:03:03.714300",
+      "collected_at": "2026-05-31T16:42:58.475007",
       "technical_score": 0.0,
       "relevance_score": 0.0,
       "final_score": 0.0,
@@ -2895,18 +2885,18 @@
       "breaking_snippets": [],
       "repo_weight": 1.2,
       "html_url": "https://pypi.org/project/fastapi/0.136.1/",
-      "collected_at": "2026-05-31T08:03:02.442517",
-      "technical_score": 15.0,
+      "collected_at": "2026-05-31T16:42:57.107093",
+      "technical_score": 8.0,
       "relevance_score": 0.0,
-      "final_score": 10.5,
-      "impact_score": 15.0,
+      "final_score": 5.6,
+      "impact_score": 8.0,
       "impact_level": "low",
       "urgency_level": "LOW",
       "detected_factors": [
         {
           "category": "performance",
           "count": 1,
-          "score_contribution": 15.0,
+          "score_contribution": 8.0,
           "snippets": [
             "FastAPI framework, high performance, easy to learn, fast to code, ready for production"
           ]
@@ -2932,7 +2922,7 @@
       "breaking_snippets": [],
       "repo_weight": 1.2,
       "html_url": "https://github.com/fastapi/fastapi/releases/tag/0.136.1",
-      "collected_at": "2026-05-31T08:02:36.347601",
+      "collected_at": "2026-05-31T16:42:23.329418",
       "technical_score": 0.0,
       "relevance_score": 0.0,
       "final_score": 0.0,
@@ -2960,7 +2950,7 @@
       "breaking_snippets": [],
       "repo_weight": 1.4,
       "html_url": "https://pypi.org/project/transformers/5.6.1/",
-      "collected_at": "2026-05-31T08:03:03.714293",
+      "collected_at": "2026-05-31T16:42:58.475000",
       "technical_score": 0.0,
       "relevance_score": 0.0,
       "final_score": 0.0,
@@ -2988,18 +2978,18 @@
       "breaking_snippets": [],
       "repo_weight": 1.3,
       "html_url": "https://github.com/huggingface/transformers/releases/tag/v5.6.1",
-      "collected_at": "2026-05-31T08:02:44.387681",
-      "technical_score": 10.0,
+      "collected_at": "2026-05-31T16:42:34.306530",
+      "technical_score": 6.0,
       "relevance_score": 0.0,
-      "final_score": 7.0,
-      "impact_score": 10.0,
+      "final_score": 4.2,
+      "impact_score": 6.0,
       "impact_level": "low",
       "urgency_level": "LOW",
       "detected_factors": [
         {
           "category": "bug_fix",
           "count": 2,
-          "score_contribution": 10.0,
+          "score_contribution": 6.0,
           "snippets": [
             "# Patch release v5.6.1",
             "* Fix AttributeError on s_aux=None in flash_attention_forward (https://github.com/huggingface/transformers/pull/45589) by @jamesbraza"
@@ -3026,18 +3016,18 @@
       "breaking_snippets": [],
       "repo_weight": 1.5,
       "html_url": "https://github.com/pola-rs/polars/releases/tag/py-1.40.1",
-      "collected_at": "2026-05-31T08:02:29.068486",
-      "technical_score": 57.0,
+      "collected_at": "2026-05-31T16:42:13.498886",
+      "technical_score": 34.0,
       "relevance_score": 10.0,
-      "final_score": 69.9,
-      "impact_score": 59.0,
+      "final_score": 53.8,
+      "impact_score": 36.0,
       "impact_level": "high",
       "urgency_level": "LOW",
       "detected_factors": [
         {
           "category": "enhancement",
           "count": 3,
-          "score_contribution": 30.0,
+          "score_contribution": 18.0,
           "snippets": [
             "## ✨ Enhancements",
             "- Add `maintain_order` parameter to `merge_sorted` (#27263)",
@@ -3047,7 +3037,7 @@
         {
           "category": "performance",
           "count": 1,
-          "score_contribution": 15.0,
+          "score_contribution": 8.0,
           "snippets": [
             "## 🚀 Performance improvements"
           ]
@@ -3055,7 +3045,7 @@
         {
           "category": "bug_fix",
           "count": 2,
-          "score_contribution": 10.0,
+          "score_contribution": 6.0,
           "snippets": [
             "## 🐞 Bug fixes",
             "- Fix typing for `DataFrame.__init__` and `Series.__init__` so they don't require all optional dependencies to be installed (#27348)"
@@ -3094,7 +3084,7 @@
       "breaking_snippets": [],
       "repo_weight": 1.5,
       "html_url": "https://pypi.org/project/polars/1.40.1/",
-      "collected_at": "2026-05-31T08:03:02.006899",
+      "collected_at": "2026-05-31T16:42:56.636466",
       "technical_score": 0.0,
       "relevance_score": 10.0,
       "final_score": 30.0,
@@ -3122,18 +3112,18 @@
       "breaking_snippets": [],
       "repo_weight": 1.3,
       "html_url": "https://github.com/huggingface/transformers/releases/tag/v5.6.0",
-      "collected_at": "2026-05-31T08:02:44.387687",
-      "technical_score": 52.0,
+      "collected_at": "2026-05-31T16:42:34.306536",
+      "technical_score": 30.0,
       "relevance_score": 0.0,
-      "final_score": 36.4,
-      "impact_score": 52.0,
+      "final_score": 21.0,
+      "impact_score": 30.0,
       "impact_level": "moderate",
       "urgency_level": "LOW",
       "detected_factors": [
         {
           "category": "performance",
           "count": 2,
-          "score_contribution": 30.0,
+          "score_contribution": 16.0,
           "snippets": [
             "OpenAI Privacy Filter is a bidirectional token-classification model for personally identifiable information (PII) detection and masking in text. It is intended for high-throughput data sanitization wo",
             "SAM3-LiteText is a lightweight variant of SAM3 that replaces the heavy SAM3 text encoder (353M parameters) with a compact MobileCLIP-based text encoder optimized through knowledge distillation, while "
@@ -3142,7 +3132,7 @@
         {
           "category": "enhancement",
           "count": 2,
-          "score_contribution": 20.0,
+          "score_contribution": 12.0,
           "snippets": [
             "Qianfan-OCR is a 4B-parameter end-to-end document intelligence model developed by Baidu that performs direct image-to-text conversion without traditional multi-stage OCR pipelines. It supports a broad",
             "* add Qianfan-OCR model definition (#45280) by @marvinzh in #45280"
@@ -3181,7 +3171,7 @@
       "breaking_snippets": [],
       "repo_weight": 1.4,
       "html_url": "https://pypi.org/project/transformers/5.6.0/",
-      "collected_at": "2026-05-31T08:03:03.714286",
+      "collected_at": "2026-05-31T16:42:58.474993",
       "technical_score": 0.0,
       "relevance_score": 0.0,
       "final_score": 0.0,
@@ -3209,12 +3199,12 @@
       "breaking_snippets": [],
       "repo_weight": 1.2,
       "html_url": "https://github.com/delta-io/delta-rs/releases/tag/rust-v0.32.0",
-      "collected_at": "2026-05-31T08:02:58.486518",
-      "technical_score": 92.0,
+      "collected_at": "2026-05-31T16:42:51.974546",
+      "technical_score": 67.0,
       "relevance_score": 8.0,
-      "final_score": 88.4,
-      "impact_score": 94.0,
-      "impact_level": "critical",
+      "final_score": 70.9,
+      "impact_score": 69.0,
+      "impact_level": "high",
       "urgency_level": "LOW",
       "detected_factors": [
         {
@@ -3228,7 +3218,7 @@
         {
           "category": "enhancement",
           "count": 3,
-          "score_contribution": 30.0,
+          "score_contribution": 18.0,
           "snippets": [
             "From a functional standpoint there are more improvements to the new (\"next\") Datafusion  `TableProvider`, incremental performance enhancements for log parsing,  and a number of bug fixes.",
             "**Implemented enhancements:**",
@@ -3236,21 +3226,21 @@
           ]
         },
         {
-          "category": "performance",
-          "count": 1,
-          "score_contribution": 15.0,
-          "snippets": [
-            "From a functional standpoint there are more improvements to the new (\"next\") Datafusion  `TableProvider`, incremental performance enhancements for log parsing,  and a number of bug fixes."
-          ]
-        },
-        {
           "category": "bug_fix",
           "count": 3,
-          "score_contribution": 15.0,
+          "score_contribution": 9.0,
           "snippets": [
             "From a functional standpoint there are more improvements to the new (\"next\") Datafusion  `TableProvider`, incremental performance enhancements for log parsing,  and a number of bug fixes.",
             "**Fixed bugs:**",
             "- \\[Bug\\]: DeltaTable.to\\_pyarrow\\_dataset\\(\\) hangs indefinitely with moto S3 mock \\(regression in 1.3.2\\) \\#4362"
+          ]
+        },
+        {
+          "category": "performance",
+          "count": 1,
+          "score_contribution": 8.0,
+          "snippets": [
+            "From a functional standpoint there are more improvements to the new (\"next\") Datafusion  `TableProvider`, incremental performance enhancements for log parsing,  and a number of bug fixes."
           ]
         },
         {
@@ -3268,7 +3258,7 @@
         "1 amélioration(s) de performance",
         "3 amélioration(s) / nouvelle(s) fonctionnalité(s)",
         "3 correction(s) de bug(s)",
-        "Impact critical — intégrer au prochain cycle de mise à jour"
+        "Impact high — intégrer au prochain cycle de mise à jour"
       ]
     },
     {
@@ -3286,7 +3276,7 @@
       "breaking_snippets": [],
       "repo_weight": 1.0,
       "html_url": "https://pypi.org/project/deltalake/1.5.1/",
-      "collected_at": "2026-05-31T08:03:03.295921",
+      "collected_at": "2026-05-31T16:42:58.003275",
       "technical_score": 0.0,
       "relevance_score": 8.0,
       "final_score": 24.0,
@@ -3314,7 +3304,7 @@
       "breaking_snippets": [],
       "repo_weight": 1.1,
       "html_url": "https://pypi.org/project/pyarrow/24.0.0/",
-      "collected_at": "2026-05-31T08:03:02.881910",
+      "collected_at": "2026-05-31T16:42:57.566811",
       "technical_score": 0.0,
       "relevance_score": 9.0,
       "final_score": 27.0,
@@ -3342,7 +3332,7 @@
       "breaking_snippets": [],
       "repo_weight": 1.2,
       "html_url": "https://github.com/apache/arrow/releases/tag/apache-arrow-24.0.0",
-      "collected_at": "2026-05-31T08:02:35.612395",
+      "collected_at": "2026-05-31T16:42:22.283408",
       "technical_score": 0.0,
       "relevance_score": 9.0,
       "final_score": 27.0,
@@ -3370,7 +3360,7 @@
       "breaking_snippets": [],
       "repo_weight": 1.1,
       "html_url": "https://pypi.org/project/pydantic/2.13.3/",
-      "collected_at": "2026-05-31T08:03:02.664132",
+      "collected_at": "2026-05-31T16:42:57.340084",
       "technical_score": 0.0,
       "relevance_score": 0.0,
       "final_score": 0.0,
@@ -3398,7 +3388,7 @@
       "breaking_snippets": [],
       "repo_weight": 1.5,
       "html_url": "https://github.com/pola-rs/polars/releases/tag/py-1.40.0",
-      "collected_at": "2026-05-31T08:02:29.068492",
+      "collected_at": "2026-05-31T16:42:13.498892",
       "technical_score": 100.0,
       "relevance_score": 10.0,
       "final_score": 100.0,
@@ -3409,7 +3399,7 @@
         {
           "category": "enhancement",
           "count": 7,
-          "score_contribution": 70.0,
+          "score_contribution": 42.0,
           "snippets": [
             "- Add streaming support for grouped AsOf join (#27293)",
             "- Add native streaming `interpolate` (#27185)",
@@ -3437,7 +3427,7 @@
         {
           "category": "performance",
           "count": 2,
-          "score_contribution": 30.0,
+          "score_contribution": 16.0,
           "snippets": [
             "## 🚀 Performance improvements",
             "- Optimize `drop_nulls().{first,last}()` to `{first,last}(ignore_nulls=True)` (#27187)"
@@ -3449,7 +3439,7 @@
         "2 amélioration(s) de performance",
         "1 dépréciation(s) — planifier avant suppression",
         "7 amélioration(s) / nouvelle(s) fonctionnalité(s)",
-        "Impact critical — intégrer au prochain cycle de mise à jour"
+        "Impact high — intégrer au prochain cycle de mise à jour"
       ]
     },
     {
@@ -3467,7 +3457,7 @@
       "breaking_snippets": [],
       "repo_weight": 1.5,
       "html_url": "https://pypi.org/project/polars/1.40.0/",
-      "collected_at": "2026-05-31T08:03:02.006892",
+      "collected_at": "2026-05-31T16:42:56.636460",
       "technical_score": 0.0,
       "relevance_score": 10.0,
       "final_score": 30.0,
@@ -3495,7 +3485,7 @@
       "breaking_snippets": [],
       "repo_weight": 1.3,
       "html_url": "https://pypi.org/project/langchain-core/1.3.0/",
-      "collected_at": "2026-05-31T08:03:04.142125",
+      "collected_at": "2026-05-31T16:42:58.923752",
       "technical_score": 0.0,
       "relevance_score": 0.0,
       "final_score": 0.0,
@@ -3523,7 +3513,7 @@
       "breaking_snippets": [],
       "repo_weight": 1.1,
       "html_url": "https://pypi.org/project/pydantic/2.13.2/",
-      "collected_at": "2026-05-31T08:03:02.664125",
+      "collected_at": "2026-05-31T16:42:57.340077",
       "technical_score": 0.0,
       "relevance_score": 0.0,
       "final_score": 0.0,
@@ -3551,18 +3541,18 @@
       "breaking_snippets": [],
       "repo_weight": 1.0,
       "html_url": "https://github.com/tokio-rs/tokio/releases/tag/tokio-1.52.1",
-      "collected_at": "2026-05-31T08:02:42.285535",
-      "technical_score": 5.0,
+      "collected_at": "2026-05-31T16:42:31.359063",
+      "technical_score": 3.0,
       "relevance_score": 0.0,
-      "final_score": 3.5,
-      "impact_score": 5.0,
+      "final_score": 2.1,
+      "impact_score": 3.0,
       "impact_level": "low",
       "urgency_level": "LOW",
       "detected_factors": [
         {
           "category": "bug_fix",
           "count": 1,
-          "score_contribution": 5.0,
+          "score_contribution": 3.0,
           "snippets": [
             "- runtime: revert [#7757] to fix [a regression][#8056] that causes `spawn_blocking` to hang ([#8057])"
           ]
@@ -3588,7 +3578,7 @@
       "breaking_snippets": [],
       "repo_weight": 1.2,
       "html_url": "https://pypi.org/project/ruff/0.15.11/",
-      "collected_at": "2026-05-31T08:03:04.832889",
+      "collected_at": "2026-05-31T16:42:59.647947",
       "technical_score": 0.0,
       "relevance_score": 0.0,
       "final_score": 0.0,
@@ -3616,7 +3606,7 @@
       "breaking_snippets": [],
       "repo_weight": 1.3,
       "html_url": "https://pypi.org/project/langchain-core/1.2.31/",
-      "collected_at": "2026-05-31T08:03:04.142070",
+      "collected_at": "2026-05-31T16:42:58.923702",
       "technical_score": 0.0,
       "relevance_score": 0.0,
       "final_score": 0.0,
@@ -3644,18 +3634,18 @@
       "breaking_snippets": [],
       "repo_weight": 1.2,
       "html_url": "https://pypi.org/project/fastapi/0.136.0/",
-      "collected_at": "2026-05-31T08:03:02.442510",
-      "technical_score": 15.0,
+      "collected_at": "2026-05-31T16:42:57.107086",
+      "technical_score": 8.0,
       "relevance_score": 0.0,
-      "final_score": 10.5,
-      "impact_score": 15.0,
+      "final_score": 5.6,
+      "impact_score": 8.0,
       "impact_level": "low",
       "urgency_level": "LOW",
       "detected_factors": [
         {
           "category": "performance",
           "count": 1,
-          "score_contribution": 15.0,
+          "score_contribution": 8.0,
           "snippets": [
             "FastAPI framework, high performance, easy to learn, fast to code, ready for production"
           ]
@@ -3681,7 +3671,7 @@
       "breaking_snippets": [],
       "repo_weight": 1.2,
       "html_url": "https://github.com/fastapi/fastapi/releases/tag/0.136.0",
-      "collected_at": "2026-05-31T08:02:36.347607",
+      "collected_at": "2026-05-31T16:42:23.329424",
       "technical_score": 0.0,
       "relevance_score": 0.0,
       "final_score": 0.0,
@@ -3709,18 +3699,18 @@
       "breaking_snippets": [],
       "repo_weight": 1.2,
       "html_url": "https://pypi.org/project/fastapi/0.135.4/",
-      "collected_at": "2026-05-31T08:03:02.442502",
-      "technical_score": 15.0,
+      "collected_at": "2026-05-31T16:42:57.107079",
+      "technical_score": 8.0,
       "relevance_score": 0.0,
-      "final_score": 10.5,
-      "impact_score": 15.0,
+      "final_score": 5.6,
+      "impact_score": 8.0,
       "impact_level": "low",
       "urgency_level": "LOW",
       "detected_factors": [
         {
           "category": "performance",
           "count": 1,
-          "score_contribution": 15.0,
+          "score_contribution": 8.0,
           "snippets": [
             "FastAPI framework, high performance, easy to learn, fast to code, ready for production"
           ]
@@ -3746,7 +3736,7 @@
       "breaking_snippets": [],
       "repo_weight": 1.2,
       "html_url": "https://github.com/fastapi/fastapi/releases/tag/0.135.4",
-      "collected_at": "2026-05-31T08:02:36.347613",
+      "collected_at": "2026-05-31T16:42:23.329429",
       "technical_score": 30.0,
       "relevance_score": 0.0,
       "final_score": 21.0,
@@ -3784,7 +3774,7 @@
       "breaking_snippets": [],
       "repo_weight": 1.2,
       "html_url": "https://pypi.org/project/openai/2.32.0/",
-      "collected_at": "2026-05-31T08:03:04.354933",
+      "collected_at": "2026-05-31T16:42:59.147202",
       "technical_score": 0.0,
       "relevance_score": 0.0,
       "final_score": 0.0,
@@ -3812,7 +3802,7 @@
       "breaking_snippets": [],
       "repo_weight": 1.1,
       "html_url": "https://github.com/astral-sh/uv/releases/tag/0.11.7",
-      "collected_at": "2026-05-31T08:02:48.858113",
+      "collected_at": "2026-05-31T16:42:40.324201",
       "technical_score": 100.0,
       "relevance_score": 0.0,
       "final_score": 70.0,
@@ -3831,7 +3821,7 @@
         {
           "category": "enhancement",
           "count": 3,
-          "score_contribution": 30.0,
+          "score_contribution": 18.0,
           "snippets": [
             "### Enhancements",
             "### Preview features",
@@ -3841,7 +3831,7 @@
         {
           "category": "bug_fix",
           "count": 5,
-          "score_contribution": 25.0,
+          "score_contribution": 15.0,
           "snippets": [
             "- Fix `--script` handling in `uv audit` (#18970)",
             "- Fix traversal of extras in `uv audit` (#18970)",
@@ -3868,7 +3858,7 @@
       "avg_days_between_releases": 4.75390625,
       "latest_version": "py-1.41.2",
       "latest_release_date": "2026-05-29T17:39:42",
-      "score": 90.1828793774319
+      "score": 78.35408560311284
     },
     {
       "name": "delta-io/delta-rs",
@@ -3878,7 +3868,7 @@
       "avg_days_between_releases": 17.254545454545454,
       "latest_version": "rust-v0.32.3",
       "latest_release_date": "2026-05-19T15:57:44",
-      "score": 65.45045045045045
+      "score": 53.67567567567568
     },
     {
       "name": "astral-sh/uv",
@@ -3888,7 +3878,7 @@
       "avg_days_between_releases": 2.475,
       "latest_version": "0.11.17",
       "latest_release_date": "2026-05-28T20:41:06",
-      "score": 64.13167259786476
+      "score": 50.02491103202847
     },
     {
       "name": "tiangolo/fastapi",
@@ -3898,17 +3888,7 @@
       "avg_days_between_releases": 9.44,
       "latest_version": "0.136.3",
       "latest_release_date": "2026-05-23T18:52:33",
-      "score": 49.880434782608695
-    },
-    {
-      "name": "huggingface/transformers",
-      "category": "ai",
-      "direction": "rising",
-      "release_count_window": 3,
-      "avg_days_between_releases": 10.21484375,
-      "latest_version": "v5.9.0",
-      "latest_release_date": "2026-05-20T14:12:54",
-      "score": 33.57976653696498
+      "score": 45.34057971014493
     },
     {
       "name": "tokio-rs/axum",
@@ -3918,7 +3898,17 @@
       "avg_days_between_releases": 8.925287356321839,
       "latest_version": "axum-v0.8.9",
       "latest_release_date": "2026-04-14T09:39:51",
-      "score": 30.594285714285714
+      "score": 29.02285714285714
+    },
+    {
+      "name": "huggingface/transformers",
+      "category": "ai",
+      "direction": "rising",
+      "release_count_window": 3,
+      "avg_days_between_releases": 10.21484375,
+      "latest_version": "v5.9.0",
+      "latest_release_date": "2026-05-20T14:12:54",
+      "score": 23.813229571984436
     },
     {
       "name": "tokio-rs/tokio",
@@ -3928,7 +3918,7 @@
       "avg_days_between_releases": 15.706666666666667,
       "latest_version": "tokio-1.52.3",
       "latest_release_date": "2026-05-08T12:53:37",
-      "score": 21.397350993377483
+      "score": 17.549668874172184
     },
     {
       "name": "pypi/fastapi",
@@ -3938,7 +3928,7 @@
       "avg_days_between_releases": 9.126315789473685,
       "latest_version": "0.136.3",
       "latest_release_date": "2026-05-23T18:53:15.192460",
-      "score": 15.0
+      "score": 8.0
     },
     {
       "name": "pypi/polars",
@@ -3981,16 +3971,6 @@
       "score": 0.02032520325203252
     },
     {
-      "name": "pypi/ruff",
-      "category": "backend-rust",
-      "direction": "rising",
-      "release_count_window": 3,
-      "avg_days_between_releases": 2.9164619164619165,
-      "latest_version": "0.15.15",
-      "latest_release_date": "2026-05-28T14:16:06.701763",
-      "score": 0.0
-    },
-    {
       "name": "pypi/uv",
       "category": "backend-rust",
       "direction": "rising",
@@ -4001,6 +3981,16 @@
       "score": 0.0
     },
     {
+      "name": "pypi/ruff",
+      "category": "backend-rust",
+      "direction": "rising",
+      "release_count_window": 3,
+      "avg_days_between_releases": 2.9164619164619165,
+      "latest_version": "0.15.15",
+      "latest_release_date": "2026-05-28T14:16:06.701763",
+      "score": 0.0
+    },
+    {
       "name": "duckdb/duckdb",
       "category": "data-engineering",
       "direction": "stable",
@@ -4008,7 +3998,7 @@
       "avg_days_between_releases": 42.16949152542373,
       "latest_version": "v1.5.3",
       "latest_release_date": "2026-05-20T11:50:43",
-      "score": 68.15
+      "score": 58.1
     },
     {
       "name": "apache/iceberg",
@@ -4018,7 +4008,7 @@
       "avg_days_between_releases": 52.18181818181818,
       "latest_version": "apache-iceberg-1.11.0",
       "latest_release_date": "2026-05-20T08:47:57",
-      "score": 32.911764705882355
+      "score": 31.294117647058822
     },
     {
       "name": "apache/arrow",
@@ -4123,88 +4113,74 @@
   ],
   "summaries": [
     {
-      "release_id": "95030f1af2fe3498",
-      "lib_name": "tiangolo/fastapi",
-      "version": "0.86.0",
-      "date": "2022-11",
+      "release_id": "58f1f4432bafa882",
+      "lib_name": "pypi/transformers",
+      "version": "2.10.0",
+      "date": "2020-05",
       "changes": [
-        "⬆ Add Python 3.11 to the officially supported versions. PR #5587 by @tiangolo",
-        "✅ Enable tests for Python 3.11. PR #4881 by @tiangolo",
-        "🐛 Close FormData (uploaded files) after the request is done. PR #5465 by @adriangb",
-        "✏ Fix typo in `docs/en/docs/tutorial/security/oauth2-jwt.md`. PR #5584 by @vivekashok1221",
-        "🌐 Update wording in Chinese translation for `docs/zh/docs/python-types.md`. PR #5416 by @supercaizehua",
-        "🌐 Add Russian translation for `docs/ru/docs/deployment/index.md`. PR #5336 by @Xewus",
-        "🌐 Update Chinese translation for `docs/tutorial/security/oauth2-jwt.md`. PR #3846 by @jaystone776",
-        "👷 Update FastAPI People to exclude bots: pre-commit-ci, dependabot. PR #5586 by @tiangolo"
-      ],
-      "impact": "critical",
-      "breaking": false,
-      "category": "backend",
-      "generated_at": "2026-05-31T08:03:21.196390"
-    },
-    {
-      "release_id": "e6d5fe4efb7b68bb",
-      "lib_name": "pypi/langchain-core",
-      "version": "1.2.16",
-      "date": "2026-02",
-      "changes": [
-        "Building applications with LLMs through composability"
+        "Transformers: the model-definition framework for state-of-the-art machine learning models in text, vision, audio, and multimodal models, for both inference and training."
       ],
       "impact": "low",
       "breaking": false,
       "category": "ai",
-      "generated_at": "2026-05-31T08:03:21.196515"
+      "generated_at": "2026-05-31T16:43:16.104920"
     },
     {
-      "release_id": "b570f6206a690939",
-      "lib_name": "pola-rs/polars",
-      "version": "py-1.35.0-beta.1",
-      "date": "2025-10",
-      "changes": [
-        "Address `group_by_dynamic` slowness in sparse data (#24916)",
-        "Push filters to PyIceberg (#24910)",
-        "Native `filter/drop_nulls/drop_nans` in group-by context (#24897)",
-        "Implement `cumulative_eval` using the group-by engine (#24889)",
-        "Prevent generation of copies of `Dataframe`s in `DslPlan` serialization (#24852)",
-        "Implement native `null_count`, `any` and `all` group-by aggregations (#24859)",
-        "Speed up `reverse` in group-by context (#24855)",
-        "Prune unused categorical values when exporting to arrow/parquet/IPC/pickle (#24829)"
-      ],
-      "impact": "critical",
-      "breaking": false,
-      "category": "data-engineering",
-      "generated_at": "2026-05-31T08:03:21.196611"
-    },
-    {
-      "release_id": "070bfabfafdf1c0c",
-      "lib_name": "pypi/langchain-core",
-      "version": "1.2.2",
-      "date": "2025-12",
-      "changes": [
-        "Building applications with LLMs through composability"
-      ],
-      "impact": "low",
-      "breaking": false,
-      "category": "ai",
-      "generated_at": "2026-05-31T08:03:21.196639"
-    },
-    {
-      "release_id": "9bc672d7dc76d666",
+      "release_id": "3e89ac71af90412f",
       "lib_name": "pypi/openai",
-      "version": "1.102.0",
-      "date": "2025-08",
+      "version": "1.60.2",
+      "date": "2025-01",
       "changes": [
         "The official Python library for the openai API"
       ],
       "impact": "low",
       "breaking": false,
       "category": "ai",
-      "generated_at": "2026-05-31T08:03:21.196661"
+      "generated_at": "2026-05-31T16:43:16.104968"
     },
     {
-      "release_id": "07f20bc1a5b4f2e0",
+      "release_id": "dc7ff0c0e14af38a",
+      "lib_name": "tokio-rs/axum",
+      "version": "axum-v0.8.8",
+      "date": "2025-12",
+      "changes": [
+        "Clarify documentation for `Router::route_layer` ([#3567])"
+      ],
+      "impact": "low",
+      "breaking": false,
+      "category": "backend-rust",
+      "generated_at": "2026-05-31T16:43:16.105124"
+    },
+    {
+      "release_id": "e632650267d9e6b0",
+      "lib_name": "pypi/scikit-learn",
+      "version": "1.7.0",
+      "date": "2025-06",
+      "changes": [
+        "A set of python modules for machine learning and data mining"
+      ],
+      "impact": "low",
+      "breaking": false,
+      "category": "ai",
+      "generated_at": "2026-05-31T16:43:16.105152"
+    },
+    {
+      "release_id": "b706d68d723a8691",
+      "lib_name": "pypi/maturin",
+      "version": "1.5.0",
+      "date": "2024-03",
+      "changes": [
+        "Build and publish crates with pyo3, cffi and uniffi bindings as well as rust binaries as python packages"
+      ],
+      "impact": "low",
+      "breaking": false,
+      "category": "backend-rust",
+      "generated_at": "2026-05-31T16:43:16.105174"
+    },
+    {
+      "release_id": "f4e1044fb4ce7886",
       "lib_name": "pypi/langchain-core",
-      "version": "0.2.4",
+      "version": "0.2.8",
       "date": "2024-06",
       "changes": [
         "Building applications with LLMs through composability"
@@ -4212,295 +4188,223 @@
       "impact": "low",
       "breaking": false,
       "category": "ai",
-      "generated_at": "2026-05-31T08:03:21.196680"
+      "generated_at": "2026-05-31T16:43:16.105193"
     },
     {
-      "release_id": "e7ff70172cb8820a",
-      "lib_name": "astral-sh/uv",
-      "version": "0.4.17",
-      "date": "2024-09",
-      "changes": [
-        "Add `uv build --all` to build all packages in a workspace (#7724)",
-        "Add support for `uv init --script` (#7565)",
-        "Add support for upgrading build environment for installed tools (`uv tool upgrade --python`) (#7605)",
-        "Initialize a Git repository in `uv init` (#5476)",
-        "Respect `--quiet` flag in `uv build` (#7674)",
-        "Add context message before listing available tools in `uvx` (#7641)",
-        "Don't create Python bytecode files during interpreter discovery (#7707)",
-        "Escape glob patterns in workspace member discovery (#7709)"
-      ],
-      "impact": "critical",
-      "breaking": false,
-      "category": "tooling",
-      "generated_at": "2026-05-31T08:03:21.196730"
-    },
-    {
-      "release_id": "1416e9f2da3b8a88",
-      "lib_name": "tokio-rs/axum",
-      "version": "axum-v0.5.12",
-      "date": "2022-07",
-      "changes": [
-        "**added:** Added `debug_handler` which is an attribute macro that improves"
-      ],
-      "impact": "low",
-      "breaking": false,
-      "category": "backend-rust",
-      "generated_at": "2026-05-31T08:03:21.196752"
-    },
-    {
-      "release_id": "d427d78f8c10ea29",
-      "lib_name": "huggingface/transformers",
-      "version": "v4.16.0",
-      "date": "2022-01",
-      "changes": [
-        "Add Nystromformer by @novice03 in https://github.com/huggingface/transformers/pull/14659",
-        "Add REALM by @qqaatw in https://github.com/huggingface/transformers/pull/13292",
-        "Add FastTokenizer to REALM by @qqaatw in https://github.com/huggingface/transformers/pull/15211",
-        "Add MAE by @NielsRogge in https://github.com/huggingface/transformers/pull/15120"
-      ],
-      "impact": "moderate",
-      "breaking": false,
-      "category": "ai",
-      "generated_at": "2026-05-31T08:03:21.196798"
-    },
-    {
-      "release_id": "c03471cf2a2450df",
-      "lib_name": "astral-sh/uv",
-      "version": "0.5.14",
-      "date": "2025-01",
-      "changes": [
-        "Add `--exact` flag to `uv run` (#10198)",
-        "Add `--outdated` support to `uv pip tree` (#10199)",
-        "Add a required version setting to uv (#10248)",
-        "Add loongarch64 to supported Python platform tags (#10223)",
-        "Add manylinux2014 aliases for `--python-platform` (#10217)",
-        "Add support for Python interpreters on ARMv5TE platforms (#10234)",
-        "Add support for optional `--description` in `uv init` (#10209)",
-        "Ignore empty or missing hrefs in Simple HTML (#10276)"
-      ],
-      "impact": "high",
-      "breaking": false,
-      "category": "tooling",
-      "generated_at": "2026-05-31T08:03:21.196844"
-    },
-    {
-      "release_id": "9a27134cabca0647",
-      "lib_name": "pola-rs/polars",
-      "version": "py-0.19.7",
-      "date": "2023-10",
-      "changes": [
-        "Postfix `rolling` expression as a special case of window functions. (#11445)",
-        "Use IPC for (un)pickling dataframes/series (#11507)",
-        "early return in replace\\_time\\_zone if target and source time zones match (#11478)",
-        "greatly improve parquet cloud reading (#11479)",
-        "ensure we download row-groups concurrently. (#11464)",
-        "support left and right anti/semi joins from the SQL interface (#11501)",
-        "Add `left_on` and `right_on` parameters to `df.update` (#11277)",
-        "expressify peak\\_min/peak\\_max (#11482)"
-      ],
-      "impact": "critical",
-      "breaking": false,
-      "category": "data-engineering",
-      "generated_at": "2026-05-31T08:03:21.196899"
-    },
-    {
-      "release_id": "bd1ab5b286a953cc",
-      "lib_name": "pypi/polars",
-      "version": "0.12.18",
-      "date": "2022-01",
-      "changes": [
-        "Blazingly fast DataFrame library"
-      ],
-      "impact": "moderate",
-      "breaking": false,
-      "category": "data-engineering",
-      "generated_at": "2026-05-31T08:03:21.196921"
-    },
-    {
-      "release_id": "71a901d2176d0010",
-      "lib_name": "tiangolo/fastapi",
-      "version": "0.102.0",
-      "date": "2023-08",
-      "changes": [
-        "✨ Add support for disabling the separation of input and output JSON Schemas in OpenAPI with Pydantic v2 with `separate_input_output_schemas=False`. PR #10145 by @tiangolo",
-        "New docs Separate OpenAPI Schemas for Input and Output or Not",
-        "This PR also includes a new setup (internal tools) for generating screenshots for the docs",
-        "♻️ Refactor tests for new Pydantic 2.2.1. PR #10115 by @tiangolo",
-        "📝 Add new docs section, How To - Recipes, move docs that don't have to be read by everyone to How To. PR #10114 by @tiangolo",
-        "📝 Update Advanced docs, add links to sponsor courses. PR #10113 by @tiangolo",
-        "📝 Update docs for generating clients. PR #10112 by @tiangolo",
-        "📝 Tweak MkDocs and add redirects. PR #10111 by @tiangolo"
-      ],
-      "impact": "low",
-      "breaking": false,
-      "category": "backend",
-      "generated_at": "2026-05-31T08:03:21.196981"
-    },
-    {
-      "release_id": "5908daf99b9bfa19",
-      "lib_name": "pypi/uv",
-      "version": "0.1.6",
-      "date": "2024-02",
-      "changes": [
-        "An extremely fast Python package and project manager, written in Rust."
-      ],
-      "impact": "low",
-      "breaking": false,
-      "category": "backend-rust",
-      "generated_at": "2026-05-31T08:03:21.197000"
-    },
-    {
-      "release_id": "780ac9fddc913ecf",
-      "lib_name": "tokio-rs/tokio",
-      "version": "tokio-1.8.3",
-      "date": "2021-07",
-      "changes": [
-        "Fix leak if output of future panics on drop ([#3967])",
-        "Fix leak in `LocalSet` ([#3978])"
-      ],
-      "impact": "low",
-      "breaking": false,
-      "category": "backend-rust",
-      "generated_at": "2026-05-31T08:03:21.197028"
-    },
-    {
-      "release_id": "8bc8b1085d56f45a",
+      "release_id": "60f4530d61533678",
       "lib_name": "pypi/scikit-learn",
-      "version": "0.20.4",
-      "date": "2019-07",
+      "version": "0.19.1",
+      "date": "2017-10",
       "changes": [
         "A set of python modules for machine learning and data mining"
       ],
       "impact": "low",
       "breaking": false,
       "category": "ai",
-      "generated_at": "2026-05-31T08:03:21.197046"
+      "generated_at": "2026-05-31T16:43:16.105210"
     },
     {
-      "release_id": "43fbe65415b4f607",
-      "lib_name": "pola-rs/polars",
-      "version": "py-0.17.5",
-      "date": "2023-10",
-      "changes": [
-        "use online variance kernel for aggregation (#8306)"
-      ],
-      "impact": "moderate",
-      "breaking": false,
-      "category": "data-engineering",
-      "generated_at": "2026-05-31T08:03:21.197070"
-    },
-    {
-      "release_id": "1437b6dd9fd80e9f",
-      "lib_name": "pypi/polars",
-      "version": "0.13.14",
-      "date": "2022-03",
-      "changes": [
-        "Blazingly fast DataFrame library"
-      ],
-      "impact": "moderate",
-      "breaking": false,
-      "category": "data-engineering",
-      "generated_at": "2026-05-31T08:03:21.197088"
-    },
-    {
-      "release_id": "150121373ab15bf9",
+      "release_id": "d0a084d942b7d6c7",
       "lib_name": "astral-sh/uv",
-      "version": "0.2.17",
-      "date": "2024-06",
+      "version": "0.6.8",
+      "date": "2025-03",
       "changes": [
-        "Avoid enforcing extra-only constraints (#4570)"
+        "Add support for enabling all groups by default with `default-groups = \"all\"` (#12289)",
+        "Add simpler `--managed-python` and `--no-managed-python` flags for toggling Python preferences (#12246)",
+        "Avoid allocations for default cache keys (#12063)",
+        "Allow local version mismatches when validating lockfile (#12285)",
+        "Allow owned string when deserializing `requires-python` (#12278)",
+        "Make cache errors non-fatal in `Planner::build` (#12281)"
+      ],
+      "impact": "moderate",
+      "breaking": false,
+      "category": "tooling",
+      "generated_at": "2026-05-31T16:43:16.105271"
+    },
+    {
+      "release_id": "65af624894e069b6",
+      "lib_name": "huggingface/transformers",
+      "version": "v4.9.2",
+      "date": "2021-08",
+      "changes": [
+        "Tpu tie weights #13030 (@sgugger)",
+        "ONNX fixes & examples: #13048, #13049, #13028, #13014, #12911,  (@mfuntowicz, @michaelbenayoun, @LysandreJik)",
+        "Fix push_to_hub for TPUs #12895 (@sgugger)"
       ],
       "impact": "low",
       "breaking": false,
-      "category": "tooling",
-      "generated_at": "2026-05-31T08:03:21.197120"
+      "category": "ai",
+      "generated_at": "2026-05-31T16:43:16.105303"
     },
     {
-      "release_id": "44845b2e4323e995",
-      "lib_name": "tokio-rs/tokio",
-      "version": "tokio-0.2.5",
-      "date": "2019-12",
+      "release_id": "d9e53b3685fedd50",
+      "lib_name": "huggingface/transformers",
+      "version": "v4.22.0",
+      "date": "2022-09",
       "changes": [
-        "`io::AsyncSeek` trait (#1924)",
-        "`Mutex::try_lock` (#1939)",
-        "`mpsc::Receiver::try_recv` and `mpsc::UnboundedReceiver::try_recv` (#1939)",
-        "`writev` support for `TcpStream` (#1956)",
-        "`time::throttle` for throttling streams (#1949)",
-        "implement `Stream` for `time::DelayQueue` (#1975)",
-        "`sync::broadcast` provides a fan-out channel (#1943)",
-        "`sync::Semaphore` provides an async semaphore (#1973)"
+        "Add swin transformer v2 by @nandwalritik in #17469",
+        "Add VideoMAE by @NielsRogge in #17821",
+        "Add Donut by @NielsRogge in #18488"
       ],
-      "impact": "moderate",
+      "impact": "low",
+      "breaking": false,
+      "category": "ai",
+      "generated_at": "2026-05-31T16:43:16.105345"
+    },
+    {
+      "release_id": "b99ba374a00670dd",
+      "lib_name": "pypi/langchain-core",
+      "version": "0.3.11",
+      "date": "2024-10",
+      "changes": [
+        "Building applications with LLMs through composability"
+      ],
+      "impact": "low",
+      "breaking": false,
+      "category": "ai",
+      "generated_at": "2026-05-31T16:43:16.105364"
+    },
+    {
+      "release_id": "c82128d2d4bfaff4",
+      "lib_name": "pypi/uv",
+      "version": "0.7.4",
+      "date": "2025-05",
+      "changes": [
+        "An extremely fast Python package and project manager, written in Rust."
+      ],
+      "impact": "low",
       "breaking": false,
       "category": "backend-rust",
-      "generated_at": "2026-05-31T08:03:21.197175"
+      "generated_at": "2026-05-31T16:43:16.105383"
+    },
+    {
+      "release_id": "554b20e4131ed466",
+      "lib_name": "pypi/ruff",
+      "version": "0.0.35",
+      "date": "2022-09",
+      "changes": [
+        "An extremely fast Python linter and code formatter, written in Rust."
+      ],
+      "impact": "low",
+      "breaking": false,
+      "category": "backend-rust",
+      "generated_at": "2026-05-31T16:43:16.105400"
+    },
+    {
+      "release_id": "326b750712cabd34",
+      "lib_name": "tokio-rs/axum",
+      "version": "axum-extra-v0.12.6",
+      "date": "2026-04",
+      "changes": [
+        "**fixed:** Escape backslashes and double quotes in `Content-Disposition` filenames to prevent header parameter injection in `Attachment` and `FileStream` ([#3664])",
+        "`vpath!` macro now stops the compilation if your path is using deprecated path variables in the old `107` format, such as `:var` and `*var`. the only allowed way now is `{var}`. ([#3618])",
+        "**fixed:** Return specific error message when multipart body limit is exceeded ([#3611])"
+      ],
+      "impact": "critical",
+      "breaking": false,
+      "category": "backend-rust",
+      "generated_at": "2026-05-31T16:43:16.105432"
+    },
+    {
+      "release_id": "6aeedd8b44839543",
+      "lib_name": "tiangolo/fastapi",
+      "version": "0.121.0",
+      "date": "2025-11",
+      "changes": [
+        "✨ Add support for dependencies with scopes, support `scope=\"request\"` for dependencies with `yield` that exit before the response is sent. PR #14262 by @tiangolo",
+        "New docs: Dependencies with `yield` - Early exit and `scope`",
+        "👥 Update FastAPI People - Contributors and Translators. PR #14273 by @tiangolo",
+        "👥 Update FastAPI People - Sponsors. PR #14274 by @tiangolo",
+        "👥 Update FastAPI GitHub topic repositories. PR #14280 by @tiangolo",
+        "⬆ Bump mkdocs-macros-plugin from 1.4.0 to 1.4.1. PR #14277 by [@dependabot[bot]](https://github.com/apps/dependabot)",
+        "⬆ Bump mkdocstrings[python] from 0.26.1 to 0.30.1. PR #14279 by [@dependabot[bot]](https://github.com/apps/dependabot)"
+      ],
+      "impact": "low",
+      "breaking": false,
+      "category": "backend",
+      "generated_at": "2026-05-31T16:43:16.105492"
+    },
+    {
+      "release_id": "103a565aff73d586",
+      "lib_name": "pypi/transformers",
+      "version": "4.0.0",
+      "date": "2020-11",
+      "changes": [
+        "Transformers: the model-definition framework for state-of-the-art machine learning models in text, vision, audio, and multimodal models, for both inference and training."
+      ],
+      "impact": "high",
+      "breaking": false,
+      "category": "ai",
+      "generated_at": "2026-05-31T16:43:16.105514"
+    },
+    {
+      "release_id": "08af6a09447d580a",
+      "lib_name": "astral-sh/uv",
+      "version": "0.2.37",
+      "date": "2024-08",
+      "changes": [
+        "Avoid cloning requirement for unchanged markers (#6116)",
+        "Fix loading of cached metadata for Git distributions with subdirectories (#6094)",
+        "Add env var to `--link-mode=copy` warning (#6103)",
+        "Avoid displaying \"failed to download\" on build failures for local source distributions (#6075)",
+        "Improve display of available package ranges (#6118)",
+        "Use \"your requirements\" consistently in resolver error messages (#6113)"
+      ],
+      "impact": "critical",
+      "breaking": false,
+      "category": "tooling",
+      "generated_at": "2026-05-31T16:43:16.105560"
+    },
+    {
+      "release_id": "569d06c5a039727d",
+      "lib_name": "pypi/ruff",
+      "version": "0.9.0",
+      "date": "2025-01",
+      "changes": [
+        "An extremely fast Python linter and code formatter, written in Rust."
+      ],
+      "impact": "low",
+      "breaking": false,
+      "category": "backend-rust",
+      "generated_at": "2026-05-31T16:43:16.105580"
+    },
+    {
+      "release_id": "dc4940ebc4768f9d",
+      "lib_name": "huggingface/transformers",
+      "version": "v4.51.3-CSM-preview",
+      "date": "2025-05",
+      "changes": [
+        "A new model is added to transformers: CSM\r\nIt is added on top of the v4.51.3 release, and can be installed from the following tag: `v4.51.3-CSM-preview`",
+        "As the tag implies, this tag is a **_preview_** of the CSM model",
+        "This tag is a tagged version of the `main` branch and does not follow semantic versioning"
+      ],
+      "impact": "critical",
+      "breaking": false,
+      "category": "ai",
+      "generated_at": "2026-05-31T16:43:16.105624"
+    },
+    {
+      "release_id": "306c7fbd904d62dd",
+      "lib_name": "pypi/openai",
+      "version": "1.90.0",
+      "date": "2025-06",
+      "changes": [
+        "The official Python library for the openai API"
+      ],
+      "impact": "low",
+      "breaking": false,
+      "category": "ai",
+      "generated_at": "2026-05-31T16:43:16.105643"
     }
   ],
   "discoveries": [
-    {
-      "owner": "langgenius",
-      "repo": "dify",
-      "full_name": "langgenius/dify",
-      "description": "Production-ready platform for agentic workflow development.",
-      "url": "https://github.com/langgenius/dify",
-      "stars": 143238,
-      "language": "TypeScript",
-      "topics": [
-        "agent",
-        "agentic-ai",
-        "agentic-framework",
-        "agentic-workflow",
-        "ai",
-        "automation",
-        "gemini",
-        "genai",
-        "gpt",
-        "gpt-4",
-        "llm",
-        "low-code",
-        "mcp",
-        "nextjs",
-        "no-code",
-        "openai",
-        "orchestration",
-        "python",
-        "rag",
-        "workflow"
-      ],
-      "pushed_at": "2026-05-31T07:38:27Z",
-      "created_at": "2023-04-12T07:40:24Z",
-      "category": "ai",
-      "discovery_source": "rag",
-      "collected_at": "2026-05-31T08:03:12.708249"
-    },
-    {
-      "owner": "TauricResearch",
-      "repo": "TradingAgents",
-      "full_name": "TauricResearch/TradingAgents",
-      "description": "TradingAgents: Multi-Agents LLM Financial Trading Framework",
-      "url": "https://github.com/TauricResearch/TradingAgents",
-      "stars": 81092,
-      "language": "Python",
-      "topics": [
-        "agent",
-        "finance",
-        "llm",
-        "multiagent",
-        "trading"
-      ],
-      "pushed_at": "2026-05-31T08:01:04Z",
-      "created_at": "2024-12-28T03:31:08Z",
-      "category": "ai",
-      "discovery_source": "llm",
-      "collected_at": "2026-05-31T08:03:11.428686"
-    },
     {
       "owner": "apache",
       "repo": "superset",
       "full_name": "apache/superset",
       "description": "Apache Superset is a Data Visualization and Data Exploration Platform",
       "url": "https://github.com/apache/superset",
-      "stars": 73092,
+      "stars": 73102,
       "language": "TypeScript",
       "topics": [
         "analytics",
@@ -4522,72 +4426,11 @@
         "sql-editor",
         "superset"
       ],
-      "pushed_at": "2026-05-31T07:33:06Z",
+      "pushed_at": "2026-05-31T12:06:12Z",
       "created_at": "2015-07-21T18:55:34Z",
       "category": "data-engineering",
       "discovery_source": "data-engineering",
-      "collected_at": "2026-05-31T08:03:06.300973"
-    },
-    {
-      "owner": "unslothai",
-      "repo": "unsloth",
-      "full_name": "unslothai/unsloth",
-      "description": "Unsloth Studio is a web UI for training and running open models like Gemma 4, Qwen3.6, DeepSeek, gpt-oss locally.",
-      "url": "https://github.com/unslothai/unsloth",
-      "stars": 65431,
-      "language": "Python",
-      "topics": [
-        "agent",
-        "deepseek",
-        "fine-tuning",
-        "gemma",
-        "gemma3",
-        "gpt-oss",
-        "llama",
-        "llama3",
-        "llm",
-        "llms",
-        "mistral",
-        "openai",
-        "qwen",
-        "reinforcement-learning",
-        "self-hosted",
-        "text-to-speech",
-        "tts",
-        "ui",
-        "unsloth"
-      ],
-      "pushed_at": "2026-05-31T07:59:26Z",
-      "created_at": "2023-11-29T16:50:09Z",
-      "category": "ai",
-      "discovery_source": "llm",
-      "collected_at": "2026-05-31T08:03:11.428702"
-    },
-    {
-      "owner": "shareAI-lab",
-      "repo": "learn-claude-code",
-      "full_name": "shareAI-lab/learn-claude-code",
-      "description": "Bash is all you need -  A nano claude code–like 「agent harness」, built from 0 to 1",
-      "url": "https://github.com/shareAI-lab/learn-claude-code",
-      "stars": 63759,
-      "language": "Python",
-      "topics": [
-        "agent",
-        "agent-development",
-        "ai-agent",
-        "claude",
-        "claude-code",
-        "educational",
-        "llm",
-        "python",
-        "teaching",
-        "tutorial"
-      ],
-      "pushed_at": "2026-05-31T07:57:15Z",
-      "created_at": "2025-06-29T15:34:15Z",
-      "category": "ai",
-      "discovery_source": "llm",
-      "collected_at": "2026-05-31T08:03:11.428723"
+      "collected_at": "2026-05-31T16:43:01.234205"
     },
     {
       "owner": "pathwaycom",
@@ -4595,7 +4438,7 @@
       "full_name": "pathwaycom/pathway",
       "description": "Python ETL framework for stream processing, real-time analytics, LLM pipelines, and RAG.",
       "url": "https://github.com/pathwaycom/pathway",
-      "stars": 63175,
+      "stars": 63166,
       "language": "Python",
       "topics": [
         "batch-processing",
@@ -4620,7 +4463,34 @@
       "created_at": "2022-11-27T13:01:14Z",
       "category": "data-engineering",
       "discovery_source": "stream-processing",
-      "collected_at": "2026-05-31T08:03:10.132928"
+      "collected_at": "2026-05-31T16:43:05.062798"
+    },
+    {
+      "owner": "safishamsi",
+      "repo": "graphify",
+      "full_name": "safishamsi/graphify",
+      "description": "AI coding assistant skill (Claude Code, Codex, OpenCode, Cursor, Gemini CLI, and more). Turn any folder of code, SQL schemas, R scripts, shell scripts, docs, papers, images, or videos into a queryable knowledge graph. App code + database schema + infrastructure in one graph.",
+      "url": "https://github.com/safishamsi/graphify",
+      "stars": 57185,
+      "language": "Python",
+      "topics": [
+        "antigravity",
+        "claude-code",
+        "codex",
+        "gemini",
+        "graphrag",
+        "knowledge-graph",
+        "leiden",
+        "openclaw",
+        "rag",
+        "skills",
+        "tree-sitter"
+      ],
+      "pushed_at": "2026-05-31T16:09:31Z",
+      "created_at": "2026-04-03T15:49:07Z",
+      "category": "ai",
+      "discovery_source": "rag",
+      "collected_at": "2026-05-31T16:43:07.706330"
     },
     {
       "owner": "dbeaver",
@@ -4628,7 +4498,7 @@
       "full_name": "dbeaver/dbeaver",
       "description": "Free universal database tool and SQL client",
       "url": "https://github.com/dbeaver/dbeaver",
-      "stars": 50312,
+      "stars": 50313,
       "language": "Java",
       "topics": [
         "ai",
@@ -4654,7 +4524,7 @@
       "created_at": "2015-10-21T08:26:28Z",
       "category": "lakehouse",
       "discovery_source": "databricks",
-      "collected_at": "2026-05-31T08:03:16.511180"
+      "collected_at": "2026-05-31T16:43:11.519124"
     },
     {
       "owner": "ClickHouse",
@@ -4662,7 +4532,7 @@
       "full_name": "ClickHouse/ClickHouse",
       "description": "ClickHouse® is a real-time analytics database management system",
       "url": "https://github.com/ClickHouse/ClickHouse",
-      "stars": 47714,
+      "stars": 47720,
       "language": "C++",
       "topics": [
         "ai",
@@ -4683,11 +4553,11 @@
         "self-hosted",
         "sql"
       ],
-      "pushed_at": "2026-05-31T07:32:40Z",
+      "pushed_at": "2026-05-31T16:08:17Z",
       "created_at": "2016-06-02T08:28:18Z",
       "category": "lakehouse",
       "discovery_source": "lakehouse",
-      "collected_at": "2026-05-31T08:03:15.223620"
+      "collected_at": "2026-05-31T16:43:10.246247"
     },
     {
       "owner": "apache",
@@ -4695,7 +4565,7 @@
       "full_name": "apache/airflow",
       "description": "Apache Airflow - A platform to programmatically author, schedule, and monitor workflows",
       "url": "https://github.com/apache/airflow",
-      "stars": 45621,
+      "stars": 45633,
       "language": "Python",
       "topics": [
         "airflow",
@@ -4719,101 +4589,101 @@
         "workflow-engine",
         "workflow-orchestration"
       ],
-      "pushed_at": "2026-05-31T06:42:24Z",
+      "pushed_at": "2026-05-31T16:20:35Z",
       "created_at": "2015-04-13T18:04:58Z",
       "category": "data-engineering",
       "discovery_source": "data-engineering",
-      "collected_at": "2026-05-31T08:03:06.301005"
+      "collected_at": "2026-05-31T16:43:01.234170"
     },
     {
-      "owner": "Hmbown",
-      "repo": "CodeWhale",
-      "full_name": "Hmbown/CodeWhale",
-      "description": "DeepSeek + MiMo coding agent in terminal",
-      "url": "https://github.com/Hmbown/CodeWhale",
-      "stars": 36153,
+      "owner": "HKUDS",
+      "repo": "LightRAG",
+      "full_name": "HKUDS/LightRAG",
+      "description": "[EMNLP2025] \"LightRAG: Simple and Fast Retrieval-Augmented Generation\"",
+      "url": "https://github.com/HKUDS/LightRAG",
+      "stars": 36002,
+      "language": "Python",
+      "topics": [
+        "genai",
+        "gpt",
+        "gpt-4",
+        "graphrag",
+        "knowledge-graph",
+        "large-language-models",
+        "llm",
+        "rag",
+        "retrieval-augmented-generation"
+      ],
+      "pushed_at": "2026-05-31T16:37:47Z",
+      "created_at": "2024-10-02T11:57:54Z",
+      "category": "ai",
+      "discovery_source": "llm",
+      "collected_at": "2026-05-31T16:43:06.380187"
+    },
+    {
+      "owner": "qdrant",
+      "repo": "qdrant",
+      "full_name": "qdrant/qdrant",
+      "description": "Qdrant - High-performance, massive-scale Vector Database and Vector Search Engine for the next generation of AI. Also available in the cloud https://cloud.qdrant.io/",
+      "url": "https://github.com/qdrant/qdrant",
+      "stars": 31703,
       "language": "Rust",
       "topics": [
-        "cli",
-        "deepseek",
-        "llm",
-        "rust",
-        "terminal",
-        "tui"
-      ],
-      "pushed_at": "2026-05-31T08:02:46Z",
-      "created_at": "2026-01-19T18:21:01Z",
-      "category": "ai",
-      "discovery_source": "llm",
-      "collected_at": "2026-05-31T08:03:11.428695"
-    },
-    {
-      "owner": "sgl-project",
-      "repo": "sglang",
-      "full_name": "sgl-project/sglang",
-      "description": "SGLang is a high-performance serving framework for large language models and multimodal models.",
-      "url": "https://github.com/sgl-project/sglang",
-      "stars": 28481,
-      "language": "Python",
-      "topics": [
-        "attention",
-        "blackwell",
-        "cuda",
-        "deepseek",
-        "diffusion",
-        "glm",
-        "gpt-oss",
-        "inference",
-        "llama",
-        "llm",
-        "minimax",
-        "moe",
-        "qwen",
-        "qwen-image",
-        "reinforcement-learning",
-        "transformer",
-        "vlm",
-        "wan"
-      ],
-      "pushed_at": "2026-05-31T07:59:06Z",
-      "created_at": "2024-01-08T04:15:52Z",
-      "category": "ai",
-      "discovery_source": "llm",
-      "collected_at": "2026-05-31T08:03:11.428709"
-    },
-    {
-      "owner": "mlflow",
-      "repo": "mlflow",
-      "full_name": "mlflow/mlflow",
-      "description": "The open source AI engineering platform for agents, LLMs, and ML models. MLflow enables teams of all sizes to debug, evaluate, monitor, and optimize production-quality AI applications while controlling costs and managing access to models and data.",
-      "url": "https://github.com/mlflow/mlflow",
-      "stars": 26207,
-      "language": "Python",
-      "topics": [
-        "agentops",
-        "agents",
-        "ai",
-        "ai-governance",
-        "apache-spark",
-        "evaluation",
-        "langchain",
-        "llm-evaluation",
-        "llmops",
+        "ai-search",
+        "ai-search-engine",
+        "embeddings-similarity",
+        "hnsw",
+        "hybrid-search",
+        "image-search",
+        "knn-algorithm",
         "machine-learning",
-        "ml",
-        "mlflow",
         "mlops",
-        "model-management",
-        "observability",
-        "open-source",
-        "openai",
-        "prompt-engineering"
+        "nearest-neighbor-search",
+        "neural-network",
+        "neural-search",
+        "recommender-system",
+        "search",
+        "search-engine",
+        "search-engines",
+        "similarity-search",
+        "vector-database",
+        "vector-search",
+        "vector-search-engine"
       ],
-      "pushed_at": "2026-05-31T07:31:50Z",
-      "created_at": "2018-06-05T16:05:58Z",
+      "pushed_at": "2026-05-31T16:12:08Z",
+      "created_at": "2020-05-30T21:37:01Z",
       "category": "ai",
       "discovery_source": "mlops",
-      "collected_at": "2026-05-31T08:03:14.093276"
+      "collected_at": "2026-05-31T16:43:09.031269"
+    },
+    {
+      "owner": "mastra-ai",
+      "repo": "mastra",
+      "full_name": "mastra-ai/mastra",
+      "description": "From the team behind Gatsby, Mastra is a framework for building AI-powered applications and agents with a modern TypeScript stack.",
+      "url": "https://github.com/mastra-ai/mastra",
+      "stars": 24599,
+      "language": "TypeScript",
+      "topics": [
+        "agents",
+        "ai",
+        "chatbots",
+        "evals",
+        "javascript",
+        "llm",
+        "mcp",
+        "nextjs",
+        "nodejs",
+        "reactjs",
+        "tts",
+        "typescript",
+        "workflows"
+      ],
+      "pushed_at": "2026-05-31T16:42:13Z",
+      "created_at": "2024-08-06T20:44:31Z",
+      "category": "ai",
+      "discovery_source": "llm",
+      "collected_at": "2026-05-31T16:43:06.380161"
     },
     {
       "owner": "vectordotdev",
@@ -4821,7 +4691,7 @@
       "full_name": "vectordotdev/vector",
       "description": "A high-performance observability data pipeline.",
       "url": "https://github.com/vectordotdev/vector",
-      "stars": 21948,
+      "stars": 21951,
       "language": "Rust",
       "topics": [
         "agent",
@@ -4847,7 +4717,78 @@
       "created_at": "2018-08-27T16:57:34Z",
       "category": "data-engineering",
       "discovery_source": "stream-processing",
-      "collected_at": "2026-05-31T08:03:10.132970"
+      "collected_at": "2026-05-31T16:43:05.062811"
+    },
+    {
+      "owner": "airbytehq",
+      "repo": "airbyte",
+      "full_name": "airbytehq/airbyte",
+      "description": "Open-source data movement for ELT pipelines and AI agents — from APIs, databases & files to warehouses, lakes, and AI applications. Both self-hosted and Cloud.",
+      "url": "https://github.com/airbytehq/airbyte",
+      "stars": 21360,
+      "language": "Python",
+      "topics": [
+        "bigquery",
+        "change-data-capture",
+        "data",
+        "data-analysis",
+        "data-collection",
+        "data-engineering",
+        "data-integration",
+        "data-pipeline",
+        "elt",
+        "etl",
+        "java",
+        "mssql",
+        "mysql",
+        "pipeline",
+        "postgresql",
+        "python",
+        "redshift",
+        "s3",
+        "self-hosted",
+        "snowflake"
+      ],
+      "pushed_at": "2026-05-31T12:20:15Z",
+      "created_at": "2020-07-27T23:55:54Z",
+      "category": "data-engineering",
+      "discovery_source": "data-engineering",
+      "collected_at": "2026-05-31T16:43:01.234199"
+    },
+    {
+      "owner": "NirDiamant",
+      "repo": "agents-towards-production",
+      "full_name": "NirDiamant/agents-towards-production",
+      "description": "End-to-end, code-first tutorials for building production-grade GenAI agents. From prototype to enterprise deployment.",
+      "url": "https://github.com/NirDiamant/agents-towards-production",
+      "stars": 20559,
+      "language": "Jupyter Notebook",
+      "topics": [
+        "agent",
+        "agent-framework",
+        "agentic-ai",
+        "agents",
+        "ai-agents",
+        "deployment",
+        "genai",
+        "generative-ai",
+        "langgraph",
+        "llm",
+        "llms",
+        "mcp",
+        "mlops",
+        "multi-agent-systems",
+        "observability",
+        "production",
+        "python",
+        "rag",
+        "tutorials"
+      ],
+      "pushed_at": "2026-05-31T11:47:45Z",
+      "created_at": "2025-06-16T17:33:44Z",
+      "category": "ai",
+      "discovery_source": "mlops",
+      "collected_at": "2026-05-31T16:43:09.031296"
     },
     {
       "owner": "cube-js",
@@ -4855,7 +4796,7 @@
       "full_name": "cube-js/cube",
       "description": "📊 Cube Core is open-source semantic layer for AI, BI and embedded analytics",
       "url": "https://github.com/cube-js/cube",
-      "stars": 20072,
+      "stars": 20073,
       "language": "Rust",
       "topics": [
         "agentic-analytics",
@@ -4882,7 +4823,39 @@
       "created_at": "2018-09-16T18:58:46Z",
       "category": "lakehouse",
       "discovery_source": "databricks",
-      "collected_at": "2026-05-31T08:03:16.511140"
+      "collected_at": "2026-05-31T16:43:11.519089"
+    },
+    {
+      "owner": "screenpipe",
+      "repo": "screenpipe",
+      "full_name": "screenpipe/screenpipe",
+      "description": "YC (S26) | AI that knows what you've seen, said, or heard. Records everything you do, say, hear 24/7, local, private, secure",
+      "url": "https://github.com/screenpipe/screenpipe",
+      "stars": 19005,
+      "language": "Rust",
+      "topics": [
+        "agents",
+        "agi",
+        "ai",
+        "audio-recording",
+        "computer-vision",
+        "llm",
+        "local-ai",
+        "local-first",
+        "machine-learning",
+        "ml",
+        "multimodal",
+        "privacy",
+        "screen-recording",
+        "speech-to-text",
+        "vision",
+        "ycombinator"
+      ],
+      "pushed_at": "2026-05-31T16:42:27Z",
+      "created_at": "2024-06-19T13:23:56Z",
+      "category": "ai",
+      "discovery_source": "llm",
+      "collected_at": "2026-05-31T16:43:06.380146"
     },
     {
       "owner": "elizaOS",
@@ -4890,7 +4863,7 @@
       "full_name": "elizaOS/eliza",
       "description": "Open source agentic operating system",
       "url": "https://github.com/elizaOS/eliza",
-      "stars": 18484,
+      "stars": 18489,
       "language": "TypeScript",
       "topics": [
         "agent",
@@ -4909,142 +4882,46 @@
         "swarm",
         "telegram"
       ],
-      "pushed_at": "2026-05-31T07:59:01Z",
+      "pushed_at": "2026-05-31T16:42:30Z",
       "created_at": "2024-07-09T07:55:40Z",
       "category": "ai",
       "discovery_source": "rag",
-      "collected_at": "2026-05-31T08:03:12.708261"
+      "collected_at": "2026-05-31T16:43:07.706317"
     },
     {
-      "owner": "argoproj",
-      "repo": "argo-workflows",
-      "full_name": "argoproj/argo-workflows",
-      "description": "Workflow Engine for Kubernetes",
-      "url": "https://github.com/argoproj/argo-workflows",
-      "stars": 16727,
-      "language": "Go",
+      "owner": "arc53",
+      "repo": "DocsGPT",
+      "full_name": "arc53/DocsGPT",
+      "description": "Private AI platform for agents, assistants and enterprise search. Built-in Agent Builder, Deep research, Document analysis, Multi-model support, and API connectivity for agents.",
+      "url": "https://github.com/arc53/DocsGPT",
+      "stars": 17916,
+      "language": "Python",
       "topics": [
-        "airflow",
-        "argo",
-        "argo-workflows",
-        "batch-processing",
-        "cloud-native",
-        "cncf",
-        "dag",
-        "data-engineering",
-        "gitops",
-        "hacktoberfest",
-        "k8s",
-        "knative",
-        "kubernetes",
-        "machine-learning",
-        "mlops",
-        "pipelines",
-        "workflow",
-        "workflow-engine"
-      ],
-      "pushed_at": "2026-05-31T02:36:31Z",
-      "created_at": "2017-08-21T18:50:44Z",
-      "category": "data-engineering",
-      "discovery_source": "data-engineering",
-      "collected_at": "2026-05-31T08:03:06.301025"
-    },
-    {
-      "owner": "prestodb",
-      "repo": "presto",
-      "full_name": "prestodb/presto",
-      "description": "The official home of the Presto distributed SQL query engine for big data",
-      "url": "https://github.com/prestodb/presto",
-      "stars": 16707,
-      "language": "Java",
-      "topics": [
-        "big-data",
-        "data",
-        "hadoop",
-        "hive",
-        "java",
-        "lakehouse",
-        "presto",
-        "query",
-        "sql"
-      ],
-      "pushed_at": "2026-05-30T22:36:25Z",
-      "created_at": "2012-08-09T01:03:37Z",
-      "category": "lakehouse",
-      "discovery_source": "lakehouse",
-      "collected_at": "2026-05-31T08:03:15.223663"
-    },
-    {
-      "owner": "weaviate",
-      "repo": "weaviate",
-      "full_name": "weaviate/weaviate",
-      "description": "Weaviate is an open-source vector database that stores both objects and vectors, allowing for the combination of vector search with structured filtering with the fault tolerance and scalability of a cloud-native database​.",
-      "url": "https://github.com/weaviate/weaviate",
-      "stars": 16257,
-      "language": "Go",
-      "topics": [
-        "approximate-nearest-neighbor-search",
-        "generative-search",
-        "grpc",
-        "hnsw",
-        "hybrid-search",
-        "image-search",
-        "information-retrieval",
-        "mlops",
-        "nearest-neighbor-search",
-        "neural-search",
-        "recommender-system",
-        "search-engine",
-        "semantic-search",
-        "semantic-search-engine",
-        "similarity-search",
-        "vector-database",
-        "vector-search",
-        "vector-search-engine",
-        "vectors",
-        "weaviate"
-      ],
-      "pushed_at": "2026-05-31T07:43:47Z",
-      "created_at": "2016-03-30T15:03:17Z",
-      "category": "ai",
-      "discovery_source": "mlops",
-      "collected_at": "2026-05-31T08:03:14.093323"
-    },
-    {
-      "owner": "Tencent",
-      "repo": "WeKnora",
-      "full_name": "Tencent/WeKnora",
-      "description": "Open-source LLM knowledge platform: turn raw documents into a queryable RAG, an autonomous reasoning agent, and a self-maintaining Wiki.",
-      "url": "https://github.com/Tencent/WeKnora",
-      "stars": 15823,
-      "language": "Go",
-      "topics": [
-        "agent",
-        "agentic",
+        "agent-builder",
+        "agents",
         "ai",
-        "chatbot",
-        "embeddings",
-        "evaluation",
-        "generative-ai",
-        "golang",
-        "knowledge-base",
+        "chatgpt",
+        "docsgpt",
+        "hacktoberfest",
+        "hacktoberfest2025",
+        "information-retrieval",
+        "language-model",
         "llm",
-        "multi-tenant",
-        "multimodel",
-        "ollama",
-        "openai",
-        "question-answering",
+        "machine-learning",
+        "natural-language-processing",
+        "python",
+        "pytorch",
         "rag",
-        "reranking",
+        "react",
+        "search",
         "semantic-search",
-        "vector-search",
-        "wiki"
+        "transformers"
       ],
-      "pushed_at": "2026-05-31T07:43:30Z",
-      "created_at": "2025-07-22T08:01:23Z",
+      "pushed_at": "2026-05-31T16:01:08Z",
+      "created_at": "2023-02-02T11:03:23Z",
       "category": "ai",
       "discovery_source": "rag",
-      "collected_at": "2026-05-31T08:03:12.708240"
+      "collected_at": "2026-05-31T16:43:07.706336"
     },
     {
       "owner": "apache",
@@ -5078,39 +4955,7 @@
       "created_at": "2017-08-10T12:13:30Z",
       "category": "data-engineering",
       "discovery_source": "query-engine",
-      "collected_at": "2026-05-31T08:03:08.787795"
-    },
-    {
-      "owner": "esengine",
-      "repo": "DeepSeek-Reasonix",
-      "full_name": "esengine/DeepSeek-Reasonix",
-      "description": "DeepSeek-native AI coding agent for your terminal. Engineered around prefix-cache stability — leave it running.",
-      "url": "https://github.com/esengine/DeepSeek-Reasonix",
-      "stars": 14823,
-      "language": "TypeScript",
-      "topics": [
-        "agent",
-        "agent-framework",
-        "ai-agent",
-        "ai-coding",
-        "cli",
-        "coding-agent",
-        "deepseek",
-        "developer-tools",
-        "ink",
-        "llm",
-        "prompt-caching",
-        "r1",
-        "terminal",
-        "tool-use",
-        "tui",
-        "typescript"
-      ],
-      "pushed_at": "2026-05-31T08:02:52Z",
-      "created_at": "2026-04-21T08:27:02Z",
-      "category": "ai",
-      "discovery_source": "llm",
-      "collected_at": "2026-05-31T08:03:11.428668"
+      "collected_at": "2026-05-31T16:43:03.666962"
     },
     {
       "owner": "trinodb",
@@ -5145,7 +4990,7 @@
       "created_at": "2019-01-19T06:38:14Z",
       "category": "data-engineering",
       "discovery_source": "query-engine",
-      "collected_at": "2026-05-31T08:03:08.787769"
+      "collected_at": "2026-05-31T16:43:03.666955"
     },
     {
       "owner": "redpanda-data",
@@ -5153,7 +4998,7 @@
       "full_name": "redpanda-data/redpanda",
       "description": "Redpanda is a streaming data platform for developers. Kafka API compatible. 10x faster. No ZooKeeper. No JVM!",
       "url": "https://github.com/redpanda-data/redpanda",
-      "stars": 12160,
+      "stars": 12162,
       "language": "C++",
       "topics": [
         "containers",
@@ -5170,11 +5015,11 @@
         "stream-processing",
         "streaming"
       ],
-      "pushed_at": "2026-05-31T04:37:34Z",
+      "pushed_at": "2026-05-31T08:39:46Z",
       "created_at": "2020-11-02T22:43:36Z",
       "category": "data-engineering",
       "discovery_source": "stream-processing",
-      "collected_at": "2026-05-31T08:03:10.132947"
+      "collected_at": "2026-05-31T16:43:05.062784"
     },
     {
       "owner": "StarRocks",
@@ -5206,83 +5051,11 @@
         "star-schema",
         "vectorized"
       ],
-      "pushed_at": "2026-05-31T04:58:27Z",
+      "pushed_at": "2026-05-31T14:10:06Z",
       "created_at": "2021-09-04T02:29:35Z",
       "category": "lakehouse",
       "discovery_source": "lakehouse",
-      "collected_at": "2026-05-31T08:03:15.223635"
-    },
-    {
-      "owner": "dataelement",
-      "repo": "bisheng",
-      "full_name": "dataelement/bisheng",
-      "description": "BISHENG is an open LLM devops platform for next generation Enterprise AI applications. Powerful and comprehensive features include: GenAI workflow, RAG, Agent, Unified model management, Evaluation, SFT, Dataset Management, Enterprise-level System Management, Observability and more.",
-      "url": "https://github.com/dataelement/bisheng",
-      "stars": 11412,
-      "language": "TypeScript",
-      "topics": [
-        "agent",
-        "ai",
-        "chatbot",
-        "enterprise",
-        "finetune",
-        "genai",
-        "gpt",
-        "langchian",
-        "llama",
-        "llm",
-        "llmdevops",
-        "llmops",
-        "ocr",
-        "openai",
-        "orchestration",
-        "python",
-        "rag",
-        "react",
-        "sft",
-        "workflow"
-      ],
-      "pushed_at": "2026-05-31T06:47:24Z",
-      "created_at": "2023-08-28T10:00:24Z",
-      "category": "ai",
-      "discovery_source": "rag",
-      "collected_at": "2026-05-31T08:03:12.708282"
-    },
-    {
-      "owner": "cocoindex-io",
-      "repo": "cocoindex",
-      "full_name": "cocoindex-io/cocoindex",
-      "description": "Incremental engine for long horizon agents 🌟 Star if you like it!",
-      "url": "https://github.com/cocoindex-io/cocoindex",
-      "stars": 10120,
-      "language": "Python",
-      "topics": [
-        "agentic-data-framework",
-        "ai",
-        "ai-agents",
-        "change-data-capture",
-        "codebase-intelligence",
-        "context-engineering",
-        "data-engineering",
-        "data-indexing",
-        "data-processing",
-        "etl",
-        "help-wanted",
-        "indexing",
-        "knowledge-graph",
-        "llm",
-        "long-horizon-agent",
-        "python",
-        "rag",
-        "real-time",
-        "rust",
-        "semantic-search"
-      ],
-      "pushed_at": "2026-05-31T05:22:54Z",
-      "created_at": "2025-03-03T23:03:09Z",
-      "category": "data-engineering",
-      "discovery_source": "data-engineering",
-      "collected_at": "2026-05-31T08:03:06.301012"
+      "collected_at": "2026-05-31T16:43:10.246279"
     },
     {
       "owner": "Netflix",
@@ -5290,7 +5063,7 @@
       "full_name": "Netflix/metaflow",
       "description": "Build, Manage and Deploy AI/ML Systems",
       "url": "https://github.com/Netflix/metaflow",
-      "stars": 10112,
+      "stars": 10110,
       "language": "Python",
       "topics": [
         "agents",
@@ -5314,11 +5087,11 @@
         "model-management",
         "python"
       ],
-      "pushed_at": "2026-05-31T07:17:02Z",
+      "pushed_at": "2026-05-31T08:30:06Z",
       "created_at": "2019-09-17T17:48:25Z",
       "category": "ai",
       "discovery_source": "mlops",
-      "collected_at": "2026-05-31T08:03:14.093310"
+      "collected_at": "2026-05-31T16:43:09.031303"
     },
     {
       "owner": "rapidsai",
@@ -5343,46 +5116,11 @@
         "python",
         "rapids"
       ],
-      "pushed_at": "2026-05-30T22:48:39Z",
+      "pushed_at": "2026-05-31T08:39:57Z",
       "created_at": "2017-05-07T03:43:37Z",
       "category": "data-engineering",
       "discovery_source": "dataframe",
-      "collected_at": "2026-05-31T08:03:07.716132"
-    },
-    {
-      "owner": "xonsh",
-      "repo": "xonsh",
-      "full_name": "xonsh/xonsh",
-      "description": "🐚 Python-powered shell. Full-featured, cross-platform and AI-friendly.",
-      "url": "https://github.com/xonsh/xonsh",
-      "stars": 9483,
-      "language": "Python",
-      "topics": [
-        "anthropic",
-        "claude",
-        "claude-code",
-        "cmux",
-        "data-engineering",
-        "data-scientists",
-        "devops",
-        "devsecops",
-        "hyper",
-        "iterm2",
-        "kitty",
-        "nix",
-        "nixos",
-        "python-automation",
-        "raspberry-pi",
-        "security-automation",
-        "vscode-extension",
-        "wezterm",
-        "xonsh"
-      ],
-      "pushed_at": "2026-05-31T03:28:04Z",
-      "created_at": "2015-01-21T22:05:27Z",
-      "category": "data-engineering",
-      "discovery_source": "data-engineering",
-      "collected_at": "2026-05-31T08:03:06.301019"
+      "collected_at": "2026-05-31T16:43:02.550311"
     },
     {
       "owner": "risingwavelabs",
@@ -5405,11 +5143,11 @@
         "stream-processing",
         "webhook"
       ],
-      "pushed_at": "2026-05-31T02:54:26Z",
+      "pushed_at": "2026-05-31T12:41:12Z",
       "created_at": "2022-01-28T12:58:03Z",
       "category": "data-engineering",
       "discovery_source": "stream-processing",
-      "collected_at": "2026-05-31T08:03:10.132978"
+      "collected_at": "2026-05-31T16:43:05.062818"
     },
     {
       "owner": "apache",
@@ -5417,7 +5155,7 @@
       "full_name": "apache/datafusion",
       "description": "Apache DataFusion SQL Query Engine",
       "url": "https://github.com/apache/datafusion",
-      "stars": 8833,
+      "stars": 8834,
       "language": "Rust",
       "topics": [
         "arrow",
@@ -5430,11 +5168,11 @@
         "rust",
         "sql"
       ],
-      "pushed_at": "2026-05-31T07:13:55Z",
+      "pushed_at": "2026-05-31T14:25:13Z",
       "created_at": "2021-04-17T15:40:23Z",
       "category": "data-engineering",
       "discovery_source": "dataframe",
-      "collected_at": "2026-05-31T08:03:07.716087"
+      "collected_at": "2026-05-31T16:43:02.550266"
     },
     {
       "owner": "fluent",
@@ -5460,11 +5198,11 @@
         "stream-processing",
         "traces"
       ],
-      "pushed_at": "2026-05-31T05:15:56Z",
+      "pushed_at": "2026-05-31T16:24:35Z",
       "created_at": "2015-01-27T20:41:52Z",
       "category": "data-engineering",
       "discovery_source": "stream-processing",
-      "collected_at": "2026-05-31T08:03:10.132985"
+      "collected_at": "2026-05-31T16:43:05.062824"
     },
     {
       "owner": "growthbook",
@@ -5472,7 +5210,7 @@
       "full_name": "growthbook/growthbook",
       "description": "Open Source Feature Flags, Experimentation, and Product Analytics",
       "url": "https://github.com/growthbook/growthbook",
-      "stars": 7829,
+      "stars": 7830,
       "language": "TypeScript",
       "topics": [
         "ab-testing",
@@ -5496,79 +5234,11 @@
         "statistics",
         "warehouse-native"
       ],
-      "pushed_at": "2026-05-31T02:03:29Z",
+      "pushed_at": "2026-05-31T13:35:48Z",
       "created_at": "2021-05-07T23:11:51Z",
-      "category": "data-engineering",
-      "discovery_source": "data-engineering",
-      "collected_at": "2026-05-31T08:03:06.301032"
-    },
-    {
-      "owner": "flyteorg",
-      "repo": "flyte",
-      "full_name": "flyteorg/flyte",
-      "description": "Dynamic, resilient AI orchestration. Coordinate data, models, and compute as you build AI workflows.",
-      "url": "https://github.com/flyteorg/flyte",
-      "stars": 7053,
-      "language": "Go",
-      "topics": [
-        "agentic",
-        "ai-agents",
-        "ai-development-tools",
-        "data-analysis",
-        "data-science",
-        "declarative",
-        "fine-tuning",
-        "flyte",
-        "golang",
-        "grpc",
-        "hacktoberfest",
-        "kubernetes",
-        "llm",
-        "machine-learning",
-        "mlops",
-        "orchestration-engine",
-        "production",
-        "python",
-        "scale",
-        "workflow"
-      ],
-      "pushed_at": "2026-05-31T05:39:11Z",
-      "created_at": "2019-10-21T17:40:04Z",
-      "category": "ai",
-      "discovery_source": "mlops",
-      "collected_at": "2026-05-31T08:03:14.093316"
-    },
-    {
-      "owner": "lance-format",
-      "repo": "lance",
-      "full_name": "lance-format/lance",
-      "description": "Open Lakehouse Format for Multimodal AI. Convert from Parquet in 2 lines of code for 100x faster random access, vector index, and data versioning. Compatible with Pandas, DuckDB, Polars, Pyarrow, and PyTorch with more integrations coming..",
-      "url": "https://github.com/lance-format/lance",
-      "stars": 6557,
-      "language": "Rust",
-      "topics": [
-        "apache-arrow",
-        "computer-vision",
-        "data-analysis",
-        "data-analytics",
-        "data-centric",
-        "data-format",
-        "data-science",
-        "dataops",
-        "deep-learning",
-        "duckdb",
-        "embeddings",
-        "llms",
-        "machine-learning",
-        "mlops",
-        "python",
-        "rust"
-      ],
-      "pushed_at": "2026-05-31T01:40:20Z",
-      "created_at": "2022-07-07T22:29:29Z",
-      "category": "ai",
-      "discovery_source": "mlops",
-      "collected_at": "2026-05-31T08:03:14.093336"
+      "category": "lakehouse",
+      "discovery_source": "databricks",
+      "collected_at": "2026-05-31T16:43:11.519113"
     },
     {
       "owner": "haifengl",
@@ -5604,7 +5274,7 @@
       "created_at": "2014-11-20T16:28:12Z",
       "category": "data-engineering",
       "discovery_source": "dataframe",
-      "collected_at": "2026-05-31T08:03:07.716153"
+      "collected_at": "2026-05-31T16:43:02.550325"
     },
     {
       "owner": "MaterializeInc",
@@ -5612,7 +5282,7 @@
       "full_name": "MaterializeInc/materialize",
       "description": "The live data layer for apps and AI agents. Create up-to-the-second views into your business, just using SQL",
       "url": "https://github.com/MaterializeInc/materialize",
-      "stars": 6307,
+      "stars": 6308,
       "language": "Rust",
       "topics": [
         "cdc",
@@ -5637,7 +5307,7 @@
       "created_at": "2019-02-22T17:15:15Z",
       "category": "data-engineering",
       "discovery_source": "stream-processing",
-      "collected_at": "2026-05-31T08:03:10.132956"
+      "collected_at": "2026-05-31T16:43:05.062792"
     },
     {
       "owner": "online-ml",
@@ -5665,7 +5335,33 @@
       "created_at": "2019-01-24T15:18:26Z",
       "category": "data-engineering",
       "discovery_source": "stream-processing",
-      "collected_at": "2026-05-31T08:03:10.132963"
+      "collected_at": "2026-05-31T16:43:05.062805"
+    },
+    {
+      "owner": "dlt-hub",
+      "repo": "dlt",
+      "full_name": "dlt-hub/dlt",
+      "description": "data load tool (dlt) is an open source Python library that makes data loading easy 🛠️ ",
+      "url": "https://github.com/dlt-hub/dlt",
+      "stars": 5411,
+      "language": "Python",
+      "topics": [
+        "data",
+        "data-engineering",
+        "data-lake",
+        "data-loading",
+        "data-warehouse",
+        "elt",
+        "extract",
+        "load",
+        "python",
+        "transform"
+      ],
+      "pushed_at": "2026-05-31T16:37:35Z",
+      "created_at": "2022-01-26T09:51:04Z",
+      "category": "data-engineering",
+      "discovery_source": "data-engineering",
+      "collected_at": "2026-05-31T16:43:01.234147"
     },
     {
       "owner": "microsoft",
@@ -5701,74 +5397,132 @@
       "created_at": "2017-06-05T08:23:44Z",
       "category": "lakehouse",
       "discovery_source": "databricks",
-      "collected_at": "2026-05-31T08:03:16.511187"
+      "collected_at": "2026-05-31T16:43:11.519131"
     },
     {
-      "owner": "fluvio-community",
-      "repo": "fluvio",
-      "full_name": "fluvio-community/fluvio",
-      "description": "🦀 event stream processing for developers to collect and transform data in motion to power responsive data intensive applications.",
-      "url": "https://github.com/fluvio-community/fluvio",
-      "stars": 5223,
-      "language": "Rust",
-      "topics": [
-        "cloud-native",
-        "data-analytics",
-        "data-flow",
-        "data-integration",
-        "data-pipelines",
-        "distributed-systems",
-        "event-driven-architecture",
-        "real-time",
-        "rust",
-        "serverless",
-        "stateful",
-        "stream-processing",
-        "stream-processing-engine",
-        "streaming",
-        "streaming-analytics",
-        "streaming-data",
-        "streaming-data-pipelines",
-        "streaming-data-processing",
-        "webassembly"
-      ],
-      "pushed_at": "2026-05-29T21:37:01Z",
-      "created_at": "2019-08-31T00:11:58Z",
-      "category": "data-engineering",
-      "discovery_source": "stream-processing",
-      "collected_at": "2026-05-31T08:03:10.132993"
-    },
-    {
-      "owner": "gptme",
-      "repo": "gptme",
-      "full_name": "gptme/gptme",
-      "description": "Your agent in your terminal, equipped with local tools: writes code, uses the terminal, browses the web. Make your own persistent autonomous agent on top!",
-      "url": "https://github.com/gptme/gptme",
-      "stars": 4314,
-      "language": "Python",
+      "owner": "the-open-agent",
+      "repo": "openagent",
+      "full_name": "the-open-agent/openagent",
+      "description": "⚡️next-generation personal AI assistant powered by LLM, RAG and agent loops, supporting computer-use, browser-use and coding agent, demo: https://demo.openagentai.org",
+      "url": "https://github.com/the-open-agent/openagent",
+      "stars": 5100,
+      "language": "Go",
       "topics": [
         "agent",
-        "agents",
-        "ai-agents",
-        "ai-assistant",
-        "anthropic",
+        "agentic",
+        "agentic-ai",
+        "agi",
         "chatbot",
         "chatgpt",
-        "cli",
-        "code-generation",
-        "llamacpp",
+        "gpt",
+        "harness",
+        "hermes-agent",
+        "knowledge-base",
+        "langchain",
         "llm",
-        "llm-agent",
-        "llm-apps",
+        "mcp",
+        "model-context-protocol",
+        "multi-agent",
+        "openagent",
         "openai",
-        "openrouter",
+        "openclaw",
         "rag"
       ],
-      "pushed_at": "2026-05-31T07:53:35Z",
-      "created_at": "2023-03-24T16:25:01Z",
+      "pushed_at": "2026-05-31T15:58:17Z",
+      "created_at": "2020-05-29T02:45:58Z",
       "category": "ai",
       "discovery_source": "rag",
-      "collected_at": "2026-05-31T08:03:12.708255"
+      "collected_at": "2026-05-31T16:43:07.706343"
+    },
+    {
+      "owner": "mock-server",
+      "repo": "mockserver-monorepo",
+      "full_name": "mock-server/mockserver-monorepo",
+      "description": "MockServer enables easy mocking of any system you integrate with via HTTP or HTTPS with clients written in Java, JavaScript and Ruby.  MockServer also includes a proxy that introspects all proxied traffic including encrypted SSL traffic and supports Port Forwarding, Web Proxying (i.e. HTTP proxy), HTTPS Tunneling Proxying (using HTTP CONNECT) and SOCKS Proxying (i.e. dynamic port forwarding).",
+      "url": "https://github.com/mock-server/mockserver-monorepo",
+      "stars": 4880,
+      "language": "Java",
+      "topics": [
+        "ai",
+        "chaos-engineering",
+        "grunt-plugin",
+        "homebrew",
+        "java-client",
+        "javascript-client",
+        "llm",
+        "mcp",
+        "mock-server",
+        "node-client",
+        "node-module",
+        "proxy",
+        "python",
+        "ruby-client",
+        "testing"
+      ],
+      "pushed_at": "2026-05-31T16:40:35Z",
+      "created_at": "2013-02-26T06:09:52Z",
+      "category": "ai",
+      "discovery_source": "llm",
+      "collected_at": "2026-05-31T16:43:06.380154"
+    },
+    {
+      "owner": "rudderlabs",
+      "repo": "rudder-server",
+      "full_name": "rudderlabs/rudder-server",
+      "description": "Privacy and Security focused Segment-alternative, in Golang and React  ",
+      "url": "https://github.com/rudderlabs/rudder-server",
+      "stars": 4435,
+      "language": "Go",
+      "topics": [
+        "bigquery",
+        "cdp",
+        "customer-data",
+        "customer-data-lake",
+        "customer-data-pipeline",
+        "customer-data-platform",
+        "data-engineering",
+        "data-integration",
+        "data-pipeline",
+        "data-synchronization",
+        "data-warehouse",
+        "elt",
+        "etl",
+        "event-streaming",
+        "privacy",
+        "redshift",
+        "segment-alternative",
+        "snowflake",
+        "warehouse-management",
+        "warehouse-native"
+      ],
+      "pushed_at": "2026-05-31T12:35:56Z",
+      "created_at": "2019-07-19T09:24:38Z",
+      "category": "data-engineering",
+      "discovery_source": "data-engineering",
+      "collected_at": "2026-05-31T16:43:01.234212"
+    },
+    {
+      "owner": "kubeflow",
+      "repo": "pipelines",
+      "full_name": "kubeflow/pipelines",
+      "description": "Machine Learning Pipelines for Kubeflow",
+      "url": "https://github.com/kubeflow/pipelines",
+      "stars": 4149,
+      "language": "Python",
+      "topics": [
+        "data-science",
+        "kubeflow",
+        "kubeflow-pipelines",
+        "kubernetes",
+        "machine-learning",
+        "mlops",
+        "pipeline"
+      ],
+      "pushed_at": "2026-05-31T13:52:09Z",
+      "created_at": "2018-05-12T00:31:47Z",
+      "category": "ai",
+      "discovery_source": "mlops",
+      "collected_at": "2026-05-31T16:43:09.031276"
     },
     {
       "owner": "dathere",
@@ -5800,11 +5554,47 @@
         "stats-sighting",
         "timeseries"
       ],
-      "pushed_at": "2026-05-30T23:04:37Z",
+      "pushed_at": "2026-05-31T14:41:53Z",
       "created_at": "2020-12-11T04:08:39Z",
       "category": "data-engineering",
       "discovery_source": "data-engineering",
-      "collected_at": "2026-05-31T08:03:06.301039"
+      "collected_at": "2026-05-31T16:43:01.234179"
+    },
+    {
+      "owner": "neomjs",
+      "repo": "neo",
+      "full_name": "neomjs/neo",
+      "description": "Neo.mjs is a self-evolving software organism: a professional end-to-end AI engineering team whose cross-model swarm inhabits live apps via Neural Link, Active Hybrid GraphRAG, DreamService, and self-healing loops.",
+      "url": "https://github.com/neomjs/neo",
+      "stars": 3188,
+      "language": "JavaScript",
+      "topics": [
+        "agent-memory",
+        "ai",
+        "ai-agent",
+        "ai-memory",
+        "context-engineering",
+        "frontend",
+        "frontend-runtime",
+        "graph-rag",
+        "javascript",
+        "json",
+        "knowledge-graph",
+        "llm",
+        "long-term-memory",
+        "mcp",
+        "mcp-server",
+        "multi-agent-systems",
+        "rag",
+        "scene-graph",
+        "semantic-search",
+        "web-workers"
+      ],
+      "pushed_at": "2026-05-31T16:26:43Z",
+      "created_at": "2019-11-10T23:56:02Z",
+      "category": "ai",
+      "discovery_source": "rag",
+      "collected_at": "2026-05-31T16:43:07.706324"
     },
     {
       "owner": "lakehq",
@@ -5812,7 +5602,7 @@
       "full_name": "lakehq/sail",
       "description": "Drop-in Apache Spark replacement written in Rust, unifying batch processing, stream processing, and compute-intensive AI workloads.",
       "url": "https://github.com/lakehq/sail",
-      "stars": 2786,
+      "stars": 2791,
       "language": "Rust",
       "topics": [
         "apache-iceberg",
@@ -5836,11 +5626,38 @@
         "spark-sql",
         "sql"
       ],
-      "pushed_at": "2026-05-31T07:24:19Z",
+      "pushed_at": "2026-05-31T12:22:41Z",
       "created_at": "2023-12-21T03:43:49Z",
       "category": "data-engineering",
       "discovery_source": "data-engineering",
-      "collected_at": "2026-05-31T08:03:06.300995"
+      "collected_at": "2026-05-31T16:43:01.234192"
+    },
+    {
+      "owner": "datachain-ai",
+      "repo": "datachain",
+      "full_name": "datachain-ai/datachain",
+      "description": "The Context Layer for unstructured data: typed, versioned datasets over S3, GCS, Azure",
+      "url": "https://github.com/datachain-ai/datachain",
+      "stars": 2752,
+      "language": "Python",
+      "topics": [
+        "ai-agents",
+        "claude-code",
+        "codex",
+        "data-context-layer",
+        "data-processing",
+        "harness-engineering",
+        "knowledge-base",
+        "mlops",
+        "multimodal",
+        "pydantic",
+        "unstructured-data"
+      ],
+      "pushed_at": "2026-05-31T08:15:54Z",
+      "created_at": "2024-06-25T22:29:35Z",
+      "category": "ai",
+      "discovery_source": "mlops",
+      "collected_at": "2026-05-31T16:43:09.031309"
     },
     {
       "owner": "dolthub",
@@ -5860,11 +5677,11 @@
         "sql-engine",
         "sql-server"
       ],
-      "pushed_at": "2026-05-30T22:39:11Z",
+      "pushed_at": "2026-05-31T09:02:42Z",
       "created_at": "2019-06-25T21:15:20Z",
       "category": "data-engineering",
       "discovery_source": "query-engine",
-      "collected_at": "2026-05-31T08:03:08.787817"
+      "collected_at": "2026-05-31T16:43:03.666990"
     },
     {
       "owner": "man-group",
@@ -5890,7 +5707,7 @@
       "created_at": "2022-11-11T09:09:46Z",
       "category": "data-engineering",
       "discovery_source": "dataframe",
-      "collected_at": "2026-05-31T08:03:07.716122"
+      "collected_at": "2026-05-31T16:43:02.550304"
     },
     {
       "owner": "ytsaurus",
@@ -5898,7 +5715,7 @@
       "full_name": "ytsaurus/ytsaurus",
       "description": "YTsaurus is a scalable and fault-tolerant open-source big data platform.",
       "url": "https://github.com/ytsaurus/ytsaurus",
-      "stars": 2190,
+      "stars": 2191,
       "language": "C++",
       "topics": [
         "big-data",
@@ -5910,36 +5727,11 @@
         "sql",
         "ytsaurus"
       ],
-      "pushed_at": "2026-05-30T23:43:30Z",
+      "pushed_at": "2026-05-31T15:47:27Z",
       "created_at": "2022-12-05T16:32:05Z",
       "category": "lakehouse",
       "discovery_source": "lakehouse",
-      "collected_at": "2026-05-31T08:03:15.223656"
-    },
-    {
-      "owner": "vllm-project",
-      "repo": "vllm-ascend",
-      "full_name": "vllm-project/vllm-ascend",
-      "description": "Community maintained hardware plugin for vLLM on Ascend",
-      "url": "https://github.com/vllm-project/vllm-ascend",
-      "stars": 2161,
-      "language": "C++",
-      "topics": [
-        "ascend",
-        "inference",
-        "llm",
-        "llm-serving",
-        "llmops",
-        "mlops",
-        "model-serving",
-        "transformer",
-        "vllm"
-      ],
-      "pushed_at": "2026-05-31T06:39:29Z",
-      "created_at": "2025-01-29T10:44:12Z",
-      "category": "ai",
-      "discovery_source": "mlops",
-      "collected_at": "2026-05-31T08:03:14.093303"
+      "collected_at": "2026-05-31T16:43:10.246264"
     },
     {
       "owner": "apache",
@@ -5960,11 +5752,11 @@
         "rust",
         "sql"
       ],
-      "pushed_at": "2026-05-29T21:37:11Z",
+      "pushed_at": "2026-05-31T14:04:11Z",
       "created_at": "2022-05-19T14:32:27Z",
       "category": "data-engineering",
       "discovery_source": "dataframe",
-      "collected_at": "2026-05-31T08:03:07.716139"
+      "collected_at": "2026-05-31T16:43:02.550283"
     },
     {
       "owner": "apache",
@@ -5987,7 +5779,7 @@
       "created_at": "2024-05-29T18:44:27Z",
       "category": "lakehouse",
       "discovery_source": "lakehouse",
-      "collected_at": "2026-05-31T08:03:15.223628"
+      "collected_at": "2026-05-31T16:43:10.246299"
     },
     {
       "owner": "apache",
@@ -6009,35 +5801,64 @@
       "created_at": "2024-10-31T06:36:35Z",
       "category": "lakehouse",
       "discovery_source": "lakehouse",
-      "collected_at": "2026-05-31T08:03:15.223643"
+      "collected_at": "2026-05-31T16:43:10.246305"
     },
     {
-      "owner": "onestardao",
-      "repo": "WFGY",
-      "full_name": "onestardao/WFGY",
-      "description": "WFGY is heading toward WFGY 5.0 Polaris Protocol, a major open-source release for AI reasoning, RAG, agents, and real-world workflows. Includes Problem Map, Global Debug Card, WFGY 4.0, and the CFV Easter Egg.",
-      "url": "https://github.com/onestardao/WFGY",
-      "stars": 1752,
-      "language": "Jupyter Notebook",
+      "owner": "yomorun",
+      "repo": "yomo",
+      "full_name": "yomorun/yomo",
+      "description": "🦖 Serverless AI Agent Framework with Geo-distributed Edge AI Infra.",
+      "url": "https://github.com/yomorun/yomo",
+      "stars": 1904,
+      "language": "Rust",
       "topics": [
-        "ai-agents",
-        "alignment",
-        "debugging",
-        "evaluation",
-        "graphrag",
-        "hallucination",
-        "information-retrieval",
-        "knowledge-graph",
-        "llm",
-        "rag",
-        "reasoning",
-        "retrieval-augmented-generation"
+        "a2a-protocol",
+        "chatgpt",
+        "claude-code",
+        "cursor",
+        "distributed-cloud",
+        "function-calling",
+        "geodistributedsystems",
+        "low-latency",
+        "mcp",
+        "openai",
+        "quic",
+        "realtime",
+        "serverless",
+        "stream-processing",
+        "yomo"
       ],
-      "pushed_at": "2026-05-31T07:45:29Z",
-      "created_at": "2025-06-04T13:45:14Z",
-      "category": "ai",
-      "discovery_source": "rag",
-      "collected_at": "2026-05-31T08:03:12.708222"
+      "pushed_at": "2026-05-31T10:29:17Z",
+      "created_at": "2020-07-01T05:48:28Z",
+      "category": "data-engineering",
+      "discovery_source": "stream-processing",
+      "collected_at": "2026-05-31T16:43:05.062767"
+    },
+    {
+      "owner": "mlrun",
+      "repo": "mlrun",
+      "full_name": "mlrun/mlrun",
+      "description": "MLRun is an open source MLOps platform for quickly building and managing continuous ML applications across their lifecycle. MLRun integrates into your development and CI/CD environment and automates the delivery of production data, ML pipelines, and online applications.",
+      "url": "https://github.com/mlrun/mlrun",
+      "stars": 1670,
+      "language": "Python",
+      "topics": [
+        "data-engineering",
+        "data-science",
+        "experiment-tracking",
+        "kubernetes",
+        "machine-learning",
+        "mlops",
+        "mlops-workflow",
+        "model-serving",
+        "python",
+        "workflow"
+      ],
+      "pushed_at": "2026-05-31T13:13:47Z",
+      "created_at": "2019-09-01T16:59:19Z",
+      "category": "data-engineering",
+      "discovery_source": "data-engineering",
+      "collected_at": "2026-05-31T16:43:01.234185"
     },
     {
       "owner": "skrub-data",
@@ -6064,30 +5885,163 @@
       "created_at": "2018-03-12T23:32:22Z",
       "category": "data-engineering",
       "discovery_source": "dataframe",
-      "collected_at": "2026-05-31T08:03:07.716114"
+      "collected_at": "2026-05-31T16:43:02.550297"
     },
     {
-      "owner": "chunkhound",
-      "repo": "chunkhound",
-      "full_name": "chunkhound/chunkhound",
-      "description": "Local first codebase intelligence",
-      "url": "https://github.com/chunkhound/chunkhound",
-      "stars": 1281,
+      "owner": "pixeltable",
+      "repo": "pixeltable",
+      "full_name": "pixeltable/pixeltable",
+      "description": "Declarative and Incremental Backend for Multimodal AI Applications",
+      "url": "https://github.com/pixeltable/pixeltable",
+      "stars": 1564,
       "language": "Python",
       "topics": [
-        "agent",
         "ai",
-        "duckdb",
+        "artificial-intelligence",
+        "chatbot",
+        "computer-vision",
+        "data-science",
+        "database",
+        "feature-engineering",
+        "feature-store",
+        "genai",
+        "llm",
+        "machine-learning",
+        "ml",
+        "mlops",
+        "multimodal",
+        "vector-database"
+      ],
+      "pushed_at": "2026-05-31T13:44:05Z",
+      "created_at": "2023-05-10T18:03:02Z",
+      "category": "ai",
+      "discovery_source": "mlops",
+      "collected_at": "2026-05-31T16:43:09.031283"
+    },
+    {
+      "owner": "alistaitsacle",
+      "repo": "free-llm-api-keys",
+      "full_name": "alistaitsacle/free-llm-api-keys",
+      "description": "Free LLM API keys for GPT-5.5, Claude, DeepSeek, Gemini, Grok — copy, paste, use. Updated 3-5x daily. No credit card needed.",
+      "url": "https://github.com/alistaitsacle/free-llm-api-keys",
+      "stars": 1346,
+      "language": "Python",
+      "topics": [
+        "ai",
+        "api",
+        "api-key",
+        "api-keys",
+        "chatgpt",
+        "claude",
+        "deepseek",
+        "free",
+        "free-api",
+        "free-api-key",
+        "free-gpt",
+        "free-llm",
+        "gemini",
+        "gpt",
+        "gpt4",
+        "grok",
+        "large-language-models",
+        "llm",
+        "llm-api",
+        "openai"
+      ],
+      "pushed_at": "2026-05-31T16:37:06Z",
+      "created_at": "2026-03-23T03:28:17Z",
+      "category": "ai",
+      "discovery_source": "llm",
+      "collected_at": "2026-05-31T16:43:06.380174"
+    },
+    {
+      "owner": "oritera",
+      "repo": "Cairn",
+      "full_name": "oritera/Cairn",
+      "description": "A AI general-purpose state-space search engine, validated first on autonomous penetration testing.",
+      "url": "https://github.com/oritera/Cairn",
+      "stars": 1333,
+      "language": "Python",
+      "topics": [
+        "ai",
+        "ai-agent",
+        "ai-cybersecurity",
+        "ai-hacker",
+        "ai-hacking",
+        "blackbox-testing",
+        "ctf",
+        "ctf-tools",
+        "llm",
+        "penetration-testing",
+        "pentesting",
+        "red-teaming",
+        "security-automation",
+        "security-tools"
+      ],
+      "pushed_at": "2026-05-31T16:36:20Z",
+      "created_at": "2026-04-19T03:28:41Z",
+      "category": "ai",
+      "discovery_source": "llm",
+      "collected_at": "2026-05-31T16:43:06.380181"
+    },
+    {
+      "owner": "lakekeeper",
+      "repo": "lakekeeper",
+      "full_name": "lakekeeper/lakekeeper",
+      "description": "Lakekeeper is an Apache-Licensed, secure, fast and easy to use Apache Iceberg REST Catalog written in Rust.",
+      "url": "https://github.com/lakekeeper/lakekeeper",
+      "stars": 1314,
+      "language": "Rust",
+      "topics": [
+        "catalog",
+        "data-lake",
+        "iceberg",
+        "lakehouse",
+        "lakehouse-governance",
+        "open-lakehouse",
+        "rust"
+      ],
+      "pushed_at": "2026-05-31T14:15:23Z",
+      "created_at": "2024-04-05T17:42:07Z",
+      "category": "lakehouse",
+      "discovery_source": "lakehouse",
+      "collected_at": "2026-05-31T16:43:10.246271"
+    },
+    {
+      "owner": "0xMassi",
+      "repo": "webclaw",
+      "full_name": "0xMassi/webclaw",
+      "description": "Fast, local-first web content extraction for LLMs. Scrape, crawl, extract structured data — all from Rust. CLI, REST API, and MCP server.",
+      "url": "https://github.com/0xMassi/webclaw",
+      "stars": 1255,
+      "language": "Rust",
+      "topics": [
+        "ai",
+        "ai-agents",
+        "ai-scraping",
+        "cli",
+        "crawler",
+        "data-extraction",
+        "firecrawl-alternative",
+        "html-to-markdown",
+        "llm",
+        "markdown",
+        "mcp",
         "mcp-server",
         "rag",
-        "semantic-search",
-        "tree-sitter"
+        "rust",
+        "self-hosted",
+        "tls-fingerprinting",
+        "web-crawler",
+        "web-extraction",
+        "web-scraper",
+        "web-scraping"
       ],
-      "pushed_at": "2026-05-31T07:37:07Z",
-      "created_at": "2025-06-04T07:41:58Z",
+      "pushed_at": "2026-05-31T16:35:47Z",
+      "created_at": "2026-03-10T17:50:15Z",
       "category": "ai",
       "discovery_source": "rag",
-      "collected_at": "2026-05-31T08:03:12.708275"
+      "collected_at": "2026-05-31T16:43:07.706311"
     },
     {
       "owner": "getnao",
@@ -6095,7 +6049,7 @@
       "full_name": "getnao/nao",
       "description": "👾 nao is an open source analytics agent. (1) Create context with nao-core cli, (2) deploy nao chat interface for everyone",
       "url": "https://github.com/getnao/nao",
-      "stars": 1229,
+      "stars": 1231,
       "language": "TypeScript",
       "topics": [
         "agentic-analytics",
@@ -6122,7 +6076,7 @@
       "created_at": "2025-12-30T18:33:25Z",
       "category": "lakehouse",
       "discovery_source": "databricks",
-      "collected_at": "2026-05-31T08:03:16.511173"
+      "collected_at": "2026-05-31T16:43:11.519119"
     },
     {
       "owner": "ClickHouse",
@@ -6130,7 +6084,7 @@
       "full_name": "ClickHouse/ClickBench",
       "description": "ClickBench: a Benchmark For Analytical Databases",
       "url": "https://github.com/ClickHouse/ClickBench",
-      "stars": 1013,
+      "stars": 1014,
       "language": "HTML",
       "topics": [
         "analytics",
@@ -6153,38 +6107,11 @@
         "snowflake",
         "sql"
       ],
-      "pushed_at": "2026-05-31T01:38:12Z",
+      "pushed_at": "2026-05-31T11:25:22Z",
       "created_at": "2022-07-11T20:36:51Z",
       "category": "lakehouse",
       "discovery_source": "lakehouse",
-      "collected_at": "2026-05-31T08:03:15.223650"
-    },
-    {
-      "owner": "kizuna-ai-lab",
-      "repo": "sokuji",
-      "full_name": "kizuna-ai-lab/sokuji",
-      "description": "Live speech translation powered by on-device AI and cloud providers — OpenAI, Google Gemini, Palabra.ai, Kizuna AI, Volcengine, and more",
-      "url": "https://github.com/kizuna-ai-lab/sokuji",
-      "stars": 883,
-      "language": "TypeScript",
-      "topics": [
-        "ai",
-        "chrome-extension",
-        "electron",
-        "linux-app",
-        "llm",
-        "meeting",
-        "openai",
-        "react",
-        "translation",
-        "translator",
-        "typescript"
-      ],
-      "pushed_at": "2026-05-31T07:56:44Z",
-      "created_at": "2025-04-14T15:58:15Z",
-      "category": "ai",
-      "discovery_source": "llm",
-      "collected_at": "2026-05-31T08:03:11.428730"
+      "collected_at": "2026-05-31T16:43:10.246293"
     },
     {
       "owner": "ad-freiburg",
@@ -6192,7 +6119,7 @@
       "full_name": "ad-freiburg/qlever",
       "description": "Graph database implementing the RDF and SPARQL standards. Very fast and scales to more than a trillion triples on a single commodity machine",
       "url": "https://github.com/ad-freiburg/qlever",
-      "stars": 837,
+      "stars": 838,
       "language": "C++",
       "topics": [
         "query-engine",
@@ -6201,11 +6128,11 @@
         "sparql-endpoints",
         "text-search"
       ],
-      "pushed_at": "2026-05-30T00:14:30Z",
+      "pushed_at": "2026-05-31T15:16:13Z",
       "created_at": "2014-12-05T14:09:19Z",
       "category": "data-engineering",
       "discovery_source": "query-engine",
-      "collected_at": "2026-05-31T08:03:08.787823"
+      "collected_at": "2026-05-31T16:43:03.666947"
     },
     {
       "owner": "SouravRoy-ETL",
@@ -6239,43 +6166,7 @@
       "created_at": "2026-04-15T12:56:46Z",
       "category": "data-engineering",
       "discovery_source": "query-engine",
-      "collected_at": "2026-05-31T08:03:08.787830"
-    },
-    {
-      "owner": "AnalyseDeCircuit",
-      "repo": "oxideterm",
-      "full_name": "AnalyseDeCircuit/oxideterm",
-      "description": "Local-first SSH workspace for local shells and remote machines — SSH, SFTP, trzsz, port forwarding, lightweight remote editing, file management, and BYOK AI in one native binary. Built with Tauri 2 and pure Rust SSH. Zero Electron, zero OpenSSL, zero telemetry, and no app subscription for core SSH workflows.",
-      "url": "https://github.com/AnalyseDeCircuit/oxideterm",
-      "stars": 750,
-      "language": "Rust",
-      "topics": [
-        "agent",
-        "ai-terminal",
-        "bring-your-own-key",
-        "devtools",
-        "filemanager",
-        "local-first",
-        "mcp",
-        "port-forwarding",
-        "rag",
-        "remote-development",
-        "russh",
-        "rust",
-        "sftp",
-        "ssh-client",
-        "tauri",
-        "terminal",
-        "terminal-emulator",
-        "tool-calling",
-        "wslg",
-        "xterm-js"
-      ],
-      "pushed_at": "2026-05-31T07:27:03Z",
-      "created_at": "2026-01-21T07:30:14Z",
-      "category": "ai",
-      "discovery_source": "rag",
-      "collected_at": "2026-05-31T08:03:12.708269"
+      "collected_at": "2026-05-31T16:43:03.666998"
     },
     {
       "owner": "pdpipe",
@@ -6294,46 +6185,11 @@
         "pandas-dataframe",
         "pipeline"
       ],
-      "pushed_at": "2026-05-31T07:03:00Z",
+      "pushed_at": "2026-05-31T08:45:16Z",
       "created_at": "2017-01-24T20:37:22Z",
       "category": "data-engineering",
       "discovery_source": "dataframe",
-      "collected_at": "2026-05-31T08:03:07.716105"
-    },
-    {
-      "owner": "Team-Commonly",
-      "repo": "commonly",
-      "full_name": "Team-Commonly/commonly",
-      "description": "A social platform for humans and AI agents, built and maintained by its own AI team. Connect any agent via HTTP.",
-      "url": "https://github.com/Team-Commonly/commonly",
-      "stars": 677,
-      "language": "TypeScript",
-      "topics": [
-        "agent-framework",
-        "agent-harness",
-        "agent-protocol",
-        "agentic",
-        "agentic-ai",
-        "agents",
-        "ai-agents",
-        "ai-orchestration",
-        "autonomous-agents",
-        "claude",
-        "codex",
-        "developer-tools",
-        "generative-ai",
-        "llm",
-        "multi-agent",
-        "open-source",
-        "openai",
-        "openclaw",
-        "self-hosted"
-      ],
-      "pushed_at": "2026-05-31T07:58:26Z",
-      "created_at": "2025-02-03T02:13:30Z",
-      "category": "ai",
-      "discovery_source": "llm",
-      "collected_at": "2026-05-31T08:03:11.428716"
+      "collected_at": "2026-05-31T16:43:02.550290"
     },
     {
       "owner": "AltimateAI",
@@ -6367,7 +6223,7 @@
       "created_at": "2026-02-27T00:57:01Z",
       "category": "lakehouse",
       "discovery_source": "databricks",
-      "collected_at": "2026-05-31T08:03:16.511194"
+      "collected_at": "2026-05-31T16:43:11.519137"
     },
     {
       "owner": "databricks",
@@ -6390,7 +6246,7 @@
       "created_at": "2020-02-13T15:10:40Z",
       "category": "lakehouse",
       "discovery_source": "databricks",
-      "collected_at": "2026-05-31T08:03:16.511200"
+      "collected_at": "2026-05-31T16:43:11.519143"
     },
     {
       "owner": "comunica",
@@ -6417,7 +6273,42 @@
       "created_at": "2017-10-18T01:57:55Z",
       "category": "data-engineering",
       "discovery_source": "query-engine",
-      "collected_at": "2026-05-31T08:03:08.787803"
+      "collected_at": "2026-05-31T16:43:03.666969"
+    },
+    {
+      "owner": "felladrin",
+      "repo": "MiniSearch",
+      "full_name": "felladrin/MiniSearch",
+      "description": "Minimalist web-searching platform with an AI assistant that runs directly from your browser. Uses Wllama and SearXNG. Demo: https://felladrin-minisearch.hf.space",
+      "url": "https://github.com/felladrin/MiniSearch",
+      "stars": 566,
+      "language": "TypeScript",
+      "topics": [
+        "ai",
+        "ai-search-engine",
+        "artificial-intelligence",
+        "generative-ai",
+        "gpu-accelerated",
+        "information-retrieval",
+        "llm",
+        "llm-inference",
+        "metasearch",
+        "metasearch-engine",
+        "perplexity",
+        "perplexity-ai",
+        "question-answering",
+        "rag",
+        "retrieval-augmented-generation",
+        "searxng",
+        "web-search",
+        "webapp",
+        "wllama"
+      ],
+      "pushed_at": "2026-05-31T16:37:59Z",
+      "created_at": "2023-10-14T12:23:56Z",
+      "category": "ai",
+      "discovery_source": "llm",
+      "collected_at": "2026-05-31T16:43:06.380168"
     },
     {
       "owner": "databricks",
@@ -6436,7 +6327,33 @@
       "created_at": "2022-06-21T13:49:09Z",
       "category": "lakehouse",
       "discovery_source": "databricks",
-      "collected_at": "2026-05-31T08:03:16.511157"
+      "collected_at": "2026-05-31T16:43:11.519105"
+    },
+    {
+      "owner": "vellum-ai",
+      "repo": "vellum-assistant",
+      "full_name": "vellum-ai/vellum-assistant",
+      "description": "A personal AI assistant that evolves with you. Memory, personality, proactive reach-outs — across macOS, Telegram, and Slack.",
+      "url": "https://github.com/vellum-ai/vellum-assistant",
+      "stars": 541,
+      "language": "TypeScript",
+      "topics": [
+        "ai-assistant",
+        "anthropic",
+        "llm",
+        "macos",
+        "open-source",
+        "openai",
+        "personal-ai",
+        "slack-bot",
+        "telegram-bot",
+        "typescript"
+      ],
+      "pushed_at": "2026-05-31T16:42:59Z",
+      "created_at": "2026-02-07T21:19:17Z",
+      "category": "ai",
+      "discovery_source": "llm",
+      "collected_at": "2026-05-31T16:43:06.380129"
     },
     {
       "owner": "xorq-labs",
@@ -6461,7 +6378,7 @@
       "created_at": "2023-09-26T12:51:03Z",
       "category": "data-engineering",
       "discovery_source": "dataframe",
-      "collected_at": "2026-05-31T08:03:07.716146"
+      "collected_at": "2026-05-31T16:43:02.550318"
     }
   ]
 }
