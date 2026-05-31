@@ -150,6 +150,48 @@ class LTSRule(BaseRule):
         return RuleResult()
 
 
+class PreventFalseCriticalRule(BaseRule):
+    """
+    Dégrade CRITICAL → HIGH si aucune faille de sécurité ni breaking change détecté.
+
+    CRITICAL doit être réservé à :
+        - faille de sécurité / CVE
+        - breaking change / changement d'API incompatible
+
+    Une release contenant uniquement des améliorations de performance,
+    des enhancements ou des corrections de bugs ne peut jamais être CRITICAL.
+    """
+
+    name = "prevent_false_critical"
+
+    _SECURITY_KEYWORDS = [
+        "cve-", "vulnerability", "vulnerabilit", "exploit",
+        "rce", "injection", "xss", "csrf", "sandbox escape",
+        "path traversal", "auth bypass", "security fix", "security patch",
+        "faille", "sécurité critique",
+    ]
+
+    def evaluate(self, ctx: RuleContext) -> RuleResult:
+        if ctx.impact_level != ImpactLevel.CRITICAL.value:
+            return RuleResult()
+
+        # CRITICAL autorisé si breaking change explicite
+        if ctx.has_breaking_change:
+            return RuleResult()
+
+        # CRITICAL autorisé si mot-clé sécurité présent
+        body_lower = ctx.body_excerpt.lower()
+        for kw in self._SECURITY_KEYWORDS:
+            if kw in body_lower:
+                return RuleResult()
+
+        # Aucun facteur critique réel → dégrader
+        return RuleResult(
+            force_level=ImpactLevel.HIGH.value,
+            reason="CRITICAL dégradé en HIGH : ni faille de sécurité ni breaking change détectés",
+        )
+
+
 # ---------------------------------------------------------------------------
 # Moteur de règles
 # ---------------------------------------------------------------------------
@@ -164,6 +206,7 @@ class RuleEngine:
             DataEngineeringBoostRule(),
             SecurityKeywordRule(),
             LTSRule(),
+            PreventFalseCriticalRule(),   # doit être en dernier pour auditer le niveau final
         ]
 
     def evaluate(self, ctx: RuleContext) -> tuple[float, str]:

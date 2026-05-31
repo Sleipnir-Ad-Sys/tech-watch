@@ -173,20 +173,31 @@ def _analyze_lines(
 
 # ── Mapping score → ImpactLevel ──────────────────────────────────────────────
 
-def score_to_impact_level(score: float) -> ImpactLevel:
+def score_to_impact_level(
+    score: float,
+    factors: "list[DetectedFactor] | None" = None,
+) -> ImpactLevel:
     """
     Mappe un score final (0–100) vers un ImpactLevel.
 
-    Classification purement basée sur le score — indépendante du type de facteurs.
-    L'urgence métier est calculée séparément via determine_urgency().
+    CRITICAL est réservé aux releases contenant explicitement :
+        - une faille de sécurité / CVE
+        - un breaking change / changement d'API incompatible
+
+    Sans l'un de ces facteurs, le maximum atteignable est HIGH.
 
     Seuils :
-        > 80  → CRITICAL
+        > 85  → CRITICAL (uniquement si sécurité ou breaking_change détectés)
         > 50  → HIGH
         > 20  → MODERATE
         ≤ 20  → LOW
     """
-    if score > 80:
+    has_critical_factor = False
+    if factors:
+        critical_cats = {ChangelogCategory.SECURITY, ChangelogCategory.BREAKING_CHANGE}
+        has_critical_factor = any(f.category in critical_cats for f in factors)
+
+    if score > 85 and has_critical_factor:
         return ImpactLevel.CRITICAL
     elif score > 50:
         return ImpactLevel.HIGH
@@ -334,7 +345,7 @@ def compute_impact(changelog: str, relevance: float = 0.0) -> dict:
     factors, technical_score = analyzer.analyze(changelog)
 
     final_score = round(min(100.0, (technical_score * 0.7) + (relevance * 3.0)), 2)
-    impact_level = score_to_impact_level(final_score)
+    impact_level = score_to_impact_level(final_score, factors)
     urgency_level = determine_urgency(factors)
     action, reasons = determine_action(factors, impact_level, urgency_level)
 
@@ -378,7 +389,7 @@ def analyze_release(changelog: str) -> dict:
     analyzer = ChangelogAnalyzer()
     factors, technical_score = analyzer.analyze(changelog)
 
-    impact_level = score_to_impact_level(technical_score)
+    impact_level = score_to_impact_level(technical_score, factors)
     urgency_level = determine_urgency(factors)
     action, reasons = determine_action(factors, impact_level, urgency_level)
 
@@ -443,9 +454,9 @@ class ChangelogAnalyzer:
             "deprecated": 30.0,
             "removed": 30.0,
             "migration": 25.0,
-            "performance": 15.0,
-            "enhancement": 10.0,
-            "bug_fix": 5.0,
+            "performance": 8.0,
+            "enhancement": 6.0,
+            "bug_fix": 3.0,
             "documentation": 1.0,
         }
 
@@ -685,8 +696,8 @@ class ImpactScoreEngine:
         #    final_score = min(100, technical_score × 0.7 + relevance_score × 3)
         final_score = round(min(100.0, (technical_score * 0.7) + (relevance_score * 3.0)), 2)
 
-        # 4. Impact (basé purement sur le score final, 0–100)
-        impact_level = score_to_impact_level(final_score)
+        # 4. Impact (score final + vérification des facteurs critiques)
+        impact_level = score_to_impact_level(final_score, factors)
 
         # 5. Urgence (indépendante du score, basée sur la criticité métier)
         urgency_level = determine_urgency(factors)

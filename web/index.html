@@ -31,6 +31,7 @@
           <a href="compare.html" class="nav-link">Comparatifs</a>
           <a href="stack-advisor.html" class="nav-link">Stack Advisor</a>
           <a href="stack-advisor-radar.html" class="nav-link">Stack Radar</a>
+          <a href="tools.html" class="nav-link">Tool KB</a>
         </nav>
         <span class="badge badge-live">● Live</span>
         <span id="home-updated" class="header-updated">—</span>
@@ -140,6 +141,22 @@
           </div>
         </a>
 
+        <a href="tools.html" class="home-page-card">
+          <span class="home-page-icon">📚</span>
+          <div class="home-page-body">
+            <h3 class="home-page-title">Tool Knowledge Base</h3>
+            <p class="home-page-desc">
+              Fiches de décision rapide : ce qu'est un outil, quand l'utiliser, quand l'éviter,
+              ses alternatives, sa cheat sheet et son intégration dans une architecture moderne.
+            </p>
+            <div class="home-page-meta">
+              <span class="home-page-stat" id="ps-tools">— outils</span>
+              <span class="home-page-tag">Terrain</span>
+              <span class="home-page-tag">Décision</span>
+            </div>
+          </div>
+        </a>
+
       </div>
     </div>
   </section>
@@ -195,6 +212,7 @@
     </div>
   </footer>
 
+  <script src="tools-data.js"></script>
   <script>
     (async () => {
       try {
@@ -214,6 +232,8 @@
         document.getElementById('ps-releases').textContent    = `${releases.length} releases`;
         document.getElementById('ps-discoveries').textContent = `${discoveries.length} outils`;
         document.getElementById('ps-tracked').textContent     = `${projects} projets`;
+        if (typeof TOOLS_KB !== 'undefined')
+          document.getElementById('ps-tools').textContent     = `${TOOLS_KB.length} outils`;
 
         if (d.generated_at) {
           const dt = new Date(d.generated_at);

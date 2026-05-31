@@ -1,0 +1,315 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="icon" type="image/png" href="ico/01.png">
+  <title>Tool Knowledge Base — Tech Watch</title>
+  <link rel="stylesheet" href="styles.css" />
+  <link rel="stylesheet" href="tools.css" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet" />
+</head>
+<body>
+
+  <!-- ─── HEADER ──────────────────────────────────────────────── -->
+  <header class="site-header">
+    <div class="container">
+      <div class="header-brand">
+        <a href="index.html" style="display:flex;align-items:center;gap:.6rem;text-decoration:none;color:inherit">
+          <span class="header-icon">🔭</span>
+          <div>
+            <h1 class="header-title">Tech Watch</h1>
+            <p class="header-subtitle">Veille technologique automatisée · Data · IA · Rust · Cloud</p>
+          </div>
+        </a>
+      </div>
+      <div class="header-meta">
+        <nav class="header-nav">
+          <a href="index.html"              class="nav-link">Accueil</a>
+          <a href="dashboard.html"          class="nav-link">Dashboard</a>
+          <a href="outils.html"             class="nav-link">Outils suivis</a>
+          <a href="radar.html"              class="nav-link">Découvertes</a>
+          <a href="compat.html"             class="nav-link">Compatibilité</a>
+          <a href="compare.html"            class="nav-link">Comparatifs</a>
+          <a href="stack-advisor.html"      class="nav-link">Stack Advisor</a>
+          <a href="stack-advisor-radar.html" class="nav-link">Stack Radar</a>
+          <a href="tools.html"              class="nav-link nav-link-active">Tool KB</a>
+        </nav>
+      </div>
+    </div>
+  </header>
+
+  <!-- ─── HERO ─────────────────────────────────────────────────── -->
+  <section class="tkb-hero">
+    <div class="container">
+      <div class="tkb-hero-badge">📚 Orienté décision · Fiches terrain · Mise à jour continue</div>
+      <h2 class="tkb-hero-title">Tool Knowledge Base</h2>
+      <p class="tkb-hero-desc">
+        Fiches de décision rapide pour comprendre en moins de 2 minutes ce qu'est un outil,
+        quand l'utiliser, quand l'éviter et comment l'intégrer dans votre architecture.
+      </p>
+      <div class="tkb-hero-stats">
+        <div class="tkb-hero-stat">
+          <strong id="hs-tools">—</strong>
+          <span>Outils documentés</span>
+        </div>
+        <div class="tkb-hero-stat">
+          <strong id="hs-categories">—</strong>
+          <span>Catégories</span>
+        </div>
+        <div class="tkb-hero-stat">
+          <strong id="hs-tags">—</strong>
+          <span>Tags disponibles</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ─── SEARCH & FILTERS ─────────────────────────────────────── -->
+  <section class="tkb-filters-section">
+    <div class="container">
+
+      <!-- Search bar -->
+      <div class="tkb-search-wrap">
+        <span class="tkb-search-icon">🔍</span>
+        <input
+          type="text"
+          id="tkb-search"
+          class="tkb-search-input"
+          placeholder="Rechercher un outil, une catégorie, un tag…"
+          autocomplete="off"
+        />
+        <button class="tkb-search-clear" id="tkb-clear" title="Effacer">✕</button>
+      </div>
+
+      <!-- Category tabs -->
+      <div class="tkb-tabs" id="tkb-cat-tabs">
+        <button class="tkb-tab active" data-cat="">Tous</button>
+      </div>
+
+      <!-- Tag cloud -->
+      <div class="tkb-tags-wrap" id="tkb-tag-cloud"></div>
+
+    </div>
+  </section>
+
+  <!-- ─── GRID ─────────────────────────────────────────────────── -->
+  <main class="container tkb-main">
+    <div id="tkb-results-info" class="tkb-results-info"></div>
+    <div class="tkb-grid" id="tkb-grid"></div>
+    <div id="tkb-empty" class="tkb-empty hidden">
+      <span>🔍</span>
+      <p>Aucun outil trouvé pour cette recherche.</p>
+      <button class="tkb-reset-btn" id="tkb-reset">Réinitialiser les filtres</button>
+    </div>
+  </main>
+
+  <!-- ─── FOOTER ───────────────────────────────────────────────── -->
+  <footer class="tkb-footer">
+    <div class="container">
+      <p>Tool Knowledge Base · Tech Watch · <a href="index.html">Retour à l'accueil</a></p>
+    </div>
+  </footer>
+
+  <script src="tools-data.js"></script>
+  <script>
+  "use strict";
+
+  // ── State ──────────────────────────────────────────────────────
+  let state = {
+    query:    '',
+    category: '',
+    tags:     new Set(),
+    filtered: [...TOOLS_KB]
+  };
+
+  // ── DOM refs ───────────────────────────────────────────────────
+  const grid       = document.getElementById('tkb-grid');
+  const empty      = document.getElementById('tkb-empty');
+  const searchInput= document.getElementById('tkb-search');
+  const clearBtn   = document.getElementById('tkb-clear');
+  const resetBtn   = document.getElementById('tkb-reset');
+  const catTabs    = document.getElementById('tkb-cat-tabs');
+  const tagCloud   = document.getElementById('tkb-tag-cloud');
+  const resultsInfo= document.getElementById('tkb-results-info');
+
+  // ── Init ───────────────────────────────────────────────────────
+  function init() {
+    // Stats
+    document.getElementById('hs-tools').textContent      = TOOLS_KB.length;
+    document.getElementById('hs-categories').textContent = getAllCategories().length;
+    document.getElementById('hs-tags').textContent       = getAllTags().length;
+
+    // Category tabs
+    getAllCategories().forEach(cat => {
+      const btn = document.createElement('button');
+      btn.className = 'tkb-tab';
+      btn.dataset.cat = cat;
+      btn.textContent = cat;
+      catTabs.appendChild(btn);
+    });
+
+    // Tag cloud
+    getAllTags().forEach(tag => {
+      const btn = document.createElement('button');
+      btn.className = 'tkb-tag-btn';
+      btn.dataset.tag = tag;
+      btn.textContent = tag;
+      tagCloud.appendChild(btn);
+    });
+
+    // Events
+    searchInput.addEventListener('input', () => {
+      state.query = searchInput.value;
+      applyFilters();
+    });
+    clearBtn.addEventListener('click', () => {
+      searchInput.value = '';
+      state.query = '';
+      applyFilters();
+    });
+    catTabs.addEventListener('click', e => {
+      const btn = e.target.closest('.tkb-tab');
+      if (!btn) return;
+      document.querySelectorAll('.tkb-tab').forEach(b => b.classList.remove('active'));
+      btn.classList.add('active');
+      state.category = btn.dataset.cat;
+      applyFilters();
+    });
+    tagCloud.addEventListener('click', e => {
+      const btn = e.target.closest('.tkb-tag-btn');
+      if (!btn) return;
+      const tag = btn.dataset.tag;
+      if (state.tags.has(tag)) { state.tags.delete(tag); btn.classList.remove('active'); }
+      else                     { state.tags.add(tag);    btn.classList.add('active'); }
+      applyFilters();
+    });
+    resetBtn.addEventListener('click', resetFilters);
+
+    applyFilters();
+  }
+
+  // ── Filter logic ───────────────────────────────────────────────
+  function applyFilters() {
+    let results = [...TOOLS_KB];
+
+    if (state.query.trim()) {
+      const q = state.query.toLowerCase();
+      results = results.filter(t =>
+        t.name.toLowerCase().includes(q) ||
+        t.summary.toLowerCase().includes(q) ||
+        t.tags.some(tag => tag.includes(q)) ||
+        t.category.toLowerCase().includes(q) ||
+        t.use_cases.some(uc => uc.toLowerCase().includes(q))
+      );
+    }
+    if (state.category) {
+      results = results.filter(t => t.category === state.category);
+    }
+    if (state.tags.size > 0) {
+      results = results.filter(t => [...state.tags].every(tag => t.tags.includes(tag)));
+    }
+
+    state.filtered = results;
+    renderGrid();
+  }
+
+  function resetFilters() {
+    searchInput.value = '';
+    state.query    = '';
+    state.category = '';
+    state.tags     = new Set();
+    document.querySelectorAll('.tkb-tab').forEach(b => b.classList.remove('active'));
+    document.querySelector('.tkb-tab[data-cat=""]').classList.add('active');
+    document.querySelectorAll('.tkb-tag-btn').forEach(b => b.classList.remove('active'));
+    applyFilters();
+  }
+
+  // ── Render ─────────────────────────────────────────────────────
+  function renderGrid() {
+    const tools = state.filtered;
+    grid.innerHTML = '';
+
+    if (tools.length === 0) {
+      empty.classList.remove('hidden');
+      resultsInfo.textContent = '';
+      return;
+    }
+    empty.classList.add('hidden');
+    resultsInfo.textContent = tools.length === TOOLS_KB.length
+      ? `${TOOLS_KB.length} outils`
+      : `${tools.length} résultat${tools.length > 1 ? 's' : ''} sur ${TOOLS_KB.length}`;
+
+    tools.forEach(tool => {
+      grid.insertAdjacentHTML('beforeend', renderCard(tool));
+    });
+  }
+
+  function renderCard(t) {
+    const profileTopScore = Math.max(...Object.values(t.profile_scores));
+    const topProfile = Object.entries(t.profile_scores)
+      .filter(([,v]) => v === profileTopScore)
+      .map(([k]) => profileLabel(k))[0];
+
+    const avgRating = (Object.values(t.ratings).reduce((a,b) => a+b, 0) / Object.values(t.ratings).length).toFixed(1);
+
+    return `
+    <article class="tkb-card" onclick="location.href='tool.html?id=${t.id}'" tabindex="0"
+             onkeydown="if(event.key==='Enter') location.href='tool.html?id=${t.id}'">
+      <div class="tkb-card-header">
+        <span class="tkb-card-icon" aria-hidden="true">${t.icon}</span>
+        <div class="tkb-card-meta">
+          ${maturityBadge(t.maturity)}
+          ${popularityBadge(t.popularity)}
+        </div>
+      </div>
+
+      <div class="tkb-card-body">
+        <h3 class="tkb-card-name">${escapeHtml(t.name)}</h3>
+        <p class="tkb-card-category">${escapeHtml(t.category)} · ${escapeHtml(t.language)}</p>
+        <p class="tkb-card-summary">${escapeHtml(t.summary.substring(0, 120))}…</p>
+      </div>
+
+      <div class="tkb-card-tags">
+        ${t.tags.slice(0, 4).map(tag => `<span class="tkb-inline-tag">#${tag}</span>`).join('')}
+      </div>
+
+      <div class="tkb-card-footer">
+        <div class="tkb-card-score">
+          <span class="tkb-score-stars">${renderStars(Math.round(parseFloat(avgRating)))}</span>
+          <span class="tkb-score-avg">${avgRating}/5</span>
+        </div>
+        <div class="tkb-card-profile">
+          <span class="tkb-profile-label">Top : ${topProfile}</span>
+          <span class="tkb-profile-score">${profileTopScore}/10</span>
+        </div>
+      </div>
+
+      <div class="tkb-card-cta">Voir la fiche →</div>
+    </article>`;
+  }
+
+  function profileLabel(key) {
+    const map = {
+      data_analyst:    'Data Analyst',
+      data_engineer:   'Data Engineer',
+      data_scientist:  'Data Scientist',
+      backend:         'Backend Dev',
+      ml_engineer:     'ML Engineer'
+    };
+    return map[key] || key;
+  }
+
+  function escapeHtml(str) {
+    if (!str) return '';
+    return String(str)
+      .replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;')
+      .replace(/"/g, '&quot;').replace(/'/g, '&#039;');
+  }
+
+  init();
+  </script>
+
+</body>
+</html>

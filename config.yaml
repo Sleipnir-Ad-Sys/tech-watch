@@ -160,9 +160,9 @@ impact_analysis:
     deprecated:      30.0   # dépréciation d'API
     removed:         30.0   # suppression de fonctionnalité
     migration:       25.0   # guide de migration requis
-    performance:     15.0   # optimisations, speedup, mémoire
-    enhancement:     10.0   # nouvelles fonctionnalités
-    bug_fix:          5.0   # corrections de bugs
+    performance:      8.0   # optimisations, speedup, mémoire (jamais CRITICAL seul)
+    enhancement:      6.0   # nouvelles fonctionnalités
+    bug_fix:          3.0   # corrections de bugs
     documentation:    1.0   # mise à jour docs uniquement
 
   # Classification du score technique

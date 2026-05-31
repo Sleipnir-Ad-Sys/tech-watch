@@ -1,0 +1,1004 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="icon" type="image/png" href="ico/01.png">
+  <title id="page-title">Fiche outil — Tech Watch</title>
+  <link rel="stylesheet" href="styles.css" />
+  <link rel="stylesheet" href="tools.css" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet" />
+</head>
+<body>
+
+  <!-- ─── HEADER ──────────────────────────────────────────────── -->
+  <header class="site-header">
+    <div class="container">
+      <div class="header-brand">
+        <a href="index.html" style="display:flex;align-items:center;gap:.6rem;text-decoration:none;color:inherit">
+          <span class="header-icon">🔭</span>
+          <div>
+            <h1 class="header-title">Tech Watch</h1>
+            <p class="header-subtitle">Veille technologique automatisée · Data · IA · Rust · Cloud</p>
+          </div>
+        </a>
+      </div>
+      <div class="header-meta">
+        <nav class="header-nav">
+          <a href="index.html"              class="nav-link">Accueil</a>
+          <a href="dashboard.html"          class="nav-link">Dashboard</a>
+          <a href="outils.html"             class="nav-link">Outils suivis</a>
+          <a href="radar.html"              class="nav-link">Découvertes</a>
+          <a href="compat.html"             class="nav-link">Compatibilité</a>
+          <a href="compare.html"            class="nav-link">Comparatifs</a>
+          <a href="stack-advisor.html"      class="nav-link">Stack Advisor</a>
+          <a href="stack-advisor-radar.html" class="nav-link">Stack Radar</a>
+          <a href="tools.html"              class="nav-link nav-link-active">Tool KB</a>
+        </nav>
+      </div>
+    </div>
+  </header>
+
+  <!-- ─── BREADCRUMB ───────────────────────────────────────────── -->
+  <div class="tkb-breadcrumb">
+    <div class="container">
+      <a href="tools.html" class="tkb-bc-link">← Tool KB</a>
+      <span class="tkb-bc-sep">/</span>
+      <span id="bc-name" class="tkb-bc-current">Chargement…</span>
+    </div>
+  </div>
+
+  <!-- ─── TOOL HERO ────────────────────────────────────────────── -->
+  <section class="tkb-tool-hero" id="tool-hero">
+    <div class="container">
+      <div class="tkb-tool-hero-top">
+        <span class="tkb-tool-hero-icon" id="tool-icon">⏳</span>
+        <div class="tkb-tool-hero-info">
+          <div class="tkb-tool-hero-badges" id="tool-badges"></div>
+          <h2 class="tkb-tool-hero-name" id="tool-name">Chargement…</h2>
+          <p class="tkb-tool-hero-sub" id="tool-sub"></p>
+          <div class="tkb-tool-hero-tags" id="tool-tags"></div>
+        </div>
+        <div class="tkb-tool-hero-actions">
+          <a href="#" class="tkb-btn-github" id="tool-github-link" target="_blank" rel="noopener noreferrer">
+            <svg width="16" height="16" fill="currentColor" viewBox="0 0 16 16" style="vertical-align:middle;margin-right:.3rem">
+              <path d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38
+              0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52
+              -.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2
+              -3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82
+              .64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08
+              2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01
+              1.93-.01 2.2 0 .21.15.46.55.38A8.013 8.013 0 0016 8c0-4.42-3.58-8-8-8z"/>
+            </svg>
+            GitHub
+          </a>
+          <button class="tkb-btn-avis" id="btn-edit-avis" title="Éditer mon avis terrain">✏️ Mon avis</button>
+        </div>
+      </div>
+      <p class="tkb-tool-summary" id="tool-summary"></p>
+    </div>
+  </section>
+
+  <!-- ─── QUICK METADATA ───────────────────────────────────────── -->
+  <section class="tkb-meta-bar">
+    <div class="container">
+      <div class="tkb-meta-grid" id="tool-meta-grid"></div>
+    </div>
+  </section>
+
+  <!-- ─── RECOMMENDATION BANNER ───────────────────────────────── -->
+  <section class="tkb-reco-bar" id="sec-recommendation">
+    <div class="container">
+      <div class="tkb-reco-inner" id="tool-recommendation"></div>
+    </div>
+  </section>
+
+  <!-- ─── MAIN CONTENT ─────────────────────────────────────────── -->
+  <main class="container tkb-detail-main" id="tool-main">
+
+    <!-- ROW 1 : Use cases + Ratings -->
+    <div class="tkb-detail-row tkb-row-2col">
+
+      <!-- Use cases -->
+      <section class="tkb-section" id="sec-usecases">
+        <h3 class="tkb-section-title">🎯 Cas d'usage recommandés</h3>
+        <div class="tkb-usecase-list" id="tool-usecases"></div>
+      </section>
+
+      <!-- Quick ratings -->
+      <section class="tkb-section" id="sec-ratings">
+        <h3 class="tkb-section-title">⭐ Indice d'adéquation</h3>
+        <p class="tkb-ratings-note">Evaluation architecturale selon cas d'usage — non une mesure scientifique.</p>
+        <div class="tkb-ratings-list" id="tool-ratings"></div>
+      </section>
+
+    </div>
+
+    <!-- ROW 2 : Choose if / Don't choose if -->
+    <div class="tkb-detail-row tkb-row-2col">
+
+      <section class="tkb-section tkb-section-green" id="sec-when-use">
+        <h3 class="tkb-section-title">✔️ Choisir cet outil si…</h3>
+        <ul class="tkb-checklist" id="tool-when-use"></ul>
+      </section>
+
+      <section class="tkb-section tkb-section-red" id="sec-when-avoid">
+        <h3 class="tkb-section-title">❌ Ne pas choisir si…</h3>
+        <ul class="tkb-checklist tkb-checklist-avoid" id="tool-when-avoid"></ul>
+      </section>
+
+    </div>
+
+    <!-- ROW 2b : Limitations -->
+    <section class="tkb-section tkb-section-full tkb-section-limitations" id="sec-limitations">
+      <h3 class="tkb-section-title">⚠️ Limitations réelles</h3>
+      <ul class="tkb-checklist tkb-checklist-limitations" id="tool-limitations"></ul>
+    </section>
+
+    <!-- ROW 2c : Tradeoffs -->
+    <section class="tkb-section tkb-section-full tkb-section-tradeoffs" id="sec-tradeoffs">
+      <h3 class="tkb-section-title">⚖️ Forces, Faiblesses &amp; Compromis</h3>
+      <div class="tkb-tradeoffs-grid" id="tool-tradeoffs"></div>
+    </section>
+
+    <!-- ROW 3 : Cheatsheet -->
+    <section class="tkb-section tkb-section-full" id="sec-cheatsheet">
+      <h3 class="tkb-section-title">💻 Cheat Sheet</h3>
+      <div class="tkb-cheatsheet" id="tool-cheatsheet"></div>
+    </section>
+
+    <!-- ROW 3b : Migration -->
+    <section class="tkb-section tkb-section-full tkb-section-migration" id="sec-migration">
+      <h3 class="tkb-section-title" id="migration-title">🔄 Guide de migration</h3>
+      <div class="tkb-migration-grid" id="tool-migration"></div>
+    </section>
+
+    <!-- ROW 4 : Alternatives -->
+    <section class="tkb-section tkb-section-full" id="sec-alternatives">
+      <h3 class="tkb-section-title">🔄 Alternatives</h3>
+      <div class="tkb-alt-grid" id="tool-alternatives"></div>
+    </section>
+
+    <!-- ROW 4b : Competitors -->
+    <section class="tkb-section tkb-section-full" id="sec-competitors">
+      <h3 class="tkb-section-title">⚔️ Outils concurrents</h3>
+      <div class="tkb-competitors-grid" id="tool-competitors"></div>
+    </section>
+
+    <!-- ROW 4c : Architecture recommandée -->
+    <section class="tkb-section tkb-section-full tkb-section-arch-reco" id="sec-arch-reco">
+      <h3 class="tkb-section-title">🏗️ Architecture recommandée</h3>
+      <p class="tkb-arch-reco-intro">Exemples d'assemblages architecturaux selon le contexte projet</p>
+      <div class="tkb-arch-reco-grid" id="tool-arch-reco"></div>
+    </section>
+
+    <!-- ROW 4d : Stacks recommandées -->
+    <section class="tkb-section tkb-section-full tkb-section-stacks" id="sec-stacks">
+      <h3 class="tkb-section-title">🧩 Stacks recommandées</h3>
+      <p class="tkb-stacks-intro">Assemblages technologiques cohérents — à adapter à votre contexte</p>
+      <div class="tkb-stacks-grid" id="tool-stacks"></div>
+    </section>
+
+    <!-- ROW 4e : Quand passer à autre chose -->
+    <section class="tkb-section tkb-section-full tkb-section-move-on" id="sec-move-on">
+      <h3 class="tkb-section-title">📈 Quand passer à autre chose ?</h3>
+      <p class="tkb-move-on-intro">Signaux d'alerte indiquant qu'un autre outil serait plus adapté</p>
+      <div class="tkb-move-on-grid" id="tool-move-on"></div>
+    </section>
+
+    <!-- ROW 5 : Compatibilities + Architecture -->
+    <div class="tkb-detail-row tkb-row-2col">
+
+      <section class="tkb-section" id="sec-compat">
+        <h3 class="tkb-section-title">🔗 Compatibilités</h3>
+        <div class="tkb-compat-cats" id="tool-compat"></div>
+      </section>
+
+      <section class="tkb-section" id="sec-arch">
+        <h3 class="tkb-section-title">🏗️ Intégration architecture</h3>
+        <div class="tkb-arch-diagram" id="tool-arch"></div>
+      </section>
+
+    </div>
+
+    <!-- ROW 6 : Profile scores -->
+    <section class="tkb-section tkb-section-full" id="sec-profiles">
+      <h3 class="tkb-section-title">👤 Pertinence par profil</h3>
+      <div class="tkb-profiles-grid" id="tool-profiles"></div>
+    </section>
+
+    <!-- ROW 6b : Erreurs fréquentes -->
+    <section class="tkb-section tkb-section-full tkb-section-mistakes" id="sec-mistakes">
+      <h3 class="tkb-section-title">⚠️ Erreurs fréquentes</h3>
+      <ul class="tkb-mistakes-list" id="tool-mistakes"></ul>
+    </section>
+
+    <!-- ROW 6c : Utilisation en entreprise -->
+    <section class="tkb-section tkb-section-full tkb-section-enterprise" id="sec-enterprise">
+      <h3 class="tkb-section-title">🏢 Utilisation en entreprise</h3>
+      <p class="tkb-enterprise-intro">Indice d'adoption estimé selon le contexte organisationnel</p>
+      <div class="tkb-enterprise-grid" id="tool-enterprise"></div>
+    </section>
+
+    <!-- ROW 7 : Releases from data.json -->
+    <section class="tkb-section tkb-section-full" id="sec-releases">
+      <h3 class="tkb-section-title">🚀 Releases récentes <span class="tkb-live-badge">● Live</span></h3>
+      <div id="tool-releases-content">
+        <div class="tkb-releases-loading" id="releases-loading">Chargement des releases…</div>
+        <div class="tkb-releases-list" id="tool-releases-list"></div>
+        <p class="tkb-releases-none hidden" id="releases-none">Aucune release récente trouvée dans la veille.</p>
+      </div>
+    </section>
+
+    <!-- ROW 8 : Related tools -->
+    <section class="tkb-section tkb-section-full" id="sec-related">
+      <h3 class="tkb-section-title">🔗 Voir aussi</h3>
+      <div class="tkb-related-grid" id="tool-related"></div>
+    </section>
+
+    <!-- ROW 9 : Learning paths (multi-profil) -->
+    <section class="tkb-section tkb-section-full tkb-section-paths" id="sec-learning">
+      <h3 class="tkb-section-title">📈 Parcours d'apprentissage</h3>
+      <p class="tkb-paths-intro">Plusieurs trajectoires selon votre profil et objectif</p>
+      <div class="tkb-paths-grid" id="tool-learning"></div>
+    </section>
+
+    <!-- ROW 9b : Context Switch Rules -->
+    <section class="tkb-section tkb-section-full tkb-section-csr" id="sec-csr">
+      <h3 class="tkb-section-title">🧠 Context Switch Rules</h3>
+      <p class="tkb-csr-desc">Guide d'arbitrage rapide — choisir ou exclure cet outil selon votre contexte.</p>
+      <div class="tkb-csr-grid" id="tool-csr"></div>
+    </section>
+
+    <!-- ROW 10 : Mon avis terrain -->
+    <section class="tkb-section tkb-section-full tkb-section-avis" id="sec-avis">
+      <h3 class="tkb-section-title">💬 Mon avis terrain</h3>
+      <div id="avis-view-mode">
+        <blockquote class="tkb-avis-quote" id="tool-avis"></blockquote>
+        <button class="tkb-avis-edit-btn" id="avis-edit-btn">✏️ Modifier</button>
+      </div>
+      <div id="avis-edit-mode" class="hidden">
+        <textarea class="tkb-avis-textarea" id="avis-textarea" rows="4" placeholder="Votre retour d'expérience personnel…"></textarea>
+        <div class="tkb-avis-actions">
+          <button class="tkb-btn-save" id="avis-save-btn">💾 Enregistrer</button>
+          <button class="tkb-btn-cancel" id="avis-cancel-btn">Annuler</button>
+          <button class="tkb-btn-reset" id="avis-reset-btn">↺ Réinitialiser</button>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- ─── NOT FOUND ────────────────────────────────────────────── -->
+  <div id="tool-not-found" class="tkb-not-found hidden">
+    <div class="container">
+      <span>🔍</span>
+      <h3>Outil non trouvé</h3>
+      <p>L'identifiant passé dans l'URL ne correspond à aucun outil documenté.</p>
+      <a href="tools.html" class="tkb-reset-btn">← Retour à la liste</a>
+    </div>
+  </div>
+
+  <!-- ─── FOOTER ───────────────────────────────────────────────── -->
+  <footer class="tkb-footer">
+    <div class="container">
+      <p>Tool Knowledge Base · Tech Watch · <a href="tools.html">← Retour à la liste</a></p>
+    </div>
+  </footer>
+
+  <script src="tools-data.js"></script>
+  <script>
+  "use strict";
+
+  // ── URL param ──────────────────────────────────────────────────
+  const params = new URLSearchParams(location.search);
+  const toolId = params.get('id') || '';
+  const tool   = getToolById(toolId);
+
+  const LS_KEY = id => `tkb-avis-${id}`;
+  const DATA_URL = './data.json';
+
+  if (!tool) {
+    document.getElementById('tool-not-found').classList.remove('hidden');
+    document.getElementById('tool-main').style.display = 'none';
+    document.getElementById('tool-hero').style.display = 'none';
+    document.querySelector('.tkb-meta-bar').style.display = 'none';
+    document.querySelector('.tkb-breadcrumb').style.display = 'none';
+  } else {
+    renderTool(tool);
+  }
+
+  // ── Render ─────────────────────────────────────────────────────
+  function renderTool(t) {
+    // Title
+    document.getElementById('page-title').textContent = `${t.name} — Tool KB`;
+    document.getElementById('bc-name').textContent = t.name;
+
+    // Hero
+    document.getElementById('tool-icon').textContent   = t.icon;
+    document.getElementById('tool-name').textContent   = t.name;
+    document.getElementById('tool-sub').textContent    = `${t.category} · ${t.language} · depuis ${t.created}`;
+    document.getElementById('tool-summary').textContent= t.summary;
+
+    document.getElementById('tool-badges').innerHTML =
+      maturityBadge(t.maturity) + ' ' + popularityBadge(t.popularity);
+
+    document.getElementById('tool-tags').innerHTML =
+      t.tags.map(tag => `<a href="tools.html" class="tkb-inline-tag" onclick="event.preventDefault();
+        window.location='tools.html?tag=${encodeURIComponent(tag)}'">#${tag}</a>`).join('');
+
+    // GitHub link
+    const ghLink = document.getElementById('tool-github-link');
+    if (t.github_repo) {
+      ghLink.href = `https://github.com/${t.github_repo}`;
+    } else {
+      ghLink.style.display = 'none';
+    }
+
+    // Meta bar
+    renderMetaBar(t);
+
+    // Use cases
+    document.getElementById('tool-usecases').innerHTML =
+      t.use_cases.map(uc => `<div class="tkb-uc-chip">${esc(uc)}</div>`).join('');
+
+    // Ratings
+    renderRatings(t.ratings);
+
+    // When to use / avoid
+    document.getElementById('tool-when-use').innerHTML =
+      t.when_to_use.map(s => `<li><span class="check-icon">✅</span> ${esc(s)}</li>`).join('');
+    document.getElementById('tool-when-avoid').innerHTML =
+      t.when_to_avoid.map(s => `<li><span class="check-icon">❌</span> ${esc(s)}</li>`).join('');
+
+    // Cheatsheet
+    renderCheatsheet(t.cheatsheet);
+
+    // Alternatives
+    renderAlternatives(t.alternatives);
+
+    // Competitors
+    renderCompetitors(t.competitors);
+
+    // Architecture recommandée
+    renderArchitectureReco(t.architecture_recommandee);
+
+    // Stacks recommandées
+    renderRecommendedStacks(t.recommended_stacks);
+
+    // Quand passer à autre chose
+    renderWhenToMoveOn(t.when_to_move_on);
+
+    // Limitations
+    renderLimitations(t.limitations);
+
+    // Tradeoffs
+    renderTradeoffs(t.tradeoffs);
+
+    // Migration
+    renderMigration(t.migration);
+
+    // Recommendation
+    renderRecommendation(t.recommendation);
+
+    // Compatibilities
+    renderCompatibilities(t.compatibilities);
+
+    // Architecture
+    renderArchDiagram(t.architecture);
+
+    // Profiles
+    renderProfiles(t.profile_scores);
+
+    // Erreurs fréquentes
+    renderCommonMistakes(t.common_mistakes);
+
+    // Utilisation entreprise
+    renderEnterpriseUsage(t.enterprise_usage);
+
+    // Related
+    renderRelated(t.related);
+
+    // Learning paths
+    renderLearningPaths(t.learning_paths);
+
+    // Avis terrain
+    renderAvis(t);
+
+    // Context Switch Rules
+    renderContextSwitchRules(t.context_switch_rules);
+
+    // Releases (async)
+    loadReleases(t);
+  }
+
+  // ── Meta bar ───────────────────────────────────────────────────
+  function renderMetaBar(t) {
+    const items = [
+      { label: 'Version',    value: t.version },
+      { label: 'Langage',    value: t.language },
+      { label: 'Catégorie',  value: t.category },
+      { label: 'Créé en',    value: t.created },
+      { label: 'Maturité',   value: maturityBadge(t.maturity), raw: true },
+      { label: 'Popularité', value: popularityBadge(t.popularity), raw: true }
+    ];
+    document.getElementById('tool-meta-grid').innerHTML = items.map(item => `
+      <div class="tkb-meta-item">
+        <span class="tkb-meta-label">${item.label}</span>
+        ${item.raw
+          ? `<span class="tkb-meta-value">${item.value}</span>`
+          : `<span class="tkb-meta-value tkb-meta-text">${esc(item.value)}</span>`
+        }
+      </div>`).join('');
+  }
+  // ── Recommendation banner ───────────────────────────────────────
+  function renderRecommendation(reco) {
+    const el = document.getElementById('sec-recommendation');
+    if (!reco) { el.style.display = 'none'; return; }
+    const starsHTML = Array.from({length: 5}, (_, i) =>
+      `<span class="reco-star ${i < reco.stars ? 'reco-star-filled' : 'reco-star-empty'}">★</span>`
+    ).join('');
+    const cls = reco.stars >= 4 ? 'reco-high' : reco.stars === 3 ? 'reco-mid' : 'reco-low';
+    document.getElementById('tool-recommendation').innerHTML = `
+      <div class="tkb-reco-stars ${cls}">${starsHTML}</div>
+      <div class="tkb-reco-label ${cls}">${esc(reco.label)}</div>
+      <div class="tkb-reco-context">${esc(reco.context)}</div>`;
+  }
+
+  // ── Limitations ──────────────────────────────────────────────────
+  function renderLimitations(limitations) {
+    const sec = document.getElementById('sec-limitations');
+    if (!limitations || !limitations.length) { sec.style.display = 'none'; return; }
+    document.getElementById('tool-limitations').innerHTML =
+      limitations.map(s => `<li><span class="check-icon">⚠️</span> ${esc(s)}</li>`).join('');
+  }
+
+  // ── Migration ────────────────────────────────────────────────────
+  function renderMigration(migration) {
+    const sec = document.getElementById('sec-migration');
+    if (!migration || !migration.mappings || !migration.mappings.length) { sec.style.display = 'none'; return; }
+    document.getElementById('migration-title').textContent = `🔄 ${migration.title || 'Guide de migration'}`;
+    const disclaimerHTML = migration.disclaimer
+      ? `<div class="tkb-migration-disclaimer">⚠️ ${esc(migration.disclaimer)}</div>`
+      : '';
+    document.getElementById('tool-migration').innerHTML = disclaimerHTML + migration.mappings.map(m => `
+      <div class="tkb-migration-card">
+        <div class="tkb-migration-before">
+          <span class="tkb-migration-badge tkb-migration-from">Avant</span>
+          <pre class="tkb-migration-code"><code>${esc(m.before)}</code></pre>
+        </div>
+        <div class="tkb-migration-arrow">→</div>
+        <div class="tkb-migration-after">
+          <span class="tkb-migration-badge tkb-migration-to">Après</span>
+          <pre class="tkb-migration-code"><code>${esc(m.after)}</code></pre>
+        </div>
+      </div>`).join('');
+  }
+
+  // ── Context Switch Rules ─────────────────────────────────────────
+  function renderContextSwitchRules(rules) {
+    const sec = document.getElementById('sec-csr');
+    if (!rules || !rules.length) { sec.style.display = 'none'; return; }
+    const iconMap = { use: '🟢', avoid: '🔴', evaluate: '🟡' };
+    const clsMap  = { use: 'csr-use', avoid: 'csr-avoid', evaluate: 'csr-eval' };
+    document.getElementById('tool-csr').innerHTML = rules.map(r => `
+      <div class="tkb-csr-card ${clsMap[r.action] || 'csr-eval'}">
+        <div class="tkb-csr-icon">${iconMap[r.action] || '🟡'}</div>
+        <div class="tkb-csr-body">
+          <div class="tkb-csr-condition">Si : ${esc(r.condition)}</div>
+          <div class="tkb-csr-reco">${esc(r.recommendation)}</div>
+        </div>
+      </div>`).join('');
+  }
+
+  // ── Competitors ───────────────────────────────────────────────────
+  function renderCompetitors(competitors) {
+    const sec = document.getElementById('sec-competitors');
+    if (!competitors) { sec.style.display = 'none'; return; }
+    const renderGroup = (list, type) => {
+      if (!list || !list.length) return '';
+      const typeLabel = type === 'direct' ? '⚔️ Concurrents directs' : '🔵 Concurrents indirects';
+      const typeCls   = type === 'direct' ? 'tkb-comp-direct' : 'tkb-comp-indirect';
+      return `
+        <div class="tkb-comp-group">
+          <h4 class="tkb-comp-group-title ${typeCls}">${typeLabel}</h4>
+          <div class="tkb-comp-cards">
+            ${list.map(c => {
+              const linked = TOOLS_KB.find(x => x.id === c.id);
+              return `
+              <div class="tkb-comp-card ${type} ${linked ? 'tkb-comp-linked' : ''}"
+                   ${linked ? `onclick="location.href='tool.html?id=${c.id}'" style="cursor:pointer"` : ''}>
+                <div class="tkb-comp-header">
+                  <span class="tkb-comp-icon">${linked ? linked.icon : '🔧'}</span>
+                  <div>
+                    <div class="tkb-comp-name">${esc(c.name)}${linked ? ' <span class="tkb-fiche-badge">Fiche →</span>' : ''}</div>
+                  </div>
+                </div>
+                <p class="tkb-comp-reason">${esc(c.reason)}</p>
+              </div>`;
+            }).join('')}
+          </div>
+        </div>`;
+    };
+    const html = renderGroup(competitors.direct, 'direct') + renderGroup(competitors.indirect, 'indirect');
+    if (!html.trim()) { sec.style.display = 'none'; return; }
+    document.getElementById('tool-competitors').innerHTML = html;
+  }
+  // ── Ratings ────────────────────────────────────────────────────
+  function renderRatings(ratings) {
+    const labels = {
+      performance: '🚀 Performance',
+      simplicity:  '🎯 Simplicité',
+      scalability: '📈 Scalabilité',
+      memory:      '💾 Mémoire',
+      ecosystem:   '🌐 Écosystème'
+    };
+    const tooltips = {
+      performance: 'Vitesse de traitement observée sur les cas d’usage typiques',
+      simplicity:  'Courbe d’apprentissage et ergonomie API',
+      scalability: 'Capacité à monter en volume et en complexité',
+      memory:      'Empreinte mémoire relative pour les opérations courantes',
+      ecosystem:   'Richesse de l’écosystème (librairies, intégrations, communauté)'
+    };
+    document.getElementById('tool-ratings').innerHTML = Object.entries(ratings).map(([k, v]) => `
+      <div class="tkb-rating-row">
+        <span class="tkb-rating-label" title="${tooltips[k] || ''}">${labels[k] || k} <span class="tkb-rating-tip">?</span></span>
+        <span class="tkb-rating-bars">${renderBars(v)}</span>
+        <span class="tkb-rating-num">${v}/5</span>
+      </div>`).join('');
+  }
+
+  function renderBars(v) {
+    return Array.from({length: 5}, (_, i) =>
+      `<span class="tkb-bar ${i < v ? 'tkb-bar-filled' : ''}"></span>`
+    ).join('');
+  }
+
+  // ── Cheatsheet ─────────────────────────────────────────────────
+  function renderCheatsheet(cs) {
+    const labelMap = {
+      install: '📦 Installation', read_csv: '📖 Lecture CSV', read_parquet: '📖 Lecture Parquet',
+      write_parquet: '💾 Écriture Parquet', write: '💾 Écriture', read: '📖 Lecture',
+      filter: '🔍 Filtre', select: '📋 Sélection', groupby: '📊 Group By',
+      join: '🔗 Jointure', lazy: '⚡ Lazy eval', with_columns: '➕ Nouvelles colonnes',
+      sort: '⬆ Tri', sample: '🎲 Échantillon', connect: '🔌 Connexion',
+      query_csv: '🔍 Requête CSV', query_parquet: '🔍 Requête Parquet',
+      create_table: '📋 Créer table', aggregation: '📊 Agrégation',
+      to_polars: '↔ Vers Polars', to_pandas: '↔ Vers pandas', from_arrow: '↔ Depuis Arrow',
+      start: '▶ Démarrer', get_route: '📥 GET route', post_route: '📤 POST route',
+      pydantic: '🔒 Schéma', query_param: '❓ Query params', dependency: '🔗 Dépendance',
+      background: '⚙ Background task', middleware: '🛡 Middleware', openapi: '📖 OpenAPI',
+      model: '📐 Modèle', validation: '✅ Validation', to_dict: '📦 → dict',
+      to_json: '📦 → JSON', from_json: '📦 → depuis JSON', optional: '❓ Champ optionnel',
+      validator: '✔ Validateur', settings: '⚙ Settings', nested: '🪆 Imbriqué',
+      alias: '🏷 Alias', session: '🔌 Session', create_tables: '🏗 Créer tables',
+      insert: '➕ Insertion', select_all: '📋 Tous', select_where: '🔍 Filtre',
+      update: '🔄 Mise à jour', fastapi_dep: '🔗 FastAPI dep',
+      init: '🏗 Init', run: '▶ Run', test: '✔ Tests', docs_gen: '📖 Docs',
+      sources: '📂 Sources', schema_test: '🔒 Tests schema', snapshot: '📸 Snapshot',
+      seed: '🌱 Seed', webserver: '🌐 Serveur web', scheduler: '⏰ Scheduler',
+      dag: '🗺 DAG', task: '⚙ Task', bash_op: '💻 BashOperator',
+      python_op: '🐍 PythonOperator', xcom: '📨 XCom', trigger: '▶ Trigger',
+      flow: '🌊 Flow', run_local: '▶ Run local', schedule: '📅 Schedule',
+      deploy: '🚀 Deploy', work_pool: '🏊 Work Pool', logging: '📋 Logging', state: '🔘 State',
+      llm: '🤖 LLM', chain: '⛓ Chain', rag_vectorstore: '🗃 Vector Store',
+      rag_retriever: '🔍 Retriever', rag_chain: '⛓ RAG Chain', prompt: '💬 Prompt',
+      memory: '🧠 Memory', agent: '🤖 Agent', stream: '📡 Stream',
+      history: '📜 Historique', time_travel: '⏰ Time Travel', vacuum: '🧹 Vacuum',
+      merge_upsert: '🔄 Merge/Upsert', optimize: '⚡ Optimiser',
+      read_parquet_arrow: '📖 Lecture Parquet', schema: '📐 Schéma',
+      filter_push: '🔍 Filtre push-down', partitioned: '📁 Partitionné', column_select: '📋 Colonnes'
+    };
+    const entries = Object.entries(cs);
+    document.getElementById('tool-cheatsheet').innerHTML =
+      `<div class="tkb-cheatsheet-grid">` +
+      entries.map(([k, v]) => `
+        <div class="tkb-cheat-item">
+          <div class="tkb-cheat-label">${labelMap[k] || k}</div>
+          <pre class="tkb-cheat-code"><code>${esc(v)}</code></pre>
+          <button class="tkb-copy-btn" title="Copier" onclick="copyCode(this, ${JSON.stringify(v)})">📋</button>
+        </div>`).join('') +
+      `</div>`;
+  }
+
+  // ── Alternatives ───────────────────────────────────────────────
+  function renderAlternatives(alts) {
+    document.getElementById('tool-alternatives').innerHTML = alts.map(alt => {
+      const linked = TOOLS_KB.find(x => x.id === alt.id);
+      return `
+      <div class="tkb-alt-card ${linked ? 'tkb-alt-linked' : ''}"
+           ${linked ? `onclick="location.href='tool.html?id=${alt.id}'" style="cursor:pointer"` : ''}>
+        <div class="tkb-alt-header">
+          <span class="tkb-alt-icon">${linked ? linked.icon : '🔧'}</span>
+          <div>
+            <div class="tkb-alt-name">${esc(alt.name)}${linked ? ' <span class="tkb-fiche-badge">Fiche →</span>' : ''}</div>
+            <div class="tkb-alt-cat">${esc(alt.category)}</div>
+          </div>
+        </div>
+        <p class="tkb-alt-reason">${esc(alt.reason)}</p>
+      </div>`;
+    }).join('');
+  }
+
+  // ── Architecture diagram ───────────────────────────────────────
+  function renderArchDiagram(arch) {
+    if (!arch) return;
+    const steps = arch.diagram || [];
+    document.getElementById('tool-arch').innerHTML =
+      `<p class="tkb-arch-position">Position : <strong>${esc(arch.position)}</strong></p>` +
+      `<div class="tkb-arch-steps">` +
+      steps.map((step, i) => `
+        <div class="tkb-arch-step ${step.step.includes('↓') ? 'tkb-arch-step-active' : ''}">
+          <div class="tkb-arch-step-label">${esc(step.step)}</div>
+          <div class="tkb-arch-step-items">
+            ${step.items.map(it => `<span class="tkb-arch-item">${esc(it)}</span>`).join('')}
+          </div>
+        </div>
+        ${i < steps.length - 1 ? '<div class="tkb-arch-arrow">↓</div>' : ''}`
+      ).join('') +
+      `</div>`;
+  }
+
+  // ── Profile scores ─────────────────────────────────────────────
+  function renderProfiles(scores) {
+    const labels = {
+      data_analyst:   { icon: '📊', label: 'Data Analyst' },
+      data_engineer:  { icon: '⚙️',  label: 'Data Engineer' },
+      data_scientist: { icon: '🧪', label: 'Data Scientist' },
+      backend:        { icon: '🖥️',  label: 'Backend Dev' },
+      ml_engineer:    { icon: '🤖', label: 'ML Engineer' }
+    };
+    document.getElementById('tool-profiles').innerHTML = Object.entries(scores).map(([k, v]) => {
+      const meta = labels[k] || { icon: '👤', label: k };
+      const cls = v >= 8 ? 'profile-score-high' : v >= 5 ? 'profile-score-mid' : 'profile-score-low';
+      return `
+      <div class="tkb-profile-card">
+        <div class="tkb-profile-header">
+          <span class="tkb-profile-icon">${meta.icon}</span>
+          <span class="tkb-profile-name">${meta.label}</span>
+          <span class="tkb-profile-num ${cls}">${v}/10</span>
+        </div>
+        ${profileBar(v)}
+      </div>`;
+    }).join('');
+  }
+
+  // ── Related tools ──────────────────────────────────────────────
+  function renderRelated(related) {
+    if (!related || !related.length) {
+      document.getElementById('sec-related').style.display = 'none';
+      return;
+    }
+    document.getElementById('tool-related').innerHTML = related.map(id => {
+      const t = getToolById(id);
+      if (!t) return '';
+      return `
+      <a href="tool.html?id=${t.id}" class="tkb-related-card">
+        <span class="tkb-related-icon">${t.icon}</span>
+        <div>
+          <div class="tkb-related-name">${esc(t.name)}</div>
+          <div class="tkb-related-cat">${esc(t.category)}</div>
+        </div>
+      </a>`;
+    }).join('');
+  }
+
+  // ── Tradeoffs ──────────────────────────────────────────────────
+  function renderTradeoffs(tradeoffs) {
+    const sec = document.getElementById('sec-tradeoffs');
+    if (!tradeoffs) { sec.style.display = 'none'; return; }
+    const sections = [
+      { key: 'forces',    icon: '✅', label: 'Forces',    cls: 'to-forces' },
+      { key: 'faiblesses',icon: '⚠️', label: 'Faiblesses', cls: 'to-faiblesses' },
+      { key: 'compromis', icon: '⚖️', label: 'Compromis', cls: 'to-compromis' }
+    ];
+    document.getElementById('tool-tradeoffs').innerHTML = sections.map(s => {
+      const items = tradeoffs[s.key] || [];
+      if (!items.length) return '';
+      return `
+        <div class="tkb-to-col ${s.cls}">
+          <h4 class="tkb-to-title">${s.icon} ${s.label}</h4>
+          <ul class="tkb-to-list">${items.map(x => `<li>${esc(x)}</li>`).join('')}</ul>
+        </div>`;
+    }).join('');
+  }
+
+  // ── Architecture recommandée ────────────────────────────────────
+  function renderArchitectureReco(arcs) {
+    const sec = document.getElementById('sec-arch-reco');
+    if (!arcs || !arcs.length) { sec.style.display = 'none'; return; }
+    document.getElementById('tool-arch-reco').innerHTML = arcs.map(arc => `
+      <div class="tkb-arc-card">
+        <div class="tkb-arc-cas">${esc(arc.cas)}</div>
+        <div class="tkb-arc-stack">${arc.stack.map((step, i) => `
+          <span class="tkb-arc-step">${esc(step)}</span>${i < arc.stack.length - 1 ? '<span class="tkb-arc-arrow">→</span>' : ''}
+        `).join('')}</div>
+      </div>`).join('');
+  }
+
+  // ── Stacks recommandées ───────────────────────────────────────────
+  function renderRecommendedStacks(stacks) {
+    const sec = document.getElementById('sec-stacks');
+    if (!stacks || !stacks.length) { sec.style.display = 'none'; return; }
+    document.getElementById('tool-stacks').innerHTML = stacks.map(s => `
+      <div class="tkb-stack-card">
+        <div class="tkb-stack-name">${esc(s.name)}</div>
+        <div class="tkb-stack-items">${s.stack.map((item, i) => `
+          <span class="tkb-stack-step">${esc(item)}</span>${i < s.stack.length - 1 ? '<span class="tkb-stack-sep">+</span>' : ''}
+        `).join('')}</div>
+      </div>`).join('');
+  }
+
+  // ── Quand passer à autre chose ────────────────────────────────────
+  function renderWhenToMoveOn(items) {
+    const sec = document.getElementById('sec-move-on');
+    if (!items || !items.length) { sec.style.display = 'none'; return; }
+    document.getElementById('tool-move-on').innerHTML = items.map(item => {
+      const linked = TOOLS_KB.find(t => t.name === item.alternative || t.id === item.alternative.toLowerCase().replace(/\s+/g, '-'));
+      return `
+      <div class="tkb-move-on-card">
+        <div class="tkb-move-on-trigger">
+          <span class="tkb-move-on-icon">⚡</span>
+          <span>${esc(item.trigger)}</span>
+        </div>
+        <div class="tkb-move-on-alt">
+          <span class="tkb-move-on-label">→</span>
+          ${linked
+            ? `<a href="tool.html?id=${linked.id}" class="tkb-move-on-link">${esc(item.alternative)} <span class="tkb-fiche-badge">Fiche</span></a>`
+            : `<span class="tkb-move-on-name">${esc(item.alternative)}</span>`
+          }
+        </div>
+      </div>`;
+    }).join('');
+  }
+
+  // ── Erreurs fréquentes ─────────────────────────────────────────────
+  function renderCommonMistakes(mistakes) {
+    const sec = document.getElementById('sec-mistakes');
+    if (!mistakes || !mistakes.length) { sec.style.display = 'none'; return; }
+    document.getElementById('tool-mistakes').innerHTML = mistakes.map(m => `
+      <li class="tkb-mistake-item">
+        <span class="tkb-mistake-icon">⚠️</span>
+        <span>${esc(m)}</span>
+      </li>`).join('');
+  }
+
+  // ── Utilisation en entreprise ──────────────────────────────────────
+  function renderEnterpriseUsage(eu) {
+    const sec = document.getElementById('sec-enterprise');
+    if (!eu) { sec.style.display = 'none'; return; }
+    const labels = {
+      startup:       { icon: '🚀', label: 'Startup' },
+      pme:           { icon: '🏢', label: 'PME' },
+      grand_groupe:  { icon: '🏦', label: 'Grand groupe' },
+      cloud:         { icon: '☁️',  label: 'Cloud-first' },
+      on_prem:       { icon: '🖥️',  label: 'On-Prem' }
+    };
+    document.getElementById('tool-enterprise').innerHTML = Object.entries(labels).map(([k, meta]) => {
+      const v = eu[k] || 0;
+      const bars = Array.from({length: 5}, (_, i) => `<span class="tkb-eu-dot ${i < v ? 'tkb-eu-dot-on' : ''}"></span>`).join('');
+      return `
+      <div class="tkb-eu-row">
+        <span class="tkb-eu-icon">${meta.icon}</span>
+        <span class="tkb-eu-label">${meta.label}</span>
+        <span class="tkb-eu-bars">${bars}</span>
+        <span class="tkb-eu-num">${v}/5</span>
+      </div>`;
+    }).join('');
+  }
+
+  // ── Compatibilities (catégorisées) ────────────────────────────────
+  function renderCompatibilities(compat) {
+    const el = document.getElementById('tool-compat');
+    if (!compat) { el.innerHTML = ''; return; }
+    const cats = [
+      { key: 'formats',       label: '📄 Formats',       cls: 'cat-formats' },
+      { key: 'engines',       label: '⚙️ Moteurs',       cls: 'cat-engines' },
+      { key: 'frameworks',    label: '🛠️ Frameworks',   cls: 'cat-frameworks' },
+      { key: 'visualization', label: '📈 Visualisation', cls: 'cat-viz' }
+    ];
+    el.innerHTML = cats.map(cat => {
+      const items = compat[cat.key] || [];
+      if (!items.length) return '';
+      return `
+        <div class="tkb-compat-cat">
+          <span class="tkb-compat-cat-label ${cat.cls}">${cat.label}</span>
+          <div class="tkb-compat-chips">${items.map(c => {
+            const linked = TOOLS_KB.find(x => x.name === c.split(' (')[0] || x.id === c.toLowerCase().split(' (')[0].replace(/\s+/g, '-'));
+            return linked
+              ? `<a href="tool.html?id=${linked.id}" class="tkb-compat-chip tkb-compat-linked">${esc(c)} →</a>`
+              : `<span class="tkb-compat-chip">${esc(c)}</span>`;
+          }).join('')}</div>
+        </div>`;
+    }).join('');
+  }
+
+  // ── Learning paths (multi-profil) ───────────────────────────────
+  function renderLearningPaths(paths) {
+    const sec = document.getElementById('sec-learning');
+    if (!paths || !paths.length) { sec.style.display = 'none'; return; }
+    const currentId = tool ? tool.id : '';
+    document.getElementById('tool-learning').innerHTML = paths.map(path => `
+      <div class="tkb-path-col">
+        <div class="tkb-path-label">${esc(path.label)}</div>
+        <div class="tkb-path-steps">${path.steps.map((step, i) => {
+          const linked  = TOOLS_KB.find(t => t.id === step.id);
+          const isCur   = linked && linked.id === currentId;
+          return `
+            <div class="tkb-path-step ${isCur ? 'tkb-path-current' : ''}" 
+                 ${linked && !isCur ? `onclick="location.href='tool.html?id=${step.id}'" style="cursor:pointer"` : ''}>
+              <span class="tkb-path-icon">${linked ? linked.icon : '🔧'}</span>
+              <span class="tkb-path-name">${esc(step.name)}</span>
+              ${isCur ? '<span class="tkb-path-here">←</span>' : ''}
+            </div>
+            ${i < path.steps.length - 1 ? '<div class="tkb-path-arrow">↓</div>' : ''}`;
+        }).join('')}</div>
+      </div>`).join('');
+  }
+
+  // ── Learning path (legacy flat — kept for compat) ───────────────────
+  function renderLearningPath(path) {
+    if (!path || !path.length) {
+      document.getElementById('sec-learning').style.display = 'none';
+      return;
+    }
+    const currentTool = tool ? tool.id : '';
+    document.getElementById('tool-learning').innerHTML = path.map((step, i) => {
+      const linked = TOOLS_KB.find(t => t.id === step || t.name.toLowerCase() === step.toLowerCase());
+      const isCurrent = linked && linked.id === currentTool;
+      const name = linked ? linked.name : step;
+      const icon = linked ? linked.icon : '🔧';
+      const levelLabels = ['Débutant', 'Intermédiaire', 'Avancé', 'Expert'];
+      const level = levelLabels[Math.min(i, levelLabels.length - 1)];
+      return `
+        <div class="tkb-lp-item ${isCurrent ? 'tkb-lp-current' : ''}"
+             ${linked && !isCurrent ? `onclick="location.href='tool.html?id=${linked.id}'" style="cursor:pointer"` : ''}>
+          <span class="tkb-lp-icon">${icon}</span>
+          <div class="tkb-lp-body">
+            <div class="tkb-lp-name">${esc(name)}</div>
+            <div class="tkb-lp-level">${level}</div>
+          </div>
+          ${isCurrent ? '<span class="tkb-lp-you">← Vous êtes ici</span>' : ''}
+        </div>
+        ${i < path.length - 1 ? '<div class="tkb-lp-arrow">↓</div>' : ''}`;
+    }).join('');
+  }
+
+  // ── Mon avis terrain ───────────────────────────────────────────
+  function renderAvis(t) {
+    const saved = localStorage.getItem(LS_KEY(t.id));
+    const avis  = saved || t.avis_terrain || '';
+    document.getElementById('tool-avis').textContent = avis;
+    document.getElementById('avis-textarea').value   = avis;
+
+    document.getElementById('avis-edit-btn').onclick = () => toggleAvisEdit(true);
+    document.getElementById('btn-edit-avis').onclick  = () => { toggleAvisEdit(true); document.getElementById('sec-avis').scrollIntoView({behavior:'smooth'}); };
+    document.getElementById('avis-save-btn').onclick  = () => saveAvis(t);
+    document.getElementById('avis-cancel-btn').onclick= () => toggleAvisEdit(false);
+    document.getElementById('avis-reset-btn').onclick = () => resetAvis(t);
+  }
+
+  function toggleAvisEdit(editing) {
+    document.getElementById('avis-view-mode').classList.toggle('hidden', editing);
+    document.getElementById('avis-edit-mode').classList.toggle('hidden', !editing);
+    if (editing) document.getElementById('avis-textarea').focus();
+  }
+
+  function saveAvis(t) {
+    const text = document.getElementById('avis-textarea').value.trim();
+    localStorage.setItem(LS_KEY(t.id), text);
+    document.getElementById('tool-avis').textContent = text;
+    toggleAvisEdit(false);
+  }
+
+  function resetAvis(t) {
+    localStorage.removeItem(LS_KEY(t.id));
+    document.getElementById('tool-avis').textContent   = t.avis_terrain || '';
+    document.getElementById('avis-textarea').value      = t.avis_terrain || '';
+    toggleAvisEdit(false);
+  }
+
+  // ── Releases from data.json ────────────────────────────────────
+  async function loadReleases(t) {
+    if (!t.github_repo) {
+      document.getElementById('releases-loading').classList.add('hidden');
+      document.getElementById('releases-none').classList.remove('hidden');
+      return;
+    }
+    try {
+      const resp = await fetch(DATA_URL);
+      if (!resp.ok) throw new Error('Erreur réseau');
+      const data = await resp.json();
+      const releases = (data.releases || []).filter(r => {
+        const name = (r.name || '').toLowerCase();
+        const repo = t.github_repo.toLowerCase();
+        return name === repo || name.includes(repo.split('/')[1]);
+      });
+
+      document.getElementById('releases-loading').classList.add('hidden');
+
+      if (releases.length === 0) {
+        document.getElementById('releases-none').classList.remove('hidden');
+        return;
+      }
+
+      const top = releases.slice(0, 5);
+      document.getElementById('tool-releases-list').innerHTML = top.map(r => {
+        // ── Recalibration: CRITICAL → HIGH sans sécurité/breaking change ──
+        let impactLevel = (r.impact_level || '').toLowerCase();
+        const factors = (() => { try { return JSON.parse(r.detected_factors || '[]'); } catch { return []; } })();
+        const hasSecurityFactor  = factors.some(f => f.category === 'security');
+        const hasBreakingFactor  = factors.some(f => f.category === 'breaking_change');
+        if (impactLevel === 'critical' && !r.has_breaking_change && !hasSecurityFactor && !hasBreakingFactor) {
+          impactLevel = 'high';
+        }
+
+        // Action recommandée lisible
+        const actionLabels = {
+          upgrade_immediately: { icon: '🔴', label: 'MISE À JOUR CRITIQUE' },
+          plan_migration:      { icon: '🟠', label: 'PLANIFIER MIGRATION' },
+          monitor_update:      { icon: '🟡', label: 'METTRE À JOUR' },
+          monitor:             { icon: '🟢', label: 'SURVEILLER' },
+          ignore:              { icon: '⚪', label: 'FACULTATIF' },
+        };
+        const actionKey = (r.action_recommended || '').toLowerCase().replace(/ /g, '_');
+        const actionMeta = actionLabels[actionKey] || { icon: '⚪', label: r.action_recommended || 'SURVEILLER' };
+
+        const impactMap = {
+          critical: { icon: '🔴', cls: 'badge-critical', label: 'CRITICAL' },
+          high:     { icon: '🟠', cls: 'badge-high',     label: 'HIGH' },
+          moderate: { icon: '🟡', cls: 'badge-moderate', label: 'MODERATE' },
+          medium:   { icon: '🟡', cls: 'badge-moderate', label: 'MODERATE' },
+          low:      { icon: '🟢', cls: 'badge-low',      label: 'LOW' }
+        };
+        const imp = impactMap[impactLevel] || { icon: '⚪', cls: 'badge-muted', label: '?' };
+        const date = r.published_at ? new Date(r.published_at).toLocaleDateString('fr-FR') : '—';
+        const score = r.final_score ? Math.round(r.final_score) : '—';
+
+        return `
+        <div class="tkb-release-item">
+          <div class="tkb-release-header">
+            <a href="${r.html_url || '#'}" class="tkb-release-tag" target="_blank" rel="noopener noreferrer">
+              ${esc(r.tag || r.version_major + '.' + r.version_minor + '.' + r.version_patch)}
+            </a>
+            <span class="badge ${imp.cls}">${imp.icon} ${imp.label}</span>
+            <span class="tkb-release-action">${actionMeta.icon} ${actionMeta.label}</span>
+            <span class="tkb-release-date">${date}</span>
+            <span class="tkb-release-score">Score : ${score}</span>
+          </div>
+          ${r.body_excerpt
+            ? `<p class="tkb-release-body">${esc(r.body_excerpt.substring(0, 200))}…</p>`
+            : ''}
+        </div>`;
+      }).join('');
+
+    } catch(e) {
+      document.getElementById('releases-loading').classList.add('hidden');
+      document.getElementById('releases-none').textContent = 'Impossible de charger les releases.';
+      document.getElementById('releases-none').classList.remove('hidden');
+    }
+  }
+
+  // ── Copy to clipboard ──────────────────────────────────────────
+  function copyCode(btn, text) {
+    navigator.clipboard.writeText(text).then(() => {
+      btn.textContent = '✅';
+      setTimeout(() => btn.textContent = '📋', 1500);
+    }).catch(() => {
+      btn.textContent = '❌';
+      setTimeout(() => btn.textContent = '📋', 1500);
+    });
+  }
+
+  // ── Escape HTML ────────────────────────────────────────────────
+  function esc(str) {
+    if (!str) return '';
+    return String(str)
+      .replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;')
+      .replace(/"/g,'&quot;').replace(/'/g,'&#039;');
+  }
+  </script>
+
+</body>
+</html>
