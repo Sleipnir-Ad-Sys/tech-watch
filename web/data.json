@@ -1,6 +1,143 @@
 {
-  "updated_at": "2026-06-24T08:08:49.486297",
+  "updated_at": "2026-06-25T08:08:22.150838",
   "releases": [
+    {
+      "id": "390f94df5335a5fb",
+      "source": "pypi",
+      "name": "pypi/openai",
+      "tag": "2.44.0",
+      "version_major": 2,
+      "version_minor": 44,
+      "version_patch": 0,
+      "published_at": "2026-06-24T20:55:58.882276",
+      "category": "ai",
+      "body_excerpt": "The official Python library for the openai API",
+      "has_breaking_change": false,
+      "breaking_snippets": [],
+      "repo_weight": 1.2,
+      "html_url": "https://pypi.org/project/openai/2.44.0/",
+      "collected_at": "2026-06-25T08:08:03.890476",
+      "technical_score": 0.0,
+      "relevance_score": 0.0,
+      "final_score": 0.0,
+      "impact_score": 0.0,
+      "impact_level": "low",
+      "urgency_level": "LOW",
+      "detected_factors": [],
+      "action_recommended": "IGNORER",
+      "analysis_reasons": [
+        "Impact faible — pas d'action requise"
+      ]
+    },
+    {
+      "id": "4f5aaba971fe011b",
+      "source": "pypi",
+      "name": "pypi/deltalake",
+      "tag": "1.6.1",
+      "version_major": 1,
+      "version_minor": 6,
+      "version_patch": 1,
+      "published_at": "2026-06-24T13:35:28.359788",
+      "category": "lakehouse",
+      "body_excerpt": "Native Delta Lake Python binding based on delta-rs with Pandas integration",
+      "has_breaking_change": false,
+      "breaking_snippets": [],
+      "repo_weight": 1.0,
+      "html_url": "https://pypi.org/project/deltalake/1.6.1/",
+      "collected_at": "2026-06-25T08:08:02.736924",
+      "technical_score": 0.0,
+      "relevance_score": 8.0,
+      "final_score": 24.0,
+      "impact_score": 2.0,
+      "impact_level": "moderate",
+      "urgency_level": "LOW",
+      "detected_factors": [],
+      "action_recommended": "IGNORER",
+      "analysis_reasons": [
+        "Impact faible — pas d'action requise"
+      ]
+    },
+    {
+      "id": "0de9afb7e4c0bc61",
+      "source": "github",
+      "name": "delta-io/delta-rs",
+      "tag": "python-v1.6.1",
+      "version_major": 1,
+      "version_minor": 6,
+      "version_patch": 1,
+      "published_at": "2026-06-24T13:16:12",
+      "category": "lakehouse",
+      "body_excerpt": "## What's Changed\r\n* docs: update the changelog for 0.32.2 by @rtyler in https://github.com/delta-io/delta-rs/pull/4459\r\n* docs: upgrade the changelog for python 1.6.0 by @rtyler in https://github.com/delta-io/delta-rs/pull/4461\r\n* chore: introduce regression test which demonstrates null partition vacuuming by @rtyler in https://github.com/delta-io/delta-rs/pull/4463\r\n* chore: bump deltalake-unity for a release to crates.io by @rtyler in https://github.com/delta-io/delta-rs/pull/4470\r\n* fix: keep delta materialized filters above parquet by @ethan-tyler in https://github.com/delta-io/delta-rs/pull/4469\r\n* fix: count distinct top-level fields against dataSkippingNumIndexedCols by @rtyler in https://github.com/delta-io/delta-rs/pull/4466\r\n* fix: add TimestampNanos to supported reader features by @adamreeve in https://github.com/delta-io/delta-rs/pull/4481\r\n* fix: preserve merge row ordinals across scan planning by @ethan-tyler in https://github.com/delta-io/delta-rs/pull/4473\r\n* fix: simplify expressions when conflict checking by @adamreeve in https://github.com/delta-io/delta-rs/pull/4479\r\n* perf: break early by @ion-elgreco in https://github.com/delta-io/delta-rs/pull/4491\r\n* feat: remove S3DynamoDbLogStore and prepare for 1.0.0 by @rtyler in https://github.com/delta-io/delta-rs/pull/4483\r\n* chore: bump jemalloc by @ion-elgreco in https://github.com/delta-io/delta-rs/pull/4492\r\n* feat(cdf): prune load_cdf reads by partition predicates by @osmant in https://github.com/delta-io/delta-rs/pull/4487\r\n* feat: add public snapshot file selection api by @ethan-tyler in https://github.com/delta-io/delta-rs/pull/4489\r\n* feat: column mapping physical exec by @ion-elgreco in https://github.com/delta-io/delta-rs/pull/4493\r\n* chore: add test cases for successful concurrent delete operations by @adamreeve in https://github.com/delta-io/delta-rs/pull/4502\r\n* fix: skip boolean min max stats during scans by @ethan-tyler in https://github.com/delta-io/delta-rs/pull/4499\r\n* ci: mark PRs ",
+      "has_breaking_change": false,
+      "breaking_snippets": [],
+      "repo_weight": 1.2,
+      "html_url": "https://github.com/delta-io/delta-rs/releases/tag/python-v1.6.1",
+      "collected_at": "2026-06-25T08:07:56.837363",
+      "technical_score": 97.0,
+      "relevance_score": 8.0,
+      "final_score": 91.9,
+      "impact_score": 99.0,
+      "impact_level": "high",
+      "urgency_level": "LOW",
+      "detected_factors": [
+        {
+          "category": "enhancement",
+          "count": 6,
+          "score_contribution": 36.0,
+          "snippets": [
+            "* chore: introduce regression test which demonstrates null partition vacuuming by @rtyler in https://github.com/delta-io/delta-rs/pull/4463",
+            "* fix: add TimestampNanos to supported reader features by @adamreeve in https://github.com/delta-io/delta-rs/pull/4481",
+            "* feat: remove S3DynamoDbLogStore and prepare for 1.0.0 by @rtyler in https://github.com/delta-io/delta-rs/pull/4483",
+            "* feat(cdf): prune load_cdf reads by partition predicates by @osmant in https://github.com/delta-io/delta-rs/pull/4487",
+            "* feat: add public snapshot file selection api by @ethan-tyler in https://github.com/delta-io/delta-rs/pull/4489"
+          ]
+        },
+        {
+          "category": "removed",
+          "count": 1,
+          "score_contribution": 30.0,
+          "snippets": [
+            "* feat: remove S3DynamoDbLogStore and prepare for 1.0.0 by @rtyler in https://github.com/delta-io/delta-rs/pull/4483"
+          ]
+        },
+        {
+          "category": "bug_fix",
+          "count": 7,
+          "score_contribution": 21.0,
+          "snippets": [
+            "* chore: introduce regression test which demonstrates null partition vacuuming by @rtyler in https://github.com/delta-io/delta-rs/pull/4463",
+            "* fix: keep delta materialized filters above parquet by @ethan-tyler in https://github.com/delta-io/delta-rs/pull/4469",
+            "* fix: count distinct top-level fields against dataSkippingNumIndexedCols by @rtyler in https://github.com/delta-io/delta-rs/pull/4466",
+            "* fix: add TimestampNanos to supported reader features by @adamreeve in https://github.com/delta-io/delta-rs/pull/4481",
+            "* fix: preserve merge row ordinals across scan planning by @ethan-tyler in https://github.com/delta-io/delta-rs/pull/4473"
+          ]
+        },
+        {
+          "category": "performance",
+          "count": 1,
+          "score_contribution": 8.0,
+          "snippets": [
+            "* perf: break early by @ion-elgreco in https://github.com/delta-io/delta-rs/pull/4491"
+          ]
+        },
+        {
+          "category": "documentation",
+          "count": 2,
+          "score_contribution": 2.0,
+          "snippets": [
+            "* docs: update the changelog for 0.32.2 by @rtyler in https://github.com/delta-io/delta-rs/pull/4459",
+            "* docs: upgrade the changelog for python 1.6.0 by @rtyler in https://github.com/delta-io/delta-rs/pull/4461"
+          ]
+        }
+      ],
+      "action_recommended": "METTRE À JOUR",
+      "analysis_reasons": [
+        "1 amélioration(s) de performance",
+        "6 amélioration(s) / nouvelle(s) fonctionnalité(s)",
+        "7 correction(s) de bug(s)",
+        "Impact high — intégrer au prochain cycle de mise à jour"
+      ]
+    },
     {
       "id": "dfe4a0e75290d56e",
       "source": "github",
@@ -16,7 +153,7 @@
       "breaking_snippets": [],
       "repo_weight": 1.5,
       "html_url": "https://github.com/pola-rs/polars/releases/tag/py-1.42.0",
-      "collected_at": "2026-06-24T08:07:40.419728",
+      "collected_at": "2026-06-25T08:07:16.360836",
       "technical_score": 100.0,
       "relevance_score": 10.0,
       "final_score": 100.0,
@@ -93,7 +230,7 @@
       "breaking_snippets": [],
       "repo_weight": 1.5,
       "html_url": "https://pypi.org/project/polars/1.42.0/",
-      "collected_at": "2026-06-24T08:08:27.044898",
+      "collected_at": "2026-06-25T08:08:01.344673",
       "technical_score": 0.0,
       "relevance_score": 10.0,
       "final_score": 30.0,
@@ -121,7 +258,7 @@
       "breaking_snippets": [],
       "repo_weight": 1.2,
       "html_url": "https://pypi.org/project/ruff/0.15.19/",
-      "collected_at": "2026-06-24T08:08:30.053162",
+      "collected_at": "2026-06-25T08:08:04.401316",
       "technical_score": 0.0,
       "relevance_score": 0.0,
       "final_score": 0.0,
@@ -149,7 +286,7 @@
       "breaking_snippets": [],
       "repo_weight": 1.1,
       "html_url": "https://github.com/astral-sh/uv/releases/tag/0.11.24",
-      "collected_at": "2026-06-24T08:08:09.975751",
+      "collected_at": "2026-06-25T08:07:44.453445",
       "technical_score": 26.0,
       "relevance_score": 0.0,
       "final_score": 18.2,
@@ -204,7 +341,7 @@
       "breaking_snippets": [],
       "repo_weight": 1.1,
       "html_url": "https://pypi.org/project/uv/0.11.24/",
-      "collected_at": "2026-06-24T08:08:30.532159",
+      "collected_at": "2026-06-25T08:08:04.901324",
       "technical_score": 0.0,
       "relevance_score": 0.0,
       "final_score": 0.0,
@@ -232,7 +369,7 @@
       "breaking_snippets": [],
       "repo_weight": 1.2,
       "html_url": "https://pypi.org/project/fastapi/0.138.0/",
-      "collected_at": "2026-06-24T08:08:27.484635",
+      "collected_at": "2026-06-25T08:08:01.829087",
       "technical_score": 8.0,
       "relevance_score": 0.0,
       "final_score": 5.6,
@@ -269,7 +406,7 @@
       "breaking_snippets": [],
       "repo_weight": 1.2,
       "html_url": "https://github.com/fastapi/fastapi/releases/tag/0.138.0",
-      "collected_at": "2026-06-24T08:07:50.411924",
+      "collected_at": "2026-06-25T08:07:26.328136",
       "technical_score": 10.0,
       "relevance_score": 0.0,
       "final_score": 7.0,
@@ -317,7 +454,7 @@
       "breaking_snippets": [],
       "repo_weight": 1.1,
       "html_url": "https://github.com/astral-sh/uv/releases/tag/0.11.23",
-      "collected_at": "2026-06-24T08:08:09.975769",
+      "collected_at": "2026-06-25T08:07:44.453463",
       "technical_score": 3.0,
       "relevance_score": 0.0,
       "final_score": 2.1,
@@ -354,7 +491,7 @@
       "breaking_snippets": [],
       "repo_weight": 1.1,
       "html_url": "https://pypi.org/project/uv/0.11.23/",
-      "collected_at": "2026-06-24T08:08:30.532132",
+      "collected_at": "2026-06-25T08:08:04.901297",
       "technical_score": 0.0,
       "relevance_score": 0.0,
       "final_score": 0.0,
@@ -382,7 +519,7 @@
       "breaking_snippets": [],
       "repo_weight": 1.0,
       "html_url": "https://pypi.org/project/maturin/1.14.1/",
-      "collected_at": "2026-06-24T08:08:30.283430",
+      "collected_at": "2026-06-25T08:08:04.641064",
       "technical_score": 0.0,
       "relevance_score": 0.0,
       "final_score": 0.0,
@@ -410,7 +547,7 @@
       "breaking_snippets": [],
       "repo_weight": 1.1,
       "html_url": "https://github.com/astral-sh/uv/releases/tag/0.11.22",
-      "collected_at": "2026-06-24T08:08:09.975777",
+      "collected_at": "2026-06-25T08:07:44.453470",
       "technical_score": 55.0,
       "relevance_score": 0.0,
       "final_score": 38.5,
@@ -483,7 +620,7 @@
       "breaking_snippets": [],
       "repo_weight": 1.1,
       "html_url": "https://pypi.org/project/uv/0.11.22/",
-      "collected_at": "2026-06-24T08:08:30.532106",
+      "collected_at": "2026-06-25T08:08:04.901272",
       "technical_score": 0.0,
       "relevance_score": 0.0,
       "final_score": 0.0,
@@ -511,7 +648,7 @@
       "breaking_snippets": [],
       "repo_weight": 1.3,
       "html_url": "https://pypi.org/project/langchain-core/1.4.8/",
-      "collected_at": "2026-06-24T08:08:29.362955",
+      "collected_at": "2026-06-25T08:08:03.664800",
       "technical_score": 0.0,
       "relevance_score": 0.0,
       "final_score": 0.0,
@@ -539,7 +676,7 @@
       "breaking_snippets": [],
       "repo_weight": 1.2,
       "html_url": "https://pypi.org/project/ruff/0.15.18/",
-      "collected_at": "2026-06-24T08:08:30.053137",
+      "collected_at": "2026-06-25T08:08:04.401292",
       "technical_score": 0.0,
       "relevance_score": 0.0,
       "final_score": 0.0,
@@ -567,7 +704,7 @@
       "breaking_snippets": [],
       "repo_weight": 1.2,
       "html_url": "https://pypi.org/project/fastapi/0.137.2/",
-      "collected_at": "2026-06-24T08:08:27.484628",
+      "collected_at": "2026-06-25T08:08:01.829080",
       "technical_score": 8.0,
       "relevance_score": 0.0,
       "final_score": 5.6,
@@ -604,7 +741,7 @@
       "breaking_snippets": [],
       "repo_weight": 1.2,
       "html_url": "https://github.com/fastapi/fastapi/releases/tag/0.137.2",
-      "collected_at": "2026-06-24T08:07:50.411941",
+      "collected_at": "2026-06-25T08:07:26.328153",
       "technical_score": 7.0,
       "relevance_score": 0.0,
       "final_score": 4.9,
@@ -649,7 +786,7 @@
       "breaking_snippets": [],
       "repo_weight": 1.0,
       "html_url": "https://pypi.org/project/delta-spark/4.3.0/",
-      "collected_at": "2026-06-24T08:08:28.187484",
+      "collected_at": "2026-06-25T08:08:02.512566",
       "technical_score": 0.0,
       "relevance_score": 8.0,
       "final_score": 24.0,
@@ -677,7 +814,7 @@
       "breaking_snippets": [],
       "repo_weight": 1.2,
       "html_url": "https://pypi.org/project/openai/2.43.0/",
-      "collected_at": "2026-06-24T08:08:29.576026",
+      "collected_at": "2026-06-25T08:08:03.890468",
       "technical_score": 0.0,
       "relevance_score": 0.0,
       "final_score": 0.0,
@@ -705,7 +842,7 @@
       "breaking_snippets": [],
       "repo_weight": 1.5,
       "html_url": "https://pypi.org/project/duckdb/1.5.4/",
-      "collected_at": "2026-06-24T08:08:27.273403",
+      "collected_at": "2026-06-25T08:08:01.603809",
       "technical_score": 0.0,
       "relevance_score": 10.0,
       "final_score": 30.0,
@@ -733,7 +870,7 @@
       "breaking_snippets": [],
       "repo_weight": 1.5,
       "html_url": "https://github.com/duckdb/duckdb/releases/tag/v1.5.4",
-      "collected_at": "2026-06-24T08:07:46.112285",
+      "collected_at": "2026-06-25T08:07:22.097783",
       "technical_score": 86.0,
       "relevance_score": 10.0,
       "final_score": 90.2,
@@ -793,7 +930,7 @@
       "breaking_snippets": [],
       "repo_weight": 1.5,
       "html_url": "https://pypi.org/project/duckdb/1.4.5/",
-      "collected_at": "2026-06-24T08:08:27.273166",
+      "collected_at": "2026-06-25T08:08:01.603574",
       "technical_score": 0.0,
       "relevance_score": 10.0,
       "final_score": 30.0,
@@ -821,7 +958,7 @@
       "breaking_snippets": [],
       "repo_weight": 1.5,
       "html_url": "https://github.com/duckdb/duckdb/releases/tag/v1.4.5",
-      "collected_at": "2026-06-24T08:07:46.112304",
+      "collected_at": "2026-06-25T08:07:22.097801",
       "technical_score": 18.0,
       "relevance_score": 10.0,
       "final_score": 42.6,
@@ -871,7 +1008,7 @@
       "breaking_snippets": [],
       "repo_weight": 1.2,
       "html_url": "https://pypi.org/project/openai/2.42.0/",
-      "collected_at": "2026-06-24T08:08:29.576018",
+      "collected_at": "2026-06-25T08:08:03.890462",
       "technical_score": 0.0,
       "relevance_score": 0.0,
       "final_score": 0.0,
@@ -899,7 +1036,7 @@
       "breaking_snippets": [],
       "repo_weight": 1.1,
       "html_url": "https://pypi.org/project/sentence-transformers/5.6.0/",
-      "collected_at": "2026-06-24T08:08:29.781588",
+      "collected_at": "2026-06-25T08:08:04.109520",
       "technical_score": 0.0,
       "relevance_score": 0.0,
       "final_score": 0.0,
@@ -927,7 +1064,7 @@
       "breaking_snippets": [],
       "repo_weight": 1.3,
       "html_url": "https://github.com/huggingface/transformers/releases/tag/v5.12.1",
-      "collected_at": "2026-06-24T08:08:03.125570",
+      "collected_at": "2026-06-25T08:07:38.023290",
       "technical_score": 10.0,
       "relevance_score": 0.0,
       "final_score": 7.0,
@@ -974,7 +1111,7 @@
       "breaking_snippets": [],
       "repo_weight": 1.3,
       "html_url": "https://github.com/huggingface/transformers/releases/tag/v5.10.3",
-      "collected_at": "2026-06-24T08:08:03.125588",
+      "collected_at": "2026-06-25T08:07:38.023307",
       "technical_score": 28.0,
       "relevance_score": 0.0,
       "final_score": 19.6,
@@ -1031,7 +1168,7 @@
       "breaking_snippets": [],
       "repo_weight": 1.4,
       "html_url": "https://pypi.org/project/transformers/5.10.4/",
-      "collected_at": "2026-06-24T08:08:28.934623",
+      "collected_at": "2026-06-25T08:08:03.211972",
       "technical_score": 0.0,
       "relevance_score": 0.0,
       "final_score": 0.0,
@@ -1059,7 +1196,7 @@
       "breaking_snippets": [],
       "repo_weight": 1.4,
       "html_url": "https://pypi.org/project/transformers/5.12.1/",
-      "collected_at": "2026-06-24T08:08:28.934645",
+      "collected_at": "2026-06-25T08:08:03.211994",
       "technical_score": 0.0,
       "relevance_score": 0.0,
       "final_score": 0.0,
@@ -1087,7 +1224,7 @@
       "breaking_snippets": [],
       "repo_weight": 1.2,
       "html_url": "https://pypi.org/project/fastapi/0.137.1/",
-      "collected_at": "2026-06-24T08:08:27.484621",
+      "collected_at": "2026-06-25T08:08:01.829073",
       "technical_score": 8.0,
       "relevance_score": 0.0,
       "final_score": 5.6,
@@ -1124,7 +1261,7 @@
       "breaking_snippets": [],
       "repo_weight": 1.2,
       "html_url": "https://github.com/fastapi/fastapi/releases/tag/0.137.1",
-      "collected_at": "2026-06-24T08:07:50.411948",
+      "collected_at": "2026-06-25T08:07:26.328161",
       "technical_score": 3.0,
       "relevance_score": 0.0,
       "final_score": 2.1,
@@ -1161,7 +1298,7 @@
       "breaking_snippets": [],
       "repo_weight": 1.2,
       "html_url": "https://pypi.org/project/fastapi/0.137.0/",
-      "collected_at": "2026-06-24T08:08:27.484614",
+      "collected_at": "2026-06-25T08:08:01.829065",
       "technical_score": 8.0,
       "relevance_score": 0.0,
       "final_score": 5.6,
@@ -1201,7 +1338,7 @@
       ],
       "repo_weight": 1.2,
       "html_url": "https://github.com/fastapi/fastapi/releases/tag/0.137.0",
-      "collected_at": "2026-06-24T08:07:50.411955",
+      "collected_at": "2026-06-25T08:07:26.328167",
       "technical_score": 100.0,
       "relevance_score": 0.0,
       "final_score": 70.0,
@@ -1249,7 +1386,7 @@
       "breaking_snippets": [],
       "repo_weight": 1.3,
       "html_url": "https://pypi.org/project/langchain-core/1.4.7/",
-      "collected_at": "2026-06-24T08:08:29.362948",
+      "collected_at": "2026-06-25T08:08:03.664793",
       "technical_score": 0.0,
       "relevance_score": 0.0,
       "final_score": 0.0,
@@ -1277,7 +1414,7 @@
       "breaking_snippets": [],
       "repo_weight": 1.3,
       "html_url": "https://github.com/huggingface/transformers/releases/tag/v5.12.0",
-      "collected_at": "2026-06-24T08:08:03.125597",
+      "collected_at": "2026-06-25T08:07:38.023315",
       "technical_score": 26.0,
       "relevance_score": 0.0,
       "final_score": 18.2,
@@ -1341,7 +1478,7 @@
       "breaking_snippets": [],
       "repo_weight": 1.4,
       "html_url": "https://pypi.org/project/transformers/5.12.0/",
-      "collected_at": "2026-06-24T08:08:28.934637",
+      "collected_at": "2026-06-25T08:08:03.211987",
       "technical_score": 0.0,
       "relevance_score": 0.0,
       "final_score": 0.0,
@@ -1369,7 +1506,7 @@
       "breaking_snippets": [],
       "repo_weight": 1.0,
       "html_url": "https://pypi.org/project/maturin/1.14.0/",
-      "collected_at": "2026-06-24T08:08:30.283394",
+      "collected_at": "2026-06-25T08:08:04.641043",
       "technical_score": 0.0,
       "relevance_score": 0.0,
       "final_score": 0.0,
@@ -1397,7 +1534,7 @@
       "breaking_snippets": [],
       "repo_weight": 1.1,
       "html_url": "https://github.com/astral-sh/uv/releases/tag/0.11.21",
-      "collected_at": "2026-06-24T08:08:09.975783",
+      "collected_at": "2026-06-25T08:07:44.453476",
       "technical_score": 44.0,
       "relevance_score": 0.0,
       "final_score": 30.8,
@@ -1459,7 +1596,7 @@
       "breaking_snippets": [],
       "repo_weight": 1.1,
       "html_url": "https://pypi.org/project/uv/0.11.21/",
-      "collected_at": "2026-06-24T08:08:30.532080",
+      "collected_at": "2026-06-25T08:08:04.901246",
       "technical_score": 0.0,
       "relevance_score": 0.0,
       "final_score": 0.0,
@@ -1487,7 +1624,7 @@
       "breaking_snippets": [],
       "repo_weight": 1.2,
       "html_url": "https://pypi.org/project/ruff/0.15.17/",
-      "collected_at": "2026-06-24T08:08:30.053111",
+      "collected_at": "2026-06-25T08:08:04.401265",
       "technical_score": 0.0,
       "relevance_score": 0.0,
       "final_score": 0.0,
@@ -1515,7 +1652,7 @@
       "breaking_snippets": [],
       "repo_weight": 1.3,
       "html_url": "https://pypi.org/project/langchain-core/1.4.6/",
-      "collected_at": "2026-06-24T08:08:29.362941",
+      "collected_at": "2026-06-25T08:08:03.664786",
       "technical_score": 0.0,
       "relevance_score": 0.0,
       "final_score": 0.0,
@@ -1543,7 +1680,7 @@
       "breaking_snippets": [],
       "repo_weight": 1.3,
       "html_url": "https://pypi.org/project/langchain-core/1.4.5/",
-      "collected_at": "2026-06-24T08:08:29.362933",
+      "collected_at": "2026-06-25T08:08:03.664779",
       "technical_score": 0.0,
       "relevance_score": 0.0,
       "final_score": 0.0,
@@ -1571,7 +1708,7 @@
       "breaking_snippets": [],
       "repo_weight": 1.3,
       "html_url": "https://pypi.org/project/langchain-core/1.4.4/",
-      "collected_at": "2026-06-24T08:08:29.362926",
+      "collected_at": "2026-06-25T08:08:03.664772",
       "technical_score": 0.0,
       "relevance_score": 0.0,
       "final_score": 0.0,
@@ -1599,7 +1736,7 @@
       "breaking_snippets": [],
       "repo_weight": 1.1,
       "html_url": "https://github.com/astral-sh/uv/releases/tag/0.11.20",
-      "collected_at": "2026-06-24T08:08:09.975789",
+      "collected_at": "2026-06-25T08:07:44.453482",
       "technical_score": 51.0,
       "relevance_score": 0.0,
       "final_score": 35.7,
@@ -1668,7 +1805,7 @@
       "breaking_snippets": [],
       "repo_weight": 1.1,
       "html_url": "https://pypi.org/project/uv/0.11.20/",
-      "collected_at": "2026-06-24T08:08:30.532054",
+      "collected_at": "2026-06-25T08:08:04.901219",
       "technical_score": 0.0,
       "relevance_score": 0.0,
       "final_score": 0.0,
@@ -1696,7 +1833,7 @@
       "breaking_snippets": [],
       "repo_weight": 1.3,
       "html_url": "https://github.com/huggingface/transformers/releases/tag/v5.11.0",
-      "collected_at": "2026-06-24T08:08:03.125604",
+      "collected_at": "2026-06-25T08:07:38.023321",
       "technical_score": 33.0,
       "relevance_score": 0.0,
       "final_score": 23.1,
@@ -1763,7 +1900,7 @@
       "breaking_snippets": [],
       "repo_weight": 1.4,
       "html_url": "https://pypi.org/project/transformers/5.11.0/",
-      "collected_at": "2026-06-24T08:08:28.934630",
+      "collected_at": "2026-06-25T08:08:03.211979",
       "technical_score": 0.0,
       "relevance_score": 0.0,
       "final_score": 0.0,
@@ -1791,7 +1928,7 @@
       "breaking_snippets": [],
       "repo_weight": 1.2,
       "html_url": "https://pypi.org/project/openai/2.41.1/",
-      "collected_at": "2026-06-24T08:08:29.576011",
+      "collected_at": "2026-06-25T08:08:03.890455",
       "technical_score": 0.0,
       "relevance_score": 0.0,
       "final_score": 0.0,
@@ -1819,7 +1956,7 @@
       "breaking_snippets": [],
       "repo_weight": 1.3,
       "html_url": "https://pypi.org/project/langchain-core/1.4.3/",
-      "collected_at": "2026-06-24T08:08:29.362919",
+      "collected_at": "2026-06-25T08:08:03.664765",
       "technical_score": 0.0,
       "relevance_score": 0.0,
       "final_score": 0.0,
@@ -1847,7 +1984,7 @@
       "breaking_snippets": [],
       "repo_weight": 1.3,
       "html_url": "https://pypi.org/project/langchain-core/1.4.2/",
-      "collected_at": "2026-06-24T08:08:29.362912",
+      "collected_at": "2026-06-25T08:08:03.664758",
       "technical_score": 0.0,
       "relevance_score": 0.0,
       "final_score": 0.0,
@@ -1875,7 +2012,7 @@
       "breaking_snippets": [],
       "repo_weight": 1.2,
       "html_url": "https://github.com/delta-io/delta-rs/releases/tag/rust-v0.32.4",
-      "collected_at": "2026-06-24T08:08:22.716045",
+      "collected_at": "2026-06-25T08:07:56.837380",
       "technical_score": 2.0,
       "relevance_score": 8.0,
       "final_score": 25.4,
@@ -1914,7 +2051,7 @@
       "breaking_snippets": [],
       "repo_weight": 1.3,
       "html_url": "https://pypi.org/project/langchain-core/1.4.1/",
-      "collected_at": "2026-06-24T08:08:29.362904",
+      "collected_at": "2026-06-25T08:08:03.664750",
       "technical_score": 0.0,
       "relevance_score": 0.0,
       "final_score": 0.0,
@@ -1942,7 +2079,7 @@
       "breaking_snippets": [],
       "repo_weight": 1.4,
       "html_url": "https://pypi.org/project/transformers/5.10.2/",
-      "collected_at": "2026-06-24T08:08:28.934616",
+      "collected_at": "2026-06-25T08:08:03.211965",
       "technical_score": 0.0,
       "relevance_score": 0.0,
       "final_score": 0.0,
@@ -1970,7 +2107,7 @@
       "breaking_snippets": [],
       "repo_weight": 1.3,
       "html_url": "https://github.com/huggingface/transformers/releases/tag/v5.10.2",
-      "collected_at": "2026-06-24T08:08:03.125610",
+      "collected_at": "2026-06-25T08:07:38.023327",
       "technical_score": 7.0,
       "relevance_score": 0.0,
       "final_score": 4.9,
@@ -2016,7 +2153,7 @@
       "breaking_snippets": [],
       "repo_weight": 1.2,
       "html_url": "https://pypi.org/project/ruff/0.15.16/",
-      "collected_at": "2026-06-24T08:08:30.053085",
+      "collected_at": "2026-06-25T08:08:04.401241",
       "technical_score": 0.0,
       "relevance_score": 0.0,
       "final_score": 0.0,
@@ -2044,7 +2181,7 @@
       "breaking_snippets": [],
       "repo_weight": 1.5,
       "html_url": "https://github.com/pola-rs/polars/releases/tag/rs-0.54.4",
-      "collected_at": "2026-06-24T08:07:40.419749",
+      "collected_at": "2026-06-25T08:07:16.360857",
       "technical_score": 50.0,
       "relevance_score": 10.0,
       "final_score": 65.0,
@@ -2096,7 +2233,7 @@
       "breaking_snippets": [],
       "repo_weight": 1.2,
       "html_url": "https://pypi.org/project/openai/2.41.0/",
-      "collected_at": "2026-06-24T08:08:29.576004",
+      "collected_at": "2026-06-25T08:08:03.890448",
       "technical_score": 0.0,
       "relevance_score": 0.0,
       "final_score": 0.0,
@@ -2124,7 +2261,7 @@
       "breaking_snippets": [],
       "repo_weight": 1.1,
       "html_url": "https://github.com/astral-sh/uv/releases/tag/0.11.19",
-      "collected_at": "2026-06-24T08:08:09.975795",
+      "collected_at": "2026-06-25T08:07:44.453488",
       "technical_score": 39.0,
       "relevance_score": 0.0,
       "final_score": 27.3,
@@ -2175,7 +2312,7 @@
       "breaking_snippets": [],
       "repo_weight": 1.1,
       "html_url": "https://pypi.org/project/uv/0.11.19/",
-      "collected_at": "2026-06-24T08:08:30.532001",
+      "collected_at": "2026-06-25T08:08:04.901167",
       "technical_score": 0.0,
       "relevance_score": 0.0,
       "final_score": 0.0,
@@ -2203,7 +2340,7 @@
       "breaking_snippets": [],
       "repo_weight": 1.3,
       "html_url": "https://github.com/huggingface/transformers/releases/tag/v5.10.1",
-      "collected_at": "2026-06-24T08:08:03.125616",
+      "collected_at": "2026-06-25T08:07:38.023334",
       "technical_score": 15.0,
       "relevance_score": 0.0,
       "final_score": 10.5,
@@ -2256,7 +2393,7 @@
       "breaking_snippets": [],
       "repo_weight": 1.4,
       "html_url": "https://pypi.org/project/transformers/5.10.1/",
-      "collected_at": "2026-06-24T08:08:28.934609",
+      "collected_at": "2026-06-25T08:08:03.211957",
       "technical_score": 0.0,
       "relevance_score": 0.0,
       "final_score": 0.0,
@@ -2284,7 +2421,7 @@
       "breaking_snippets": [],
       "repo_weight": 1.4,
       "html_url": "https://pypi.org/project/transformers/5.10.0/",
-      "collected_at": "2026-06-24T08:08:28.934601",
+      "collected_at": "2026-06-25T08:08:03.211950",
       "technical_score": 0.0,
       "relevance_score": 0.0,
       "final_score": 0.0,
@@ -2312,7 +2449,7 @@
       "breaking_snippets": [],
       "repo_weight": 1.2,
       "html_url": "https://pypi.org/project/scikit-learn/1.9.0/",
-      "collected_at": "2026-06-24T08:08:29.151551",
+      "collected_at": "2026-06-25T08:08:03.440756",
       "technical_score": 0.0,
       "relevance_score": 0.0,
       "final_score": 0.0,
@@ -2340,7 +2477,7 @@
       "breaking_snippets": [],
       "repo_weight": 1.2,
       "html_url": "https://pypi.org/project/openai/2.40.0/",
-      "collected_at": "2026-06-24T08:08:29.575997",
+      "collected_at": "2026-06-25T08:08:03.890441",
       "technical_score": 0.0,
       "relevance_score": 0.0,
       "final_score": 0.0,
@@ -2368,7 +2505,7 @@
       "breaking_snippets": [],
       "repo_weight": 1.1,
       "html_url": "https://github.com/astral-sh/uv/releases/tag/0.11.18",
-      "collected_at": "2026-06-24T08:08:09.975800",
+      "collected_at": "2026-06-25T08:07:44.453494",
       "technical_score": 31.0,
       "relevance_score": 0.0,
       "final_score": 21.7,
@@ -2427,7 +2564,7 @@
       "breaking_snippets": [],
       "repo_weight": 1.1,
       "html_url": "https://pypi.org/project/uv/0.11.18/",
-      "collected_at": "2026-06-24T08:08:30.531975",
+      "collected_at": "2026-06-25T08:08:04.901141",
       "technical_score": 0.0,
       "relevance_score": 0.0,
       "final_score": 0.0,
@@ -2455,7 +2592,7 @@
       "breaking_snippets": [],
       "repo_weight": 1.2,
       "html_url": "https://pypi.org/project/openai/2.39.0/",
-      "collected_at": "2026-06-24T08:08:29.575983",
+      "collected_at": "2026-06-25T08:08:03.890427",
       "technical_score": 0.0,
       "relevance_score": 0.0,
       "final_score": 0.0,
@@ -2483,7 +2620,7 @@
       "breaking_snippets": [],
       "repo_weight": 1.5,
       "html_url": "https://github.com/pola-rs/polars/releases/tag/py-1.41.2",
-      "collected_at": "2026-06-24T08:07:40.419757",
+      "collected_at": "2026-06-25T08:07:16.360865",
       "technical_score": 46.0,
       "relevance_score": 10.0,
       "final_score": 62.2,
@@ -2553,7 +2690,7 @@
       "breaking_snippets": [],
       "repo_weight": 1.5,
       "html_url": "https://pypi.org/project/polars/1.41.2/",
-      "collected_at": "2026-06-24T08:08:27.044890",
+      "collected_at": "2026-06-25T08:08:01.344666",
       "technical_score": 0.0,
       "relevance_score": 10.0,
       "final_score": 30.0,
@@ -2581,7 +2718,7 @@
       "breaking_snippets": [],
       "repo_weight": 1.1,
       "html_url": "https://github.com/astral-sh/uv/releases/tag/0.11.17",
-      "collected_at": "2026-06-24T08:08:09.975806",
+      "collected_at": "2026-06-25T08:07:44.453499",
       "technical_score": 87.0,
       "relevance_score": 0.0,
       "final_score": 60.9,
@@ -2660,7 +2797,7 @@
       "breaking_snippets": [],
       "repo_weight": 1.1,
       "html_url": "https://pypi.org/project/uv/0.11.17/",
-      "collected_at": "2026-06-24T08:08:30.531948",
+      "collected_at": "2026-06-25T08:08:04.901115",
       "technical_score": 0.0,
       "relevance_score": 0.0,
       "final_score": 0.0,
@@ -2688,7 +2825,7 @@
       "breaking_snippets": [],
       "repo_weight": 1.2,
       "html_url": "https://pypi.org/project/ruff/0.15.15/",
-      "collected_at": "2026-06-24T08:08:30.053060",
+      "collected_at": "2026-06-25T08:08:04.401216",
       "technical_score": 0.0,
       "relevance_score": 0.0,
       "final_score": 0.0,
@@ -2716,7 +2853,7 @@
       "breaking_snippets": [],
       "repo_weight": 1.5,
       "html_url": "https://github.com/pola-rs/polars/releases/tag/py-1.41.1",
-      "collected_at": "2026-06-24T08:07:40.419765",
+      "collected_at": "2026-06-25T08:07:16.360872",
       "technical_score": 100.0,
       "relevance_score": 10.0,
       "final_score": 100.0,
@@ -2798,7 +2935,7 @@
       "breaking_snippets": [],
       "repo_weight": 1.5,
       "html_url": "https://pypi.org/project/polars/1.41.1/",
-      "collected_at": "2026-06-24T08:08:27.044883",
+      "collected_at": "2026-06-25T08:08:01.344659",
       "technical_score": 0.0,
       "relevance_score": 10.0,
       "final_score": 30.0,
@@ -2826,7 +2963,7 @@
       "breaking_snippets": [],
       "repo_weight": 1.2,
       "html_url": "https://pypi.org/project/fastapi/0.136.3/",
-      "collected_at": "2026-06-24T08:08:27.484607",
+      "collected_at": "2026-06-25T08:08:01.829058",
       "technical_score": 8.0,
       "relevance_score": 0.0,
       "final_score": 5.6,
@@ -2863,7 +3000,7 @@
       "breaking_snippets": [],
       "repo_weight": 1.2,
       "html_url": "https://github.com/fastapi/fastapi/releases/tag/0.136.3",
-      "collected_at": "2026-06-24T08:07:50.411960",
+      "collected_at": "2026-06-25T08:07:26.328173",
       "technical_score": 0.0,
       "relevance_score": 0.0,
       "final_score": 0.0,
@@ -2891,7 +3028,7 @@
       "breaking_snippets": [],
       "repo_weight": 1.2,
       "html_url": "https://github.com/fastapi/fastapi/releases/tag/0.136.2",
-      "collected_at": "2026-06-24T08:07:50.411970",
+      "collected_at": "2026-06-25T08:07:26.328183",
       "technical_score": 100.0,
       "relevance_score": 0.0,
       "final_score": 70.0,
@@ -2942,7 +3079,7 @@
       "breaking_snippets": [],
       "repo_weight": 1.5,
       "html_url": "https://github.com/pola-rs/polars/releases/tag/py-1.41.0",
-      "collected_at": "2026-06-24T08:07:40.419774",
+      "collected_at": "2026-06-25T08:07:16.360881",
       "technical_score": 96.0,
       "relevance_score": 10.0,
       "final_score": 97.2,
@@ -3004,7 +3141,7 @@
       "breaking_snippets": [],
       "repo_weight": 1.5,
       "html_url": "https://pypi.org/project/polars/1.41.0/",
-      "collected_at": "2026-06-24T08:08:27.044876",
+      "collected_at": "2026-06-25T08:08:01.344652",
       "technical_score": 0.0,
       "relevance_score": 10.0,
       "final_score": 30.0,
@@ -3034,7 +3171,7 @@
       ],
       "repo_weight": 1.1,
       "html_url": "https://github.com/astral-sh/uv/releases/tag/0.11.16",
-      "collected_at": "2026-06-24T08:08:09.975811",
+      "collected_at": "2026-06-25T08:07:44.453505",
       "technical_score": 22.0,
       "relevance_score": 0.0,
       "final_score": 15.4,
@@ -3089,7 +3226,7 @@
       "breaking_snippets": [],
       "repo_weight": 1.1,
       "html_url": "https://pypi.org/project/uv/0.11.16/",
-      "collected_at": "2026-06-24T08:08:30.531922",
+      "collected_at": "2026-06-25T08:08:04.901090",
       "technical_score": 0.0,
       "relevance_score": 0.0,
       "final_score": 0.0,
@@ -3117,7 +3254,7 @@
       "breaking_snippets": [],
       "repo_weight": 1.2,
       "html_url": "https://pypi.org/project/openai/2.38.0/",
-      "collected_at": "2026-06-24T08:08:29.575976",
+      "collected_at": "2026-06-25T08:08:03.890419",
       "technical_score": 0.0,
       "relevance_score": 0.0,
       "final_score": 0.0,
@@ -3145,7 +3282,7 @@
       "breaking_snippets": [],
       "repo_weight": 1.2,
       "html_url": "https://pypi.org/project/ruff/0.15.14/",
-      "collected_at": "2026-06-24T08:08:30.053027",
+      "collected_at": "2026-06-25T08:08:04.401191",
       "technical_score": 0.0,
       "relevance_score": 0.0,
       "final_score": 0.0,
@@ -3173,7 +3310,7 @@
       "breaking_snippets": [],
       "repo_weight": 1.4,
       "html_url": "https://pypi.org/project/transformers/5.9.0/",
-      "collected_at": "2026-06-24T08:08:28.934753",
+      "collected_at": "2026-06-25T08:08:03.212102",
       "technical_score": 0.0,
       "relevance_score": 0.0,
       "final_score": 0.0,
@@ -3203,7 +3340,7 @@
       ],
       "repo_weight": 1.3,
       "html_url": "https://github.com/huggingface/transformers/releases/tag/v5.9.0",
-      "collected_at": "2026-06-24T08:08:03.125622",
+      "collected_at": "2026-06-25T08:07:38.023339",
       "technical_score": 78.0,
       "relevance_score": 0.0,
       "final_score": 54.6,
@@ -3263,7 +3400,7 @@
       "breaking_snippets": [],
       "repo_weight": 1.5,
       "html_url": "https://pypi.org/project/duckdb/1.5.3/",
-      "collected_at": "2026-06-24T08:08:27.273352",
+      "collected_at": "2026-06-25T08:08:01.603758",
       "technical_score": 0.0,
       "relevance_score": 10.0,
       "final_score": 30.0,
@@ -3291,7 +3428,7 @@
       "breaking_snippets": [],
       "repo_weight": 1.5,
       "html_url": "https://github.com/duckdb/duckdb/releases/tag/v1.5.3",
-      "collected_at": "2026-06-24T08:07:46.112315",
+      "collected_at": "2026-06-25T08:07:22.097808",
       "technical_score": 33.0,
       "relevance_score": 10.0,
       "final_score": 53.1,
@@ -3343,7 +3480,7 @@
       "breaking_snippets": [],
       "repo_weight": 1.2,
       "html_url": "https://github.com/apache/iceberg/releases/tag/apache-iceberg-1.11.0",
-      "collected_at": "2026-06-24T08:08:21.699866",
+      "collected_at": "2026-06-25T08:07:55.880684",
       "technical_score": 15.0,
       "relevance_score": 8.0,
       "final_score": 34.5,
@@ -3393,7 +3530,7 @@
       "breaking_snippets": [],
       "repo_weight": 1.1,
       "html_url": "https://pypi.org/project/sentence-transformers/5.5.1/",
-      "collected_at": "2026-06-24T08:08:29.781579",
+      "collected_at": "2026-06-25T08:08:04.109513",
       "technical_score": 0.0,
       "relevance_score": 0.0,
       "final_score": 0.0,
@@ -3421,7 +3558,7 @@
       "breaking_snippets": [],
       "repo_weight": 1.2,
       "html_url": "https://github.com/delta-io/delta-rs/releases/tag/rust-v0.32.3",
-      "collected_at": "2026-06-24T08:08:22.716062",
+      "collected_at": "2026-06-25T08:07:56.837388",
       "technical_score": 8.0,
       "relevance_score": 8.0,
       "final_score": 29.6,
@@ -3469,7 +3606,7 @@
       "breaking_snippets": [],
       "repo_weight": 1.2,
       "html_url": "https://github.com/delta-io/delta-rs/releases/tag/python-v1.6.0",
-      "collected_at": "2026-06-24T08:08:22.716069",
+      "collected_at": "2026-06-25T08:07:56.837394",
       "technical_score": 69.0,
       "relevance_score": 8.0,
       "final_score": 72.3,
@@ -3540,7 +3677,7 @@
       "breaking_snippets": [],
       "repo_weight": 1.2,
       "html_url": "https://github.com/apache/iceberg/releases/tag/apache-iceberg-1.10.2",
-      "collected_at": "2026-06-24T08:08:21.699883",
+      "collected_at": "2026-06-25T08:07:55.880701",
       "technical_score": 100.0,
       "relevance_score": 8.0,
       "final_score": 94.0,
@@ -3595,7 +3732,7 @@
       "breaking_snippets": [],
       "repo_weight": 1.1,
       "html_url": "https://github.com/astral-sh/uv/releases/tag/0.11.15",
-      "collected_at": "2026-06-24T08:08:09.975817",
+      "collected_at": "2026-06-25T08:07:44.453510",
       "technical_score": 100.0,
       "relevance_score": 0.0,
       "final_score": 70.0,
@@ -3673,7 +3810,7 @@
       "breaking_snippets": [],
       "repo_weight": 1.1,
       "html_url": "https://pypi.org/project/uv/0.11.15/",
-      "collected_at": "2026-06-24T08:08:30.531896",
+      "collected_at": "2026-06-25T08:08:04.901064",
       "technical_score": 0.0,
       "relevance_score": 0.0,
       "final_score": 0.0,
@@ -3701,7 +3838,7 @@
       "breaking_snippets": [],
       "repo_weight": 1.0,
       "html_url": "https://pypi.org/project/deltalake/1.6.0/",
-      "collected_at": "2026-06-24T08:08:28.456775",
+      "collected_at": "2026-06-25T08:08:02.736899",
       "technical_score": 0.0,
       "relevance_score": 8.0,
       "final_score": 24.0,
@@ -3729,7 +3866,7 @@
       "breaking_snippets": [],
       "repo_weight": 1.2,
       "html_url": "https://github.com/delta-io/delta-rs/releases/tag/rust-v0.32.2",
-      "collected_at": "2026-06-24T08:08:22.716075",
+      "collected_at": "2026-06-25T08:07:56.837400",
       "technical_score": 100.0,
       "relevance_score": 8.0,
       "final_score": 94.0,
@@ -3807,7 +3944,7 @@
       "breaking_snippets": [],
       "repo_weight": 1.2,
       "html_url": "https://pypi.org/project/openai/2.37.0/",
-      "collected_at": "2026-06-24T08:08:29.575969",
+      "collected_at": "2026-06-25T08:08:03.890412",
       "technical_score": 0.0,
       "relevance_score": 0.0,
       "final_score": 0.0,
@@ -3835,7 +3972,7 @@
       "breaking_snippets": [],
       "repo_weight": 1.2,
       "html_url": "https://pypi.org/project/ruff/0.15.13/",
-      "collected_at": "2026-06-24T08:08:30.053003",
+      "collected_at": "2026-06-25T08:08:04.401165",
       "technical_score": 0.0,
       "relevance_score": 0.0,
       "final_score": 0.0,
@@ -3843,120 +3980,6 @@
       "impact_level": "low",
       "urgency_level": "LOW",
       "detected_factors": [],
-      "action_recommended": "IGNORER",
-      "analysis_reasons": [
-        "Impact faible — pas d'action requise"
-      ]
-    },
-    {
-      "id": "ff72c790688fb1bd",
-      "source": "pypi",
-      "name": "pypi/transformers",
-      "tag": "5.8.1",
-      "version_major": 5,
-      "version_minor": 8,
-      "version_patch": 1,
-      "published_at": "2026-05-13T03:21:52.876933",
-      "category": "ai",
-      "body_excerpt": "Transformers: the model-definition framework for state-of-the-art machine learning models in text, vision, audio, and multimodal models, for both inference and training.",
-      "has_breaking_change": false,
-      "breaking_snippets": [],
-      "repo_weight": 1.4,
-      "html_url": "https://pypi.org/project/transformers/5.8.1/",
-      "collected_at": "2026-06-24T08:08:28.934746",
-      "technical_score": 0.0,
-      "relevance_score": 0.0,
-      "final_score": 0.0,
-      "impact_score": 0.0,
-      "impact_level": "low",
-      "urgency_level": "LOW",
-      "detected_factors": [],
-      "action_recommended": "IGNORER",
-      "analysis_reasons": [
-        "Impact faible — pas d'action requise"
-      ]
-    },
-    {
-      "id": "a3887663d9d52092",
-      "source": "github",
-      "name": "huggingface/transformers",
-      "tag": "v5.8.1",
-      "version_major": 5,
-      "version_minor": 8,
-      "version_patch": 1,
-      "published_at": "2026-05-13T03:21:23",
-      "category": "ai",
-      "body_excerpt": "# Patch release v5.8.1 \r\nThis release is mainly to fix the Deepseek V4 integration!!! \r\n\r\n\r\n\r\n\r\n* [fix] Add fatal_error to ContinuousBatchingManager so the serving... by @qgallouedec, @remi-or\r\n* Fix WeightConverter regex incorrectly matching shared_experts as experts by @silencelamb, @claude\r\n* Fix deepseek v4 by @ArthurZucker (#45892)\r\n* Deepseek v4 csa mask collapse by @ArthurZucker, @Sawyer117 (#45928)",
-      "has_breaking_change": false,
-      "breaking_snippets": [],
-      "repo_weight": 1.3,
-      "html_url": "https://github.com/huggingface/transformers/releases/tag/v5.8.1",
-      "collected_at": "2026-06-24T08:08:03.125627",
-      "technical_score": 9.0,
-      "relevance_score": 0.0,
-      "final_score": 6.3,
-      "impact_score": 9.0,
-      "impact_level": "low",
-      "urgency_level": "LOW",
-      "detected_factors": [
-        {
-          "category": "bug_fix",
-          "count": 3,
-          "score_contribution": 9.0,
-          "snippets": [
-            "# Patch release v5.8.1",
-            "* Fix WeightConverter regex incorrectly matching shared_experts as experts by @silencelamb, @claude",
-            "* Fix deepseek v4 by @ArthurZucker (#45892)"
-          ]
-        }
-      ],
-      "action_recommended": "IGNORER",
-      "analysis_reasons": [
-        "Impact faible — pas d'action requise"
-      ]
-    },
-    {
-      "id": "3d1b236f9f573afe",
-      "source": "github",
-      "name": "astral-sh/uv",
-      "tag": "0.11.14",
-      "version_major": 0,
-      "version_minor": 11,
-      "version_patch": 14,
-      "published_at": "2026-05-12T18:04:36",
-      "category": "tooling",
-      "body_excerpt": "## Release Notes\n\nReleased on 2026-05-12.\n\n### Enhancements\n\n- Add Astral mirror URL override (#19206)\n- Ignore `top_level.txt` entries in uninstall that are not valid Python identifiers (#19340)\n\n### Bug fixes\n\n- Avoid applying `.env` files in parent process (#19343)\n- Filter ANSI codes in logging output (#19311)\n- Fix `uv tree` showing extra-conditional deps for packages required without extras (#19332)\n- Respect build options (e.g., `--no-build`) during lock validation (#19366)\n\n## Install uv 0.11.14\n\n### Install prebuilt binaries via shell script\n\n### Install prebuilt binaries via powershell script\n\n## Download uv 0.11.14\n\n|  File  | Platform | Checksum |\n|--------|----------|----------|\n| uv-aarch64-apple-darwin.tar.gz | Apple Silicon macOS | checksum |\n| uv-x86_64-apple-darwin.tar.gz | Intel macOS | checksum |\n| uv-aarch64-pc-windows-msvc.zip | ARM64 Windows | checksum |\n| uv-i686-pc-windows-msvc.zip | x86 Windows | checksum |\n| uv-x86_64-pc-windows-msvc.zip | x64 Windows | checksum |\n| uv-aarch64-unknown-linux-gnu.tar.gz | ARM64 Linux | checksum |\n| uv-i686-unknown-linux-gnu.tar.gz | x86 Linux | checksum |\n| uv-powerpc64le-unknown-linux-gnu.tar.gz | PPC64LE Linux | checksum |\n| uv-riscv64gc-unknown-linux-gnu.tar.gz | RISCV Linux | checksum |\n| uv-s390x-unknown-linux-gnu.tar.gz | S390x Linux | checksum |\n| uv-x86_64-unknown-linux-gnu.tar.gz | x64 Linux | checksum |\n| uv-armv7-unknown-linux-gnueabihf.tar.gz | ARMv7 Linux | checksum |\n| uv-aarch64-unknown-linux-musl.tar.gz | ARM64 MUSL Linux | checksum |\n| uv-i686-unknown-linux-musl.tar.gz | x86 MUSL Linux | checksum |\n| uv-riscv64gc-unknown-linux-musl.tar.gz | RISCV MUSL Linux | checksum |\n| uv-x86_64-unknown-linux-musl.tar.gz | x64 MUSL Linux | checksum |\n| uv-arm-unknown-linux-musleabihf.tar.gz | ARMv6 MUSL Linux (Hardfloat) | checksum |\n| uv-armv7-unknown-linux-musleabihf.tar.gz | ARMv7 MUSL Linux | checksum |\n\n## Verifying GitHub Artifact Attestations\n\nThe artifacts in this release have attestations generat",
-      "has_breaking_change": false,
-      "breaking_snippets": [],
-      "repo_weight": 1.1,
-      "html_url": "https://github.com/astral-sh/uv/releases/tag/0.11.14",
-      "collected_at": "2026-06-24T08:08:09.975822",
-      "technical_score": 18.0,
-      "relevance_score": 0.0,
-      "final_score": 12.6,
-      "impact_score": 18.0,
-      "impact_level": "low",
-      "urgency_level": "LOW",
-      "detected_factors": [
-        {
-          "category": "enhancement",
-          "count": 2,
-          "score_contribution": 12.0,
-          "snippets": [
-            "### Enhancements",
-            "- Add Astral mirror URL override (#19206)"
-          ]
-        },
-        {
-          "category": "bug_fix",
-          "count": 2,
-          "score_contribution": 6.0,
-          "snippets": [
-            "### Bug fixes",
-            "- Fix `uv tree` showing extra-conditional deps for packages required without extras (#19332)"
-          ]
-        }
-      ],
       "action_recommended": "IGNORER",
       "analysis_reasons": [
         "Impact faible — pas d'action requise"
@@ -4048,11 +4071,11 @@
       "name": "pypi/openai",
       "category": "ai",
       "direction": "rising",
-      "release_count_window": 6,
-      "avg_days_between_releases": 5.4512820512820515,
-      "latest_version": "2.43.0",
-      "latest_release_date": "2026-06-17T17:06:53.614324",
-      "score": 0.02557544757033248
+      "release_count_window": 7,
+      "avg_days_between_releases": 5.455242966751918,
+      "latest_version": "2.44.0",
+      "latest_release_date": "2026-06-24T20:55:58.882276",
+      "score": 0.025510204081632654
     },
     {
       "name": "pypi/langchain-core",
@@ -4098,11 +4121,11 @@
       "name": "delta-io/delta-rs",
       "category": "lakehouse",
       "direction": "stable",
-      "release_count_window": 1,
-      "avg_days_between_releases": 17.26126126126126,
-      "latest_version": "rust-v0.32.4",
-      "latest_release_date": "2026-06-07T13:20:13",
-      "score": 53.232142857142854
+      "release_count_window": 2,
+      "avg_days_between_releases": 17.25,
+      "latest_version": "python-v1.6.1",
+      "latest_release_date": "2026-06-24T13:16:12",
+      "score": 53.63716814159292
     },
     {
       "name": "apache/iceberg",
@@ -4178,11 +4201,11 @@
       "name": "pypi/deltalake",
       "category": "lakehouse",
       "direction": "stable",
-      "release_count_window": 0,
-      "avg_days_between_releases": 21.27956989247312,
-      "latest_version": "1.6.0",
-      "latest_release_date": "2026-05-18T13:46:27.813108",
-      "score": 2.0520833333333335
+      "release_count_window": 1,
+      "avg_days_between_releases": 21.43617021276596,
+      "latest_version": "1.6.1",
+      "latest_release_date": "2026-06-24T13:35:28.359788",
+      "score": 2.051546391752577
     },
     {
       "name": "pypi/sentence-transformers",
@@ -4227,261 +4250,168 @@
   ],
   "summaries": [
     {
-      "release_id": "d03e9a405858e85e",
-      "lib_name": "tokio-rs/tokio",
-      "version": "tokio-1.18.1",
-      "date": "2022-05",
+      "release_id": "f1d76d969f45caa6",
+      "lib_name": "pypi/ruff",
+      "version": "0.0.23",
+      "date": "2022-09",
       "changes": [
-        "# 1.18.1 (May 2, 2022)\r\n\r\nThe 1.18.0 release broke the build for targets without 64-bit atomics when building with `tokio_unstable`",
-        "This release fixes that",
-        "([#4649])\r\n\r\n[#4649]: https://github.com/tokio-rs/tokio/pull/4649"
+        "An extremely fast Python linter and code formatter, written in Rust."
       ],
       "impact": "low",
       "breaking": false,
       "category": "backend-rust",
-      "generated_at": "2026-06-24T08:08:49.312310"
+      "generated_at": "2026-06-25T08:08:21.969892"
     },
     {
-      "release_id": "6d889313a593046a",
-      "lib_name": "pypi/pydantic",
-      "version": "2.7.4",
-      "date": "2024-06",
-      "changes": [
-        "Data validation using Python type hints"
-      ],
-      "impact": "low",
-      "breaking": false,
-      "category": "tooling",
-      "generated_at": "2026-06-24T08:08:49.312355"
-    },
-    {
-      "release_id": "e142c9acef59c6ee",
-      "lib_name": "pypi/maturin",
-      "version": "1.14.1",
-      "date": "2026-06",
-      "changes": [
-        "Build and publish crates with pyo3, cffi and uniffi bindings as well as rust binaries as python packages"
-      ],
-      "impact": "low",
-      "breaking": false,
-      "category": "backend-rust",
-      "generated_at": "2026-06-24T08:08:49.312385"
-    },
-    {
-      "release_id": "350a736d32fd4ade",
+      "release_id": "1e469803d17b3314",
       "lib_name": "pypi/openai",
-      "version": "1.57.0",
-      "date": "2024-12",
-      "changes": [
-        "The official Python library for the openai API"
-      ],
-      "impact": "low",
-      "breaking": false,
-      "category": "ai",
-      "generated_at": "2026-06-24T08:08:49.312440"
-    },
-    {
-      "release_id": "8cbc42e3d097dbd3",
-      "lib_name": "pypi/pydantic",
-      "version": "2.7.3",
-      "date": "2024-06",
-      "changes": [
-        "Data validation using Python type hints"
-      ],
-      "impact": "low",
-      "breaking": false,
-      "category": "tooling",
-      "generated_at": "2026-06-24T08:08:49.312470"
-    },
-    {
-      "release_id": "56cf24af4047d0e3",
-      "lib_name": "delta-io/delta-rs",
-      "version": "python-v0.7.0",
-      "date": "2023-01",
-      "changes": [
-        "Add the support of the AWS_PROFILE environment variable for S3 by @fvaleye in https://github.com/delta-io/delta-rs/pull/986",
-        "Handle pandas timestamps by @hayesgb in https://github.com/delta-io/delta-rs/pull/958",
-        "fix: get azure client secret from config by @roeap in https://github.com/delta-io/delta-rs/pull/981",
-        "fix truncating signature on SAS by @damiondoesthings in https://github.com/delta-io/delta-rs/pull/1007",
-        "fix: azure sas key url encoding by @roeap in https://github.com/delta-io/delta-rs/pull/1036",
-        "test: add Data Acceptance Tests by @wjones127 in https://github.com/delta-io/delta-rs/pull/909",
-        "test(python): add read / write benchmarks by @wjones127 in https://github.com/delta-io/delta-rs/pull/933",
-        "Add a new release github action for Python binding: macos with universal2 wheel by @fvaleye in https://github.com/delta-io/delta-rs/pull/976"
-      ],
-      "impact": "high",
-      "breaking": false,
-      "category": "lakehouse",
-      "generated_at": "2026-06-24T08:08:49.312642"
-    },
-    {
-      "release_id": "bc5262b66d247693",
-      "lib_name": "pypi/openai",
-      "version": "0.27.5",
-      "date": "2023-04",
-      "changes": [
-        "The official Python library for the openai API"
-      ],
-      "impact": "low",
-      "breaking": false,
-      "category": "ai",
-      "generated_at": "2026-06-24T08:08:49.312676"
-    },
-    {
-      "release_id": "9862fbb69f6a9328",
-      "lib_name": "huggingface/transformers",
-      "version": "v4.51.3-Qwen2.5-Omni-preview",
-      "date": "2025-04",
-      "changes": [
-        "A new model is added to transformers: Qwen2.5-Omni",
-        "It is added on top of the v4.51.3 release, and can be installed from the following tag: `v4.51.3-Qwen2.5-Omni-preview`",
-        "As the tag implies, this tag is a **_preview_** of the Qwen2.5-Omni model"
-      ],
-      "impact": "critical",
-      "breaking": false,
-      "category": "ai",
-      "generated_at": "2026-06-24T08:08:49.312726"
-    },
-    {
-      "release_id": "7bf6052a357dbc7d",
-      "lib_name": "pypi/transformers",
-      "version": "4.52.2",
-      "date": "2025-05",
-      "changes": [
-        "Transformers: the model-definition framework for state-of-the-art machine learning models in text, vision, audio, and multimodal models, for both inference and training."
-      ],
-      "impact": "low",
-      "breaking": false,
-      "category": "ai",
-      "generated_at": "2026-06-24T08:08:49.312752"
-    },
-    {
-      "release_id": "d50b94cc28b111c3",
-      "lib_name": "pypi/fastapi",
-      "version": "0.110.0",
-      "date": "2024-02",
-      "changes": [
-        "FastAPI framework, high performance, easy to learn, fast to code, ready for production"
-      ],
-      "impact": "low",
-      "breaking": false,
-      "category": "backend",
-      "generated_at": "2026-06-24T08:08:49.312780"
-    },
-    {
-      "release_id": "c2875eceef273c1b",
-      "lib_name": "astral-sh/uv",
-      "version": "0.4.27",
-      "date": "2024-10",
-      "changes": [
-        "Support for PEP 735 (#8272)",
-        "Add support for `--dry-run` mode in `uv lock` (#7783)",
-        "Don't allow non-string email in authors (#8520)",
-        "Enforce lockfile schema versions (#8509)",
-        "Always attach URL to network errors (#8444)",
-        "Fix dangling non-platform dependencies in `uv tree` (#8532)",
-        "Prefer `lto` over `debug` free-threaded managed Python builds (#8515)",
-        "Add `tool.uv.sources` to the \"Settings\" reference (#8543)"
-      ],
-      "impact": "critical",
-      "breaking": false,
-      "category": "tooling",
-      "generated_at": "2026-06-24T08:08:49.312846"
-    },
-    {
-      "release_id": "42b2f729afccbedb",
-      "lib_name": "pypi/openai",
-      "version": "1.24.1",
-      "date": "2024-04",
-      "changes": [
-        "The official Python library for the openai API"
-      ],
-      "impact": "low",
-      "breaking": false,
-      "category": "ai",
-      "generated_at": "2026-06-24T08:08:49.312872"
-    },
-    {
-      "release_id": "28eac02878b27e6a",
-      "lib_name": "pypi/openai",
-      "version": "1.53.0",
-      "date": "2024-10",
-      "changes": [
-        "The official Python library for the openai API"
-      ],
-      "impact": "low",
-      "breaking": false,
-      "category": "ai",
-      "generated_at": "2026-06-24T08:08:49.312894"
-    },
-    {
-      "release_id": "0e8f6e99e092a9bc",
-      "lib_name": "pypi/transformers",
-      "version": "3.5.0",
-      "date": "2020-11",
-      "changes": [
-        "Transformers: the model-definition framework for state-of-the-art machine learning models in text, vision, audio, and multimodal models, for both inference and training."
-      ],
-      "impact": "low",
-      "breaking": false,
-      "category": "ai",
-      "generated_at": "2026-06-24T08:08:49.312916"
-    },
-    {
-      "release_id": "02a8912bbdf821a4",
-      "lib_name": "pypi/uv",
-      "version": "0.6.10",
+      "version": "1.66.2",
       "date": "2025-03",
       "changes": [
-        "An extremely fast Python package and project manager, written in Rust."
+        "The official Python library for the openai API"
       ],
       "impact": "low",
       "breaking": false,
-      "category": "backend-rust",
-      "generated_at": "2026-06-24T08:08:49.312936"
+      "category": "ai",
+      "generated_at": "2026-06-25T08:08:21.969963"
     },
     {
-      "release_id": "35b9b1865b62fe5a",
+      "release_id": "4db51df5df06e1b8",
+      "lib_name": "pola-rs/polars",
+      "version": "py-0.16.18",
+      "date": "2023-04",
+      "changes": [
+        "improve group\\_tuples of high cardinality data `~10%` (#7938)",
+        "Add seed argument to rank for random (#7913)",
+        "Support Numpy ufunc with more than one expression (#7924)",
+        "Fix lazy encode schema (#7912)",
+        "respect skip\\_nulls in apply for temporal types (#7908)",
+        "Rename argument `f` to `function` in reduce docstring (#7925)",
+        "improve docstrings for numeric/math operator-equivalent methods (#7942)"
+      ],
+      "impact": "moderate",
+      "breaking": false,
+      "category": "data-engineering",
+      "generated_at": "2026-06-25T08:08:21.970157"
+    },
+    {
+      "release_id": "a6ac998e5b82cef8",
+      "lib_name": "astral-sh/uv",
+      "version": "0.7.21",
+      "date": "2025-07",
+      "changes": [
+        "Restore the SQLite `fts4`, `fts5`, `rtree`, and `geopoly` extensions on macOS and Linux",
+        "Add `--python-platform` to `uv sync` (#14320)",
+        "Support pre-releases in `uv version --bump` (#13578)",
+        "Add `-w` shorthand for `--with` (#14530)",
+        "Add an exception handler on Windows to display information on crash (#14582)",
+        "Add hint when Python downloads are disabled (#14522)",
+        "Add `UV_HTTP_RETRIES` to customize retry counts (#14544)",
+        "Follow leaf symlinks matched by globs in `cache-key` (#13438)"
+      ],
+      "impact": "high",
+      "breaking": true,
+      "category": "tooling",
+      "generated_at": "2026-06-25T08:08:21.970233"
+    },
+    {
+      "release_id": "682fbbac759ab0f2",
+      "lib_name": "pypi/openai",
+      "version": "2.8.0",
+      "date": "2025-11",
+      "changes": [
+        "The official Python library for the openai API"
+      ],
+      "impact": "low",
+      "breaking": false,
+      "category": "ai",
+      "generated_at": "2026-06-25T08:08:21.970265"
+    },
+    {
+      "release_id": "5a191085886f7453",
+      "lib_name": "pypi/pydantic",
+      "version": "0.13.1",
+      "date": "2018-09",
+      "changes": [
+        "Data validation using Python type hints"
+      ],
+      "impact": "low",
+      "breaking": false,
+      "category": "tooling",
+      "generated_at": "2026-06-25T08:08:21.970290"
+    },
+    {
+      "release_id": "0dd1e14c8bbe3dd8",
+      "lib_name": "pypi/transformers",
+      "version": "2.8.0",
+      "date": "2020-04",
+      "changes": [
+        "Transformers: the model-definition framework for state-of-the-art machine learning models in text, vision, audio, and multimodal models, for both inference and training."
+      ],
+      "impact": "low",
+      "breaking": false,
+      "category": "ai",
+      "generated_at": "2026-06-25T08:08:21.970315"
+    },
+    {
+      "release_id": "49ff1f40e9beb8f3",
       "lib_name": "pypi/ruff",
-      "version": "0.0.141",
-      "date": "2022-11",
+      "version": "0.1.3",
+      "date": "2023-10",
       "changes": [
         "An extremely fast Python linter and code formatter, written in Rust."
       ],
       "impact": "low",
       "breaking": false,
       "category": "backend-rust",
-      "generated_at": "2026-06-24T08:08:49.312956"
+      "generated_at": "2026-06-25T08:08:21.970339"
     },
     {
-      "release_id": "3de3c8aedd60a5e6",
+      "release_id": "2712935e80b87786",
       "lib_name": "pypi/fastapi",
-      "version": "0.96.1",
-      "date": "2023-06",
+      "version": "0.1.8",
+      "date": "2018-12",
       "changes": [
         "FastAPI framework, high performance, easy to learn, fast to code, ready for production"
       ],
       "impact": "low",
       "breaking": false,
       "category": "backend",
-      "generated_at": "2026-06-24T08:08:49.312983"
+      "generated_at": "2026-06-25T08:08:21.970368"
     },
     {
-      "release_id": "bb378be044cb97e0",
-      "lib_name": "pypi/ruff",
-      "version": "0.11.13",
-      "date": "2025-06",
+      "release_id": "cd8979df34d2703e",
+      "lib_name": "astral-sh/uv",
+      "version": "0.7.5",
+      "date": "2025-05",
       "changes": [
-        "An extremely fast Python linter and code formatter, written in Rust."
+        "Support case-sensitive module discovery in the build backend (#13468)",
+        "Bump Simple cache bucket to v16 (#13498)",
+        "Don't error when the script is too short for the buffer (#13488)",
+        "Add missing word in \"script not supported\" error (#13483)"
       ],
       "impact": "low",
       "breaking": false,
-      "category": "backend-rust",
-      "generated_at": "2026-06-24T08:08:49.313004"
+      "category": "tooling",
+      "generated_at": "2026-06-25T08:08:21.970419"
     },
     {
-      "release_id": "07f0c9bbb33960f5",
+      "release_id": "df4d61efd0d3aeb3",
       "lib_name": "pypi/langchain-core",
-      "version": "0.2.40",
+      "version": "0.1.36",
+      "date": "2024-03",
+      "changes": [
+        "Building applications with LLMs through composability"
+      ],
+      "impact": "low",
+      "breaking": false,
+      "category": "ai",
+      "generated_at": "2026-06-25T08:08:21.970443"
+    },
+    {
+      "release_id": "07a33ca1c0124930",
+      "lib_name": "pypi/langchain-core",
+      "version": "0.2.41",
       "date": "2024-09",
       "changes": [
         "Building applications with LLMs through composability"
@@ -4489,27 +4419,134 @@
       "impact": "low",
       "breaking": false,
       "category": "ai",
-      "generated_at": "2026-06-24T08:08:49.313025"
+      "generated_at": "2026-06-25T08:08:21.970466"
     },
     {
-      "release_id": "d9773b843afcd46b",
-      "lib_name": "astral-sh/uv",
-      "version": "0.7.20",
-      "date": "2025-07",
+      "release_id": "59a2bf6b6c5d800f",
+      "lib_name": "delta-io/delta-rs",
+      "version": "python-v0.5.7",
+      "date": "2022-04",
       "changes": [
-        "Add Python 3.14.0b4",
-        "Add zstd support to Python 3.14 on Unix (it already was available on Windows)",
-        "Add PyPy 7.3.20 (for Python 3.11.13)",
-        "Add `--workspace` flag to `uv add` (#14496)",
-        "Add auto-detection for Intel GPUs (#14386)",
-        "Drop trailing arguments when writing shebangs (#14519)",
-        "Add debug message when skipping Python downloads (#14509)",
-        "Add support for declaring multiple modules in namespace packages (#14460)"
+        "Upgrade DataFusion, Arrow, Parquet dependencies by @Dandandan in https://github.com/delta-io/delta-rs/pull/562",
+        "fix clippy warnings by @houqp in https://github.com/delta-io/delta-rs/pull/567",
+        "Azure improvements by @thovoll in https://github.com/delta-io/delta-rs/pull/556",
+        "Update ADLSGen2-HOWTO.md by @dgcaron in https://github.com/delta-io/delta-rs/pull/560",
+        "Parse partition values before handing to PyArrow by @wjones127 in https://github.com/delta-io/delta-rs/pull/565",
+        "[Python] Test in minimal and latest Python environments by @wjones127 in https://github.com/delta-io/delta-rs/pull/572",
+        "[Python] Initial PyArrow writer by @wjones127 in https://github.com/delta-io/delta-rs/pull/566",
+        "Upgrade `arrow, parquet, datafusion` version by @zemelLeong in https://github.com/delta-io/delta-rs/pull/583"
       ],
-      "impact": "critical",
+      "impact": "moderate",
       "breaking": false,
-      "category": "tooling",
-      "generated_at": "2026-06-24T08:08:49.313084"
+      "category": "lakehouse",
+      "generated_at": "2026-06-25T08:08:21.970517"
+    },
+    {
+      "release_id": "17135385d324c167",
+      "lib_name": "tokio-rs/axum",
+      "version": "axum-v0.6.10",
+      "date": "2023-03",
+      "changes": [
+        "**fixed:** Add `#[must_use]` attributes to types that do nothing unless used ([#1809])",
+        "**fixed:** Gracefully handle missing headers in the `TypedHeader` extractor ([#1810])",
+        "**fixed:** Fix routing issues when loading a `Router` via a dynamic library ([#1806])"
+      ],
+      "impact": "low",
+      "breaking": false,
+      "category": "backend-rust",
+      "generated_at": "2026-06-25T08:08:21.970548"
+    },
+    {
+      "release_id": "21684688a398a216",
+      "lib_name": "pypi/uv",
+      "version": "0.6.11",
+      "date": "2025-03",
+      "changes": [
+        "An extremely fast Python package and project manager, written in Rust."
+      ],
+      "impact": "low",
+      "breaking": false,
+      "category": "backend-rust",
+      "generated_at": "2026-06-25T08:08:21.970571"
+    },
+    {
+      "release_id": "3f5319d085037f56",
+      "lib_name": "pypi/polars",
+      "version": "0.12.6",
+      "date": "2021-12",
+      "changes": [
+        "Blazingly fast DataFrame library"
+      ],
+      "impact": "moderate",
+      "breaking": false,
+      "category": "data-engineering",
+      "generated_at": "2026-06-25T08:08:21.970592"
+    },
+    {
+      "release_id": "141531be843cbd24",
+      "lib_name": "pola-rs/polars",
+      "version": "rs-0.26.0",
+      "date": "2022-12",
+      "changes": [
+        "remove Series::append\\_array (#5681)",
+        "iso weekday (#5598)",
+        "improve reducing window function performance ~33% (#5878)",
+        "impove performance reducing window functions with numeric output `~-14%` (#5841)",
+        "set\\_sorted flag when creating from literal (#5728)",
+        "use sorted fast path in streaming groupby (#5727)",
+        "ensure fast\\_explode propagates (#5676)",
+        "fix quadratic time complexity of groupby in stream… (#5614)"
+      ],
+      "impact": "high",
+      "breaking": true,
+      "category": "data-engineering",
+      "generated_at": "2026-06-25T08:08:21.970659"
+    },
+    {
+      "release_id": "b86b0f6041802812",
+      "lib_name": "pypi/deltalake",
+      "version": "1.4.2",
+      "date": "2026-02",
+      "changes": [
+        "Native Delta Lake Python binding based on delta-rs with Pandas integration"
+      ],
+      "impact": "moderate",
+      "breaking": false,
+      "category": "lakehouse",
+      "generated_at": "2026-06-25T08:08:21.970685"
+    },
+    {
+      "release_id": "842c8d73c7138a1a",
+      "lib_name": "pypi/uv",
+      "version": "0.8.23",
+      "date": "2025-10",
+      "changes": [
+        "An extremely fast Python package and project manager, written in Rust."
+      ],
+      "impact": "low",
+      "breaking": false,
+      "category": "backend-rust",
+      "generated_at": "2026-06-25T08:08:21.970707"
+    },
+    {
+      "release_id": "131df81355f9350c",
+      "lib_name": "tiangolo/fastapi",
+      "version": "0.115.10",
+      "date": "2025-02",
+      "changes": [
+        "♻️ Update internal annotation usage for compatibility with Pydantic 2.11. PR #13314 by @Viicos",
+        "⬆️ Bump Starlette to allow up to 0.46.0: `>=0.40.0,<0.47.0`. PR #13426 by @musicinmybrain",
+        "🌐 Add Ukrainian translation for `docs/uk/docs/tutorial/debugging.md`. PR #13370 by @valentinDruzhinin",
+        "🌐 Add Ukrainian translation for `docs/uk/docs/tutorial/query-params.md`. PR #13362 by @valentinDruzhinin",
+        "🌐 Add Ukrainian translation for `docs/uk/docs/tutorial/path-params.md`. PR #13354 by @valentinDruzhinin",
+        "🌐 Add Japanese translation for `docs/ja/docs/tutorial/cookie-param-models.md`. PR #13330 by @k94-ishi",
+        "🌐 Add Ukrainian translation for `docs/uk/docs/tutorial/body-multiple-params.md`. PR #13408 by @valentinDruzhinin",
+        "🌐 Add Japanese translation for `docs/ja/docs/tutorial/query-param-models.md`. PR #13323 by @k94-ishi"
+      ],
+      "impact": "low",
+      "breaking": false,
+      "category": "backend",
+      "generated_at": "2026-06-25T08:08:21.970789"
     }
   ],
   "discoveries": [
@@ -4519,7 +4556,7 @@
       "full_name": "langgenius/dify",
       "description": "Production-ready platform for agentic workflow development.",
       "url": "https://github.com/langgenius/dify",
-      "stars": 146386,
+      "stars": 146515,
       "language": "TypeScript",
       "topics": [
         "agent",
@@ -4543,72 +4580,11 @@
         "rag",
         "workflow"
       ],
-      "pushed_at": "2026-06-24T08:02:45Z",
+      "pushed_at": "2026-06-25T08:07:00Z",
       "created_at": "2023-04-12T07:40:24Z",
       "category": "ai",
       "discovery_source": "llm",
-      "collected_at": "2026-06-24T08:08:38.156762"
-    },
-    {
-      "owner": "apache",
-      "repo": "superset",
-      "full_name": "apache/superset",
-      "description": "Apache Superset is a Data Visualization and Data Exploration Platform",
-      "url": "https://github.com/apache/superset",
-      "stars": 73467,
-      "language": "TypeScript",
-      "topics": [
-        "analytics",
-        "apache",
-        "apache-superset",
-        "asf",
-        "bi",
-        "business-analytics",
-        "business-intelligence",
-        "data-analysis",
-        "data-analytics",
-        "data-engineering",
-        "data-science",
-        "data-visualization",
-        "data-viz",
-        "flask",
-        "python",
-        "react",
-        "sql-editor",
-        "superset"
-      ],
-      "pushed_at": "2026-06-24T07:56:51Z",
-      "created_at": "2015-07-21T18:55:34Z",
-      "category": "data-engineering",
-      "discovery_source": "data-engineering",
-      "collected_at": "2026-06-24T08:08:31.928309"
-    },
-    {
-      "owner": "safishamsi",
-      "repo": "graphify",
-      "full_name": "safishamsi/graphify",
-      "description": "AI coding assistant skill (Claude Code, Codex, OpenCode, Cursor, Gemini CLI, and more). Turn any folder of code, SQL schemas, R scripts, shell scripts, docs, papers, images, or videos into a queryable knowledge graph. App code + database schema + infrastructure in one graph.",
-      "url": "https://github.com/safishamsi/graphify",
-      "stars": 71339,
-      "language": "Python",
-      "topics": [
-        "antigravity",
-        "claude-code",
-        "codex",
-        "gemini",
-        "graphrag",
-        "knowledge-graph",
-        "leiden",
-        "openclaw",
-        "rag",
-        "skills",
-        "tree-sitter"
-      ],
-      "pushed_at": "2026-06-24T07:55:48Z",
-      "created_at": "2026-04-03T15:49:07Z",
-      "category": "ai",
-      "discovery_source": "rag",
-      "collected_at": "2026-06-24T08:08:39.587914"
+      "collected_at": "2026-06-25T08:08:11.430599"
     },
     {
       "owner": "pathwaycom",
@@ -4616,7 +4592,7 @@
       "full_name": "pathwaycom/pathway",
       "description": "Python ETL framework for stream processing, real-time analytics, LLM pipelines, and RAG.",
       "url": "https://github.com/pathwaycom/pathway",
-      "stars": 62856,
+      "stars": 62846,
       "language": "Python",
       "topics": [
         "batch-processing",
@@ -4637,11 +4613,11 @@
         "streaming",
         "time-series-analysis"
       ],
-      "pushed_at": "2026-06-24T05:28:30Z",
+      "pushed_at": "2026-06-25T05:31:05Z",
       "created_at": "2022-11-27T13:01:14Z",
       "category": "data-engineering",
       "discovery_source": "stream-processing",
-      "collected_at": "2026-06-24T08:08:36.639438"
+      "collected_at": "2026-06-25T08:08:10.120182"
     },
     {
       "owner": "dbeaver",
@@ -4649,7 +4625,7 @@
       "full_name": "dbeaver/dbeaver",
       "description": "Free universal database tool and SQL client",
       "url": "https://github.com/dbeaver/dbeaver",
-      "stars": 50693,
+      "stars": 50707,
       "language": "Java",
       "topics": [
         "ai",
@@ -4671,11 +4647,11 @@
         "sqlite",
         "sqlserver"
       ],
-      "pushed_at": "2026-06-24T07:51:37Z",
+      "pushed_at": "2026-06-25T08:02:20Z",
       "created_at": "2015-10-21T08:26:28Z",
       "category": "lakehouse",
       "discovery_source": "databricks",
-      "collected_at": "2026-06-24T08:08:44.289951"
+      "collected_at": "2026-06-25T08:08:17.074929"
     },
     {
       "owner": "ClickHouse",
@@ -4683,7 +4659,7 @@
       "full_name": "ClickHouse/ClickHouse",
       "description": "ClickHouse® is a real-time analytics database management system",
       "url": "https://github.com/ClickHouse/ClickHouse",
-      "stars": 48255,
+      "stars": 48274,
       "language": "C++",
       "topics": [
         "ai",
@@ -4704,11 +4680,11 @@
         "self-hosted",
         "sql"
       ],
-      "pushed_at": "2026-06-24T07:53:55Z",
+      "pushed_at": "2026-06-25T08:00:22Z",
       "created_at": "2016-06-02T08:28:18Z",
       "category": "lakehouse",
       "discovery_source": "lakehouse",
-      "collected_at": "2026-06-24T08:08:42.795355"
+      "collected_at": "2026-06-25T08:08:15.693685"
     },
     {
       "owner": "apache",
@@ -4716,7 +4692,7 @@
       "full_name": "apache/airflow",
       "description": "Apache Airflow - A platform to programmatically author, schedule, and monitor workflows",
       "url": "https://github.com/apache/airflow",
-      "stars": 45908,
+      "stars": 45915,
       "language": "Python",
       "topics": [
         "airflow",
@@ -4740,45 +4716,45 @@
         "workflow-engine",
         "workflow-orchestration"
       ],
-      "pushed_at": "2026-06-24T07:49:36Z",
+      "pushed_at": "2026-06-25T07:36:32Z",
       "created_at": "2015-04-13T18:04:58Z",
       "category": "data-engineering",
       "discovery_source": "data-engineering",
-      "collected_at": "2026-06-24T08:08:31.928340"
+      "collected_at": "2026-06-25T08:08:06.083467"
     },
     {
-      "owner": "sgl-project",
-      "repo": "sglang",
-      "full_name": "sgl-project/sglang",
-      "description": "SGLang is a high-performance serving framework for large language models and multimodal models.",
-      "url": "https://github.com/sgl-project/sglang",
-      "stars": 29590,
-      "language": "Python",
+      "owner": "milvus-io",
+      "repo": "milvus",
+      "full_name": "milvus-io/milvus",
+      "description": "Milvus is a high-performance, cloud-native vector database built for scalable vector ANN search",
+      "url": "https://github.com/milvus-io/milvus",
+      "stars": 44944,
+      "language": "Go",
       "topics": [
-        "attention",
-        "blackwell",
-        "cuda",
-        "deepseek",
-        "diffusion",
-        "glm",
-        "gpt-oss",
-        "inference",
-        "llama",
+        "anns",
+        "cloud-native",
+        "diskann",
+        "distributed",
+        "embedding-database",
+        "embedding-similarity",
+        "embedding-store",
+        "faiss",
+        "golang",
+        "hnsw",
+        "image-search",
         "llm",
-        "minimax",
-        "moe",
-        "qwen",
-        "qwen-image",
-        "reinforcement-learning",
-        "transformer",
-        "vlm",
-        "wan"
+        "nearest-neighbor-search",
+        "rag",
+        "vector-database",
+        "vector-search",
+        "vector-similarity",
+        "vector-store"
       ],
-      "pushed_at": "2026-06-24T08:06:48Z",
-      "created_at": "2024-01-08T04:15:52Z",
+      "pushed_at": "2026-06-25T07:54:28Z",
+      "created_at": "2019-09-16T06:43:43Z",
       "category": "ai",
-      "discovery_source": "llm",
-      "collected_at": "2026-06-24T08:08:38.156749"
+      "discovery_source": "rag",
+      "collected_at": "2026-06-25T08:08:12.960640"
     },
     {
       "owner": "HumanSignal",
@@ -4786,7 +4762,7 @@
       "full_name": "HumanSignal/label-studio",
       "description": "Label Studio is a multi-type data labeling and annotation tool with standardized output format",
       "url": "https://github.com/HumanSignal/label-studio",
-      "stars": 27678,
+      "stars": 27690,
       "language": "TypeScript",
       "topics": [
         "annotation",
@@ -4810,11 +4786,81 @@
         "text-annotation",
         "yolo"
       ],
-      "pushed_at": "2026-06-24T07:13:12Z",
+      "pushed_at": "2026-06-25T07:13:36Z",
       "created_at": "2019-06-19T02:00:44Z",
       "category": "ai",
       "discovery_source": "mlops",
-      "collected_at": "2026-06-24T08:08:41.373083"
+      "collected_at": "2026-06-25T08:08:14.374418"
+    },
+    {
+      "owner": "ScrapeGraphAI",
+      "repo": "Scrapegraph-ai",
+      "full_name": "ScrapeGraphAI/Scrapegraph-ai",
+      "description": "Python scraper based on AI",
+      "url": "https://github.com/ScrapeGraphAI/Scrapegraph-ai",
+      "stars": 27599,
+      "language": "Python",
+      "topics": [
+        "ai-crawler",
+        "ai-scraping",
+        "ai-search",
+        "crawler",
+        "data-extraction",
+        "firecrawl-alternative",
+        "large-language-model",
+        "llm",
+        "markdown",
+        "rag",
+        "scraping",
+        "scraping-python",
+        "web-crawler",
+        "web-crawlers",
+        "web-data",
+        "web-data-extraction",
+        "web-scraper",
+        "web-scraping",
+        "web-search",
+        "webscraping"
+      ],
+      "pushed_at": "2026-06-25T07:51:20Z",
+      "created_at": "2024-01-27T16:54:38Z",
+      "category": "ai",
+      "discovery_source": "rag",
+      "collected_at": "2026-06-25T08:08:12.960646"
+    },
+    {
+      "owner": "mlflow",
+      "repo": "mlflow",
+      "full_name": "mlflow/mlflow",
+      "description": "The open source AI engineering platform for agents, LLMs, and ML models. MLflow enables teams of all sizes to debug, evaluate, monitor, and optimize production-quality AI applications while controlling costs and managing access to models and data.",
+      "url": "https://github.com/mlflow/mlflow",
+      "stars": 26732,
+      "language": "Python",
+      "topics": [
+        "agentops",
+        "agents",
+        "ai",
+        "ai-governance",
+        "apache-spark",
+        "evaluation",
+        "langchain",
+        "llm-evaluation",
+        "llmops",
+        "machine-learning",
+        "ml",
+        "mlflow",
+        "mlops",
+        "model-management",
+        "observability",
+        "open-source",
+        "openai",
+        "prompt-engineering"
+      ],
+      "pushed_at": "2026-06-25T05:40:53Z",
+      "created_at": "2018-06-05T16:05:58Z",
+      "category": "ai",
+      "discovery_source": "mlops",
+      "collected_at": "2026-06-25T08:08:14.374440"
     },
     {
       "owner": "volcengine",
@@ -4822,7 +4868,7 @@
       "full_name": "volcengine/OpenViking",
       "description": "OpenViking is an open-source context database designed specifically for AI Agents(such as openclaw). OpenViking unifies the management of context (memory, resources, and skills) that Agents need through a file system paradigm, enabling hierarchical context delivery and self-evolving.",
       "url": "https://github.com/volcengine/OpenViking",
-      "stars": 25983,
+      "stars": 26028,
       "language": "Python",
       "topics": [
         "agent",
@@ -4839,11 +4885,47 @@
         "rag",
         "skill"
       ],
-      "pushed_at": "2026-06-24T08:07:36Z",
+      "pushed_at": "2026-06-25T08:05:46Z",
       "created_at": "2026-01-05T07:11:17Z",
       "category": "ai",
       "discovery_source": "llm",
-      "collected_at": "2026-06-24T08:08:38.156727"
+      "collected_at": "2026-06-25T08:08:11.430612"
+    },
+    {
+      "owner": "opendataloader-project",
+      "repo": "opendataloader-pdf",
+      "full_name": "opendataloader-project/opendataloader-pdf",
+      "description": "PDF Parser for AI-ready data. Automate PDF accessibility. Open-source.",
+      "url": "https://github.com/opendataloader-project/opendataloader-pdf",
+      "stars": 25891,
+      "language": "Java",
+      "topics": [
+        "a11y",
+        "accessibility",
+        "ai",
+        "bounding-box",
+        "document-parsing",
+        "eaa",
+        "html",
+        "json",
+        "markdown",
+        "ocr",
+        "ocr-recognition",
+        "pdf",
+        "pdf-accessibility",
+        "pdf-converter",
+        "pdf-extraction",
+        "pdf-parser",
+        "pdf-ua",
+        "rag",
+        "tables",
+        "tagged-pdf"
+      ],
+      "pushed_at": "2026-06-25T08:00:07Z",
+      "created_at": "2025-05-13T05:48:02Z",
+      "category": "ai",
+      "discovery_source": "rag",
+      "collected_at": "2026-06-25T08:08:12.960621"
     },
     {
       "owner": "deepset-ai",
@@ -4851,7 +4933,7 @@
       "full_name": "deepset-ai/haystack",
       "description": "Open-source AI orchestration framework for building context-engineered, production-ready LLM applications. Design modular pipelines and agent workflows with explicit control over retrieval, routing, memory, and generation. Built for scalable agents, RAG, multimodal applications, semantic search, and conversational systems.",
       "url": "https://github.com/deepset-ai/haystack",
-      "stars": 25651,
+      "stars": 25712,
       "language": "MDX",
       "topics": [
         "agent",
@@ -4875,40 +4957,47 @@
         "summarization",
         "transformers"
       ],
-      "pushed_at": "2026-06-24T08:08:19Z",
+      "pushed_at": "2026-06-25T08:07:07Z",
       "created_at": "2019-11-14T09:05:28Z",
       "category": "ai",
-      "discovery_source": "llm",
-      "collected_at": "2026-06-24T08:08:38.156709"
+      "discovery_source": "rag",
+      "collected_at": "2026-06-25T08:08:12.960628"
     },
     {
-      "owner": "mastra-ai",
-      "repo": "mastra",
-      "full_name": "mastra-ai/mastra",
-      "description": "Mastra is the modern TypeScript framework for AI-powered applications and agents.",
-      "url": "https://github.com/mastra-ai/mastra",
-      "stars": 25400,
-      "language": "TypeScript",
+      "owner": "airbytehq",
+      "repo": "airbyte",
+      "full_name": "airbytehq/airbyte",
+      "description": "Open-source data movement for ELT pipelines and AI agents — from APIs, databases & files to warehouses, lakes, and AI applications. Both self-hosted and Cloud.",
+      "url": "https://github.com/airbytehq/airbyte",
+      "stars": 21522,
+      "language": "Python",
       "topics": [
-        "agents",
-        "ai",
-        "chatbots",
-        "evals",
-        "javascript",
-        "llm",
-        "mcp",
-        "nextjs",
-        "nodejs",
-        "reactjs",
-        "tts",
-        "typescript",
-        "workflows"
+        "bigquery",
+        "change-data-capture",
+        "data",
+        "data-analysis",
+        "data-collection",
+        "data-engineering",
+        "data-integration",
+        "data-pipeline",
+        "elt",
+        "etl",
+        "java",
+        "mssql",
+        "mysql",
+        "pipeline",
+        "postgresql",
+        "python",
+        "redshift",
+        "s3",
+        "self-hosted",
+        "snowflake"
       ],
-      "pushed_at": "2026-06-24T08:06:30Z",
-      "created_at": "2024-08-06T20:44:31Z",
-      "category": "ai",
-      "discovery_source": "llm",
-      "collected_at": "2026-06-24T08:08:38.156755"
+      "pushed_at": "2026-06-25T06:16:41Z",
+      "created_at": "2020-07-27T23:55:54Z",
+      "category": "data-engineering",
+      "discovery_source": "data-engineering",
+      "collected_at": "2026-06-25T08:08:06.083493"
     },
     {
       "owner": "cube-js",
@@ -4916,7 +5005,7 @@
       "full_name": "cube-js/cube",
       "description": "📊 Cube Core is open-source semantic layer for AI, BI and embedded analytics",
       "url": "https://github.com/cube-js/cube",
-      "stars": 20260,
+      "stars": 20265,
       "language": "Rust",
       "topics": [
         "agentic-analytics",
@@ -4939,11 +5028,11 @@
         "snowflake",
         "sql"
       ],
-      "pushed_at": "2026-06-24T07:38:25Z",
+      "pushed_at": "2026-06-25T08:05:14Z",
       "created_at": "2018-09-16T18:58:46Z",
       "category": "lakehouse",
       "discovery_source": "databricks",
-      "collected_at": "2026-06-24T08:08:44.289973"
+      "collected_at": "2026-06-25T08:08:17.074945"
     },
     {
       "owner": "elizaOS",
@@ -4951,7 +5040,7 @@
       "full_name": "elizaOS/eliza",
       "description": "Open source agentic operating system",
       "url": "https://github.com/elizaOS/eliza",
-      "stars": 18632,
+      "stars": 18644,
       "language": "TypeScript",
       "topics": [
         "agent",
@@ -4970,47 +5059,11 @@
         "swarm",
         "telegram"
       ],
-      "pushed_at": "2026-06-24T08:04:44Z",
+      "pushed_at": "2026-06-25T08:07:46Z",
       "created_at": "2024-07-09T07:55:40Z",
       "category": "ai",
       "discovery_source": "rag",
-      "collected_at": "2026-06-24T08:08:39.587901"
-    },
-    {
-      "owner": "Tencent",
-      "repo": "APIJSON",
-      "full_name": "Tencent/APIJSON",
-      "description": "🏆 Real-Time no-code, powerful and secure ORM 🚀  providing APIs and Docs without coding by Backend, and Frontend(Client) can customize response JSONs 🏆 实时 零代码、全功能、强安全 ORM 库 🚀 后端接口和文档零代码，前端(客户端) 定制返回 JSON 的数据和结构",
-      "url": "https://github.com/Tencent/APIJSON",
-      "stars": 18397,
-      "language": "Java",
-      "topics": [
-        "baas",
-        "clickhouse",
-        "crud",
-        "databricks",
-        "elasticsearch",
-        "hadoop",
-        "hive",
-        "influxdb",
-        "low-code",
-        "lowcode",
-        "milvus",
-        "nocode",
-        "oracle",
-        "postgresql",
-        "postgresql-database",
-        "serverless",
-        "snowflake",
-        "sqlserver",
-        "tdengine",
-        "tidb"
-      ],
-      "pushed_at": "2026-06-23T14:06:18Z",
-      "created_at": "2016-11-21T12:03:29Z",
-      "category": "lakehouse",
-      "discovery_source": "databricks",
-      "collected_at": "2026-06-24T08:08:44.289987"
+      "collected_at": "2026-06-25T08:08:12.960588"
     },
     {
       "owner": "weaviate",
@@ -5018,7 +5071,7 @@
       "full_name": "weaviate/weaviate",
       "description": "Weaviate is an open-source vector database that stores both objects and vectors, allowing for the combination of vector search with structured filtering with the fault tolerance and scalability of a cloud-native database​.",
       "url": "https://github.com/weaviate/weaviate",
-      "stars": 16418,
+      "stars": 16426,
       "language": "Go",
       "topics": [
         "approximate-nearest-neighbor-search",
@@ -5042,11 +5095,11 @@
         "vectors",
         "weaviate"
       ],
-      "pushed_at": "2026-06-24T07:31:17Z",
+      "pushed_at": "2026-06-25T08:02:36Z",
       "created_at": "2016-03-30T15:03:17Z",
       "category": "ai",
       "discovery_source": "mlops",
-      "collected_at": "2026-06-24T08:08:41.373062"
+      "collected_at": "2026-06-25T08:08:14.374447"
     },
     {
       "owner": "apache",
@@ -5054,7 +5107,7 @@
       "full_name": "apache/doris",
       "description": "Apache Doris is an easy-to-use, high performance and unified analytics database.",
       "url": "https://github.com/apache/doris",
-      "stars": 15535,
+      "stars": 15542,
       "language": "Java",
       "topics": [
         "agent",
@@ -5076,11 +5129,42 @@
         "spark",
         "sql"
       ],
-      "pushed_at": "2026-06-24T08:07:24Z",
+      "pushed_at": "2026-06-25T08:07:43Z",
       "created_at": "2017-08-10T12:13:30Z",
       "category": "data-engineering",
       "discovery_source": "query-engine",
-      "collected_at": "2026-06-24T08:08:34.899119"
+      "collected_at": "2026-06-25T08:08:08.667178"
+    },
+    {
+      "owner": "can1357",
+      "repo": "oh-my-pi",
+      "full_name": "can1357/oh-my-pi",
+      "description": "⌥  AI Coding agent for the terminal — hash-anchored edits, optimized tool harness, LSP, Python, browser, subagents, and more",
+      "url": "https://github.com/can1357/oh-my-pi",
+      "stars": 14552,
+      "language": "TypeScript",
+      "topics": [
+        "ai-agent",
+        "ai-coding-agent",
+        "anthropic",
+        "bun",
+        "claude",
+        "cli",
+        "coding-assistant",
+        "llm",
+        "mcp",
+        "multi-provider",
+        "openai",
+        "rust",
+        "terminal",
+        "tui",
+        "typescript"
+      ],
+      "pushed_at": "2026-06-25T08:06:19Z",
+      "created_at": "2025-12-31T14:01:28Z",
+      "category": "ai",
+      "discovery_source": "llm",
+      "collected_at": "2026-06-25T08:08:11.430632"
     },
     {
       "owner": "trinodb",
@@ -5088,7 +5172,7 @@
       "full_name": "trinodb/trino",
       "description": "Official repository of Trino, the distributed SQL query engine for big data, formerly known as PrestoSQL (https://trino.io)",
       "url": "https://github.com/trinodb/trino",
-      "stars": 12955,
+      "stars": 12960,
       "language": "Java",
       "topics": [
         "analytics",
@@ -5111,11 +5195,11 @@
         "sql",
         "trino"
       ],
-      "pushed_at": "2026-06-24T08:04:01Z",
+      "pushed_at": "2026-06-25T07:36:57Z",
       "created_at": "2019-01-19T06:38:14Z",
       "category": "data-engineering",
       "discovery_source": "query-engine",
-      "collected_at": "2026-06-24T08:08:34.899137"
+      "collected_at": "2026-06-25T08:08:08.667195"
     },
     {
       "owner": "redpanda-data",
@@ -5123,7 +5207,7 @@
       "full_name": "redpanda-data/redpanda",
       "description": "Redpanda is a streaming data platform for developers. Kafka API compatible. 10x faster. No ZooKeeper. No JVM!",
       "url": "https://github.com/redpanda-data/redpanda",
-      "stars": 12252,
+      "stars": 12257,
       "language": "C++",
       "topics": [
         "containers",
@@ -5140,11 +5224,11 @@
         "stream-processing",
         "streaming"
       ],
-      "pushed_at": "2026-06-24T07:25:26Z",
+      "pushed_at": "2026-06-25T07:40:16Z",
       "created_at": "2020-11-02T22:43:36Z",
       "category": "data-engineering",
       "discovery_source": "stream-processing",
-      "collected_at": "2026-06-24T08:08:36.639400"
+      "collected_at": "2026-06-25T08:08:10.120140"
     },
     {
       "owner": "StarRocks",
@@ -5152,7 +5236,7 @@
       "full_name": "StarRocks/starrocks",
       "description": "The world's fastest open query engine for sub-second analytics both on and off the data lakehouse. With the flexibility to support nearly any scenario, StarRocks provides best-in-class performance for multi-dimensional analytics, real-time analytics, and ad-hoc queries. A Linux Foundation project.",
       "url": "https://github.com/StarRocks/starrocks",
-      "stars": 11815,
+      "stars": 11821,
       "language": "Java",
       "topics": [
         "analytics",
@@ -5176,46 +5260,82 @@
         "star-schema",
         "vectorized"
       ],
-      "pushed_at": "2026-06-24T07:20:38Z",
+      "pushed_at": "2026-06-25T08:01:53Z",
       "created_at": "2021-09-04T02:29:35Z",
       "category": "lakehouse",
       "discovery_source": "lakehouse",
-      "collected_at": "2026-06-24T08:08:42.795388"
+      "collected_at": "2026-06-25T08:08:15.693677"
     },
     {
-      "owner": "skypilot-org",
-      "repo": "skypilot",
-      "full_name": "skypilot-org/skypilot",
-      "description": "Run, manage, and scale AI workloads on any AI infrastructure. Use one system to access & manage all AI compute (Kubernetes, Slurm, 20+ clouds, on-prem).",
-      "url": "https://github.com/skypilot-org/skypilot",
-      "stars": 10203,
+      "owner": "wandb",
+      "repo": "wandb",
+      "full_name": "wandb/wandb",
+      "description": "The AI developer platform. Use Weights & Biases to train and fine-tune models, and manage models from experimentation to production.",
+      "url": "https://github.com/wandb/wandb",
+      "stars": 11142,
       "language": "Python",
       "topics": [
-        "cloud-computing",
-        "cloud-management",
-        "cost-optimization",
+        "ai",
+        "collaboration",
+        "data-science",
+        "data-versioning",
         "deep-learning",
-        "distributed-training",
-        "gpu",
+        "experiment-track",
+        "hyperparameter-optimization",
+        "hyperparameter-search",
         "hyperparameter-tuning",
-        "job-queue",
-        "job-scheduler",
-        "llm-serving",
-        "llm-training",
+        "jax",
+        "keras",
         "machine-learning",
-        "ml-infrastructure",
         "ml-platform",
         "mlops",
-        "multicloud",
-        "slurm",
-        "spot-instances",
-        "tpu"
+        "model-versioning",
+        "pytorch",
+        "reinforcement-learning",
+        "reproducibility",
+        "tensorflow"
       ],
-      "pushed_at": "2026-06-24T07:58:10Z",
-      "created_at": "2021-08-11T23:32:15Z",
+      "pushed_at": "2026-06-25T07:02:25Z",
+      "created_at": "2017-03-24T05:46:23Z",
       "category": "ai",
       "discovery_source": "mlops",
-      "collected_at": "2026-06-24T08:08:41.373028"
+      "collected_at": "2026-06-25T08:08:14.374454"
+    },
+    {
+      "owner": "cocoindex-io",
+      "repo": "cocoindex",
+      "full_name": "cocoindex-io/cocoindex",
+      "description": "Incremental engine for long horizon agents 🌟 Star if you like it!",
+      "url": "https://github.com/cocoindex-io/cocoindex",
+      "stars": 10492,
+      "language": "Rust",
+      "topics": [
+        "agentic-data-framework",
+        "ai",
+        "ai-agents",
+        "change-data-capture",
+        "codebase-intelligence",
+        "context-engineering",
+        "data-engineering",
+        "data-indexing",
+        "data-processing",
+        "etl",
+        "help-wanted",
+        "indexing",
+        "knowledge-graph",
+        "llm",
+        "long-horizon-agent",
+        "python",
+        "rag",
+        "real-time",
+        "rust",
+        "semantic-search"
+      ],
+      "pushed_at": "2026-06-25T07:31:32Z",
+      "created_at": "2025-03-03T23:03:09Z",
+      "category": "data-engineering",
+      "discovery_source": "data-engineering",
+      "collected_at": "2026-06-25T08:08:06.083473"
     },
     {
       "owner": "rapidsai",
@@ -5223,7 +5343,7 @@
       "full_name": "rapidsai/cudf",
       "description": "cuDF - GPU DataFrame Library ",
       "url": "https://github.com/rapidsai/cudf",
-      "stars": 9684,
+      "stars": 9685,
       "language": "C++",
       "topics": [
         "arrow",
@@ -5240,11 +5360,11 @@
         "python",
         "rapids"
       ],
-      "pushed_at": "2026-06-24T06:42:24Z",
+      "pushed_at": "2026-06-25T07:07:42Z",
       "created_at": "2017-05-07T03:43:37Z",
       "category": "data-engineering",
       "discovery_source": "dataframe",
-      "collected_at": "2026-06-24T08:08:33.713907"
+      "collected_at": "2026-06-25T08:08:07.582382"
     },
     {
       "owner": "tobymao",
@@ -5252,7 +5372,7 @@
       "full_name": "tobymao/sqlglot",
       "description": "Python SQL Parser and Transpiler",
       "url": "https://github.com/tobymao/sqlglot",
-      "stars": 9353,
+      "stars": 9361,
       "language": "Python",
       "topics": [
         "bigquery",
@@ -5276,11 +5396,11 @@
         "trino",
         "tsql"
       ],
-      "pushed_at": "2026-06-24T07:17:12Z",
+      "pushed_at": "2026-06-24T23:08:35Z",
       "created_at": "2021-03-13T05:01:56Z",
       "category": "lakehouse",
       "discovery_source": "databricks",
-      "collected_at": "2026-06-24T08:08:44.289967"
+      "collected_at": "2026-06-25T08:08:17.074952"
     },
     {
       "owner": "databendlabs",
@@ -5288,7 +5408,7 @@
       "full_name": "databendlabs/databend",
       "description": "Data Agent Ready Warehouse : One for  Analytics, Search, AI, Python Sandbox.  — rebuilt from scratch. Unified architecture on your S3.",
       "url": "https://github.com/databendlabs/databend",
-      "stars": 9352,
+      "stars": 9354,
       "language": "Rust",
       "topics": [
         "ai",
@@ -5306,11 +5426,11 @@
         "vector-database",
         "vector-search"
       ],
-      "pushed_at": "2026-06-24T07:50:07Z",
+      "pushed_at": "2026-06-25T07:43:03Z",
       "created_at": "2020-10-10T06:04:42Z",
       "category": "lakehouse",
       "discovery_source": "lakehouse",
-      "collected_at": "2026-06-24T08:08:42.795329"
+      "collected_at": "2026-06-25T08:08:15.693699"
     },
     {
       "owner": "risingwavelabs",
@@ -5318,7 +5438,7 @@
       "full_name": "risingwavelabs/risingwave",
       "description": "Event streaming platform for agentic AI. Continuously ingest, transform, and serve event streams in real time, at scale.",
       "url": "https://github.com/risingwavelabs/risingwave",
-      "stars": 9097,
+      "stars": 9103,
       "language": "Rust",
       "topics": [
         "apache-iceberg",
@@ -5333,11 +5453,11 @@
         "stream-processing",
         "webhook"
       ],
-      "pushed_at": "2026-06-24T08:04:08Z",
+      "pushed_at": "2026-06-25T08:06:06Z",
       "created_at": "2022-01-28T12:58:03Z",
       "category": "data-engineering",
-      "discovery_source": "data-engineering",
-      "collected_at": "2026-06-24T08:08:31.928326"
+      "discovery_source": "stream-processing",
+      "collected_at": "2026-06-25T08:08:10.120176"
     },
     {
       "owner": "apache",
@@ -5345,7 +5465,7 @@
       "full_name": "apache/datafusion",
       "description": "Apache DataFusion SQL Query Engine",
       "url": "https://github.com/apache/datafusion",
-      "stars": 8910,
+      "stars": 8915,
       "language": "Rust",
       "topics": [
         "arrow",
@@ -5358,41 +5478,11 @@
         "rust",
         "sql"
       ],
-      "pushed_at": "2026-06-24T04:38:56Z",
+      "pushed_at": "2026-06-25T07:23:07Z",
       "created_at": "2021-04-17T15:40:23Z",
       "category": "data-engineering",
       "discovery_source": "dataframe",
-      "collected_at": "2026-06-24T08:08:33.713915"
-    },
-    {
-      "owner": "fluent",
-      "repo": "fluent-bit",
-      "full_name": "fluent/fluent-bit",
-      "description": "Fast and Lightweight Logs, Metrics and Traces processor for Linux, BSD, OSX and Windows",
-      "url": "https://github.com/fluent/fluent-bit",
-      "stars": 7941,
-      "language": "C",
-      "topics": [
-        "c",
-        "cloudnative",
-        "data-collector",
-        "fluent-bit",
-        "fluentd",
-        "forwarder",
-        "logging",
-        "logs",
-        "metrics",
-        "opentelemetry",
-        "prometheus",
-        "sql-queries",
-        "stream-processing",
-        "traces"
-      ],
-      "pushed_at": "2026-06-24T06:03:28Z",
-      "created_at": "2015-01-27T20:41:52Z",
-      "category": "data-engineering",
-      "discovery_source": "stream-processing",
-      "collected_at": "2026-06-24T08:08:36.639430"
+      "collected_at": "2026-06-25T08:08:07.582366"
     },
     {
       "owner": "growthbook",
@@ -5400,7 +5490,7 @@
       "full_name": "growthbook/growthbook",
       "description": "Open Source Feature Flags, Experimentation, and Product Analytics",
       "url": "https://github.com/growthbook/growthbook",
-      "stars": 7916,
+      "stars": 7923,
       "language": "TypeScript",
       "topics": [
         "ab-testing",
@@ -5424,47 +5514,35 @@
         "statistics",
         "warehouse-native"
       ],
-      "pushed_at": "2026-06-24T07:21:01Z",
+      "pushed_at": "2026-06-25T05:04:00Z",
       "created_at": "2021-05-07T23:11:51Z",
-      "category": "data-engineering",
-      "discovery_source": "data-engineering",
-      "collected_at": "2026-06-24T08:08:31.928346"
+      "category": "lakehouse",
+      "discovery_source": "databricks",
+      "collected_at": "2026-06-25T08:08:17.074939"
     },
     {
-      "owner": "flyteorg",
-      "repo": "flyte",
-      "full_name": "flyteorg/flyte",
-      "description": "Dynamic, resilient AI orchestration. Coordinate data, models, and compute as you build AI workflows.",
-      "url": "https://github.com/flyteorg/flyte",
-      "stars": 7106,
-      "language": "Go",
+      "owner": "open-compass",
+      "repo": "opencompass",
+      "full_name": "open-compass/opencompass",
+      "description": "OpenCompass is an LLM evaluation platform, supporting a wide range of models (Llama3, Mistral, InternLM2,GPT-4,LLaMa2, Qwen,GLM, Claude, etc) over 100+ datasets.",
+      "url": "https://github.com/open-compass/opencompass",
+      "stars": 7119,
+      "language": "Python",
       "topics": [
-        "agentic",
-        "ai-agents",
-        "ai-development-tools",
-        "data-analysis",
-        "data-science",
-        "declarative",
-        "fine-tuning",
-        "flyte",
-        "golang",
-        "grpc",
-        "hacktoberfest",
-        "kubernetes",
+        "benchmark",
+        "chatgpt",
+        "evaluation",
+        "large-language-model",
+        "llama2",
+        "llama3",
         "llm",
-        "machine-learning",
-        "mlops",
-        "orchestration-engine",
-        "production",
-        "python",
-        "scale",
-        "workflow"
+        "openai"
       ],
-      "pushed_at": "2026-06-24T07:22:41Z",
-      "created_at": "2019-10-21T17:40:04Z",
+      "pushed_at": "2026-06-25T08:07:21Z",
+      "created_at": "2023-06-15T12:42:58Z",
       "category": "ai",
-      "discovery_source": "mlops",
-      "collected_at": "2026-06-24T08:08:41.373096"
+      "discovery_source": "llm",
+      "collected_at": "2026-06-25T08:08:11.430574"
     },
     {
       "owner": "vespa-engine",
@@ -5490,11 +5568,11 @@
         "vector-search",
         "vespa"
       ],
-      "pushed_at": "2026-06-24T07:49:42Z",
+      "pushed_at": "2026-06-25T07:58:27Z",
       "created_at": "2016-06-03T20:54:20Z",
       "category": "ai",
       "discovery_source": "rag",
-      "collected_at": "2026-06-24T08:08:39.587927"
+      "collected_at": "2026-06-25T08:08:12.960634"
     },
     {
       "owner": "lance-format",
@@ -5502,7 +5580,7 @@
       "full_name": "lance-format/lance",
       "description": "Open Lakehouse Format for Multimodal AI. Convert from Parquet in 2 lines of code for 100x faster random access, vector index, and data versioning. Compatible with Pandas, DuckDB, Polars, Pyarrow, and PyTorch with more integrations coming..",
       "url": "https://github.com/lance-format/lance",
-      "stars": 6701,
+      "stars": 6704,
       "language": "Rust",
       "topics": [
         "apache-arrow",
@@ -5522,11 +5600,11 @@
         "python",
         "rust"
       ],
-      "pushed_at": "2026-06-24T06:53:58Z",
+      "pushed_at": "2026-06-25T08:04:10Z",
       "created_at": "2022-07-07T22:29:29Z",
       "category": "ai",
       "discovery_source": "mlops",
-      "collected_at": "2026-06-24T08:08:41.373089"
+      "collected_at": "2026-06-25T08:08:14.374433"
     },
     {
       "owner": "Zipstack",
@@ -5534,7 +5612,7 @@
       "full_name": "Zipstack/unstract",
       "description": "LLM-Driven Extraction of Unstructured Data — Built for API Deployments & ETL Pipeline Workflows",
       "url": "https://github.com/Zipstack/unstract",
-      "stars": 6669,
+      "stars": 6671,
       "language": "Python",
       "topics": [
         "ai-agents",
@@ -5550,11 +5628,11 @@
         "prompt-engineering",
         "structured-output"
       ],
-      "pushed_at": "2026-06-24T07:07:29Z",
+      "pushed_at": "2026-06-25T07:59:32Z",
       "created_at": "2024-02-21T10:34:33Z",
       "category": "data-engineering",
       "discovery_source": "data-engineering",
-      "collected_at": "2026-06-24T08:08:31.928352"
+      "collected_at": "2026-06-25T08:08:06.083450"
     },
     {
       "owner": "haifengl",
@@ -5586,11 +5664,11 @@
         "visualization",
         "wavelet"
       ],
-      "pushed_at": "2026-06-24T01:48:15Z",
+      "pushed_at": "2026-06-25T03:26:04Z",
       "created_at": "2014-11-20T16:28:12Z",
       "category": "data-engineering",
       "discovery_source": "dataframe",
-      "collected_at": "2026-06-24T08:08:33.713922"
+      "collected_at": "2026-06-25T08:08:07.582389"
     },
     {
       "owner": "MaterializeInc",
@@ -5598,7 +5676,7 @@
       "full_name": "MaterializeInc/materialize",
       "description": "The live data layer for apps and AI agents. Create up-to-the-second views into your business, just using SQL",
       "url": "https://github.com/MaterializeInc/materialize",
-      "stars": 6316,
+      "stars": 6317,
       "language": "Rust",
       "topics": [
         "cdc",
@@ -5619,11 +5697,11 @@
         "streaming",
         "streaming-data"
       ],
-      "pushed_at": "2026-06-24T07:53:16Z",
+      "pushed_at": "2026-06-25T08:06:02Z",
       "created_at": "2019-02-22T17:15:15Z",
       "category": "data-engineering",
       "discovery_source": "stream-processing",
-      "collected_at": "2026-06-24T08:08:36.639361"
+      "collected_at": "2026-06-25T08:08:10.120124"
     },
     {
       "owner": "online-ml",
@@ -5631,7 +5709,7 @@
       "full_name": "online-ml/river",
       "description": "🌊 Online machine learning in Python",
       "url": "https://github.com/online-ml/river",
-      "stars": 5854,
+      "stars": 5859,
       "language": "Python",
       "topics": [
         "concept-drift",
@@ -5647,11 +5725,11 @@
         "streaming",
         "streaming-data"
       ],
-      "pushed_at": "2026-06-24T07:16:37Z",
+      "pushed_at": "2026-06-25T07:39:16Z",
       "created_at": "2019-01-24T15:18:26Z",
       "category": "data-engineering",
       "discovery_source": "stream-processing",
-      "collected_at": "2026-06-24T08:08:36.639407"
+      "collected_at": "2026-06-25T08:08:10.120149"
     },
     {
       "owner": "Giskard-AI",
@@ -5659,7 +5737,7 @@
       "full_name": "Giskard-AI/giskard-oss",
       "description": "🐢 Open-Source Evaluation & Testing library for LLM Agents",
       "url": "https://github.com/Giskard-AI/giskard-oss",
-      "stars": 5458,
+      "stars": 5463,
       "language": "Python",
       "topics": [
         "agent-evaluation",
@@ -5680,40 +5758,43 @@
         "responsible-ai",
         "trustworthy-ai"
       ],
-      "pushed_at": "2026-06-24T07:59:04Z",
+      "pushed_at": "2026-06-25T05:16:19Z",
       "created_at": "2022-03-06T21:45:37Z",
       "category": "ai",
       "discovery_source": "mlops",
-      "collected_at": "2026-06-24T08:08:41.373076"
+      "collected_at": "2026-06-25T08:08:14.374460"
     },
     {
-      "owner": "langwatch",
-      "repo": "langwatch",
-      "full_name": "langwatch/langwatch",
-      "description": "The platform for LLM evaluations and AI agent testing",
-      "url": "https://github.com/langwatch/langwatch",
-      "stars": 3312,
-      "language": "TypeScript",
+      "owner": "omnigent-ai",
+      "repo": "omnigent",
+      "full_name": "omnigent-ai/omnigent",
+      "description": "Omnigent is an open-source AI agent framework and meta-harness: orchestrate Claude Code, Codex, Cursor, Pi, and custom agents — swap harnesses without rewriting, enforce policies and sandboxing, and collaborate in real time from any device.",
+      "url": "https://github.com/omnigent-ai/omnigent",
+      "stars": 4787,
+      "language": "Python",
       "topics": [
+        "agent-framework",
+        "agent-governance",
+        "agent-orchestration",
+        "agents",
         "ai",
-        "analytics",
-        "datasets",
-        "dspy",
-        "evaluation",
-        "gpt",
+        "ai-agent",
+        "ai-agents",
+        "claude-code",
+        "codex",
+        "coding-agents",
+        "developer-tools",
         "llm",
-        "llm-ops",
-        "llmops",
-        "low-code",
-        "observability",
-        "openai",
-        "prompt-engineering"
+        "ml",
+        "multi-agent",
+        "python",
+        "sandbox"
       ],
-      "pushed_at": "2026-06-24T08:07:11Z",
-      "created_at": "2023-09-09T11:33:18Z",
+      "pushed_at": "2026-06-25T08:07:13Z",
+      "created_at": "2026-06-11T12:18:13Z",
       "category": "ai",
       "discovery_source": "llm",
-      "collected_at": "2026-06-24T08:08:38.156735"
+      "collected_at": "2026-06-25T08:08:11.430625"
     },
     {
       "owner": "PeerDB-io",
@@ -5721,7 +5802,7 @@
       "full_name": "PeerDB-io/peerdb",
       "description": "Fast, Simple and a cost effective tool to replicate data from Postgres to Data Warehouses, Queues and Storage",
       "url": "https://github.com/PeerDB-io/peerdb",
-      "stars": 3160,
+      "stars": 3163,
       "language": "Go",
       "topics": [
         "bigquery",
@@ -5741,11 +5822,43 @@
         "sql",
         "stream-processing"
       ],
-      "pushed_at": "2026-06-24T07:54:53Z",
+      "pushed_at": "2026-06-25T08:06:56Z",
       "created_at": "2023-04-15T19:51:12Z",
       "category": "data-engineering",
       "discovery_source": "stream-processing",
-      "collected_at": "2026-06-24T08:08:36.639378"
+      "collected_at": "2026-06-25T08:08:10.120163"
+    },
+    {
+      "owner": "apache",
+      "repo": "devlake",
+      "full_name": "apache/devlake",
+      "description": "Apache DevLake is an open-source dev data platform to ingest, analyze, and visualize the fragmented data from DevOps tools, extracting insights for engineering excellence, developer experience, and community growth.",
+      "url": "https://github.com/apache/devlake",
+      "stars": 3047,
+      "language": "Go",
+      "topics": [
+        "dashboard-friendly",
+        "data",
+        "data-analysis",
+        "data-engineering",
+        "data-integration",
+        "data-transfers",
+        "devops",
+        "domain-layer",
+        "dora",
+        "etl",
+        "golang",
+        "hacktoberfest",
+        "integration",
+        "jira",
+        "open-source",
+        "user-friendly"
+      ],
+      "pushed_at": "2026-06-25T06:24:47Z",
+      "created_at": "2021-07-08T12:06:09Z",
+      "category": "data-engineering",
+      "discovery_source": "data-engineering",
+      "collected_at": "2026-06-25T08:08:06.083487"
     },
     {
       "owner": "lakehq",
@@ -5753,7 +5866,7 @@
       "full_name": "lakehq/sail",
       "description": "Drop-in Apache Spark replacement written in Rust, unifying batch processing, stream processing, and compute-intensive AI workloads.",
       "url": "https://github.com/lakehq/sail",
-      "stars": 3032,
+      "stars": 3045,
       "language": "Rust",
       "topics": [
         "apache-iceberg",
@@ -5777,11 +5890,11 @@
         "spark-sql",
         "sql"
       ],
-      "pushed_at": "2026-06-24T07:44:43Z",
+      "pushed_at": "2026-06-25T04:08:49Z",
       "created_at": "2023-12-21T03:43:49Z",
-      "category": "data-engineering",
-      "discovery_source": "data-engineering",
-      "collected_at": "2026-06-24T08:08:31.928318"
+      "category": "lakehouse",
+      "discovery_source": "lakehouse",
+      "collected_at": "2026-06-25T08:08:15.693718"
     },
     {
       "owner": "hosseinmoein",
@@ -5789,7 +5902,7 @@
       "full_name": "hosseinmoein/DataFrame",
       "description": "C++ DataFrame for statistical, financial, and ML analysis in modern C++",
       "url": "https://github.com/hosseinmoein/DataFrame",
-      "stars": 2963,
+      "stars": 2964,
       "language": "C++",
       "topics": [
         "ai",
@@ -5814,7 +5927,7 @@
       "created_at": "2017-10-28T17:25:45Z",
       "category": "data-engineering",
       "discovery_source": "dataframe",
-      "collected_at": "2026-06-24T08:08:33.713929"
+      "collected_at": "2026-06-25T08:08:07.582410"
     },
     {
       "owner": "alistaitsacle",
@@ -5822,7 +5935,7 @@
       "full_name": "alistaitsacle/free-llm-api-keys",
       "description": "Free LLM API keys for GPT-5.5, Claude, DeepSeek, Gemini, Grok — copy, paste, use. Updated 3-5x daily. No credit card needed.",
       "url": "https://github.com/alistaitsacle/free-llm-api-keys",
-      "stars": 2736,
+      "stars": 2779,
       "language": "Python",
       "topics": [
         "ai",
@@ -5846,11 +5959,11 @@
         "llm-api",
         "openai"
       ],
-      "pushed_at": "2026-06-24T08:07:07Z",
+      "pushed_at": "2026-06-25T08:07:07Z",
       "created_at": "2026-03-23T03:28:17Z",
       "category": "ai",
       "discovery_source": "llm",
-      "collected_at": "2026-06-24T08:08:38.156742"
+      "collected_at": "2026-06-25T08:08:11.430591"
     },
     {
       "owner": "dolthub",
@@ -5870,11 +5983,11 @@
         "sql-engine",
         "sql-server"
       ],
-      "pushed_at": "2026-06-23T23:51:53Z",
+      "pushed_at": "2026-06-24T21:46:21Z",
       "created_at": "2019-06-25T21:15:20Z",
       "category": "data-engineering",
       "discovery_source": "query-engine",
-      "collected_at": "2026-06-24T08:08:34.899165"
+      "collected_at": "2026-06-25T08:08:08.667229"
     },
     {
       "owner": "man-group",
@@ -5896,11 +6009,47 @@
         "quantitative-finance",
         "quantitative-trading"
       ],
-      "pushed_at": "2026-06-23T18:58:59Z",
+      "pushed_at": "2026-06-25T07:39:53Z",
       "created_at": "2022-11-11T09:09:46Z",
       "category": "data-engineering",
       "discovery_source": "dataframe",
-      "collected_at": "2026-06-24T08:08:33.713936"
+      "collected_at": "2026-06-25T08:08:07.582349"
+    },
+    {
+      "owner": "sodadata",
+      "repo": "soda-core",
+      "full_name": "sodadata/soda-core",
+      "description": "Data Contracts engine for the modern data stack. https://www.soda.io",
+      "url": "https://github.com/sodadata/soda-core",
+      "stars": 2376,
+      "language": "Python",
+      "topics": [
+        "data-contracts",
+        "data-engineering",
+        "data-governance",
+        "data-monitoring",
+        "data-observability",
+        "data-profiling",
+        "data-quality",
+        "data-quality-checks",
+        "data-quality-monitoring",
+        "data-quality-testing",
+        "data-reliability",
+        "data-testing",
+        "data-unit-tests",
+        "data-validation",
+        "dataquality",
+        "datatesting",
+        "dbt",
+        "pipeline-testing",
+        "python",
+        "snowflake"
+      ],
+      "pushed_at": "2026-06-25T07:57:47Z",
+      "created_at": "2020-12-14T19:59:19Z",
+      "category": "data-engineering",
+      "discovery_source": "data-engineering",
+      "collected_at": "2026-06-25T08:08:06.083459"
     },
     {
       "owner": "vllm-project",
@@ -5908,7 +6057,7 @@
       "full_name": "vllm-project/vllm-ascend",
       "description": "Community maintained hardware plugin for vLLM on Ascend",
       "url": "https://github.com/vllm-project/vllm-ascend",
-      "stars": 2286,
+      "stars": 2290,
       "language": "C++",
       "topics": [
         "ascend",
@@ -5921,11 +6070,11 @@
         "transformer",
         "vllm"
       ],
-      "pushed_at": "2026-06-24T07:53:52Z",
+      "pushed_at": "2026-06-25T07:56:36Z",
       "created_at": "2025-01-29T10:44:12Z",
       "category": "ai",
       "discovery_source": "mlops",
-      "collected_at": "2026-06-24T08:08:41.373053"
+      "collected_at": "2026-06-25T08:08:14.374426"
     },
     {
       "owner": "ytsaurus",
@@ -5933,7 +6082,7 @@
       "full_name": "ytsaurus/ytsaurus",
       "description": "YTsaurus is a scalable and fault-tolerant open-source big data platform.",
       "url": "https://github.com/ytsaurus/ytsaurus",
-      "stars": 2195,
+      "stars": 2196,
       "language": "C++",
       "topics": [
         "big-data",
@@ -5945,11 +6094,11 @@
         "sql",
         "ytsaurus"
       ],
-      "pushed_at": "2026-06-24T07:06:00Z",
+      "pushed_at": "2026-06-25T08:07:39Z",
       "created_at": "2022-12-05T16:32:05Z",
       "category": "lakehouse",
       "discovery_source": "lakehouse",
-      "collected_at": "2026-06-24T08:08:42.795376"
+      "collected_at": "2026-06-25T08:08:15.693692"
     },
     {
       "owner": "apache",
@@ -5957,7 +6106,7 @@
       "full_name": "apache/datafusion-ballista",
       "description": "Apache DataFusion Ballista Distributed Query Engine",
       "url": "https://github.com/apache/datafusion-ballista",
-      "stars": 2073,
+      "stars": 2074,
       "language": "Rust",
       "topics": [
         "arrow",
@@ -5970,11 +6119,11 @@
         "rust",
         "sql"
       ],
-      "pushed_at": "2026-06-24T05:13:40Z",
+      "pushed_at": "2026-06-25T06:59:46Z",
       "created_at": "2022-05-19T14:32:27Z",
       "category": "data-engineering",
       "discovery_source": "dataframe",
-      "collected_at": "2026-06-24T08:08:33.713890"
+      "collected_at": "2026-06-25T08:08:07.582374"
     },
     {
       "owner": "apache",
@@ -5982,7 +6131,7 @@
       "full_name": "apache/polaris",
       "description": "Apache Polaris, the interoperable, open source catalog for Apache Iceberg",
       "url": "https://github.com/apache/polaris",
-      "stars": 1979,
+      "stars": 1982,
       "language": "Java",
       "topics": [
         "apache",
@@ -5993,11 +6142,11 @@
         "opencatalog",
         "polaris"
       ],
-      "pushed_at": "2026-06-24T06:32:46Z",
+      "pushed_at": "2026-06-25T06:43:34Z",
       "created_at": "2024-05-29T18:44:27Z",
       "category": "lakehouse",
       "discovery_source": "lakehouse",
-      "collected_at": "2026-06-24T08:08:42.795382"
+      "collected_at": "2026-06-25T08:08:15.693706"
     },
     {
       "owner": "databricks-solutions",
@@ -6005,7 +6154,7 @@
       "full_name": "databricks-solutions/ai-dev-kit",
       "description": "Databricks Toolkit for Coding Agents provided by Field Engineering",
       "url": "https://github.com/databricks-solutions/ai-dev-kit",
-      "stars": 1701,
+      "stars": 1707,
       "language": "Python",
       "topics": [
         "agents",
@@ -6014,47 +6163,11 @@
         "databricks",
         "vibecoding"
       ],
-      "pushed_at": "2026-06-23T16:46:12Z",
+      "pushed_at": "2026-06-25T07:21:17Z",
       "created_at": "2025-12-17T01:12:36Z",
       "category": "lakehouse",
       "discovery_source": "databricks",
-      "collected_at": "2026-06-24T08:08:44.289980"
-    },
-    {
-      "owner": "Multiwoven",
-      "repo": "multiwoven",
-      "full_name": "Multiwoven/multiwoven",
-      "description": "🔥🔥🔥 Open source Reverse ETL -  alternative to hightouch and census. ",
-      "url": "https://github.com/Multiwoven/multiwoven",
-      "stars": 1657,
-      "language": "Ruby",
-      "topics": [
-        "bigquery",
-        "cdp",
-        "customer-data-platform",
-        "data-activation",
-        "data-engineering",
-        "data-pipeline",
-        "data-warehouse",
-        "databricks",
-        "dbt",
-        "etl",
-        "hacktoberfest",
-        "open-source",
-        "postresql",
-        "react",
-        "redshift",
-        "reverse-etl",
-        "ruby",
-        "self-hosted",
-        "snowflake",
-        "typescript"
-      ],
-      "pushed_at": "2026-06-23T12:09:05Z",
-      "created_at": "2023-10-20T15:21:26Z",
-      "category": "lakehouse",
-      "discovery_source": "databricks",
-      "collected_at": "2026-06-24T08:08:44.289995"
+      "collected_at": "2026-06-25T08:08:17.074958"
     },
     {
       "owner": "skrub-data",
@@ -6077,100 +6190,67 @@
         "dirty-data",
         "machine-learning"
       ],
-      "pushed_at": "2026-06-23T14:04:15Z",
+      "pushed_at": "2026-06-24T13:20:32Z",
       "created_at": "2018-03-12T23:32:22Z",
       "category": "data-engineering",
       "discovery_source": "dataframe",
-      "collected_at": "2026-06-24T08:08:33.713943"
+      "collected_at": "2026-06-25T08:08:07.582397"
     },
     {
-      "owner": "tenstorrent",
-      "repo": "tt-metal",
-      "full_name": "tenstorrent/tt-metal",
-      "description": ":metal: TT-NN operator library, and TT-Metalium low level kernel programming model.",
-      "url": "https://github.com/tenstorrent/tt-metal",
-      "stars": 1544,
-      "language": "C++",
-      "topics": [
-        "accelerator",
-        "ai",
-        "cuda",
-        "deepseek",
-        "gpu",
-        "img-gen",
-        "kernels",
-        "llama",
-        "llm",
-        "metal",
-        "scale-out",
-        "stable-diffusion",
-        "tenstorrent",
-        "video-gen"
-      ],
-      "pushed_at": "2026-06-24T08:07:17Z",
-      "created_at": "2023-02-13T15:30:05Z",
-      "category": "ai",
-      "discovery_source": "llm",
-      "collected_at": "2026-06-24T08:08:38.156769"
-    },
-    {
-      "owner": "study8677",
-      "repo": "awesome-architecture",
-      "full_name": "study8677/awesome-architecture",
-      "description": "🧭 Architecture-first system design: 26 bilingual tutorials, 25 architecture templates, and 6 end-to-end cases covering distributed systems, AI-native systems, RAG, coding Agents, and production trade-offs.",
-      "url": "https://github.com/study8677/awesome-architecture",
-      "stars": 1542,
-      "language": "Vue",
-      "topics": [
-        "ai-agents",
-        "ai-coding",
-        "ai-native",
-        "architecture-decision-records",
-        "architecture-patterns",
-        "awesome-list",
-        "backend",
-        "c4-model",
-        "design-patterns",
-        "distributed-systems",
-        "interview-preparation",
-        "learning-resources",
-        "llm",
-        "microservices",
-        "rag",
-        "scalability",
-        "software-architecture",
-        "software-engineering",
-        "system-design",
-        "system-design-interview"
-      ],
-      "pushed_at": "2026-06-24T07:48:02Z",
-      "created_at": "2026-05-23T02:44:43Z",
-      "category": "ai",
-      "discovery_source": "rag",
-      "collected_at": "2026-06-24T08:08:39.587934"
-    },
-    {
-      "owner": "pyjanitor-devs",
-      "repo": "pyjanitor",
-      "full_name": "pyjanitor-devs/pyjanitor",
-      "description": "Clean APIs for data cleaning. Python implementation of R package Janitor",
-      "url": "https://github.com/pyjanitor-devs/pyjanitor",
-      "stars": 1497,
+      "owner": "xbtlin",
+      "repo": "ai-berkshire",
+      "full_name": "xbtlin/ai-berkshire",
+      "description": "AI 时代的伯克希尔：基于 Claude Code 的价值投资研究框架。巴菲特·芒格·段永平·李录四大师方法论 + 多Agent并行研究。| AI-era Berkshire: a value investing research framework   built on Claude Code. 4 masters' methodologies + multi-agent adversarial analysis.",
+      "url": "https://github.com/xbtlin/ai-berkshire",
+      "stars": 1434,
       "language": "Python",
       "topics": [
-        "cleaning-data",
-        "data",
-        "data-engineering",
-        "dataframe",
-        "hacktoberfest",
-        "pandas",
-        "pydata"
+        "ai",
+        "ai-agent",
+        "anthropic",
+        "berkshire-hathaway",
+        "charlie-munger",
+        "china-stock",
+        "claude",
+        "claude-code",
+        "financial-analysis",
+        "fintech",
+        "fundamental-analysis",
+        "investment",
+        "investment-research",
+        "llm",
+        "mcp",
+        "portfolio-management",
+        "stock-analysis",
+        "stock-market",
+        "value-investing",
+        "warren-buffett"
       ],
-      "pushed_at": "2026-06-23T11:18:48Z",
-      "created_at": "2018-03-04T22:43:33Z",
-      "category": "data-engineering",
-      "discovery_source": "dataframe",
-      "collected_at": "2026-06-24T08:08:33.713949"
+      "pushed_at": "2026-06-25T08:05:31Z",
+      "created_at": "2026-04-07T11:19:51Z",
+      "category": "ai",
+      "discovery_source": "llm",
+      "collected_at": "2026-06-25T08:08:11.430619"
+    },
+    {
+      "owner": "dust-tt",
+      "repo": "dust",
+      "full_name": "dust-tt/dust",
+      "description": "Custom AI agent platform to speed up your work.",
+      "url": "https://github.com/dust-tt/dust",
+      "stars": 1394,
+      "language": "TypeScript",
+      "topics": [
+        "agents",
+        "large-language-models",
+        "llm",
+        "rust"
+      ],
+      "pushed_at": "2026-06-25T08:06:22Z",
+      "created_at": "2022-08-19T07:57:29Z",
+      "category": "ai",
+      "discovery_source": "llm",
+      "collected_at": "2026-06-25T08:08:11.430606"
     },
     {
       "owner": "lakekeeper",
@@ -6178,7 +6258,7 @@
       "full_name": "lakekeeper/lakekeeper",
       "description": "Lakekeeper is an Apache-Licensed, secure, fast and easy to use Apache Iceberg REST Catalog written in Rust.",
       "url": "https://github.com/lakekeeper/lakekeeper",
-      "stars": 1362,
+      "stars": 1366,
       "language": "Rust",
       "topics": [
         "catalog",
@@ -6189,11 +6269,11 @@
         "open-lakehouse",
         "rust"
       ],
-      "pushed_at": "2026-06-24T07:30:31Z",
+      "pushed_at": "2026-06-25T05:21:00Z",
       "created_at": "2024-04-05T17:42:07Z",
       "category": "lakehouse",
       "discovery_source": "lakehouse",
-      "collected_at": "2026-06-24T08:08:42.795362"
+      "collected_at": "2026-06-25T08:08:15.693712"
     },
     {
       "owner": "getnao",
@@ -6201,7 +6281,7 @@
       "full_name": "getnao/nao",
       "description": "👾 nao is an open source analytics agent. (1) Create context with nao-core cli, (2) deploy nao chat interface for everyone",
       "url": "https://github.com/getnao/nao",
-      "stars": 1304,
+      "stars": 1317,
       "language": "TypeScript",
       "topics": [
         "agentic-analytics",
@@ -6224,11 +6304,31 @@
         "sql",
         "text-to-sql"
       ],
-      "pushed_at": "2026-06-24T07:57:47Z",
+      "pushed_at": "2026-06-24T18:57:26Z",
       "created_at": "2025-12-30T18:33:25Z",
+      "category": "lakehouse",
+      "discovery_source": "databricks",
+      "collected_at": "2026-06-25T08:08:17.074971"
+    },
+    {
+      "owner": "Kotlin",
+      "repo": "dataframe",
+      "full_name": "Kotlin/dataframe",
+      "description": "Kotlin DataFrame: typesafe in-memory structured data processing for JVM",
+      "url": "https://github.com/Kotlin/dataframe",
+      "stars": 1049,
+      "language": "Kotlin",
+      "topics": [
+        "data-analysis",
+        "data-science",
+        "dataframe",
+        "kotlin"
+      ],
+      "pushed_at": "2026-06-24T13:03:35Z",
+      "created_at": "2020-04-27T08:46:20Z",
       "category": "data-engineering",
-      "discovery_source": "data-engineering",
-      "collected_at": "2026-06-24T08:08:31.928288"
+      "discovery_source": "dataframe",
+      "collected_at": "2026-06-25T08:08:07.582404"
     },
     {
       "owner": "ad-freiburg",
@@ -6236,7 +6336,7 @@
       "full_name": "ad-freiburg/qlever",
       "description": "Graph database implementing the RDF and SPARQL standards. Very fast and scales to more than a trillion triples on a single commodity machine",
       "url": "https://github.com/ad-freiburg/qlever",
-      "stars": 851,
+      "stars": 852,
       "language": "C++",
       "topics": [
         "query-engine",
@@ -6245,11 +6345,71 @@
         "sparql-endpoints",
         "text-search"
       ],
-      "pushed_at": "2026-06-24T02:05:31Z",
+      "pushed_at": "2026-06-25T02:13:45Z",
       "created_at": "2014-12-05T14:09:19Z",
       "category": "data-engineering",
       "discovery_source": "query-engine",
-      "collected_at": "2026-06-24T08:08:34.899158"
+      "collected_at": "2026-06-25T08:08:08.667223"
+    },
+    {
+      "owner": "weifuwan",
+      "repo": "seatunnel-web",
+      "full_name": "weifuwan/seatunnel-web",
+      "description": "Modern SeaTunnel Web UI with visual DAG pipelines, batch & streaming sync, connector management, built-in metrics, and runtime logs.",
+      "url": "https://github.com/weifuwan/seatunnel-web",
+      "stars": 763,
+      "language": "TypeScript",
+      "topics": [
+        "batch",
+        "dag",
+        "data-engineering",
+        "data-integration",
+        "data-pipeline",
+        "etl",
+        "pipeline",
+        "seatunnel",
+        "streaming"
+      ],
+      "pushed_at": "2026-06-25T07:25:47Z",
+      "created_at": "2026-02-10T06:28:11Z",
+      "category": "data-engineering",
+      "discovery_source": "data-engineering",
+      "collected_at": "2026-06-25T08:08:06.083480"
+    },
+    {
+      "owner": "TouK",
+      "repo": "nussknacker",
+      "full_name": "TouK/nussknacker",
+      "description": "Low-code tool for automating actions on real time data | Stream processing for the users.",
+      "url": "https://github.com/TouK/nussknacker",
+      "stars": 731,
+      "language": "Scala",
+      "topics": [
+        "apache-flink",
+        "automation",
+        "big-data",
+        "data-streaming",
+        "decision-engine",
+        "decision-making",
+        "decisioning",
+        "flink",
+        "flink-kafka",
+        "gui",
+        "kafka",
+        "low-code",
+        "lowcode",
+        "real-time",
+        "rules-engine",
+        "scala",
+        "stream-processing",
+        "streaming",
+        "touk"
+      ],
+      "pushed_at": "2026-06-25T07:55:44Z",
+      "created_at": "2017-06-29T14:09:57Z",
+      "category": "data-engineering",
+      "discovery_source": "stream-processing",
+      "collected_at": "2026-06-25T08:08:10.120156"
     },
     {
       "owner": "apache",
@@ -6273,11 +6433,11 @@
         "self-service",
         "stream-processing"
       ],
-      "pushed_at": "2026-06-24T07:43:42Z",
+      "pushed_at": "2026-06-25T06:08:50Z",
       "created_at": "2018-04-22T20:06:55Z",
       "category": "data-engineering",
       "discovery_source": "stream-processing",
-      "collected_at": "2026-06-24T08:08:36.639386"
+      "collected_at": "2026-06-25T08:08:10.120169"
     },
     {
       "owner": "KipData",
@@ -6309,7 +6469,7 @@
       "created_at": "2023-06-05T03:53:10Z",
       "category": "data-engineering",
       "discovery_source": "query-engine",
-      "collected_at": "2026-06-24T08:08:34.899172"
+      "collected_at": "2026-06-25T08:08:08.667236"
     },
     {
       "owner": "slothflowlabs",
@@ -6317,7 +6477,7 @@
       "full_name": "slothflowlabs/duckle",
       "description": "Local-first ETL/ELT studio: a drag-and-drop visual pipeline designer that compiles to SQL and runs on DuckDB. Tiny desktop app, no servers, git-friendly workspaces.",
       "url": "https://github.com/slothflowlabs/duckle",
-      "stars": 616,
+      "stars": 639,
       "language": "Rust",
       "topics": [
         "data-engineering",
@@ -6341,11 +6501,70 @@
         "typescript",
         "vector-database"
       ],
-      "pushed_at": "2026-06-24T07:36:49Z",
+      "pushed_at": "2026-06-25T07:59:55Z",
       "created_at": "2026-05-21T06:32:39Z",
       "category": "data-engineering",
       "discovery_source": "data-engineering",
-      "collected_at": "2026-06-24T08:08:31.928333"
+      "collected_at": "2026-06-25T08:08:06.083430"
+    },
+    {
+      "owner": "databricks",
+      "repo": "terraform-provider-databricks",
+      "full_name": "databricks/terraform-provider-databricks",
+      "description": "Databricks Terraform Provider",
+      "url": "https://github.com/databricks/terraform-provider-databricks",
+      "stars": 594,
+      "language": "Go",
+      "topics": [
+        "aws",
+        "azure",
+        "databricks",
+        "databricks-automation",
+        "gcp",
+        "terraform",
+        "terraform-provider"
+      ],
+      "pushed_at": "2026-06-25T05:33:11Z",
+      "created_at": "2020-02-13T15:10:40Z",
+      "category": "lakehouse",
+      "discovery_source": "databricks",
+      "collected_at": "2026-06-25T08:08:17.074965"
+    },
+    {
+      "owner": "DataflareApp",
+      "repo": "dataflare",
+      "full_name": "DataflareApp/dataflare",
+      "description": "Simple, easy-to-use database manager",
+      "url": "https://github.com/DataflareApp/dataflare",
+      "stars": 577,
+      "language": "TypeScript",
+      "topics": [
+        "bigquery",
+        "clickhouse",
+        "cloudflare-d1",
+        "cloudflare-r2",
+        "cockroachdb",
+        "database-manager",
+        "databend",
+        "databricks",
+        "duckdb",
+        "mariadb",
+        "mysql",
+        "postgresql",
+        "questdb",
+        "redis",
+        "rqlite",
+        "sqlite",
+        "sqlserver",
+        "turso",
+        "workers-analytics-engine",
+        "workers-kv"
+      ],
+      "pushed_at": "2026-06-25T07:48:10Z",
+      "created_at": "2023-10-18T08:02:42Z",
+      "category": "lakehouse",
+      "discovery_source": "databricks",
+      "collected_at": "2026-06-25T08:08:17.074897"
     },
     {
       "owner": "comunica",
@@ -6353,7 +6572,7 @@
       "full_name": "comunica/comunica",
       "description": "📬 A knowledge graph querying framework for JavaScript",
       "url": "https://github.com/comunica/comunica",
-      "stars": 574,
+      "stars": 575,
       "language": "TypeScript",
       "topics": [
         "decentralization",
@@ -6368,35 +6587,11 @@
         "sparql",
         "triple-pattern-fragments"
       ],
-      "pushed_at": "2026-06-20T03:29:18Z",
+      "pushed_at": "2026-06-25T06:31:29Z",
       "created_at": "2017-10-18T01:57:55Z",
       "category": "data-engineering",
       "discovery_source": "query-engine",
-      "collected_at": "2026-06-24T08:08:34.899179"
-    },
-    {
-      "owner": "ggozad",
-      "repo": "haiku.rag",
-      "full_name": "ggozad/haiku.rag",
-      "description": "Opinionated agentic RAG powered by LanceDB, Pydantic AI, and Docling",
-      "url": "https://github.com/ggozad/haiku.rag",
-      "stars": 539,
-      "language": "Python",
-      "topics": [
-        "ai",
-        "docling",
-        "lancedb",
-        "mcp",
-        "mcp-server",
-        "ml",
-        "pydantic-ai",
-        "rag"
-      ],
-      "pushed_at": "2026-06-24T07:51:08Z",
-      "created_at": "2024-10-13T15:12:23Z",
-      "category": "ai",
-      "discovery_source": "rag",
-      "collected_at": "2026-06-24T08:08:39.587921"
+      "collected_at": "2026-06-25T08:08:08.667217"
     }
   ]
 }
