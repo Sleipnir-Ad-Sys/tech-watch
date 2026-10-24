@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-10-24T06:21:28.260936",
+  "updated_at": "2026-10-24T07:06:00.352247",
   "releases": [
     {
       "id": "f20b0ffc5c760d5b",
@@ -16,7 +16,7 @@
       "breaking_snippets": [],
       "repo_weight": 1.2,
       "html_url": "https://pypi.org/project/fastapi/0.162.0/",
-      "collected_at": "2026-10-24T06:21:07.583260",
+      "collected_at": "2026-10-24T07:05:40.340716",
       "technical_score": 8.0,
       "relevance_score": 0.0,
       "final_score": 5.6,
@@ -55,7 +55,7 @@
       ],
       "repo_weight": 1.2,
       "html_url": "https://github.com/fastapi/fastapi/releases/tag/0.162.0",
-      "collected_at": "2026-10-24T06:20:28.048533",
+      "collected_at": "2026-10-24T07:05:04.405255",
       "technical_score": 50.0,
       "relevance_score": 0.0,
       "final_score": 35.0,
@@ -93,7 +93,7 @@
       "breaking_snippets": [],
       "repo_weight": 1.2,
       "html_url": "https://pypi.org/project/fastapi/0.161.1/",
-      "collected_at": "2026-10-24T06:21:07.583253",
+      "collected_at": "2026-10-24T07:05:40.340709",
       "technical_score": 8.0,
       "relevance_score": 0.0,
       "final_score": 5.6,
@@ -130,7 +130,7 @@
       "breaking_snippets": [],
       "repo_weight": 1.2,
       "html_url": "https://github.com/fastapi/fastapi/releases/tag/0.161.1",
-      "collected_at": "2026-10-24T06:20:28.048551",
+      "collected_at": "2026-10-24T07:05:04.405273",
       "technical_score": 3.0,
       "relevance_score": 0.0,
       "final_score": 2.1,
@@ -167,7 +167,7 @@
       "breaking_snippets": [],
       "repo_weight": 1.2,
       "html_url": "https://pypi.org/project/openai/3.37.0/",
-      "collected_at": "2026-10-24T06:21:09.746790",
+      "collected_at": "2026-10-24T07:05:42.619712",
       "technical_score": 0.0,
       "relevance_score": 0.0,
       "final_score": 0.0,
@@ -195,7 +195,7 @@
       "breaking_snippets": [],
       "repo_weight": 1.2,
       "html_url": "https://pypi.org/project/ruff/0.17.2/",
-      "collected_at": "2026-10-24T06:21:10.303194",
+      "collected_at": "2026-10-24T07:05:43.108092",
       "technical_score": 0.0,
       "relevance_score": 0.0,
       "final_score": 0.0,
@@ -223,7 +223,7 @@
       "breaking_snippets": [],
       "repo_weight": 1.2,
       "html_url": "https://pypi.org/project/fastapi/0.161.0/",
-      "collected_at": "2026-10-24T06:21:07.583246",
+      "collected_at": "2026-10-24T07:05:40.340702",
       "technical_score": 8.0,
       "relevance_score": 0.0,
       "final_score": 5.6,
@@ -260,7 +260,7 @@
       "breaking_snippets": [],
       "repo_weight": 1.2,
       "html_url": "https://github.com/fastapi/fastapi/releases/tag/0.161.0",
-      "collected_at": "2026-10-24T06:20:28.048559",
+      "collected_at": "2026-10-24T07:05:04.405281",
       "technical_score": 6.0,
       "relevance_score": 0.0,
       "final_score": 4.2,
@@ -297,7 +297,7 @@
       "breaking_snippets": [],
       "repo_weight": 1.3,
       "html_url": "https://pypi.org/project/langchain-core/1.7.0/",
-      "collected_at": "2026-10-24T06:21:09.506644",
+      "collected_at": "2026-10-24T07:05:42.403275",
       "technical_score": 0.0,
       "relevance_score": 0.0,
       "final_score": 0.0,
@@ -325,7 +325,7 @@
       "breaking_snippets": [],
       "repo_weight": 1.2,
       "html_url": "https://pypi.org/project/fastapi/0.160.0/",
-      "collected_at": "2026-10-24T06:21:07.583238",
+      "collected_at": "2026-10-24T07:05:40.340694",
       "technical_score": 8.0,
       "relevance_score": 0.0,
       "final_score": 5.6,
@@ -364,7 +364,7 @@
       ],
       "repo_weight": 1.2,
       "html_url": "https://github.com/fastapi/fastapi/releases/tag/0.160.0",
-      "collected_at": "2026-10-24T06:20:28.048565",
+      "collected_at": "2026-10-24T07:05:04.405287",
       "technical_score": 50.0,
       "relevance_score": 0.0,
       "final_score": 35.0,
@@ -402,7 +402,7 @@
       "breaking_snippets": [],
       "repo_weight": 1.2,
       "html_url": "https://pypi.org/project/openai/3.36.1/",
-      "collected_at": "2026-10-24T06:21:09.746783",
+      "collected_at": "2026-10-24T07:05:42.619704",
       "technical_score": 0.0,
       "relevance_score": 0.0,
       "final_score": 0.0,
@@ -432,7 +432,7 @@
       ],
       "repo_weight": 1.1,
       "html_url": "https://github.com/astral-sh/uv/releases/tag/0.13.5",
-      "collected_at": "2026-10-24T06:20:47.717811",
+      "collected_at": "2026-10-24T07:05:22.626752",
       "technical_score": 100.0,
       "relevance_score": 0.0,
       "final_score": 70.0,
@@ -514,7 +514,7 @@
       "breaking_snippets": [],
       "repo_weight": 1.1,
       "html_url": "https://pypi.org/project/uv/0.13.5/",
-      "collected_at": "2026-10-24T06:21:10.853139",
+      "collected_at": "2026-10-24T07:05:43.675035",
       "technical_score": 0.0,
       "relevance_score": 0.0,
       "final_score": 0.0,
@@ -542,7 +542,7 @@
       "breaking_snippets": [],
       "repo_weight": 1.0,
       "html_url": "https://github.com/tokio-rs/tokio/releases/tag/tokio-1.54.1",
-      "collected_at": "2026-10-24T06:20:38.413032",
+      "collected_at": "2026-10-24T07:05:13.298838",
       "technical_score": 30.0,
       "relevance_score": 0.0,
       "final_score": 21.0,
@@ -580,7 +580,7 @@
       "breaking_snippets": [],
       "repo_weight": 1.2,
       "html_url": "https://pypi.org/project/fastapi/0.159.1/",
-      "collected_at": "2026-10-24T06:21:07.583224",
+      "collected_at": "2026-10-24T07:05:40.340680",
       "technical_score": 8.0,
       "relevance_score": 0.0,
       "final_score": 5.6,
@@ -617,7 +617,7 @@
       "breaking_snippets": [],
       "repo_weight": 1.2,
       "html_url": "https://github.com/fastapi/fastapi/releases/tag/0.159.1",
-      "collected_at": "2026-10-24T06:20:28.048571",
+      "collected_at": "2026-10-24T07:05:04.405293",
       "technical_score": 6.0,
       "relevance_score": 0.0,
       "final_score": 4.2,
@@ -654,7 +654,7 @@
       "breaking_snippets": [],
       "repo_weight": 1.3,
       "html_url": "https://pypi.org/project/langchain-core/1.6.13/",
-      "collected_at": "2026-10-24T06:21:09.506578",
+      "collected_at": "2026-10-24T07:05:42.403209",
       "technical_score": 0.0,
       "relevance_score": 0.0,
       "final_score": 0.0,
@@ -682,7 +682,7 @@
       "breaking_snippets": [],
       "repo_weight": 1.2,
       "html_url": "https://pypi.org/project/fastapi/0.159.0/",
-      "collected_at": "2026-10-24T06:21:07.583217",
+      "collected_at": "2026-10-24T07:05:40.340673",
       "technical_score": 8.0,
       "relevance_score": 0.0,
       "final_score": 5.6,
@@ -719,7 +719,7 @@
       "breaking_snippets": [],
       "repo_weight": 1.2,
       "html_url": "https://github.com/fastapi/fastapi/releases/tag/0.159.0",
-      "collected_at": "2026-10-24T06:20:28.048578",
+      "collected_at": "2026-10-24T07:05:04.405300",
       "technical_score": 6.0,
       "relevance_score": 0.0,
       "final_score": 4.2,
@@ -756,7 +756,7 @@
       "breaking_snippets": [],
       "repo_weight": 1.2,
       "html_url": "https://pypi.org/project/fastapi/0.158.2/",
-      "collected_at": "2026-10-24T06:21:07.583210",
+      "collected_at": "2026-10-24T07:05:40.340665",
       "technical_score": 8.0,
       "relevance_score": 0.0,
       "final_score": 5.6,
@@ -793,7 +793,7 @@
       "breaking_snippets": [],
       "repo_weight": 1.2,
       "html_url": "https://github.com/fastapi/fastapi/releases/tag/0.158.2",
-      "collected_at": "2026-10-24T06:20:28.048583",
+      "collected_at": "2026-10-24T07:05:04.405306",
       "technical_score": 6.0,
       "relevance_score": 0.0,
       "final_score": 4.2,
@@ -830,7 +830,7 @@
       "breaking_snippets": [],
       "repo_weight": 1.2,
       "html_url": "https://pypi.org/project/fastapi/0.158.1/",
-      "collected_at": "2026-10-24T06:21:07.583203",
+      "collected_at": "2026-10-24T07:05:40.340658",
       "technical_score": 8.0,
       "relevance_score": 0.0,
       "final_score": 5.6,
@@ -867,7 +867,7 @@
       "breaking_snippets": [],
       "repo_weight": 1.2,
       "html_url": "https://github.com/fastapi/fastapi/releases/tag/0.158.1",
-      "collected_at": "2026-10-24T06:20:28.048589",
+      "collected_at": "2026-10-24T07:05:04.405312",
       "technical_score": 3.0,
       "relevance_score": 0.0,
       "final_score": 2.1,
@@ -904,7 +904,7 @@
       "breaking_snippets": [],
       "repo_weight": 1.2,
       "html_url": "https://pypi.org/project/fastapi/0.158.0/",
-      "collected_at": "2026-10-24T06:21:07.583196",
+      "collected_at": "2026-10-24T07:05:40.340650",
       "technical_score": 8.0,
       "relevance_score": 0.0,
       "final_score": 5.6,
@@ -941,7 +941,7 @@
       "breaking_snippets": [],
       "repo_weight": 1.2,
       "html_url": "https://github.com/fastapi/fastapi/releases/tag/0.158.0",
-      "collected_at": "2026-10-24T06:20:28.048595",
+      "collected_at": "2026-10-24T07:05:04.405318",
       "technical_score": 6.0,
       "relevance_score": 0.0,
       "final_score": 4.2,
@@ -978,7 +978,7 @@
       "breaking_snippets": [],
       "repo_weight": 1.2,
       "html_url": "https://pypi.org/project/openai/3.36.0/",
-      "collected_at": "2026-10-24T06:21:09.746776",
+      "collected_at": "2026-10-24T07:05:42.619696",
       "technical_score": 0.0,
       "relevance_score": 0.0,
       "final_score": 0.0,
@@ -1006,7 +1006,7 @@
       "breaking_snippets": [],
       "repo_weight": 1.2,
       "html_url": "https://pypi.org/project/fastapi/0.157.0/",
-      "collected_at": "2026-10-24T06:21:07.583189",
+      "collected_at": "2026-10-24T07:05:40.340643",
       "technical_score": 8.0,
       "relevance_score": 0.0,
       "final_score": 5.6,
@@ -1043,7 +1043,7 @@
       "breaking_snippets": [],
       "repo_weight": 1.2,
       "html_url": "https://github.com/fastapi/fastapi/releases/tag/0.157.0",
-      "collected_at": "2026-10-24T06:20:28.048601",
+      "collected_at": "2026-10-24T07:05:04.405323",
       "technical_score": 37.0,
       "relevance_score": 0.0,
       "final_score": 25.9,
@@ -1099,7 +1099,7 @@
       "breaking_snippets": [],
       "repo_weight": 1.5,
       "html_url": "https://pypi.org/project/duckdb/2.0.0/",
-      "collected_at": "2026-10-24T06:21:07.340356",
+      "collected_at": "2026-10-24T07:05:40.124074",
       "technical_score": 0.0,
       "relevance_score": 10.0,
       "final_score": 30.0,
@@ -1127,7 +1127,7 @@
       "breaking_snippets": [],
       "repo_weight": 1.5,
       "html_url": "https://github.com/duckdb/duckdb/releases/tag/v2.0.0",
-      "collected_at": "2026-10-24T06:20:22.574678",
+      "collected_at": "2026-10-24T07:04:57.951818",
       "technical_score": 86.0,
       "relevance_score": 10.0,
       "final_score": 90.2,
@@ -1185,7 +1185,7 @@
       "breaking_snippets": [],
       "repo_weight": 1.1,
       "html_url": "https://pypi.org/project/sentence-transformers/6.2.0/",
-      "collected_at": "2026-10-24T06:21:09.978901",
+      "collected_at": "2026-10-24T07:05:42.826613",
       "technical_score": 0.0,
       "relevance_score": 0.0,
       "final_score": 0.0,
@@ -1213,7 +1213,7 @@
       "breaking_snippets": [],
       "repo_weight": 1.2,
       "html_url": "https://pypi.org/project/fastapi/0.156.8/",
-      "collected_at": "2026-10-24T06:21:07.583181",
+      "collected_at": "2026-10-24T07:05:40.340634",
       "technical_score": 8.0,
       "relevance_score": 0.0,
       "final_score": 5.6,
@@ -1250,7 +1250,7 @@
       "breaking_snippets": [],
       "repo_weight": 1.2,
       "html_url": "https://github.com/fastapi/fastapi/releases/tag/0.156.8",
-      "collected_at": "2026-10-24T06:20:28.048607",
+      "collected_at": "2026-10-24T07:05:04.405329",
       "technical_score": 3.0,
       "relevance_score": 0.0,
       "final_score": 2.1,
@@ -1287,7 +1287,7 @@
       "breaking_snippets": [],
       "repo_weight": 1.2,
       "html_url": "https://pypi.org/project/fastapi/0.156.7/",
-      "collected_at": "2026-10-24T06:21:07.583174",
+      "collected_at": "2026-10-24T07:05:40.340627",
       "technical_score": 8.0,
       "relevance_score": 0.0,
       "final_score": 5.6,
@@ -1324,7 +1324,7 @@
       "breaking_snippets": [],
       "repo_weight": 1.2,
       "html_url": "https://github.com/fastapi/fastapi/releases/tag/0.156.7",
-      "collected_at": "2026-10-24T06:20:28.048613",
+      "collected_at": "2026-10-24T07:05:04.405334",
       "technical_score": 3.0,
       "relevance_score": 0.0,
       "final_score": 2.1,
@@ -1361,7 +1361,7 @@
       "breaking_snippets": [],
       "repo_weight": 1.2,
       "html_url": "https://pypi.org/project/fastapi/0.156.6/",
-      "collected_at": "2026-10-24T06:21:07.583167",
+      "collected_at": "2026-10-24T07:05:40.340620",
       "technical_score": 8.0,
       "relevance_score": 0.0,
       "final_score": 5.6,
@@ -1398,7 +1398,7 @@
       "breaking_snippets": [],
       "repo_weight": 1.2,
       "html_url": "https://github.com/fastapi/fastapi/releases/tag/0.156.6",
-      "collected_at": "2026-10-24T06:20:28.048619",
+      "collected_at": "2026-10-24T07:05:04.405340",
       "technical_score": 3.0,
       "relevance_score": 0.0,
       "final_score": 2.1,
@@ -1435,7 +1435,7 @@
       "breaking_snippets": [],
       "repo_weight": 1.2,
       "html_url": "https://pypi.org/project/fastapi/0.156.5/",
-      "collected_at": "2026-10-24T06:21:07.583160",
+      "collected_at": "2026-10-24T07:05:40.340612",
       "technical_score": 8.0,
       "relevance_score": 0.0,
       "final_score": 5.6,
@@ -1472,7 +1472,7 @@
       "breaking_snippets": [],
       "repo_weight": 1.2,
       "html_url": "https://github.com/fastapi/fastapi/releases/tag/0.156.5",
-      "collected_at": "2026-10-24T06:20:28.048625",
+      "collected_at": "2026-10-24T07:05:04.405346",
       "technical_score": 3.0,
       "relevance_score": 0.0,
       "final_score": 2.1,
@@ -1509,7 +1509,7 @@
       "breaking_snippets": [],
       "repo_weight": 1.2,
       "html_url": "https://pypi.org/project/fastapi/0.156.4/",
-      "collected_at": "2026-10-24T06:21:07.583153",
+      "collected_at": "2026-10-24T07:05:40.340605",
       "technical_score": 8.0,
       "relevance_score": 0.0,
       "final_score": 5.6,
@@ -1546,7 +1546,7 @@
       "breaking_snippets": [],
       "repo_weight": 1.2,
       "html_url": "https://github.com/fastapi/fastapi/releases/tag/0.156.4",
-      "collected_at": "2026-10-24T06:20:28.048631",
+      "collected_at": "2026-10-24T07:05:04.405351",
       "technical_score": 3.0,
       "relevance_score": 0.0,
       "final_score": 2.1,
@@ -1583,7 +1583,7 @@
       "breaking_snippets": [],
       "repo_weight": 1.2,
       "html_url": "https://pypi.org/project/fastapi/0.156.3/",
-      "collected_at": "2026-10-24T06:21:07.583145",
+      "collected_at": "2026-10-24T07:05:40.340598",
       "technical_score": 8.0,
       "relevance_score": 0.0,
       "final_score": 5.6,
@@ -1620,7 +1620,7 @@
       "breaking_snippets": [],
       "repo_weight": 1.2,
       "html_url": "https://github.com/fastapi/fastapi/releases/tag/0.156.3",
-      "collected_at": "2026-10-24T06:20:28.048636",
+      "collected_at": "2026-10-24T07:05:04.405357",
       "technical_score": 3.0,
       "relevance_score": 0.0,
       "final_score": 2.1,
@@ -1657,7 +1657,7 @@
       "breaking_snippets": [],
       "repo_weight": 1.2,
       "html_url": "https://pypi.org/project/fastapi/0.156.2/",
-      "collected_at": "2026-10-24T06:21:07.583138",
+      "collected_at": "2026-10-24T07:05:40.340590",
       "technical_score": 8.0,
       "relevance_score": 0.0,
       "final_score": 5.6,
@@ -1694,7 +1694,7 @@
       "breaking_snippets": [],
       "repo_weight": 1.2,
       "html_url": "https://github.com/fastapi/fastapi/releases/tag/0.156.2",
-      "collected_at": "2026-10-24T06:20:28.048642",
+      "collected_at": "2026-10-24T07:05:04.405363",
       "technical_score": 3.0,
       "relevance_score": 0.0,
       "final_score": 2.1,
@@ -1731,7 +1731,7 @@
       "breaking_snippets": [],
       "repo_weight": 1.2,
       "html_url": "https://pypi.org/project/fastapi/0.156.1/",
-      "collected_at": "2026-10-24T06:21:07.583131",
+      "collected_at": "2026-10-24T07:05:40.340583",
       "technical_score": 8.0,
       "relevance_score": 0.0,
       "final_score": 5.6,
@@ -1768,7 +1768,7 @@
       "breaking_snippets": [],
       "repo_weight": 1.2,
       "html_url": "https://github.com/fastapi/fastapi/releases/tag/0.156.1",
-      "collected_at": "2026-10-24T06:20:28.048648",
+      "collected_at": "2026-10-24T07:05:04.405368",
       "technical_score": 3.0,
       "relevance_score": 0.0,
       "final_score": 2.1,
@@ -1805,7 +1805,7 @@
       "breaking_snippets": [],
       "repo_weight": 1.2,
       "html_url": "https://pypi.org/project/fastapi/0.156.0/",
-      "collected_at": "2026-10-24T06:21:07.583124",
+      "collected_at": "2026-10-24T07:05:40.340575",
       "technical_score": 8.0,
       "relevance_score": 0.0,
       "final_score": 5.6,
@@ -1842,7 +1842,7 @@
       "breaking_snippets": [],
       "repo_weight": 1.2,
       "html_url": "https://github.com/fastapi/fastapi/releases/tag/0.156.0",
-      "collected_at": "2026-10-24T06:20:28.048668",
+      "collected_at": "2026-10-24T07:05:04.405378",
       "technical_score": 3.0,
       "relevance_score": 0.0,
       "final_score": 2.1,
@@ -1879,7 +1879,7 @@
       "breaking_snippets": [],
       "repo_weight": 1.2,
       "html_url": "https://pypi.org/project/fastapi/0.155.0/",
-      "collected_at": "2026-10-24T06:21:07.583117",
+      "collected_at": "2026-10-24T07:05:40.340568",
       "technical_score": 8.0,
       "relevance_score": 0.0,
       "final_score": 5.6,
@@ -1918,7 +1918,7 @@
       ],
       "repo_weight": 1.2,
       "html_url": "https://github.com/fastapi/fastapi/releases/tag/0.155.0",
-      "collected_at": "2026-10-24T06:20:28.048674",
+      "collected_at": "2026-10-24T07:05:04.405384",
       "technical_score": 100.0,
       "relevance_score": 0.0,
       "final_score": 70.0,
@@ -1975,7 +1975,7 @@
       "breaking_snippets": [],
       "repo_weight": 1.2,
       "html_url": "https://pypi.org/project/fastapi/0.154.0/",
-      "collected_at": "2026-10-24T06:21:07.583109",
+      "collected_at": "2026-10-24T07:05:40.340561",
       "technical_score": 8.0,
       "relevance_score": 0.0,
       "final_score": 5.6,
@@ -2012,7 +2012,7 @@
       "breaking_snippets": [],
       "repo_weight": 1.2,
       "html_url": "https://github.com/fastapi/fastapi/releases/tag/0.154.0",
-      "collected_at": "2026-10-24T06:20:28.048681",
+      "collected_at": "2026-10-24T07:05:04.405389",
       "technical_score": 6.0,
       "relevance_score": 0.0,
       "final_score": 4.2,
@@ -2049,7 +2049,7 @@
       "breaking_snippets": [],
       "repo_weight": 1.1,
       "html_url": "https://github.com/astral-sh/uv/releases/tag/0.13.4",
-      "collected_at": "2026-10-24T06:20:47.717831",
+      "collected_at": "2026-10-24T07:05:22.626770",
       "technical_score": 6.0,
       "relevance_score": 0.0,
       "final_score": 4.2,
@@ -2086,7 +2086,7 @@
       "breaking_snippets": [],
       "repo_weight": 1.1,
       "html_url": "https://pypi.org/project/uv/0.13.4/",
-      "collected_at": "2026-10-24T06:21:10.853112",
+      "collected_at": "2026-10-24T07:05:43.675008",
       "technical_score": 0.0,
       "relevance_score": 0.0,
       "final_score": 0.0,
@@ -2114,7 +2114,7 @@
       "breaking_snippets": [],
       "repo_weight": 1.2,
       "html_url": "https://pypi.org/project/fastapi/0.153.0/",
-      "collected_at": "2026-10-24T06:21:07.583102",
+      "collected_at": "2026-10-24T07:05:40.340553",
       "technical_score": 8.0,
       "relevance_score": 0.0,
       "final_score": 5.6,
@@ -2151,7 +2151,7 @@
       "breaking_snippets": [],
       "repo_weight": 1.2,
       "html_url": "https://github.com/fastapi/fastapi/releases/tag/0.153.0",
-      "collected_at": "2026-10-24T06:20:28.048686",
+      "collected_at": "2026-10-24T07:05:04.405395",
       "technical_score": 3.0,
       "relevance_score": 0.0,
       "final_score": 2.1,
@@ -2188,7 +2188,7 @@
       "breaking_snippets": [],
       "repo_weight": 1.2,
       "html_url": "https://pypi.org/project/fastapi/0.152.0/",
-      "collected_at": "2026-10-24T06:21:07.583095",
+      "collected_at": "2026-10-24T07:05:40.340546",
       "technical_score": 8.0,
       "relevance_score": 0.0,
       "final_score": 5.6,
@@ -2225,7 +2225,7 @@
       "breaking_snippets": [],
       "repo_weight": 1.2,
       "html_url": "https://github.com/fastapi/fastapi/releases/tag/0.152.0",
-      "collected_at": "2026-10-24T06:20:28.048692",
+      "collected_at": "2026-10-24T07:05:04.405400",
       "technical_score": 3.0,
       "relevance_score": 0.0,
       "final_score": 2.1,
@@ -2262,7 +2262,7 @@
       "breaking_snippets": [],
       "repo_weight": 1.2,
       "html_url": "https://pypi.org/project/fastapi/0.151.0/",
-      "collected_at": "2026-10-24T06:21:07.583088",
+      "collected_at": "2026-10-24T07:05:40.340538",
       "technical_score": 8.0,
       "relevance_score": 0.0,
       "final_score": 5.6,
@@ -2301,7 +2301,7 @@
       ],
       "repo_weight": 1.2,
       "html_url": "https://github.com/fastapi/fastapi/releases/tag/0.151.0",
-      "collected_at": "2026-10-24T06:20:28.048698",
+      "collected_at": "2026-10-24T07:05:04.405406",
       "technical_score": 50.0,
       "relevance_score": 0.0,
       "final_score": 35.0,
@@ -2339,7 +2339,7 @@
       "breaking_snippets": [],
       "repo_weight": 1.1,
       "html_url": "https://github.com/astral-sh/uv/releases/tag/0.13.3",
-      "collected_at": "2026-10-24T06:20:47.717839",
+      "collected_at": "2026-10-24T07:05:22.626793",
       "technical_score": 8.0,
       "relevance_score": 0.0,
       "final_score": 5.6,
@@ -2376,7 +2376,7 @@
       "breaking_snippets": [],
       "repo_weight": 1.1,
       "html_url": "https://pypi.org/project/uv/0.13.3/",
-      "collected_at": "2026-10-24T06:21:10.853085",
+      "collected_at": "2026-10-24T07:05:43.674982",
       "technical_score": 0.0,
       "relevance_score": 0.0,
       "final_score": 0.0,
@@ -2404,7 +2404,7 @@
       "breaking_snippets": [],
       "repo_weight": 1.2,
       "html_url": "https://pypi.org/project/fastapi/0.150.0/",
-      "collected_at": "2026-10-24T06:21:07.583081",
+      "collected_at": "2026-10-24T07:05:40.340531",
       "technical_score": 8.0,
       "relevance_score": 0.0,
       "final_score": 5.6,
@@ -2443,7 +2443,7 @@
       ],
       "repo_weight": 1.2,
       "html_url": "https://github.com/fastapi/fastapi/releases/tag/0.150.0",
-      "collected_at": "2026-10-24T06:20:28.048704",
+      "collected_at": "2026-10-24T07:05:04.405411",
       "technical_score": 50.0,
       "relevance_score": 0.0,
       "final_score": 35.0,
@@ -2481,7 +2481,7 @@
       "breaking_snippets": [],
       "repo_weight": 1.1,
       "html_url": "https://github.com/astral-sh/uv/releases/tag/0.13.2",
-      "collected_at": "2026-10-24T06:20:47.717845",
+      "collected_at": "2026-10-24T07:05:22.626800",
       "technical_score": 29.0,
       "relevance_score": 0.0,
       "final_score": 20.3,
@@ -2539,7 +2539,7 @@
       "breaking_snippets": [],
       "repo_weight": 1.1,
       "html_url": "https://pypi.org/project/uv/0.13.2/",
-      "collected_at": "2026-10-24T06:21:10.853059",
+      "collected_at": "2026-10-24T07:05:43.674956",
       "technical_score": 0.0,
       "relevance_score": 0.0,
       "final_score": 0.0,
@@ -2567,7 +2567,7 @@
       "breaking_snippets": [],
       "repo_weight": 1.4,
       "html_url": "https://pypi.org/project/transformers/5.20.2/",
-      "collected_at": "2026-10-24T06:21:09.024177",
+      "collected_at": "2026-10-24T07:05:41.823765",
       "technical_score": 0.0,
       "relevance_score": 0.0,
       "final_score": 0.0,
@@ -2595,7 +2595,7 @@
       "breaking_snippets": [],
       "repo_weight": 1.3,
       "html_url": "https://github.com/huggingface/transformers/releases/tag/v5.20.2",
-      "collected_at": "2026-10-24T06:20:41.393657",
+      "collected_at": "2026-10-24T07:05:15.916618",
       "technical_score": 12.0,
       "relevance_score": 0.0,
       "final_score": 8.4,
@@ -2635,7 +2635,7 @@
       "breaking_snippets": [],
       "repo_weight": 1.2,
       "html_url": "https://pypi.org/project/fastapi/0.149.0/",
-      "collected_at": "2026-10-24T06:21:07.583067",
+      "collected_at": "2026-10-24T07:05:40.340516",
       "technical_score": 8.0,
       "relevance_score": 0.0,
       "final_score": 5.6,
@@ -2674,7 +2674,7 @@
       ],
       "repo_weight": 1.2,
       "html_url": "https://github.com/fastapi/fastapi/releases/tag/0.149.0",
-      "collected_at": "2026-10-24T06:20:28.048710",
+      "collected_at": "2026-10-24T07:05:04.405417",
       "technical_score": 50.0,
       "relevance_score": 0.0,
       "final_score": 35.0,
@@ -2712,7 +2712,7 @@
       "breaking_snippets": [],
       "repo_weight": 1.0,
       "html_url": "https://github.com/tokio-rs/tokio/releases/tag/tokio-1.54.0",
-      "collected_at": "2026-10-24T06:20:38.413051",
+      "collected_at": "2026-10-24T07:05:13.298858",
       "technical_score": 100.0,
       "relevance_score": 0.0,
       "final_score": 70.0,
@@ -2759,7 +2759,7 @@
       "breaking_snippets": [],
       "repo_weight": 1.2,
       "html_url": "https://pypi.org/project/fastapi/0.148.0/",
-      "collected_at": "2026-10-24T06:21:07.583059",
+      "collected_at": "2026-10-24T07:05:40.340509",
       "technical_score": 8.0,
       "relevance_score": 0.0,
       "final_score": 5.6,
@@ -2798,7 +2798,7 @@
       ],
       "repo_weight": 1.2,
       "html_url": "https://github.com/fastapi/fastapi/releases/tag/0.148.0",
-      "collected_at": "2026-10-24T06:20:28.048716",
+      "collected_at": "2026-10-24T07:05:04.405422",
       "technical_score": 50.0,
       "relevance_score": 0.0,
       "final_score": 35.0,
@@ -2836,7 +2836,7 @@
       "breaking_snippets": [],
       "repo_weight": 1.2,
       "html_url": "https://pypi.org/project/fastapi/0.147.0/",
-      "collected_at": "2026-10-24T06:21:07.583052",
+      "collected_at": "2026-10-24T07:05:40.340501",
       "technical_score": 8.0,
       "relevance_score": 0.0,
       "final_score": 5.6,
@@ -2875,7 +2875,7 @@
       ],
       "repo_weight": 1.2,
       "html_url": "https://github.com/fastapi/fastapi/releases/tag/0.147.0",
-      "collected_at": "2026-10-24T06:20:28.048722",
+      "collected_at": "2026-10-24T07:05:04.405427",
       "technical_score": 50.0,
       "relevance_score": 0.0,
       "final_score": 35.0,
@@ -2913,7 +2913,7 @@
       "breaking_snippets": [],
       "repo_weight": 1.2,
       "html_url": "https://pypi.org/project/fastapi/0.146.0/",
-      "collected_at": "2026-10-24T06:21:07.583045",
+      "collected_at": "2026-10-24T07:05:40.340494",
       "technical_score": 8.0,
       "relevance_score": 0.0,
       "final_score": 5.6,
@@ -2952,7 +2952,7 @@
       ],
       "repo_weight": 1.2,
       "html_url": "https://github.com/fastapi/fastapi/releases/tag/0.146.0",
-      "collected_at": "2026-10-24T06:20:28.048728",
+      "collected_at": "2026-10-24T07:05:04.405433",
       "technical_score": 100.0,
       "relevance_score": 0.0,
       "final_score": 70.0,
@@ -2999,7 +2999,7 @@
       "breaking_snippets": [],
       "repo_weight": 1.2,
       "html_url": "https://pypi.org/project/fastapi/0.145.0/",
-      "collected_at": "2026-10-24T06:21:07.583038",
+      "collected_at": "2026-10-24T07:05:40.340486",
       "technical_score": 8.0,
       "relevance_score": 0.0,
       "final_score": 5.6,
@@ -3038,7 +3038,7 @@
       ],
       "repo_weight": 1.2,
       "html_url": "https://github.com/fastapi/fastapi/releases/tag/0.145.0",
-      "collected_at": "2026-10-24T06:20:28.048734",
+      "collected_at": "2026-10-24T07:05:04.405438",
       "technical_score": 100.0,
       "relevance_score": 0.0,
       "final_score": 70.0,
@@ -3101,7 +3101,7 @@
       "breaking_snippets": [],
       "repo_weight": 1.2,
       "html_url": "https://pypi.org/project/fastapi/0.143.4/",
-      "collected_at": "2026-10-24T06:21:07.583017",
+      "collected_at": "2026-10-24T07:05:40.340463",
       "technical_score": 8.0,
       "relevance_score": 0.0,
       "final_score": 5.6,
@@ -3138,7 +3138,7 @@
       "breaking_snippets": [],
       "repo_weight": 1.2,
       "html_url": "https://github.com/fastapi/fastapi/releases/tag/0.143.4",
-      "collected_at": "2026-10-24T06:20:28.630218",
+      "collected_at": "2026-10-24T07:05:04.997054",
       "technical_score": 0.0,
       "relevance_score": 0.0,
       "final_score": 0.0,
@@ -3166,7 +3166,7 @@
       "breaking_snippets": [],
       "repo_weight": 1.2,
       "html_url": "https://pypi.org/project/fastapi/0.144.0/",
-      "collected_at": "2026-10-24T06:21:07.583031",
+      "collected_at": "2026-10-24T07:05:40.340479",
       "technical_score": 8.0,
       "relevance_score": 0.0,
       "final_score": 5.6,
@@ -3203,7 +3203,7 @@
       "breaking_snippets": [],
       "repo_weight": 1.2,
       "html_url": "https://github.com/fastapi/fastapi/releases/tag/0.144.0",
-      "collected_at": "2026-10-24T06:20:28.630191",
+      "collected_at": "2026-10-24T07:05:04.997027",
       "technical_score": 100.0,
       "relevance_score": 0.0,
       "final_score": 70.0,
@@ -3250,7 +3250,7 @@
       "breaking_snippets": [],
       "repo_weight": 1.2,
       "html_url": "https://pypi.org/project/fastapi/0.143.5/",
-      "collected_at": "2026-10-24T06:21:07.583024",
+      "collected_at": "2026-10-24T07:05:40.340471",
       "technical_score": 8.0,
       "relevance_score": 0.0,
       "final_score": 5.6,
@@ -3287,7 +3287,7 @@
       "breaking_snippets": [],
       "repo_weight": 1.2,
       "html_url": "https://github.com/fastapi/fastapi/releases/tag/0.143.5",
-      "collected_at": "2026-10-24T06:20:28.630210",
+      "collected_at": "2026-10-24T07:05:04.997045",
       "technical_score": 3.0,
       "relevance_score": 0.0,
       "final_score": 2.1,
@@ -3324,7 +3324,7 @@
       "breaking_snippets": [],
       "repo_weight": 1.2,
       "html_url": "https://pypi.org/project/openai/3.35.1/",
-      "collected_at": "2026-10-24T06:21:09.746769",
+      "collected_at": "2026-10-24T07:05:42.619688",
       "technical_score": 0.0,
       "relevance_score": 0.0,
       "final_score": 0.0,
@@ -3352,7 +3352,7 @@
       "breaking_snippets": [],
       "repo_weight": 1.2,
       "html_url": "https://pypi.org/project/openai/3.35.0/",
-      "collected_at": "2026-10-24T06:21:09.746762",
+      "collected_at": "2026-10-24T07:05:42.619680",
       "technical_score": 0.0,
       "relevance_score": 0.0,
       "final_score": 0.0,
@@ -3380,7 +3380,7 @@
       "breaking_snippets": [],
       "repo_weight": 1.2,
       "html_url": "https://pypi.org/project/openai/3.34.0/",
-      "collected_at": "2026-10-24T06:21:09.746755",
+      "collected_at": "2026-10-24T07:05:42.619672",
       "technical_score": 0.0,
       "relevance_score": 0.0,
       "final_score": 0.0,
@@ -3408,7 +3408,7 @@
       "breaking_snippets": [],
       "repo_weight": 1.2,
       "html_url": "https://pypi.org/project/openai/3.33.0/",
-      "collected_at": "2026-10-24T06:21:09.746748",
+      "collected_at": "2026-10-24T07:05:42.619665",
       "technical_score": 0.0,
       "relevance_score": 0.0,
       "final_score": 0.0,
@@ -3436,7 +3436,7 @@
       "breaking_snippets": [],
       "repo_weight": 1.2,
       "html_url": "https://pypi.org/project/openai/3.32.0/",
-      "collected_at": "2026-10-24T06:21:09.746741",
+      "collected_at": "2026-10-24T07:05:42.619657",
       "technical_score": 0.0,
       "relevance_score": 0.0,
       "final_score": 0.0,
@@ -3464,7 +3464,7 @@
       "breaking_snippets": [],
       "repo_weight": 1.3,
       "html_url": "https://pypi.org/project/langchain-core/1.6.12/",
-      "collected_at": "2026-10-24T06:21:09.506571",
+      "collected_at": "2026-10-24T07:05:42.403201",
       "technical_score": 0.0,
       "relevance_score": 0.0,
       "final_score": 0.0,
@@ -3492,7 +3492,7 @@
       "breaking_snippets": [],
       "repo_weight": 1.2,
       "html_url": "https://pypi.org/project/fastapi/0.143.3/",
-      "collected_at": "2026-10-24T06:21:07.583010",
+      "collected_at": "2026-10-24T07:05:40.340455",
       "technical_score": 8.0,
       "relevance_score": 0.0,
       "final_score": 5.6,
@@ -3529,7 +3529,7 @@
       "breaking_snippets": [],
       "repo_weight": 1.2,
       "html_url": "https://github.com/fastapi/fastapi/releases/tag/0.143.3",
-      "collected_at": "2026-10-24T06:20:28.630225",
+      "collected_at": "2026-10-24T07:05:04.997061",
       "technical_score": 4.0,
       "relevance_score": 0.0,
       "final_score": 2.8,
@@ -3574,7 +3574,7 @@
       "breaking_snippets": [],
       "repo_weight": 1.3,
       "html_url": "https://github.com/huggingface/transformers/releases/tag/v5.20.1",
-      "collected_at": "2026-10-24T06:20:41.393676",
+      "collected_at": "2026-10-24T07:05:15.916637",
       "technical_score": 20.0,
       "relevance_score": 0.0,
       "final_score": 14.0,
@@ -3624,7 +3624,7 @@
       "breaking_snippets": [],
       "repo_weight": 1.4,
       "html_url": "https://pypi.org/project/transformers/5.20.1/",
-      "collected_at": "2026-10-24T06:21:09.024170",
+      "collected_at": "2026-10-24T07:05:41.823757",
       "technical_score": 0.0,
       "relevance_score": 0.0,
       "final_score": 0.0,
@@ -3652,7 +3652,7 @@
       "breaking_snippets": [],
       "repo_weight": 1.3,
       "html_url": "https://pypi.org/project/langchain-core/1.6.11/",
-      "collected_at": "2026-10-24T06:21:09.506564",
+      "collected_at": "2026-10-24T07:05:42.403194",
       "technical_score": 0.0,
       "relevance_score": 0.0,
       "final_score": 0.0,
@@ -3680,7 +3680,7 @@
       "breaking_snippets": [],
       "repo_weight": 1.3,
       "html_url": "https://github.com/huggingface/transformers/releases/tag/v5.20.0",
-      "collected_at": "2026-10-24T06:20:41.393685",
+      "collected_at": "2026-10-24T07:05:15.916645",
       "technical_score": 14.0,
       "relevance_score": 0.0,
       "final_score": 9.8,
@@ -3727,7 +3727,7 @@
       "breaking_snippets": [],
       "repo_weight": 1.4,
       "html_url": "https://pypi.org/project/transformers/5.20.0/",
-      "collected_at": "2026-10-24T06:21:09.024162",
+      "collected_at": "2026-10-24T07:05:41.823750",
       "technical_score": 0.0,
       "relevance_score": 0.0,
       "final_score": 0.0,
@@ -4005,299 +4005,402 @@
   ],
   "summaries": [
     {
-      "release_id": "8b1ccb5c698f508a",
-      "lib_name": "pypi/maturin",
-      "version": "1.10.2",
-      "date": "2025-11",
-      "changes": [
-        "Build and publish crates with pyo3, cffi and uniffi bindings as well as rust binaries as python packages"
-      ],
-      "impact": "low",
-      "breaking": false,
-      "category": "backend-rust",
-      "generated_at": "2026-10-24T06:21:28.087066"
-    },
-    {
-      "release_id": "be7f27e7736638cc",
-      "lib_name": "pypi/openai",
-      "version": "1.99.2",
-      "date": "2025-08",
-      "changes": [
-        "The official Python library for the openai API"
-      ],
-      "impact": "low",
-      "breaking": false,
-      "category": "ai",
-      "generated_at": "2026-10-24T06:21:28.087112"
-    },
-    {
-      "release_id": "28f5c7980e827cb4",
-      "lib_name": "pypi/openai",
-      "version": "1.40.8",
-      "date": "2024-08",
-      "changes": [
-        "The official Python library for the openai API"
-      ],
-      "impact": "low",
-      "breaking": false,
-      "category": "ai",
-      "generated_at": "2026-10-24T06:21:28.087140"
-    },
-    {
-      "release_id": "7c45ba0938f94374",
-      "lib_name": "tiangolo/fastapi",
-      "version": "0.121.1",
-      "date": "2025-11",
-      "changes": [
-        "🐛 Fix `Depends(func, scope='function')` for top level (parameterless) dependencies. PR #14301 by @luzzodev",
-        "📝 Upate docs for advanced dependencies with `yield`, noting the changes in 0.121.0, adding `scope`. PR #14287 by @tiangolo",
-        "⬆ Bump ruff from 0.13.2 to 0.14.3. PR #14276 by [@dependabot[bot]](https://github.com/apps/dependabot)",
-        "⬆ [pre-commit.ci] pre-commit autoupdate. PR #14289 by [@pre-commit-ci[bot]](https://github.com/apps/pre-commit-ci)"
-      ],
-      "impact": "low",
-      "breaking": false,
-      "category": "backend",
-      "generated_at": "2026-10-24T06:21:28.087325"
-    },
-    {
-      "release_id": "83199f92582310a6",
+      "release_id": "58b080991dcd9f21",
       "lib_name": "pypi/transformers",
-      "version": "4.13.0",
-      "date": "2021-12",
+      "version": "4.53.1",
+      "date": "2025-07",
       "changes": [
         "Transformers: the model-definition framework for state-of-the-art machine learning models in text, vision, audio, and multimodal models, for both inference and training."
       ],
       "impact": "low",
       "breaking": false,
       "category": "ai",
-      "generated_at": "2026-10-24T06:21:28.087357"
+      "generated_at": "2026-10-24T07:06:00.156674"
     },
     {
-      "release_id": "2bf8a6ebb93aad15",
+      "release_id": "67cb2524d1af44c5",
+      "lib_name": "pypi/uv",
+      "version": "0.7.13",
+      "date": "2025-06",
+      "changes": [
+        "An extremely fast Python package and project manager, written in Rust."
+      ],
+      "impact": "low",
+      "breaking": false,
+      "category": "backend-rust",
+      "generated_at": "2026-10-24T07:06:00.156724"
+    },
+    {
+      "release_id": "31b072a58d7899ac",
+      "lib_name": "pypi/openai",
+      "version": "1.46.0",
+      "date": "2024-09",
+      "changes": [
+        "The official Python library for the openai API"
+      ],
+      "impact": "low",
+      "breaking": false,
+      "category": "ai",
+      "generated_at": "2026-10-24T07:06:00.156754"
+    },
+    {
+      "release_id": "065ceea23cfa84ee",
+      "lib_name": "pypi/uv",
+      "version": "0.1.18",
+      "date": "2024-03",
+      "changes": [
+        "An extremely fast Python package and project manager, written in Rust."
+      ],
+      "impact": "low",
+      "breaking": false,
+      "category": "backend-rust",
+      "generated_at": "2026-10-24T07:06:00.156803"
+    },
+    {
+      "release_id": "5bafa05f6727ac1b",
+      "lib_name": "pypi/fastapi",
+      "version": "0.128.2",
+      "date": "2026-02",
+      "changes": [
+        "FastAPI framework, high performance, easy to learn, fast to code, ready for production"
+      ],
+      "impact": "low",
+      "breaking": false,
+      "category": "backend",
+      "generated_at": "2026-10-24T07:06:00.156846"
+    },
+    {
+      "release_id": "0b6bb4b666d49b2c",
+      "lib_name": "pypi/transformers",
+      "version": "2.2.2",
+      "date": "2019-12",
+      "changes": [
+        "Transformers: the model-definition framework for state-of-the-art machine learning models in text, vision, audio, and multimodal models, for both inference and training."
+      ],
+      "impact": "low",
+      "breaking": false,
+      "category": "ai",
+      "generated_at": "2026-10-24T07:06:00.156873"
+    },
+    {
+      "release_id": "9af4085ec1be4901",
+      "lib_name": "pypi/fastapi",
+      "version": "0.124.3",
+      "date": "2025-12",
+      "changes": [
+        "FastAPI framework, high performance, easy to learn, fast to code, ready for production"
+      ],
+      "impact": "low",
+      "breaking": false,
+      "category": "backend",
+      "generated_at": "2026-10-24T07:06:00.156902"
+    },
+    {
+      "release_id": "7a82928aed343725",
+      "lib_name": "pypi/maturin",
+      "version": "1.9.6",
+      "date": "2025-10",
+      "changes": [
+        "Build and publish crates with pyo3, cffi and uniffi bindings as well as rust binaries as python packages"
+      ],
+      "impact": "low",
+      "breaking": false,
+      "category": "backend-rust",
+      "generated_at": "2026-10-24T07:06:00.156925"
+    },
+    {
+      "release_id": "0baa30e3ef015d44",
+      "lib_name": "astral-sh/uv",
+      "version": "0.11.8",
+      "date": "2026-04",
+      "changes": [
+        "Add `--python-downloads-json-url` to `python pin` (#19092)",
+        "Fetch uv from Astral mirror during self-update (#18682)",
+        "Support `pip uninstall -y` (#19082)",
+        "Allow `exclude-newer` to be missing from the lockfile when `exclude-newer-span` is present (#19024)",
+        "Only show the version number in `uv self version --short` (#19019)",
+        "Silence warnings on empty `SSL_CERT_DIR` directory (#19018)",
+        "Use a sentinel timestamp for relative `exclude-newer` and `exclude-newer-package` values in lockfiles (#19022, #19101)",
+        "Add `UV_PYTHON_NO_REGISTRY` (#19035)"
+      ],
+      "impact": "high",
+      "breaking": false,
+      "category": "tooling",
+      "generated_at": "2026-10-24T07:06:00.157109"
+    },
+    {
+      "release_id": "8e2135a7ff8a2f87",
+      "lib_name": "astral-sh/uv",
+      "version": "0.7.0",
+      "date": "2025-04",
+      "changes": [
+        "**Update `uv version` to display and update project versions (#12349)**",
+        "**Avoid fallback to subsequent indexes on authentication failure (#12805)**",
+        "**Require the command in `uvx ` to be available in the Python environment (#11603)**"
+      ],
+      "impact": "high",
+      "breaking": true,
+      "category": "tooling",
+      "generated_at": "2026-10-24T07:06:00.157167"
+    },
+    {
+      "release_id": "27df1d62d6843979",
+      "lib_name": "huggingface/transformers",
+      "version": "v4.3.1",
+      "date": "2021-02",
+      "changes": [
+        "Deprecate Wav2Vec2ForMaskedLM and add Wav2Vec2ForCTC #10089 (@patrickvonplaten)"
+      ],
+      "impact": "moderate",
+      "breaking": false,
+      "category": "ai",
+      "generated_at": "2026-10-24T07:06:00.157206"
+    },
+    {
+      "release_id": "ca83c86cef6f9d3b",
+      "lib_name": "huggingface/transformers",
+      "version": "v5.13.0",
+      "date": "2026-07",
+      "changes": [
+        "Add new model: Kimi2-6 (#45630) by @zucchini-nlp in #45630",
+        "Add Xiaomi MiMo-V2 (#45144) by @casinca in #45144"
+      ],
+      "impact": "critical",
+      "breaking": false,
+      "category": "ai",
+      "generated_at": "2026-10-24T07:06:00.157265"
+    },
+    {
+      "release_id": "3f54fba2ce2169cc",
+      "lib_name": "tokio-rs/tokio",
+      "version": "tokio-1.40.0",
+      "date": "2024-08",
+      "changes": [
+        "io: add `util::SimplexStream` ([#6589])",
+        "process: stabilize `Command::process_group` ([#6731])",
+        "sync: add `{TrySendError,SendTimeoutError}::into_inner` ([#6755])",
+        "task: add `JoinSet::join_all` ([#6784])",
+        "runtime: add `Builder::{on_task_spawn, on_task_terminate}` ([#6742])",
+        "io: use vectored io for `write_all_buf` when possible ([#6724])",
+        "runtime: prevent niche-optimization to avoid triggering miri ([#6744])",
+        "sync: mark mpsc types as `UnwindSafe` ([#6783])"
+      ],
+      "impact": "low",
+      "breaking": false,
+      "category": "backend-rust",
+      "generated_at": "2026-10-24T07:06:00.157318"
+    },
+    {
+      "release_id": "49b7fe8af711b656",
+      "lib_name": "astral-sh/uv",
+      "version": "0.13.1",
+      "date": "2026-10",
+      "changes": [
+        "Ignore `Requires-Python` upper bounds in `uv pip check` and `uv pip install --strict`, consistent with resolution (#22500)",
+        "Support Linux SPARC by falling back when filesystem cloning and detailed cache accounting are unavailable (#22463)",
+        "Report missing trusted hashes in resolution errors (#22241)",
+        "Add CPython 3.16.0a1 (#22527)",
+        "Allow `uv tool upgrade` to upgrade installed tools when `tool-install-locks` is enabled (#22498)",
+        "Add preliminary support for parsing PEP 825 variant labels in wheel filenames with `wheel-variants` (#22039)",
+        "Reduce uv's binary size (#22429, #22430, #22432)",
+        "Speed up Simple API parsing (#22429)"
+      ],
+      "impact": "critical",
+      "breaking": false,
+      "category": "tooling",
+      "generated_at": "2026-10-24T07:06:00.157376"
+    },
+    {
+      "release_id": "2332379b81c09d7a",
+      "lib_name": "tiangolo/fastapi",
+      "version": "0.83.0",
+      "date": "2022-09",
+      "changes": [
+        "✨ Add support in `jsonable_encoder` for include and exclude with dataclasses. PR #4923 by @DCsunset",
+        "🐛 Fix `RuntimeError` raised when `HTTPException` has a status code with no content. PR #5365 by @iudeen",
+        "🐛 Fix empty reponse body when default `status_code` is empty but the a `Response` parameter with `response.status_code` is set. PR #5360 by @tmeckel",
+        "📝 Update `SECURITY.md`. PR #5377 by @Kludex",
+        "⬆ [pre-commit.ci] pre-commit autoupdate. PR #5352 by [@pre-commit-ci[bot]](https://github.com/apps/pre-commit-ci)"
+      ],
+      "impact": "critical",
+      "breaking": false,
+      "category": "backend",
+      "generated_at": "2026-10-24T07:06:00.157448"
+    },
+    {
+      "release_id": "2eceae9a6f32e9ec",
+      "lib_name": "pypi/transformers",
+      "version": "4.50.1",
+      "date": "2025-03",
+      "changes": [
+        "Transformers: the model-definition framework for state-of-the-art machine learning models in text, vision, audio, and multimodal models, for both inference and training."
+      ],
+      "impact": "low",
+      "breaking": false,
+      "category": "ai",
+      "generated_at": "2026-10-24T07:06:00.157477"
+    },
+    {
+      "release_id": "f8b3c3ecd5ad8728",
+      "lib_name": "pypi/fastapi",
+      "version": "0.143.1",
+      "date": "2026-10",
+      "changes": [
+        "FastAPI framework, high performance, easy to learn, fast to code, ready for production"
+      ],
+      "impact": "low",
+      "breaking": false,
+      "category": "backend",
+      "generated_at": "2026-10-24T07:06:00.157505"
+    },
+    {
+      "release_id": "a49f0b5fb1808340",
+      "lib_name": "pypi/uv",
+      "version": "0.1.14",
+      "date": "2024-03",
+      "changes": [
+        "An extremely fast Python package and project manager, written in Rust."
+      ],
+      "impact": "low",
+      "breaking": false,
+      "category": "backend-rust",
+      "generated_at": "2026-10-24T07:06:00.157529"
+    },
+    {
+      "release_id": "018232b575523ba8",
+      "lib_name": "pypi/openai",
+      "version": "2.13.0",
+      "date": "2025-12",
+      "changes": [
+        "The official Python library for the openai API"
+      ],
+      "impact": "low",
+      "breaking": false,
+      "category": "ai",
+      "generated_at": "2026-10-24T07:06:00.157551"
+    },
+    {
+      "release_id": "f52b5965de2af25d",
       "lib_name": "pypi/polars",
-      "version": "0.18.4",
-      "date": "2023-06",
+      "version": "0.20.30",
+      "date": "2024-05",
       "changes": [
         "Blazingly fast DataFrame library"
       ],
       "impact": "moderate",
       "breaking": false,
       "category": "data-engineering",
-      "generated_at": "2026-10-24T06:21:28.087378"
-    },
-    {
-      "release_id": "57b92959d636bf5f",
-      "lib_name": "pypi/ruff",
-      "version": "0.0.33",
-      "date": "2022-09",
-      "changes": [
-        "An extremely fast Python linter and code formatter, written in Rust."
-      ],
-      "impact": "low",
-      "breaking": false,
-      "category": "backend-rust",
-      "generated_at": "2026-10-24T06:21:28.087399"
-    },
-    {
-      "release_id": "e5db44861217f2fb",
-      "lib_name": "pypi/uv",
-      "version": "0.12.24",
-      "date": "2026-10",
-      "changes": [
-        "An extremely fast Python package and project manager, written in Rust."
-      ],
-      "impact": "low",
-      "breaking": false,
-      "category": "backend-rust",
-      "generated_at": "2026-10-24T06:21:28.087418"
-    },
-    {
-      "release_id": "e86a789366bd936c",
-      "lib_name": "pypi/langchain-core",
-      "version": "0.0.2",
-      "date": "2023-11",
-      "changes": [
-        "Building applications with LLMs through composability"
-      ],
-      "impact": "low",
-      "breaking": false,
-      "category": "ai",
-      "generated_at": "2026-10-24T06:21:28.087436"
-    },
-    {
-      "release_id": "326cac7872c104cb",
-      "lib_name": "huggingface/transformers",
-      "version": "v4.4.2",
-      "date": "2021-03",
-      "changes": [
-        "Add support for detecting intel-tensorflow version",
-        "Fix distributed evaluation on SageMaker with distributed evaluation"
-      ],
-      "impact": "low",
-      "breaking": false,
-      "category": "ai",
-      "generated_at": "2026-10-24T06:21:28.087489"
-    },
-    {
-      "release_id": "67615351cc29ee3c",
-      "lib_name": "tokio-rs/tokio",
-      "version": "tokio-1.43.2",
-      "date": "2025-08",
-      "changes": [
-        "process: fix panic from spurious pidfd wakeup ([#7494])"
-      ],
-      "impact": "low",
-      "breaking": false,
-      "category": "backend-rust",
-      "generated_at": "2026-10-24T06:21:28.087514"
-    },
-    {
-      "release_id": "e110f80d518a9364",
-      "lib_name": "pypi/ruff",
-      "version": "0.0.34",
-      "date": "2022-09",
-      "changes": [
-        "An extremely fast Python linter and code formatter, written in Rust."
-      ],
-      "impact": "low",
-      "breaking": false,
-      "category": "backend-rust",
-      "generated_at": "2026-10-24T06:21:28.087535"
-    },
-    {
-      "release_id": "83d7e62be106618c",
-      "lib_name": "tokio-rs/tokio",
-      "version": "tokio-1.4.0",
-      "date": "2021-03",
-      "changes": [
-        "macros: introduce biased argument for `select!` ([#3603])",
-        "runtime: add `Handle::block_on` ([#3569])",
-        "runtime: avoid unnecessary polling of `block_on` future ([#3582])",
-        "runtime: fix memory leak/growth when creating many runtimes ([#3564])",
-        "runtime: mark `EnterGuard` with `must_use` ([#3609])",
-        "chore: mention fix for building docs in contributing guide ([#3618])",
-        "doc: add link to `PollSender` ([#3613])",
-        "doc: alias sleep to delay ([#3604])"
-      ],
-      "impact": "low",
-      "breaking": false,
-      "category": "backend-rust",
-      "generated_at": "2026-10-24T06:21:28.087586"
-    },
-    {
-      "release_id": "8116b7181154d1c7",
-      "lib_name": "pola-rs/polars",
-      "version": "py-0.16.13",
-      "date": "2023-03",
-      "changes": [
-        "use atoi in favor of lexical in strptime `-25%` (#7501)",
-        "[csv] faster utf8 validation `~20%` (#7500)",
-        "[csv] SIMD accelerate SplitFields `-40%` (#7498)",
-        "(csv) don't use memchr for splitfields `-~0.15%` (#7494)",
-        "csv-file use fast-float for csv float parsing (#7492)",
-        "literal support for binary (#7519)",
-        "fix(rust, python) respect time zone in date\\_range (#7503)",
-        "transparently integrate externally-registered Excel formats (#7520)"
-      ],
-      "impact": "high",
-      "breaking": false,
-      "category": "data-engineering",
-      "generated_at": "2026-10-24T06:21:28.087644"
-    },
-    {
-      "release_id": "1f3228f02668e8aa",
-      "lib_name": "pypi/uv",
-      "version": "0.4.11",
-      "date": "2024-09",
-      "changes": [
-        "An extremely fast Python package and project manager, written in Rust."
-      ],
-      "impact": "low",
-      "breaking": false,
-      "category": "backend-rust",
-      "generated_at": "2026-10-24T06:21:28.087666"
-    },
-    {
-      "release_id": "77c9a1d6510a8f06",
-      "lib_name": "pypi/ruff",
-      "version": "0.0.229",
-      "date": "2023-01",
-      "changes": [
-        "An extremely fast Python linter and code formatter, written in Rust."
-      ],
-      "impact": "low",
-      "breaking": false,
-      "category": "backend-rust",
-      "generated_at": "2026-10-24T06:21:28.087685"
-    },
-    {
-      "release_id": "d0694c13ec7252a3",
-      "lib_name": "astral-sh/uv",
-      "version": "0.12.12",
-      "date": "2026-09",
-      "changes": [
-        "Exclude distributions uploaded after the `exclude-newer` cutoff from lockfiles and generated requirement hashes (#21539)"
-      ],
-      "impact": "critical",
-      "breaking": false,
-      "category": "tooling",
-      "generated_at": "2026-10-24T06:21:28.087728"
-    },
-    {
-      "release_id": "43c4f53f4eaeea64",
-      "lib_name": "pypi/langchain-core",
-      "version": "0.3.64",
-      "date": "2025-06",
-      "changes": [
-        "Building applications with LLMs through composability"
-      ],
-      "impact": "low",
-      "breaking": false,
-      "category": "ai",
-      "generated_at": "2026-10-24T06:21:28.087747"
-    },
-    {
-      "release_id": "da616d0b95ca9513",
-      "lib_name": "pola-rs/polars",
-      "version": "py-0.19.13",
-      "date": "2023-11",
-      "changes": [
-        "improve join performance through radix partitioned join (#12270)",
-        "Rename `write_csv` parameter `has_header` to `include_header` (#12351)",
-        "Deprecate `_saturating` in duration string language, make it the default (#12301)",
-        "Switch args for `Decimal` and set default `scale=0` (#12224)",
-        "Rename `dt.seconds` to `dt.total_seconds` (likewise for days, hours, minutes, milliseconds, microseconds, and nanoseconds) (#12179)",
-        "Deprecate `DataFrame.as_dict` positional input (#12131)",
-        "indexvec in group-by (#12371)",
-        "Reduce allocations in hash join (#12368)"
-      ],
-      "impact": "high",
-      "breaking": false,
-      "category": "data-engineering",
-      "generated_at": "2026-10-24T06:21:28.087801"
-    },
-    {
-      "release_id": "4190cfe7aa63841f",
-      "lib_name": "pypi/pydantic",
-      "version": "2.1.0",
-      "date": "2023-07",
-      "changes": [
-        "Data validation using Python type hints"
-      ],
-      "impact": "low",
-      "breaking": false,
-      "category": "tooling",
-      "generated_at": "2026-10-24T06:21:28.087821"
+      "generated_at": "2026-10-24T07:06:00.157572"
     }
   ],
   "discoveries": [
+    {
+      "owner": "NousResearch",
+      "repo": "hermes-agent",
+      "full_name": "NousResearch/hermes-agent",
+      "description": "The agent that grows with you",
+      "url": "https://github.com/NousResearch/hermes-agent",
+      "stars": 256603,
+      "language": "Python",
+      "topics": [
+        "ai",
+        "ai-agent",
+        "ai-agents",
+        "anthropic",
+        "chatgpt",
+        "claude",
+        "claude-code",
+        "codex",
+        "hermes",
+        "hermes-agent",
+        "llm",
+        "nous-research",
+        "openai"
+      ],
+      "pushed_at": "2026-10-24T07:04:50Z",
+      "created_at": "2025-07-22T22:22:28Z",
+      "category": "ai",
+      "discovery_source": "llm",
+      "collected_at": "2026-10-24T07:05:49.724210"
+    },
+    {
+      "owner": "langgenius",
+      "repo": "dify",
+      "full_name": "langgenius/dify",
+      "description": "Build Agentic workflows, RAG pipelines, with rich AI model and tool support on one collaborative workspace. Deploy on cloud, VPC, or self-hosted, so teams move from prototype to production without rebuilding the stack.",
+      "url": "https://github.com/langgenius/dify",
+      "stars": 159398,
+      "language": "Python",
+      "topics": [
+        "agent",
+        "agentic-ai",
+        "agentic-framework",
+        "agentic-workflow",
+        "ai",
+        "automation",
+        "claude",
+        "deepseek",
+        "genai",
+        "gpt",
+        "llm",
+        "low-code",
+        "mcp",
+        "nextjs",
+        "no-code",
+        "openai",
+        "python",
+        "skills",
+        "workflow"
+      ],
+      "pushed_at": "2026-10-24T07:05:38Z",
+      "created_at": "2023-04-12T07:40:24Z",
+      "category": "ai",
+      "discovery_source": "llm",
+      "collected_at": "2026-10-24T07:05:49.724184"
+    },
+    {
+      "owner": "thedotmack",
+      "repo": "claude-mem",
+      "full_name": "thedotmack/claude-mem",
+      "description": "Persistent Context Across Sessions for Every Agent –  Captures everything your agent does during sessions, compresses it with AI, and injects relevant context back into future sessions. Works with Claude Code, OpenClaw, Codex, Gemini, Hermes, Copilot, OpenCode + More",
+      "url": "https://github.com/thedotmack/claude-mem",
+      "stars": 102628,
+      "language": "TypeScript",
+      "topics": [
+        "ai",
+        "ai-agents",
+        "ai-memory",
+        "anthropic",
+        "artificial-intelligence",
+        "chromadb",
+        "claude",
+        "claude-agent-sdk",
+        "claude-agents",
+        "claude-code",
+        "claude-code-plugin",
+        "claude-skills",
+        "embeddings",
+        "long-term-memory",
+        "mem0",
+        "memory-engine",
+        "openmemory",
+        "rag",
+        "sqlite",
+        "supermemory"
+      ],
+      "pushed_at": "2026-10-24T06:56:29Z",
+      "created_at": "2025-08-31T20:50:03Z",
+      "category": "ai",
+      "discovery_source": "rag",
+      "collected_at": "2026-10-24T07:05:51.028025"
+    },
     {
       "owner": "headroomlabs-ai",
       "repo": "headroom",
       "full_name": "headroomlabs-ai/headroom",
       "description": "Compress tool outputs, logs, files, and RAG chunks before they reach the LLM. 20% fewer tokens for coding agents, 60-95% fewer tokens for JSON, same answers. Library, proxy, MCP server.",
       "url": "https://github.com/headroomlabs-ai/headroom",
-      "stars": 77677,
+      "stars": 77676,
       "language": "Python",
       "topics": [
         "agent",
@@ -4321,11 +4424,11 @@
         "tokens",
         "typescript"
       ],
-      "pushed_at": "2026-10-24T06:17:41Z",
+      "pushed_at": "2026-10-24T06:54:58Z",
       "created_at": "2026-01-07T19:58:51Z",
       "category": "ai",
       "discovery_source": "rag",
-      "collected_at": "2026-10-24T06:21:18.781553"
+      "collected_at": "2026-10-24T07:05:51.028032"
     },
     {
       "owner": "apache",
@@ -4355,11 +4458,11 @@
         "sql-editor",
         "superset"
       ],
-      "pushed_at": "2026-10-24T05:49:14Z",
+      "pushed_at": "2026-10-24T07:05:10Z",
       "created_at": "2015-07-21T18:55:34Z",
       "category": "data-engineering",
       "discovery_source": "data-engineering",
-      "collected_at": "2026-10-24T06:21:12.042520"
+      "collected_at": "2026-10-24T07:05:44.773724"
     },
     {
       "owner": "pathwaycom",
@@ -4392,7 +4495,7 @@
       "created_at": "2022-11-27T13:01:14Z",
       "category": "data-engineering",
       "discovery_source": "stream-processing",
-      "collected_at": "2026-10-24T06:21:16.118893"
+      "collected_at": "2026-10-24T07:05:48.474668"
     },
     {
       "owner": "dbeaver",
@@ -4422,11 +4525,11 @@
         "sqlite",
         "sqlserver"
       ],
-      "pushed_at": "2026-10-24T06:11:07Z",
+      "pushed_at": "2026-10-24T06:35:01Z",
       "created_at": "2015-10-21T08:26:28Z",
       "category": "lakehouse",
       "discovery_source": "databricks",
-      "collected_at": "2026-10-24T06:21:23.058119"
+      "collected_at": "2026-10-24T07:05:55.011956"
     },
     {
       "owner": "ClickHouse",
@@ -4455,11 +4558,11 @@
         "self-hosted",
         "sql"
       ],
-      "pushed_at": "2026-10-24T06:16:02Z",
+      "pushed_at": "2026-10-24T06:56:33Z",
       "created_at": "2016-06-02T08:28:18Z",
       "category": "lakehouse",
       "discovery_source": "lakehouse",
-      "collected_at": "2026-10-24T06:21:21.572596"
+      "collected_at": "2026-10-24T07:05:53.727196"
     },
     {
       "owner": "apache",
@@ -4495,36 +4598,29 @@
       "created_at": "2015-04-13T18:04:58Z",
       "category": "data-engineering",
       "discovery_source": "data-engineering",
-      "collected_at": "2026-10-24T06:21:12.042497"
+      "collected_at": "2026-10-24T07:05:44.773699"
     },
     {
-      "owner": "lyogavin",
-      "repo": "airllm",
-      "full_name": "lyogavin/airllm",
-      "description": "AirLLM 2.8T LLM inference with single 4GB GPU",
-      "url": "https://github.com/lyogavin/airllm",
-      "stars": 40498,
-      "language": "Jupyter Notebook",
+      "owner": "AlexsJones",
+      "repo": "llmfit",
+      "full_name": "AlexsJones/llmfit",
+      "description": "Hundreds of models & providers. One command to find what runs on your hardware.",
+      "url": "https://github.com/AlexsJones/llmfit",
+      "stars": 38318,
+      "language": "Rust",
       "topics": [
-        "chinese-llm",
-        "chinese-nlp",
-        "finetune",
-        "generative-ai",
-        "instruct-gpt",
-        "instruction-set",
-        "llama",
+        "gguf",
         "llm",
-        "lora",
-        "open-models",
-        "open-source",
-        "open-source-models",
-        "qlora"
+        "localai",
+        "mlx",
+        "skill",
+        "unsloth"
       ],
-      "pushed_at": "2026-10-24T06:19:07Z",
-      "created_at": "2023-06-12T16:28:41Z",
+      "pushed_at": "2026-10-24T07:05:42Z",
+      "created_at": "2026-02-15T16:11:31Z",
       "category": "ai",
       "discovery_source": "llm",
-      "collected_at": "2026-10-24T06:21:17.462517"
+      "collected_at": "2026-10-24T07:05:49.724201"
     },
     {
       "owner": "google-ai-edge",
@@ -4557,35 +4653,7 @@
       "created_at": "2019-06-13T19:16:41Z",
       "category": "data-engineering",
       "discovery_source": "stream-processing",
-      "collected_at": "2026-10-24T06:21:16.118960"
-    },
-    {
-      "owner": "QwenLM",
-      "repo": "qwen-code",
-      "full_name": "QwenLM/qwen-code",
-      "description": "An open-source AI coding agent that lives in your terminal.",
-      "url": "https://github.com/QwenLM/qwen-code",
-      "stars": 28684,
-      "language": "TypeScript",
-      "topics": [
-        "agentic",
-        "ai",
-        "ai-agent",
-        "ai-coding",
-        "cli",
-        "coding-agent",
-        "developer-tools",
-        "llm",
-        "mcp",
-        "qwen",
-        "terminal",
-        "typescript"
-      ],
-      "pushed_at": "2026-10-24T06:18:44Z",
-      "created_at": "2025-06-26T01:37:46Z",
-      "category": "ai",
-      "discovery_source": "llm",
-      "collected_at": "2026-10-24T06:21:17.462524"
+      "collected_at": "2026-10-24T07:05:48.474733"
     },
     {
       "owner": "mlflow",
@@ -4619,7 +4687,7 @@
       "created_at": "2018-06-05T16:05:58Z",
       "category": "ai",
       "discovery_source": "mlops",
-      "collected_at": "2026-10-24T06:21:20.192556"
+      "collected_at": "2026-10-24T07:05:52.406217"
     },
     {
       "owner": "airbytehq",
@@ -4655,7 +4723,7 @@
       "created_at": "2020-07-27T23:55:54Z",
       "category": "data-engineering",
       "discovery_source": "data-engineering",
-      "collected_at": "2026-10-24T06:21:12.042537"
+      "collected_at": "2026-10-24T07:05:44.773742"
     },
     {
       "owner": "cube-js",
@@ -4690,7 +4758,7 @@
       "created_at": "2018-09-16T18:58:46Z",
       "category": "lakehouse",
       "discovery_source": "databricks",
-      "collected_at": "2026-10-24T06:21:23.058100"
+      "collected_at": "2026-10-24T07:05:55.011939"
     },
     {
       "owner": "elizaOS",
@@ -4698,7 +4766,7 @@
       "full_name": "elizaOS/eliza",
       "description": "Open source agentic operating system",
       "url": "https://github.com/elizaOS/eliza",
-      "stars": 19640,
+      "stars": 19642,
       "language": "TypeScript",
       "topics": [
         "agent",
@@ -4717,11 +4785,11 @@
         "swarm",
         "telegram"
       ],
-      "pushed_at": "2026-10-24T06:19:55Z",
+      "pushed_at": "2026-10-24T06:51:28Z",
       "created_at": "2024-07-09T07:55:40Z",
       "category": "ai",
       "discovery_source": "rag",
-      "collected_at": "2026-10-24T06:21:18.781588"
+      "collected_at": "2026-10-24T07:05:51.028039"
     },
     {
       "owner": "Canner",
@@ -4757,7 +4825,7 @@
       "created_at": "2024-03-13T06:18:20Z",
       "category": "lakehouse",
       "discovery_source": "databricks",
-      "collected_at": "2026-10-24T06:21:23.058161"
+      "collected_at": "2026-10-24T07:05:55.012000"
     },
     {
       "owner": "prestodb",
@@ -4782,7 +4850,7 @@
       "created_at": "2012-08-09T01:03:37Z",
       "category": "lakehouse",
       "discovery_source": "lakehouse",
-      "collected_at": "2026-10-24T06:21:21.572640"
+      "collected_at": "2026-10-24T07:05:53.727240"
     },
     {
       "owner": "apache",
@@ -4816,7 +4884,7 @@
       "created_at": "2017-08-10T12:13:30Z",
       "category": "data-engineering",
       "discovery_source": "query-engine",
-      "collected_at": "2026-10-24T06:21:14.605812"
+      "collected_at": "2026-10-24T07:05:47.181516"
     },
     {
       "owner": "xerj-org",
@@ -4824,7 +4892,7 @@
       "full_name": "xerj-org/xerj",
       "description": "Local-first search engine and MCP server for AI agents. One Rust binary indexes code, docs, logs, JSONL/CSV and PDFs for BM25 full-text, vector and hybrid search, code search without grep, agent memory and RAG. Elasticsearch-compatible API; Corpus Hub serves hundreds of reference memory corpora.",
       "url": "https://github.com/xerj-org/xerj",
-      "stars": 14270,
+      "stars": 14281,
       "language": "Rust",
       "topics": [
         "agent-memory",
@@ -4848,11 +4916,11 @@
         "search-engine",
         "vector-search"
       ],
-      "pushed_at": "2026-10-24T06:12:41Z",
+      "pushed_at": "2026-10-24T07:05:13Z",
       "created_at": "2026-06-30T04:32:45Z",
       "category": "ai",
       "discovery_source": "rag",
-      "collected_at": "2026-10-24T06:21:18.781544"
+      "collected_at": "2026-10-24T07:05:51.028018"
     },
     {
       "owner": "semantica-agi",
@@ -4888,7 +4956,7 @@
       "created_at": "2025-06-25T10:41:00Z",
       "category": "data-engineering",
       "discovery_source": "data-engineering",
-      "collected_at": "2026-10-24T06:21:12.042559"
+      "collected_at": "2026-10-24T07:05:44.773764"
     },
     {
       "owner": "trinodb",
@@ -4923,7 +4991,39 @@
       "created_at": "2019-01-19T06:38:14Z",
       "category": "data-engineering",
       "discovery_source": "query-engine",
-      "collected_at": "2026-10-24T06:21:14.605796"
+      "collected_at": "2026-10-24T07:05:47.181500"
+    },
+    {
+      "owner": "StarTrail-org",
+      "repo": "LEANN",
+      "full_name": "StarTrail-org/LEANN",
+      "description": "[MLsys2026 Best Paper]: https://arxiv.org/abs/2506.08276. RAG on Everything with LEANN. Enjoy 97% storage savings while running a fast, accurate, and 100% private RAG application on your personal device.",
+      "url": "https://github.com/StarTrail-org/LEANN",
+      "stars": 13094,
+      "language": "Python",
+      "topics": [
+        "ai",
+        "faiss",
+        "gpt-oss",
+        "langchain",
+        "llama-index",
+        "llm",
+        "localstorage",
+        "offline-first",
+        "ollama",
+        "privacy",
+        "python",
+        "rag",
+        "retrieval-augmented-generation",
+        "vector-database",
+        "vector-search",
+        "vectors"
+      ],
+      "pushed_at": "2026-10-24T06:58:25Z",
+      "created_at": "2025-06-09T06:52:59Z",
+      "category": "ai",
+      "discovery_source": "rag",
+      "collected_at": "2026-10-24T07:05:51.028011"
     },
     {
       "owner": "StarRocks",
@@ -4959,7 +5059,7 @@
       "created_at": "2021-09-04T02:29:35Z",
       "category": "lakehouse",
       "discovery_source": "lakehouse",
-      "collected_at": "2026-10-24T06:21:21.572634"
+      "collected_at": "2026-10-24T07:05:53.727234"
     },
     {
       "owner": "wandb",
@@ -4994,7 +5094,7 @@
       "created_at": "2017-03-24T05:46:23Z",
       "category": "ai",
       "discovery_source": "mlops",
-      "collected_at": "2026-10-24T06:21:20.192599"
+      "collected_at": "2026-10-24T07:05:52.406253"
     },
     {
       "owner": "skypilot-org",
@@ -5029,7 +5129,7 @@
       "created_at": "2021-08-11T23:32:15Z",
       "category": "ai",
       "discovery_source": "mlops",
-      "collected_at": "2026-10-24T06:21:20.192592"
+      "collected_at": "2026-10-24T07:05:52.406246"
     },
     {
       "owner": "NVIDIA",
@@ -5054,11 +5154,11 @@
         "python",
         "rapids"
       ],
-      "pushed_at": "2026-10-24T05:57:01Z",
+      "pushed_at": "2026-10-24T06:21:54Z",
       "created_at": "2017-05-07T03:43:37Z",
       "category": "data-engineering",
       "discovery_source": "dataframe",
-      "collected_at": "2026-10-24T06:21:13.455263"
+      "collected_at": "2026-10-24T07:05:46.152327"
     },
     {
       "owner": "tobymao",
@@ -5094,7 +5194,7 @@
       "created_at": "2021-03-13T05:01:56Z",
       "category": "lakehouse",
       "discovery_source": "databricks",
-      "collected_at": "2026-10-24T06:21:23.058148"
+      "collected_at": "2026-10-24T07:05:55.011986"
     },
     {
       "owner": "apache",
@@ -5102,7 +5202,7 @@
       "full_name": "apache/datafusion",
       "description": "Apache DataFusion SQL Query Engine",
       "url": "https://github.com/apache/datafusion",
-      "stars": 9514,
+      "stars": 9515,
       "language": "Rust",
       "topics": [
         "arrow",
@@ -5115,47 +5215,11 @@
         "rust",
         "sql"
       ],
-      "pushed_at": "2026-10-24T06:20:50Z",
+      "pushed_at": "2026-10-24T07:05:32Z",
       "created_at": "2021-04-17T15:40:23Z",
       "category": "data-engineering",
       "discovery_source": "dataframe",
-      "collected_at": "2026-10-24T06:21:13.455243"
-    },
-    {
-      "owner": "xberg-io",
-      "repo": "xberg",
-      "full_name": "xberg-io/xberg",
-      "description": "Polyglot document intelligence with a Rust core: extract text, metadata, images, tables, and structured data from 106 formats across 140 file extensions, plus code intelligence for 371 languages. Fifteen bindings, with CLI, REST API, and MCP server.",
-      "url": "https://github.com/xberg-io/xberg",
-      "stars": 9441,
-      "language": "Rust",
-      "topics": [
-        "bun",
-        "csharp",
-        "document-intelligence",
-        "elixir",
-        "ffi",
-        "golang",
-        "java",
-        "metadata-extraction",
-        "node",
-        "pdf-extraction",
-        "pdfium",
-        "php",
-        "python",
-        "rag",
-        "ruby",
-        "rust",
-        "table-extraction",
-        "tesseract",
-        "text-extraction",
-        "wasm"
-      ],
-      "pushed_at": "2026-10-24T06:15:33Z",
-      "created_at": "2025-01-31T21:50:02Z",
-      "category": "ai",
-      "discovery_source": "rag",
-      "collected_at": "2026-10-24T06:21:18.781525"
+      "collected_at": "2026-10-24T07:05:46.152309"
     },
     {
       "owner": "growthbook",
@@ -5187,42 +5251,11 @@
         "statistics",
         "warehouse-native"
       ],
-      "pushed_at": "2026-10-24T06:20:41Z",
+      "pushed_at": "2026-10-24T07:01:43Z",
       "created_at": "2021-05-07T23:11:51Z",
       "category": "lakehouse",
       "discovery_source": "databricks",
-      "collected_at": "2026-10-24T06:21:23.058134"
-    },
-    {
-      "owner": "deeplethe",
-      "repo": "utopia",
-      "full_name": "deeplethe/utopia",
-      "description": "World's first open-source enterprise world model.",
-      "url": "https://github.com/deeplethe/utopia",
-      "stars": 8505,
-      "language": "Rust",
-      "topics": [
-        "agent-memory",
-        "bitemporal",
-        "graphrag",
-        "knowledge-base",
-        "knowledge-graph",
-        "llm",
-        "ontology",
-        "pgvector",
-        "postgresql",
-        "rag",
-        "rust",
-        "self-hosted",
-        "semantic-search",
-        "temporal-knowledge-graph",
-        "world-model"
-      ],
-      "pushed_at": "2026-10-24T06:05:45Z",
-      "created_at": "2026-08-07T19:33:17Z",
-      "category": "ai",
-      "discovery_source": "rag",
-      "collected_at": "2026-10-24T06:21:18.781581"
+      "collected_at": "2026-10-24T07:05:55.011972"
     },
     {
       "owner": "fluent",
@@ -5252,7 +5285,39 @@
       "created_at": "2015-01-27T20:41:52Z",
       "category": "data-engineering",
       "discovery_source": "stream-processing",
-      "collected_at": "2026-10-24T06:21:16.118923"
+      "collected_at": "2026-10-24T07:05:48.474695"
+    },
+    {
+      "owner": "Osmantic",
+      "repo": "ODS",
+      "full_name": "Osmantic/ODS",
+      "description": "ODS V3 Pre-Release: Public testing and refinement ahead of the official V3 launch. Turn your PC, Mac, or Linux box into a private AI server.",
+      "url": "https://github.com/Osmantic/ODS",
+      "stars": 7670,
+      "language": "Python",
+      "topics": [
+        "ai-agents",
+        "amd",
+        "comfyui",
+        "docker",
+        "llama-cpp",
+        "llm",
+        "local-ai",
+        "n8n",
+        "nvidia",
+        "open-webui",
+        "rag",
+        "self-hosted",
+        "speech-to-text",
+        "strix-halo",
+        "text-to-speech",
+        "workflow-automation"
+      ],
+      "pushed_at": "2026-10-24T07:03:19Z",
+      "created_at": "2026-02-09T13:14:58Z",
+      "category": "ai",
+      "discovery_source": "llm",
+      "collected_at": "2026-10-24T07:05:49.724247"
     },
     {
       "owner": "lance-format",
@@ -5280,11 +5345,11 @@
         "python",
         "rust"
       ],
-      "pushed_at": "2026-10-24T05:47:09Z",
+      "pushed_at": "2026-10-24T06:46:10Z",
       "created_at": "2022-07-07T22:29:29Z",
       "category": "ai",
       "discovery_source": "mlops",
-      "collected_at": "2026-10-24T06:21:20.192564"
+      "collected_at": "2026-10-24T07:05:52.406224"
     },
     {
       "owner": "apache",
@@ -5292,7 +5357,7 @@
       "full_name": "apache/hudi",
       "description": "Upserts, Deletes And Incremental Processing on Big Data.",
       "url": "https://github.com/apache/hudi",
-      "stars": 6338,
+      "stars": 6339,
       "language": "Java",
       "topics": [
         "apacheflink",
@@ -5309,7 +5374,7 @@
       "created_at": "2016-12-14T15:53:41Z",
       "category": "data-engineering",
       "discovery_source": "stream-processing",
-      "collected_at": "2026-10-24T06:21:16.118931"
+      "collected_at": "2026-10-24T07:05:48.474703"
     },
     {
       "owner": "dlt-hub",
@@ -5335,7 +5400,7 @@
       "created_at": "2022-01-26T09:51:04Z",
       "category": "data-engineering",
       "discovery_source": "data-engineering",
-      "collected_at": "2026-10-24T06:21:12.042545"
+      "collected_at": "2026-10-24T07:05:44.773749"
     },
     {
       "owner": "ag2ai",
@@ -5364,7 +5429,7 @@
       "created_at": "2022-12-01T09:46:18Z",
       "category": "data-engineering",
       "discovery_source": "stream-processing",
-      "collected_at": "2026-10-24T06:21:16.118953"
+      "collected_at": "2026-10-24T07:05:48.474726"
     },
     {
       "owner": "m3db",
@@ -5388,7 +5453,7 @@
       "created_at": "2016-06-14T20:29:45Z",
       "category": "data-engineering",
       "discovery_source": "query-engine",
-      "collected_at": "2026-10-24T06:21:14.605840"
+      "collected_at": "2026-10-24T07:05:47.181545"
     },
     {
       "owner": "kirodotdev",
@@ -5409,11 +5474,11 @@
         "kiro",
         "llm"
       ],
-      "pushed_at": "2026-10-24T06:20:52Z",
+      "pushed_at": "2026-10-24T07:03:55Z",
       "created_at": "2026-07-16T21:21:54Z",
       "category": "ai",
       "discovery_source": "llm",
-      "collected_at": "2026-10-24T06:21:17.462502"
+      "collected_at": "2026-10-24T07:05:49.724232"
     },
     {
       "owner": "kubeflow",
@@ -5436,7 +5501,7 @@
       "created_at": "2018-05-12T00:31:47Z",
       "category": "ai",
       "discovery_source": "mlops",
-      "collected_at": "2026-10-24T06:21:20.192578"
+      "collected_at": "2026-10-24T07:05:52.406231"
     },
     {
       "owner": "pipeshub-ai",
@@ -5444,7 +5509,7 @@
       "full_name": "pipeshub-ai/pipeshub-ai",
       "description": "The open-source context layer for AI agents. PipesHub turns your company's knowledge (Slack, Drive, Jira, GitHub, Microsoft 365 and 40+ connectors) into a permission-aware workspace that agents can search, grep, navigate and cite. MCP, SDKs and built-in agents. Self-hosted.",
       "url": "https://github.com/pipeshub-ai/pipeshub-ai",
-      "stars": 3845,
+      "stars": 3846,
       "language": "Python",
       "topics": [
         "agentic-rag",
@@ -5468,11 +5533,11 @@
         "self-hosted",
         "workplace-ai"
       ],
-      "pushed_at": "2026-10-24T06:20:37Z",
+      "pushed_at": "2026-10-24T07:03:42Z",
       "created_at": "2025-03-06T18:51:10Z",
       "category": "ai",
       "discovery_source": "rag",
-      "collected_at": "2026-10-24T06:21:18.781561"
+      "collected_at": "2026-10-24T07:05:51.027994"
     },
     {
       "owner": "PeerDB-io",
@@ -5500,47 +5565,11 @@
         "sql",
         "stream-processing"
       ],
-      "pushed_at": "2026-10-24T05:48:42Z",
+      "pushed_at": "2026-10-24T06:45:35Z",
       "created_at": "2023-04-15T19:51:12Z",
       "category": "data-engineering",
       "discovery_source": "stream-processing",
-      "collected_at": "2026-10-24T06:21:16.118939"
-    },
-    {
-      "owner": "HarnessRouter",
-      "repo": "harnessrouter",
-      "full_name": "HarnessRouter/harnessrouter",
-      "description": "HarnessRouter Community Edition: the self-hosted, Apache-2.0 edition of the unified interface for agent harnesses. Run Codex, Claude Code, Hermes, PI, DSH, and more through one API, with sessions, streaming, files, cancellation, and failure handling. Implements the Unified Harness Protocol (UHP), an open standard. Your keys, your infrastructure.",
-      "url": "https://github.com/HarnessRouter/harnessrouter",
-      "stars": 3283,
-      "language": "Python",
-      "topics": [
-        "agent-api",
-        "agent-framework",
-        "agent-harness",
-        "ai-agents",
-        "ai-infrastructure",
-        "coding-agent",
-        "conformance-testing",
-        "deepseek-harness",
-        "harness-engineering",
-        "hermes",
-        "llm",
-        "open-protocol",
-        "open-source",
-        "open-standard",
-        "pi-coding-agent",
-        "self-hosted",
-        "uhp",
-        "unified-api",
-        "unified-harness-protocol",
-        "unified-interface"
-      ],
-      "pushed_at": "2026-10-24T06:21:06Z",
-      "created_at": "2026-08-09T20:19:14Z",
-      "category": "ai",
-      "discovery_source": "llm",
-      "collected_at": "2026-10-24T06:21:17.462495"
+      "collected_at": "2026-10-24T07:05:48.474711"
     },
     {
       "owner": "vllm-project",
@@ -5564,7 +5593,7 @@
       "created_at": "2025-01-29T10:44:12Z",
       "category": "ai",
       "discovery_source": "mlops",
-      "collected_at": "2026-10-24T06:21:20.192585"
+      "collected_at": "2026-10-24T07:05:52.406239"
     },
     {
       "owner": "sfu-db",
@@ -5586,7 +5615,7 @@
       "created_at": "2021-01-13T22:21:03Z",
       "category": "data-engineering",
       "discovery_source": "dataframe",
-      "collected_at": "2026-10-24T06:21:13.455278"
+      "collected_at": "2026-10-24T07:05:46.152342"
     },
     {
       "owner": "dolthub",
@@ -5610,7 +5639,7 @@
       "created_at": "2019-06-25T21:15:20Z",
       "category": "data-engineering",
       "discovery_source": "query-engine",
-      "collected_at": "2026-10-24T06:21:14.605819"
+      "collected_at": "2026-10-24T07:05:47.181524"
     },
     {
       "owner": "man-group",
@@ -5636,7 +5665,7 @@
       "created_at": "2022-11-11T09:09:46Z",
       "category": "data-engineering",
       "discovery_source": "dataframe",
-      "collected_at": "2026-10-24T06:21:13.455299"
+      "collected_at": "2026-10-24T07:05:46.152363"
     },
     {
       "owner": "ytsaurus",
@@ -5656,11 +5685,47 @@
         "sql",
         "ytsaurus"
       ],
-      "pushed_at": "2026-10-24T06:16:12Z",
+      "pushed_at": "2026-10-24T06:59:22Z",
       "created_at": "2022-12-05T16:32:05Z",
       "category": "lakehouse",
       "discovery_source": "lakehouse",
-      "collected_at": "2026-10-24T06:21:21.572576"
+      "collected_at": "2026-10-24T07:05:53.727178"
+    },
+    {
+      "owner": "777genius",
+      "repo": "agent-teams-ai",
+      "full_name": "777genius/agent-teams-ai",
+      "description": "You're the boss, agents are your team. They handle tasks on their own, message each other, and review each other's work. You just watch the kanban board and give high-level commands. Codex/Claude/OpenCode/Cursor/Grok/GitHub/Kiro/Z.AI/Xiaomi/MiniMax/Kimi(300+ models, 200+ LLM providers, free models no auth) Build your AI company with multiple teams",
+      "url": "https://github.com/777genius/agent-teams-ai",
+      "stars": 2305,
+      "language": "TypeScript",
+      "topics": [
+        "agent-orchestration",
+        "agent-teams",
+        "agent-to-agent",
+        "ai-agents",
+        "claude",
+        "claude-code",
+        "codex",
+        "coding-agent",
+        "cursor",
+        "developer-tools",
+        "electron",
+        "github-copilot",
+        "kiro",
+        "llm",
+        "mcp-server",
+        "multi-agent",
+        "multi-agent-systems",
+        "openai",
+        "opencode",
+        "typescript"
+      ],
+      "pushed_at": "2026-10-24T07:05:30Z",
+      "created_at": "2026-02-21T08:14:44Z",
+      "category": "ai",
+      "discovery_source": "llm",
+      "collected_at": "2026-10-24T07:05:49.724240"
     },
     {
       "owner": "apache",
@@ -5682,7 +5747,7 @@
       "created_at": "2024-10-31T06:36:35Z",
       "category": "lakehouse",
       "discovery_source": "lakehouse",
-      "collected_at": "2026-10-24T06:21:21.572626"
+      "collected_at": "2026-10-24T07:05:53.727227"
     },
     {
       "owner": "apache",
@@ -5707,7 +5772,7 @@
       "created_at": "2022-05-19T14:32:27Z",
       "category": "data-engineering",
       "discovery_source": "dataframe",
-      "collected_at": "2026-10-24T06:21:13.455292"
+      "collected_at": "2026-10-24T07:05:46.152356"
     },
     {
       "owner": "bytewax",
@@ -5732,7 +5797,7 @@
       "created_at": "2022-02-04T18:29:36Z",
       "category": "data-engineering",
       "discovery_source": "data-engineering",
-      "collected_at": "2026-10-24T06:21:12.042530"
+      "collected_at": "2026-10-24T07:05:44.773734"
     },
     {
       "owner": "getnao",
@@ -5767,7 +5832,7 @@
       "created_at": "2025-12-30T18:33:25Z",
       "category": "data-engineering",
       "discovery_source": "data-engineering",
-      "collected_at": "2026-10-24T06:21:12.042566"
+      "collected_at": "2026-10-24T07:05:44.773771"
     },
     {
       "owner": "SemiAnalysisAI",
@@ -5799,11 +5864,11 @@
         "tensorrt-llm",
         "vllm"
       ],
-      "pushed_at": "2026-10-24T06:21:16Z",
+      "pushed_at": "2026-10-24T07:02:17Z",
       "created_at": "2025-07-12T20:07:46Z",
       "category": "ai",
       "discovery_source": "mlops",
-      "collected_at": "2026-10-24T06:21:20.192571"
+      "collected_at": "2026-10-24T07:05:52.406191"
     },
     {
       "owner": "ModernRelay",
@@ -5811,7 +5876,7 @@
       "full_name": "ModernRelay/omnigraph",
       "description": "Object-storage native graph database with branching and typed ontology",
       "url": "https://github.com/ModernRelay/omnigraph",
-      "stars": 1712,
+      "stars": 1714,
       "language": "Rust",
       "topics": [
         "apache-arrow",
@@ -5830,36 +5895,27 @@
       "created_at": "2026-04-10T17:50:30Z",
       "category": "lakehouse",
       "discovery_source": "lakehouse",
-      "collected_at": "2026-10-24T06:21:21.572605"
+      "collected_at": "2026-10-24T07:05:53.727204"
     },
     {
-      "owner": "utkuozdemir",
-      "repo": "nvidia_gpu_exporter",
-      "full_name": "utkuozdemir/nvidia_gpu_exporter",
-      "description": "Nvidia GPU exporter for prometheus using nvidia-smi binary OR using NVML",
-      "url": "https://github.com/utkuozdemir/nvidia_gpu_exporter",
-      "stars": 1572,
-      "language": "Go",
+      "owner": "openonion",
+      "repo": "connectonion",
+      "full_name": "openonion/connectonion",
+      "description": "CLI is all you need. The agent CLI harness.",
+      "url": "https://github.com/openonion/connectonion",
+      "stars": 1501,
+      "language": "Python",
       "topics": [
-        "ai",
-        "cryptocurrency",
-        "gaming",
-        "inference",
+        "agent",
+        "agentic-ai",
         "llm",
-        "llm-training",
-        "monitoring",
-        "nvidia",
-        "nvidia-gpu",
-        "nvidia-smi",
-        "nvml",
-        "prometheus",
-        "prometheus-exporter"
+        "openonion"
       ],
-      "pushed_at": "2026-10-24T06:21:09Z",
-      "created_at": "2021-06-08T22:42:30Z",
+      "pushed_at": "2026-10-24T07:04:27Z",
+      "created_at": "2025-07-28T04:21:41Z",
       "category": "ai",
       "discovery_source": "llm",
-      "collected_at": "2026-10-24T06:21:17.462467"
+      "collected_at": "2026-10-24T07:05:49.724218"
     },
     {
       "owner": "pyjanitor-devs",
@@ -5882,99 +5938,39 @@
       "created_at": "2018-03-04T22:43:33Z",
       "category": "data-engineering",
       "discovery_source": "dataframe",
-      "collected_at": "2026-10-24T06:21:13.455305"
+      "collected_at": "2026-10-24T07:05:46.152370"
     },
     {
-      "owner": "Gentleman-Programming",
-      "repo": "gentle-shell",
-      "full_name": "Gentleman-Programming/gentle-shell",
-      "description": "Your coding agent for controlled development in the workspace you lead. A Pi-native shell with Organic Driven Development, focused subagents, risk-based native review, live changes and agent views, and permission  modes that keep destructive guards.",
-      "url": "https://github.com/Gentleman-Programming/gentle-shell",
-      "stars": 1413,
-      "language": "TypeScript",
-      "topics": [
-        "agent-harness",
-        "agent-skills",
-        "ai-agents",
-        "ai-coding",
-        "ai-coding-agent",
-        "code-review",
-        "coding-agents",
-        "developer-tools",
-        "gentle-ai",
-        "llm",
-        "mcp",
-        "openspec",
-        "pi",
-        "pi-coding-agent",
-        "rdd",
-        "sdd",
-        "spec-driven-development",
-        "subagents",
-        "tdd"
-      ],
-      "pushed_at": "2026-10-24T06:18:39Z",
-      "created_at": "2026-05-10T10:11:33Z",
-      "category": "ai",
-      "discovery_source": "llm",
-      "collected_at": "2026-10-24T06:21:17.462531"
-    },
-    {
-      "owner": "xianshang33",
-      "repo": "llm-paper-daily",
-      "full_name": "xianshang33/llm-paper-daily",
-      "description": "Daily updated LLM papers.        每日更新 LLM 相关的论文，欢迎订阅 👏   喜欢的话动动你的小手 🌟 一个",
-      "url": "https://github.com/xianshang33/llm-paper-daily",
-      "stars": 1337,
+      "owner": "chunxiaoxx",
+      "repo": "nautilus-compass",
+      "full_name": "chunxiaoxx/nautilus-compass",
+      "description": "Open memory & reliability layer for AI agents + independent judging/verification (NACRE judge, caliber-bench meta-benchmark, preregistered criteria) — by Nautilus Platform",
+      "url": "https://github.com/chunxiaoxx/nautilus-compass",
+      "stars": 1254,
       "language": "Python",
       "topics": [
-        "agent",
-        "chatgpt",
-        "large-language-models",
-        "llm",
-        "rag"
-      ],
-      "pushed_at": "2026-10-24T06:07:30Z",
-      "created_at": "2023-11-27T03:50:11Z",
-      "category": "ai",
-      "discovery_source": "rag",
-      "collected_at": "2026-10-24T06:21:18.781574"
-    },
-    {
-      "owner": "heymrun",
-      "repo": "heym",
-      "full_name": "heymrun/heym",
-      "description": "Build agentic systems. Run them with confidence. Orchestrate agents, automate business processes, inspect every execution, and keep humans in control. Deploy Heym on your own infrastructure.",
-      "url": "https://github.com/heymrun/heym",
-      "stars": 1302,
-      "language": "Python",
-      "topics": [
+        "a2a",
+        "agent-memory",
         "agentic-ai",
-        "ai-agents",
-        "ai-agents-framework",
-        "ai-assistant",
-        "automation",
-        "automation-tool",
-        "autonomous-agents",
-        "coding-agent",
-        "evals",
-        "human-in-the-loop",
+        "benchmark",
+        "claude-code",
+        "cross-agent",
+        "evaluation",
+        "llm",
+        "llm-as-judge",
+        "local-first",
+        "long-term-memory",
         "mcp",
-        "mcp-server",
-        "mcp-servers",
-        "mcp-tool",
-        "no-code",
-        "no-code-automation",
+        "memory-layer",
+        "nautilus",
         "rag",
-        "self-hosted",
-        "workflow-automation",
-        "workflows"
+        "verification"
       ],
-      "pushed_at": "2026-10-24T06:08:47Z",
-      "created_at": "2026-03-28T08:08:49Z",
+      "pushed_at": "2026-10-24T06:59:26Z",
+      "created_at": "2026-04-27T18:20:31Z",
       "category": "ai",
       "discovery_source": "rag",
-      "collected_at": "2026-10-24T06:21:18.781568"
+      "collected_at": "2026-10-24T07:05:51.028003"
     },
     {
       "owner": "ClickHouse",
@@ -6009,7 +6005,7 @@
       "created_at": "2022-07-11T20:36:51Z",
       "category": "lakehouse",
       "discovery_source": "lakehouse",
-      "collected_at": "2026-10-24T06:21:21.572612"
+      "collected_at": "2026-10-24T07:05:53.727212"
     },
     {
       "owner": "datacontract",
@@ -6041,7 +6037,7 @@
       "created_at": "2023-07-24T14:54:16Z",
       "category": "lakehouse",
       "discovery_source": "databricks",
-      "collected_at": "2026-10-24T06:21:23.058154"
+      "collected_at": "2026-10-24T07:05:55.011993"
     },
     {
       "owner": "Kotlin",
@@ -6061,42 +6057,7 @@
       "created_at": "2020-04-27T08:46:20Z",
       "category": "data-engineering",
       "discovery_source": "dataframe",
-      "collected_at": "2026-10-24T06:21:13.455285"
-    },
-    {
-      "owner": "NVIDIA-NeMo",
-      "repo": "Automodel",
-      "full_name": "NVIDIA-NeMo/Automodel",
-      "description": "🚀 Pytorch Distributed native training library for LLMs/VLMs with OOTB Hugging Face support",
-      "url": "https://github.com/NVIDIA-NeMo/Automodel",
-      "stars": 1047,
-      "language": "Python",
-      "topics": [
-        "agent",
-        "deepseek-v4",
-        "deepseek-v4-flash",
-        "finetuning",
-        "gemma3",
-        "gemma4",
-        "glm",
-        "gpt-oss",
-        "kimi-k3",
-        "llama",
-        "llama3",
-        "llm",
-        "minimax-m2",
-        "mistral",
-        "openai",
-        "qwen-38-27b",
-        "qwen3",
-        "qwen3-next",
-        "vlm"
-      ],
-      "pushed_at": "2026-10-24T06:19:28Z",
-      "created_at": "2025-05-21T21:45:47Z",
-      "category": "ai",
-      "discovery_source": "llm",
-      "collected_at": "2026-10-24T06:21:17.462510"
+      "collected_at": "2026-10-24T07:05:46.152349"
     },
     {
       "owner": "ad-freiburg",
@@ -6117,7 +6078,7 @@
       "created_at": "2014-12-05T14:09:19Z",
       "category": "data-engineering",
       "discovery_source": "query-engine",
-      "collected_at": "2026-10-24T06:21:14.605804"
+      "collected_at": "2026-10-24T07:05:47.181508"
     },
     {
       "owner": "AltimateAI",
@@ -6151,7 +6112,7 @@
       "created_at": "2026-02-27T00:57:01Z",
       "category": "lakehouse",
       "discovery_source": "databricks",
-      "collected_at": "2026-10-24T06:21:23.058141"
+      "collected_at": "2026-10-24T07:05:55.011979"
     },
     {
       "owner": "apache",
@@ -6179,40 +6140,7 @@
       "created_at": "2018-04-22T20:06:55Z",
       "category": "data-engineering",
       "discovery_source": "stream-processing",
-      "collected_at": "2026-10-24T06:21:16.118946"
-    },
-    {
-      "owner": "smg-project",
-      "repo": "smg",
-      "full_name": "smg-project/smg",
-      "description": "Engine-agnostic LLM gateway in Rust. Full OpenAI & Anthropic API compatibility across vLLM, TRT-LLM, TokenSpeed, SGLang, OpenAI, Gemini & more. Industry-first gRPC pipeline, KV cache-aware routing, chat history, tokenization caching, Responses API, embeddings, WASM plugins, MCP, and multi-tenant auth.",
-      "url": "https://github.com/smg-project/smg",
-      "stars": 668,
-      "language": "Rust",
-      "topics": [
-        "anthropic",
-        "anthropic-api",
-        "chat",
-        "claude",
-        "gemini",
-        "inference-gateway",
-        "lightseek",
-        "llm",
-        "mcp",
-        "openai",
-        "responses-api",
-        "routing",
-        "sglang",
-        "tensorrtllm",
-        "tokenspeed",
-        "trtllm",
-        "vllm"
-      ],
-      "pushed_at": "2026-10-24T06:21:06Z",
-      "created_at": "2025-11-22T05:17:14Z",
-      "category": "ai",
-      "discovery_source": "llm",
-      "collected_at": "2026-10-24T06:21:17.462486"
+      "collected_at": "2026-10-24T07:05:48.474719"
     },
     {
       "owner": "Quantco",
@@ -6232,7 +6160,7 @@
       "created_at": "2025-04-17T13:06:59Z",
       "category": "data-engineering",
       "discovery_source": "dataframe",
-      "collected_at": "2026-10-24T06:21:13.455271"
+      "collected_at": "2026-10-24T07:05:46.152335"
     },
     {
       "owner": "ConduitIO",
@@ -6257,7 +6185,7 @@
       "created_at": "2022-01-11T13:12:14Z",
       "category": "data-engineering",
       "discovery_source": "data-engineering",
-      "collected_at": "2026-10-24T06:21:12.042551"
+      "collected_at": "2026-10-24T07:05:44.773756"
     },
     {
       "owner": "comunica",
@@ -6284,7 +6212,39 @@
       "created_at": "2017-10-18T01:57:55Z",
       "category": "data-engineering",
       "discovery_source": "query-engine",
-      "collected_at": "2026-10-24T06:21:14.605833"
+      "collected_at": "2026-10-24T07:05:47.181538"
+    },
+    {
+      "owner": "qybaihe",
+      "repo": "mu",
+      "full_name": "qybaihe/mu",
+      "description": "mu (μ): a coding agent that thinks before it acts. A small, fast judge makes the routine calls, the big model does the work. Built on pi.",
+      "url": "https://github.com/qybaihe/mu",
+      "stars": 540,
+      "language": "TypeScript",
+      "topics": [
+        "agent-harness",
+        "ai-agent",
+        "ai-coding",
+        "cli",
+        "coding-agent",
+        "context-engineering",
+        "desktop-app",
+        "developer-tools",
+        "electron",
+        "jev",
+        "llm",
+        "multi-agent",
+        "pi-coding-agent",
+        "prompt-injection",
+        "typesafe",
+        "typescript"
+      ],
+      "pushed_at": "2026-10-24T07:04:12Z",
+      "created_at": "2026-09-22T11:56:05Z",
+      "category": "ai",
+      "discovery_source": "llm",
+      "collected_at": "2026-10-24T07:05:49.724225"
     }
   ]
 }
