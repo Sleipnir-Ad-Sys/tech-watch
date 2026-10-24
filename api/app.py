@@ -264,9 +264,9 @@ async def get_stats() -> JSONResponse:    """
     if df.is_empty():
         return JSONResponse({"total": 0, "by_category": {}, "by_impact": {}, "by_source": {}})
 
-    by_category = df.group_by("category").agg(pl.count().alias("count")).sort("count", descending=True)
-    by_impact = df.group_by("impact_level").agg(pl.count().alias("count")).sort("count", descending=True)
-    by_source = df.group_by("source").agg(pl.count().alias("count")).sort("count", descending=True)
+    by_category = df.group_by("category").agg(pl.len().alias("count")).sort("count", descending=True)
+    by_impact = df.group_by("impact_level").agg(pl.len().alias("count")).sort("count", descending=True)
+    by_source = df.group_by("source").agg(pl.len().alias("count")).sort("count", descending=True)
 
     return JSONResponse({
         "total": len(df),

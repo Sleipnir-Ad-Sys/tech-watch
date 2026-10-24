@@ -61,7 +61,7 @@ def compute_trends(df: pl.DataFrame, window_days: int | None = None) -> list[Tre
     # Compte des releases dans la fenêtre
     window_counts = (
         df_window.group_by("name")
-        .agg(pl.count().alias("release_count_window"))
+        .agg(pl.len().alias("release_count_window"))
     )
 
     agg_df = agg_df.join(window_counts, on="name", how="left").with_columns(
